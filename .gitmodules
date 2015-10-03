@@ -1,0 +1,3 @@
+[submodule "Ziggeo/Ziggeo"]
+	path = Ziggeo/Ziggeo
+	url = https://github.com/Ziggeo/iOS-SDK.git
