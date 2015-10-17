@@ -61,6 +61,11 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
+## Enable cover selector dialog
+```
+    recorder.coverSelectorEnabled = YES;
+```
+
 ## Delegate
 You can use ZiggeoVideosDelegate in your app to be notified about video uploading events.
 ```
@@ -112,13 +117,13 @@ All the API methods are working asynchronously and never blocking the calling th
 ### Create new video
 #### Basic
 ```
-	[videos createVideoWithData:nil file:videoPath callback:nil Progress:nil];
+	[videos createVideoWithData:nil file:videoPath cover:nil callback:nil Progress:nil];
 ```
 
 #### Advanced
-You can add your custom completion/progress callbacks here to make the SDK inform your app about uploading progress and response
+You can add your custom completion/progress callbacks here to make the SDK inform your app about uploading progress and response. Cover image is optional and could be nil, making Ziggeo platform to generate default video cover
 ```
-    [videos createVideoWithData:nil file:videoPath 
+    [videos createVideoWithData:nil file:videoPath cover:(UIImage*)cover
     	callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
 	    	NSLog(@"video upload complete: %@, error = %@", jsonObject, error);
    		} Progress:^(int bytesSent, int totalBytes) {
