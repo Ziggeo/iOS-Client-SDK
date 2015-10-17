@@ -85,6 +85,7 @@
 
 - (IBAction)startCapture:(id)sender {
     ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:self.ziggeo];
+    recorder.coverSelectorEnabled = YES;
     [self presentViewController:recorder animated:YES completion:nil];
 }
 

@@ -33,6 +33,8 @@
 
 - (NSURLSessionTask*) postWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
 
+- (NSURLSessionTask*) postRawDataWithPath:(NSString*)path Data:(NSData*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
+
 - (NSURLSessionTask*) postJsonWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 
 - (NSURLSessionTask*) deleteWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;

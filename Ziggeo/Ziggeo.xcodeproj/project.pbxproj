@@ -20,6 +20,12 @@
 		FAE668BF1BB4381000A45B41 /* ZiggeoConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE668B71BB4381000A45B41 /* ZiggeoConnect.m */; };
 		FAE668C01BB4381000A45B41 /* ZiggeoVideos.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE668B81BB4381000A45B41 /* ZiggeoVideos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAE668C11BB4381000A45B41 /* ZiggeoVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE668B91BB4381000A45B41 /* ZiggeoVideos.m */; };
+		FAEB5D8D1BC9316D00A64841 /* CoverSelectorController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D8A1BC9316D00A64841 /* CoverSelectorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAEB5D8E1BC9316D00A64841 /* CoverSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEB5D8B1BC9316D00A64841 /* CoverSelectorController.m */; };
+		FAEB5D8F1BC9316D00A64841 /* CoverSelectorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEB5D8C1BC9316D00A64841 /* CoverSelectorController.xib */; };
+		FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FAEB5D971BC9C0D700A64841 /* CoverSelectorTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEB5D951BC9C0D700A64841 /* CoverSelectorTableCell.m */; };
+		FAEB5D991BC9CC0600A64841 /* CoverSelectorTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEB5D981BC9CC0600A64841 /* CoverSelectorTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		FAE668B71BB4381000A45B41 /* ZiggeoConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoConnect.m; path = API/ZiggeoConnect.m; sourceTree = "<group>"; };
 		FAE668B81BB4381000A45B41 /* ZiggeoVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoVideos.h; path = API/ZiggeoVideos.h; sourceTree = "<group>"; };
 		FAE668B91BB4381000A45B41 /* ZiggeoVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoVideos.m; path = API/ZiggeoVideos.m; sourceTree = "<group>"; };
+		FAEB5D8A1BC9316D00A64841 /* CoverSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverSelectorController.h; path = CoverSelector/CoverSelectorController.h; sourceTree = "<group>"; };
+		FAEB5D8B1BC9316D00A64841 /* CoverSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverSelectorController.m; path = CoverSelector/CoverSelectorController.m; sourceTree = "<group>"; };
+		FAEB5D8C1BC9316D00A64841 /* CoverSelectorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverSelectorController.xib; path = CoverSelector/CoverSelectorController.xib; sourceTree = "<group>"; };
+		FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverSelectorTableCell.h; path = CoverSelector/CoverSelectorTableCell.h; sourceTree = "<group>"; };
+		FAEB5D951BC9C0D700A64841 /* CoverSelectorTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverSelectorTableCell.m; path = CoverSelector/CoverSelectorTableCell.m; sourceTree = "<group>"; };
+		FAEB5D981BC9CC0600A64841 /* CoverSelectorTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverSelectorTableCell.xib; path = CoverSelector/CoverSelectorTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 		FAE668971BB4345200A45B41 /* Ziggeo */ = {
 			isa = PBXGroup;
 			children = (
+				FAEB5D871BC930CF00A64841 /* CoverSelector */,
 				FA8827CE1BB578710025C71D /* Recorder */,
 				FA8827C91BB55B910025C71D /* Player */,
 				FAE668B11BB4379D00A45B41 /* API */,
@@ -120,6 +133,19 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		FAEB5D871BC930CF00A64841 /* CoverSelector */ = {
+			isa = PBXGroup;
+			children = (
+				FAEB5D8A1BC9316D00A64841 /* CoverSelectorController.h */,
+				FAEB5D8B1BC9316D00A64841 /* CoverSelectorController.m */,
+				FAEB5D8C1BC9316D00A64841 /* CoverSelectorController.xib */,
+				FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */,
+				FAEB5D951BC9C0D700A64841 /* CoverSelectorTableCell.m */,
+				FAEB5D981BC9CC0600A64841 /* CoverSelectorTableCell.xib */,
+			);
+			name = CoverSelector;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -133,7 +159,9 @@
 				FA8827D11BB5797A0025C71D /* ZiggeoRecorder.h in Headers */,
 				FAE668C01BB4381000A45B41 /* ZiggeoVideos.h in Headers */,
 				FA8827CC1BB55CF70025C71D /* ZiggeoPlayer.h in Headers */,
+				FAEB5D8D1BC9316D00A64841 /* CoverSelectorController.h in Headers */,
 				FAE668BC1BB4381000A45B41 /* ZiggeoConfig.h in Headers */,
+				FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +224,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEB5D8F1BC9316D00A64841 /* CoverSelectorController.xib in Resources */,
+				FAEB5D991BC9CC0600A64841 /* CoverSelectorTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +255,8 @@
 			files = (
 				FAE668C11BB4381000A45B41 /* ZiggeoVideos.m in Sources */,
 				FAE668BF1BB4381000A45B41 /* ZiggeoConnect.m in Sources */,
+				FAEB5D8E1BC9316D00A64841 /* CoverSelectorController.m in Sources */,
+				FAEB5D971BC9C0D700A64841 /* CoverSelectorTableCell.m in Sources */,
 				FA8827D21BB5797A0025C71D /* ZiggeoRecorder.m in Sources */,
 				FAE668BD1BB4381000A45B41 /* ZiggeoConfig.m in Sources */,
 				FAE668BB1BB4381000A45B41 /* ZiggeoApplication.m in Sources */,
