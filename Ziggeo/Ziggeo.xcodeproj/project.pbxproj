@@ -23,7 +23,7 @@
 		FAEB5D8D1BC9316D00A64841 /* CoverSelectorController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D8A1BC9316D00A64841 /* CoverSelectorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEB5D8E1BC9316D00A64841 /* CoverSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEB5D8B1BC9316D00A64841 /* CoverSelectorController.m */; };
 		FAEB5D8F1BC9316D00A64841 /* CoverSelectorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEB5D8C1BC9316D00A64841 /* CoverSelectorController.xib */; };
-		FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEB5D971BC9C0D700A64841 /* CoverSelectorTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEB5D951BC9C0D700A64841 /* CoverSelectorTableCell.m */; };
 		FAEB5D991BC9CC0600A64841 /* CoverSelectorTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEB5D981BC9CC0600A64841 /* CoverSelectorTableCell.xib */; };
 /* End PBXBuildFile section */
@@ -160,8 +160,8 @@
 				FAE668C01BB4381000A45B41 /* ZiggeoVideos.h in Headers */,
 				FA8827CC1BB55CF70025C71D /* ZiggeoPlayer.h in Headers */,
 				FAEB5D8D1BC9316D00A64841 /* CoverSelectorController.h in Headers */,
-				FAE668BC1BB4381000A45B41 /* ZiggeoConfig.h in Headers */,
 				FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */,
+				FAE668BC1BB4381000A45B41 /* ZiggeoConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
