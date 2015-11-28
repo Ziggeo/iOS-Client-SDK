@@ -86,7 +86,28 @@
 - (IBAction)startCapture:(id)sender {
     ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:self.ziggeo];
     recorder.coverSelectorEnabled = YES;
-    [self presentViewController:recorder animated:YES completion:nil];
+    
+    UIAlertController* selectVideoSourceAlert = [UIAlertController alertControllerWithTitle:@"Video upload"
+                                                                   message:@"Please select video source"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* createNewVideoAction = [UIAlertAction actionWithTitle:@"Create new video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [self presentViewController:recorder animated:YES completion:nil];
+    }];
+    [selectVideoSourceAlert addAction:createNewVideoAction];
+    
+    UIAlertAction* selectExistingVideoAction = [UIAlertAction actionWithTitle:@"Select existing video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        [recorder selectExistingVideo];
+        [self presentViewController:recorder animated:YES completion:nil];
+    }];
+    [selectVideoSourceAlert addAction:selectExistingVideoAction];
+    
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    }];
+    [selectVideoSourceAlert addAction:cancelAction];
+    
+    [self presentViewController:selectVideoSourceAlert animated:YES completion:nil];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

@@ -15,4 +15,6 @@
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
 @property (nonatomic) bool coverSelectorEnabled;
 
+-(void) selectExistingVideo;
+
 @end
