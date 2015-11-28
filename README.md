@@ -54,19 +54,25 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
-## Capture duration limit
+### Capture duration limit
 ```
     ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
 	recorder.videoMaximumDuration = 20; //optional capture duration limit
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
-## Enable cover selector dialog
+### Enable cover selector dialog
 ```
     recorder.coverSelectorEnabled = YES;
 ```
 
-## Delegate
+### Select existing video instead of capturing a new one
+
+```
+    [recorder selectExistingVideo];
+```
+
+### Delegate
 You can use ZiggeoVideosDelegate in your app to be notified about video uploading events.
 ```
 @interface ViewController : UIViewController <ZiggeoVideosDelegate>
