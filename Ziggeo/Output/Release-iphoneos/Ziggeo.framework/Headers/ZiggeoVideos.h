@@ -26,7 +26,11 @@
 
 - (NSURLSessionTask*) indexWithData:(NSDictionary*)data Callback:(void (^)(NSArray* jsonArray, NSError* error))callback;
 
+- (NSURLSessionTask*) createStreamWithVideoToken:(NSString*)token callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
+
 - (NSURLSessionTask*) createVideoWithData:(NSDictionary*)data file:(NSString*)fileName cover:(UIImage*)cover callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+
+- (NSURLSessionTask*) rerecordVideoWithToken:(NSString*)videoToken file:(NSString*)fileName callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
 
 - (NSURLSessionTask*) getImageForVideoByToken:(NSString*)token callback:(void (^)(UIImage* image, NSURLResponse* response, NSError* error))callback;
 

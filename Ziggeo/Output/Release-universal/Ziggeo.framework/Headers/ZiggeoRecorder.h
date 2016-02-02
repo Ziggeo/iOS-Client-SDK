@@ -10,11 +10,15 @@
 #import "CoverSelectorController.h"
 @import UIKit;
 
+@protocol ZiggeoRecorderDelegate <NSObject>
+-(void) ziggeoRecorderDidCancel;
+@end
+
 @interface ZiggeoRecorder : UIImagePickerController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,CoverSelectorDelegate>
 
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
+-(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)videoToken;
 @property (nonatomic) bool coverSelectorEnabled;
-
--(void) selectExistingVideo;
+@property (nonatomic) id<ZiggeoRecorderDelegate> recorderDelegate;
 
 @end

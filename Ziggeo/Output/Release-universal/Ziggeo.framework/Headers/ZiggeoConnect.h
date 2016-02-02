@@ -15,7 +15,7 @@
 
 - (NSURLSessionTask*) requestWithMethod:(NSString*)method Path:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
 
-- (NSURLSessionTask*) backgroundUploadWithPath:(NSString*)path Data:(NSDictionary*)data File:(NSString*)file Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+- (NSURLSessionTask*) backgroundUploadWithPath:(NSString*)path Data:(NSDictionary*)data identifier:(NSString*)identifier File:(NSString*)file Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
 
 - (NSURLSessionTask*) requestStringWithMethod:(NSString*)method Path:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSString *string, NSURLResponse *response, NSError *error))callback;
 
@@ -40,5 +40,7 @@
 - (NSURLSessionTask*) deleteWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
 
 - (NSURLSessionTask*) deleteJsonWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
+
+- (void) appWakeupSignalTaskComplete:(NSString*)sessionID;
 
 @end
