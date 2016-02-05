@@ -19,6 +19,7 @@
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)videoToken;
 @property (nonatomic) bool coverSelectorEnabled;
+@property (nonatomic) bool cameraFlipButtonVisible;
 @property (nonatomic) id<ZiggeoRecorderDelegate> recorderDelegate;
 -(void) selectExistingVideo;
 
