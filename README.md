@@ -72,6 +72,18 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     [recorder selectExistingVideo];
 ```
 
+### Disable camera flip button
+
+```
+    recorder.cameraFlipButtonVisible = NO;
+```
+
+### Set active camera device
+
+```
+    recorder.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+```
+
 ### Delegate
 You can use ZiggeoVideosDelegate in your app to be notified about video uploading events.
 ```
