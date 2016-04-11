@@ -84,6 +84,15 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceRear;
 ```
 
+### Custom Recorder UI
+
+```
+    recorder.showsCameraControls = NO;
+    recorder.cameraOverlayView = some_view;
+```
+
+Since ZiggeoRecorder is a subclass of UIImagePickerController, it is possible to use any standard ways to create custom camera UI. Please check CustomUITestApp example and this Apple tutorial for more details: https://developer.apple.com/library/ios/samplecode/PhotoPicker/Introduction/Intro.html 
+
 ### Delegate
 You can use ZiggeoVideosDelegate in your app to be notified about video uploading events.
 ```
