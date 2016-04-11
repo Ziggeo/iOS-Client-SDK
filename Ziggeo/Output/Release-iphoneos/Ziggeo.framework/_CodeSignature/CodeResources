@@ -6,15 +6,11 @@
 	<dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		Is9FzkYViOwGrpYoP/peez5Gb2Y=
+		EYHwc9fpWAwCINcre6lE2jyfBIA=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		mLYIapvaN5xam66UjUhj/+Ag0ss=
-		</data>
-		<key>Delete-50.png</key>
-		<data>
-		llmqQFpwuzPOWkkFsv5FsX9icus=
+		w13TCmqxE2dCTWJ9FCip+MOc6nU=
 		</data>
 		<key>Headers/CoverSelectorController.h</key>
 		<data>
@@ -50,7 +46,7 @@
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
-		VMJmaF8m75rVrsfzNeAHqExMjdY=
+		oOT2ZCrTroEHME5pG1tD9fliQcw=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -60,28 +56,16 @@
 		<data>
 		ABXbN9uzgchYq/6YDM6PS68TdVo=
 		</data>
-		<key>trash-50.png</key>
-		<data>
-		rh5NUt+MezRQ/yuFsojAJ+z6gRg=
-		</data>
-		<key>upload-50.png</key>
-		<data>
-		coMM6njce03R/X32d8tDMLUnkB4=
-		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		Is9FzkYViOwGrpYoP/peez5Gb2Y=
+		EYHwc9fpWAwCINcre6lE2jyfBIA=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		mLYIapvaN5xam66UjUhj/+Ag0ss=
-		</data>
-		<key>Delete-50.png</key>
-		<data>
-		llmqQFpwuzPOWkkFsv5FsX9icus=
+		w13TCmqxE2dCTWJ9FCip+MOc6nU=
 		</data>
 		<key>Headers/CoverSelectorController.h</key>
 		<data>
@@ -117,19 +101,11 @@
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
-		VMJmaF8m75rVrsfzNeAHqExMjdY=
+		oOT2ZCrTroEHME5pG1tD9fliQcw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		ABXbN9uzgchYq/6YDM6PS68TdVo=
-		</data>
-		<key>trash-50.png</key>
-		<data>
-		rh5NUt+MezRQ/yuFsojAJ+z6gRg=
-		</data>
-		<key>upload-50.png</key>
-		<data>
-		coMM6njce03R/X32d8tDMLUnkB4=
 		</data>
 	</dict>
 	<key>rules</key>

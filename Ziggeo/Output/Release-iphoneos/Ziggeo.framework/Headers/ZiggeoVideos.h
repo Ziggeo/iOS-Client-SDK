@@ -10,9 +10,9 @@
 
 @protocol ZiggeoVideosDelegate <NSObject>
 
--(void) videoUploadStartedWithPath:(NSString*)sourcePath backgroundTask:(NSURLSessionTask*)uploadingTask;
--(void) videoUploadCompleteForPath:(NSString*)sourcePath withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json;
--(void) videoUploadProgressForPath:(NSString*)sourcePath totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes;
+-(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask;
+-(void) videoUploadCompleteForPath:(NSString*)sourcePath token:(NSString*)token withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json;
+-(void) videoUploadProgressForPath:(NSString*)sourcePath token:(NSString*)token totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes;
 
 @end
 

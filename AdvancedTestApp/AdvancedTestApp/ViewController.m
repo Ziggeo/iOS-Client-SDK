@@ -43,18 +43,18 @@
     [self refreshVideoJsonArray];
 }
 
--(void) videoUploadStartedWithPath:(NSString*)sourcePath backgroundTask:(NSURLSessionTask*)uploadingTask {
+-(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask {
     [self.uploadingVideos addObject:sourcePath];
     [self refreshVideoJsonArray];
 }
 
--(void) videoUploadCompleteForPath:(NSString*)sourcePath withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
+-(void) videoUploadCompleteForPath:(NSString*)sourcePath token:(NSString*)token withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
     NSLog(@"upload complete: %@, error = %@", json, error);
     [self.uploadingVideos removeObject:sourcePath];
     [self refreshVideoJsonArray];
 }
 
--(void) videoUploadProgressForPath:(NSString*)sourcePath totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
+-(void) videoUploadProgressForPath:(NSString*)sourcePath token:(NSString*)token totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
     if(totalBytes > 0) {
         dispatch_async(dispatch_get_main_queue(), ^
         {
