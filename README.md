@@ -54,6 +54,13 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
+## ZiggeoRecorder2 (beta)
+New recorder rewritten from scratch. Allows to record video and audio without interrupting 3rd party apps playback (Music app, for example). Some additional setup required for simultaneous recording, see TestApp->AppDelegate.m for details.
+```
+    ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
+    [self presentViewController:recorder animated:true completion:nil];
+```
+
 ### Capture duration limit
 ```
     ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
