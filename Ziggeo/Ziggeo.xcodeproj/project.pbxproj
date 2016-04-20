@@ -11,6 +11,17 @@
 		FA8827CD1BB55CF70025C71D /* ZiggeoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827CB1BB55CF70025C71D /* ZiggeoPlayer.m */; };
 		FA8827D11BB5797A0025C71D /* ZiggeoRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8827CF1BB5797A0025C71D /* ZiggeoRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA8827D21BB5797A0025C71D /* ZiggeoRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827D01BB5797A0025C71D /* ZiggeoRecorder.m */; };
+		FAE23A5B1CC4F07600E61CC6 /* Record-100.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A591CC4F07600E61CC6 /* Record-100.png */; };
+		FAE23A5C1CC4F07600E61CC6 /* Stop-100.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A5A1CC4F07600E61CC6 /* Stop-100.png */; };
+		FAE23A5F1CC4F9C000E61CC6 /* Delete-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A5D1CC4F9C000E61CC6 /* Delete-50@2x.png */; };
+		FAE23A601CC4F9C000E61CC6 /* trash-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A5E1CC4F9C000E61CC6 /* trash-50@2x.png */; };
+		FAE23A631CC4FBB100E61CC6 /* Pause-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A611CC4FBB100E61CC6 /* Pause-50@2x.png */; };
+		FAE23A641CC4FBB100E61CC6 /* Play-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A621CC4FBB100E61CC6 /* Play-50@2x.png */; };
+		FAE23A671CC4FC9C00E61CC6 /* Pause-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A651CC4FC9C00E61CC6 /* Pause-50.png */; };
+		FAE23A681CC4FC9C00E61CC6 /* Play-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A661CC4FC9C00E61CC6 /* Play-50.png */; };
+		FAE23A6A1CC51D7C00E61CC6 /* SwitchCamera-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A691CC51D7B00E61CC6 /* SwitchCamera-50.png */; };
+		FAE23A6C1CC634FA00E61CC6 /* SwitchCamera-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A6B1CC634FA00E61CC6 /* SwitchCamera-50@2x.png */; };
+		FAE23A6E1CC6356300E61CC6 /* upload-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE23A6D1CC6356300E61CC6 /* upload-50@2x.png */; };
 		FAE6689B1BB4345200A45B41 /* Ziggeo.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE6689A1BB4345200A45B41 /* Ziggeo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAE668BA1BB4381000A45B41 /* ZiggeoApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE668B21BB4381000A45B41 /* ZiggeoApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAE668BB1BB4381000A45B41 /* ZiggeoApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE668B31BB4381000A45B41 /* ZiggeoApplication.m */; };
@@ -20,12 +31,23 @@
 		FAE668BF1BB4381000A45B41 /* ZiggeoConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE668B71BB4381000A45B41 /* ZiggeoConnect.m */; };
 		FAE668C01BB4381000A45B41 /* ZiggeoVideos.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE668B81BB4381000A45B41 /* ZiggeoVideos.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAE668C11BB4381000A45B41 /* ZiggeoVideos.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE668B91BB4381000A45B41 /* ZiggeoVideos.m */; };
+		FAE72AEE1CB688D500BF2497 /* ZiggeoRecorder2.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE72AEB1CB688D500BF2497 /* ZiggeoRecorder2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAE72AEF1CB688D500BF2497 /* ZiggeoRecorder2.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE72AEC1CB688D500BF2497 /* ZiggeoRecorder2.m */; };
+		FAE72AF01CB688D500BF2497 /* ZiggeoRecorder2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE72AED1CB688D500BF2497 /* ZiggeoRecorder2.xib */; };
+		FAE72AF31CB6988F00BF2497 /* CapturePreviewView.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE72AF11CB6988F00BF2497 /* CapturePreviewView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAE72AF41CB6988F00BF2497 /* CapturePreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE72AF21CB6988F00BF2497 /* CapturePreviewView.m */; };
+		FAEA9BBA1C6014D100B83119 /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEA9BB91C6014D100B83119 /* Delete-50.png */; };
+		FAEA9BBD1C60174200B83119 /* trash-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEA9BBB1C60174200B83119 /* trash-50.png */; };
+		FAEA9BBE1C60174200B83119 /* upload-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEA9BBC1C60174200B83119 /* upload-50.png */; };
 		FAEB5D8D1BC9316D00A64841 /* CoverSelectorController.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D8A1BC9316D00A64841 /* CoverSelectorController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEB5D8E1BC9316D00A64841 /* CoverSelectorController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEB5D8B1BC9316D00A64841 /* CoverSelectorController.m */; };
 		FAEB5D8F1BC9316D00A64841 /* CoverSelectorController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEB5D8C1BC9316D00A64841 /* CoverSelectorController.xib */; };
 		FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAEB5D971BC9C0D700A64841 /* CoverSelectorTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEB5D951BC9C0D700A64841 /* CoverSelectorTableCell.m */; };
 		FAEB5D991BC9CC0600A64841 /* CoverSelectorTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEB5D981BC9CC0600A64841 /* CoverSelectorTableCell.xib */; };
+		FAF128BA1CB7ED820010B608 /* RecordedVideoPreview.h in Headers */ = {isa = PBXBuildFile; fileRef = FAF128B71CB7ED820010B608 /* RecordedVideoPreview.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAF128BB1CB7ED820010B608 /* RecordedVideoPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF128B81CB7ED820010B608 /* RecordedVideoPreview.m */; };
+		FAF128BC1CB7ED820010B608 /* RecordedVideoPreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF128B91CB7ED820010B608 /* RecordedVideoPreview.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +56,17 @@
 		FA8827CF1BB5797A0025C71D /* ZiggeoRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoRecorder.h; path = Recorder/ZiggeoRecorder.h; sourceTree = "<group>"; };
 		FA8827D01BB5797A0025C71D /* ZiggeoRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoRecorder.m; path = Recorder/ZiggeoRecorder.m; sourceTree = "<group>"; };
 		FA8828121BB6DCAB0025C71D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE23A591CC4F07600E61CC6 /* Record-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Record-100.png"; path = "art/Record-100.png"; sourceTree = "<group>"; };
+		FAE23A5A1CC4F07600E61CC6 /* Stop-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Stop-100.png"; path = "art/Stop-100.png"; sourceTree = "<group>"; };
+		FAE23A5D1CC4F9C000E61CC6 /* Delete-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete-50@2x.png"; path = "art/Delete-50@2x.png"; sourceTree = "<group>"; };
+		FAE23A5E1CC4F9C000E61CC6 /* trash-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-50@2x.png"; path = "art/trash-50@2x.png"; sourceTree = "<group>"; };
+		FAE23A611CC4FBB100E61CC6 /* Pause-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Pause-50@2x.png"; path = "art/Pause-50@2x.png"; sourceTree = "<group>"; };
+		FAE23A621CC4FBB100E61CC6 /* Play-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-50@2x.png"; path = "art/Play-50@2x.png"; sourceTree = "<group>"; };
+		FAE23A651CC4FC9C00E61CC6 /* Pause-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Pause-50.png"; path = "art/Pause-50.png"; sourceTree = "<group>"; };
+		FAE23A661CC4FC9C00E61CC6 /* Play-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-50.png"; path = "art/Play-50.png"; sourceTree = "<group>"; };
+		FAE23A691CC51D7B00E61CC6 /* SwitchCamera-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SwitchCamera-50.png"; path = "art/SwitchCamera-50.png"; sourceTree = "<group>"; };
+		FAE23A6B1CC634FA00E61CC6 /* SwitchCamera-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SwitchCamera-50@2x.png"; path = "art/SwitchCamera-50@2x.png"; sourceTree = "<group>"; };
+		FAE23A6D1CC6356300E61CC6 /* upload-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upload-50@2x.png"; path = "art/upload-50@2x.png"; sourceTree = "<group>"; };
 		FAE668951BB4345200A45B41 /* Ziggeo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ziggeo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE6689A1BB4345200A45B41 /* Ziggeo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ziggeo.h; sourceTree = "<group>"; };
 		FAE668B21BB4381000A45B41 /* ZiggeoApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoApplication.h; path = API/ZiggeoApplication.h; sourceTree = "<group>"; };
@@ -44,12 +77,23 @@
 		FAE668B71BB4381000A45B41 /* ZiggeoConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoConnect.m; path = API/ZiggeoConnect.m; sourceTree = "<group>"; };
 		FAE668B81BB4381000A45B41 /* ZiggeoVideos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoVideos.h; path = API/ZiggeoVideos.h; sourceTree = "<group>"; };
 		FAE668B91BB4381000A45B41 /* ZiggeoVideos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoVideos.m; path = API/ZiggeoVideos.m; sourceTree = "<group>"; };
+		FAE72AEB1CB688D500BF2497 /* ZiggeoRecorder2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoRecorder2.h; path = Recorder2/ZiggeoRecorder2.h; sourceTree = "<group>"; };
+		FAE72AEC1CB688D500BF2497 /* ZiggeoRecorder2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoRecorder2.m; path = Recorder2/ZiggeoRecorder2.m; sourceTree = "<group>"; };
+		FAE72AED1CB688D500BF2497 /* ZiggeoRecorder2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZiggeoRecorder2.xib; path = Recorder2/ZiggeoRecorder2.xib; sourceTree = "<group>"; };
+		FAE72AF11CB6988F00BF2497 /* CapturePreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CapturePreviewView.h; path = Recorder2/CapturePreviewView.h; sourceTree = "<group>"; };
+		FAE72AF21CB6988F00BF2497 /* CapturePreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CapturePreviewView.m; path = Recorder2/CapturePreviewView.m; sourceTree = "<group>"; };
+		FAEA9BB91C6014D100B83119 /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete-50.png"; path = "art/Delete-50.png"; sourceTree = "<group>"; };
+		FAEA9BBB1C60174200B83119 /* trash-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-50.png"; path = "art/trash-50.png"; sourceTree = "<group>"; };
+		FAEA9BBC1C60174200B83119 /* upload-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upload-50.png"; path = "art/upload-50.png"; sourceTree = "<group>"; };
 		FAEB5D8A1BC9316D00A64841 /* CoverSelectorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverSelectorController.h; path = CoverSelector/CoverSelectorController.h; sourceTree = "<group>"; };
 		FAEB5D8B1BC9316D00A64841 /* CoverSelectorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverSelectorController.m; path = CoverSelector/CoverSelectorController.m; sourceTree = "<group>"; };
 		FAEB5D8C1BC9316D00A64841 /* CoverSelectorController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverSelectorController.xib; path = CoverSelector/CoverSelectorController.xib; sourceTree = "<group>"; };
 		FAEB5D941BC9C0D700A64841 /* CoverSelectorTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoverSelectorTableCell.h; path = CoverSelector/CoverSelectorTableCell.h; sourceTree = "<group>"; };
 		FAEB5D951BC9C0D700A64841 /* CoverSelectorTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoverSelectorTableCell.m; path = CoverSelector/CoverSelectorTableCell.m; sourceTree = "<group>"; };
 		FAEB5D981BC9CC0600A64841 /* CoverSelectorTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CoverSelectorTableCell.xib; path = CoverSelector/CoverSelectorTableCell.xib; sourceTree = "<group>"; };
+		FAF128B71CB7ED820010B608 /* RecordedVideoPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordedVideoPreview.h; path = Recorder2/RecordedVideoPreview.h; sourceTree = "<group>"; };
+		FAF128B81CB7ED820010B608 /* RecordedVideoPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordedVideoPreview.m; path = Recorder2/RecordedVideoPreview.m; sourceTree = "<group>"; };
+		FAF128B91CB7ED820010B608 /* RecordedVideoPreview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordedVideoPreview.xib; path = Recorder2/RecordedVideoPreview.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +144,8 @@
 		FAE668971BB4345200A45B41 /* Ziggeo */ = {
 			isa = PBXGroup;
 			children = (
+				FAE72AE81CB6870300BF2497 /* Recorder2 */,
+				FAEA9BB81C60148500B83119 /* Art */,
 				FAEB5D871BC930CF00A64841 /* CoverSelector */,
 				FA8827CE1BB578710025C71D /* Recorder */,
 				FA8827C91BB55B910025C71D /* Player */,
@@ -133,6 +179,42 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		FAE72AE81CB6870300BF2497 /* Recorder2 */ = {
+			isa = PBXGroup;
+			children = (
+				FAE72AEB1CB688D500BF2497 /* ZiggeoRecorder2.h */,
+				FAE72AEC1CB688D500BF2497 /* ZiggeoRecorder2.m */,
+				FAE72AED1CB688D500BF2497 /* ZiggeoRecorder2.xib */,
+				FAE72AF11CB6988F00BF2497 /* CapturePreviewView.h */,
+				FAE72AF21CB6988F00BF2497 /* CapturePreviewView.m */,
+				FAF128B71CB7ED820010B608 /* RecordedVideoPreview.h */,
+				FAF128B81CB7ED820010B608 /* RecordedVideoPreview.m */,
+				FAF128B91CB7ED820010B608 /* RecordedVideoPreview.xib */,
+			);
+			name = Recorder2;
+			sourceTree = "<group>";
+		};
+		FAEA9BB81C60148500B83119 /* Art */ = {
+			isa = PBXGroup;
+			children = (
+				FAE23A6D1CC6356300E61CC6 /* upload-50@2x.png */,
+				FAE23A6B1CC634FA00E61CC6 /* SwitchCamera-50@2x.png */,
+				FAE23A691CC51D7B00E61CC6 /* SwitchCamera-50.png */,
+				FAE23A651CC4FC9C00E61CC6 /* Pause-50.png */,
+				FAE23A661CC4FC9C00E61CC6 /* Play-50.png */,
+				FAE23A611CC4FBB100E61CC6 /* Pause-50@2x.png */,
+				FAE23A621CC4FBB100E61CC6 /* Play-50@2x.png */,
+				FAE23A5D1CC4F9C000E61CC6 /* Delete-50@2x.png */,
+				FAE23A5E1CC4F9C000E61CC6 /* trash-50@2x.png */,
+				FAE23A591CC4F07600E61CC6 /* Record-100.png */,
+				FAE23A5A1CC4F07600E61CC6 /* Stop-100.png */,
+				FAEA9BBB1C60174200B83119 /* trash-50.png */,
+				FAEA9BBC1C60174200B83119 /* upload-50.png */,
+				FAEA9BB91C6014D100B83119 /* Delete-50.png */,
+			);
+			name = Art;
+			sourceTree = "<group>";
+		};
 		FAEB5D871BC930CF00A64841 /* CoverSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +242,10 @@
 				FAE668C01BB4381000A45B41 /* ZiggeoVideos.h in Headers */,
 				FA8827CC1BB55CF70025C71D /* ZiggeoPlayer.h in Headers */,
 				FAEB5D8D1BC9316D00A64841 /* CoverSelectorController.h in Headers */,
+				FAF128BA1CB7ED820010B608 /* RecordedVideoPreview.h in Headers */,
+				FAE72AEE1CB688D500BF2497 /* ZiggeoRecorder2.h in Headers */,
 				FAEB5D961BC9C0D700A64841 /* CoverSelectorTableCell.h in Headers */,
+				FAE72AF31CB6988F00BF2497 /* CapturePreviewView.h in Headers */,
 				FAE668BC1BB4381000A45B41 /* ZiggeoConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,8 +309,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE23A631CC4FBB100E61CC6 /* Pause-50@2x.png in Resources */,
 				FAEB5D8F1BC9316D00A64841 /* CoverSelectorController.xib in Resources */,
+				FAE23A6E1CC6356300E61CC6 /* upload-50@2x.png in Resources */,
+				FAF128BC1CB7ED820010B608 /* RecordedVideoPreview.xib in Resources */,
+				FAE23A6A1CC51D7C00E61CC6 /* SwitchCamera-50.png in Resources */,
+				FAE23A5F1CC4F9C000E61CC6 /* Delete-50@2x.png in Resources */,
+				FAE23A601CC4F9C000E61CC6 /* trash-50@2x.png in Resources */,
+				FAE23A671CC4FC9C00E61CC6 /* Pause-50.png in Resources */,
+				FAE23A6C1CC634FA00E61CC6 /* SwitchCamera-50@2x.png in Resources */,
+				FAE72AF01CB688D500BF2497 /* ZiggeoRecorder2.xib in Resources */,
 				FAEB5D991BC9CC0600A64841 /* CoverSelectorTableCell.xib in Resources */,
+				FAE23A681CC4FC9C00E61CC6 /* Play-50.png in Resources */,
+				FAE23A641CC4FBB100E61CC6 /* Play-50@2x.png in Resources */,
+				FAEA9BBE1C60174200B83119 /* upload-50.png in Resources */,
+				FAEA9BBA1C6014D100B83119 /* Delete-50.png in Resources */,
+				FAE23A5B1CC4F07600E61CC6 /* Record-100.png in Resources */,
+				FAEA9BBD1C60174200B83119 /* trash-50.png in Resources */,
+				FAE23A5C1CC4F07600E61CC6 /* Stop-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "exit 0\n\nset -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\n\n# Constants\nSF_TARGET_NAME=${PROJECT_NAME}\nUNIVERSAL_OUTPUTFOLDER=${PROJECT_DIR}/Output/${CONFIGURATION}-universal\n\n# Take build target\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\necho \"Please choose iPhone simulator as the build target.\"\nexit 1\nfi\n\nIPHONE_DEVICE_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\n\n# Build the other (non-simulator) platform\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/arm64\" SYMROOT=\"${SYMROOT}\" ARCHS='arm64' VALID_ARCHS='arm64' $ACTION\n\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/armv7\" SYMROOT=\"${SYMROOT}\" ARCHS='armv7 armv7s' VALID_ARCHS='armv7 armv7s' $ACTION\n\n# Copy the framework structure to the universal folder (clean it first)\nrm -rf \"${UNIVERSAL_OUTPUTFOLDER}\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\"\n\n# Smash them together to combine all architectures\nlipo -create  \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/arm64/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/armv7/${PROJECT_NAME}.framework/${PROJECT_NAME}\" -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\"";
+			shellScript = "exit 0\nset -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\n\n# Constants\nSF_TARGET_NAME=${PROJECT_NAME}\nUNIVERSAL_OUTPUTFOLDER=${PROJECT_DIR}/Output/${CONFIGURATION}-universal\n\n# Take build target\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\necho \"Please choose iPhone simulator as the build target.\"\nexit 1\nfi\n\nIPHONE_DEVICE_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos\n\n# Build the other (non-simulator) platform\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/arm64\" SYMROOT=\"${SYMROOT}\" ARCHS='arm64' VALID_ARCHS='arm64' $ACTION\n\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\"  CONFIGURATION_BUILD_DIR=\"${IPHONE_DEVICE_BUILD_DIR}/armv7\" SYMROOT=\"${SYMROOT}\" ARCHS='armv7 armv7s' VALID_ARCHS='armv7 armv7s' $ACTION\n\n# Copy the framework structure to the universal folder (clean it first)\nrm -rf \"${UNIVERSAL_OUTPUTFOLDER}\"\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\"\n\n# Smash them together to combine all architectures\nlipo -create  \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/arm64/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/armv7/${PROJECT_NAME}.framework/${PROJECT_NAME}\" -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -254,12 +355,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE668C11BB4381000A45B41 /* ZiggeoVideos.m in Sources */,
+				FAE72AF41CB6988F00BF2497 /* CapturePreviewView.m in Sources */,
+				FAF128BB1CB7ED820010B608 /* RecordedVideoPreview.m in Sources */,
 				FAE668BF1BB4381000A45B41 /* ZiggeoConnect.m in Sources */,
 				FAEB5D8E1BC9316D00A64841 /* CoverSelectorController.m in Sources */,
 				FAEB5D971BC9C0D700A64841 /* CoverSelectorTableCell.m in Sources */,
 				FA8827D21BB5797A0025C71D /* ZiggeoRecorder.m in Sources */,
 				FAE668BD1BB4381000A45B41 /* ZiggeoConfig.m in Sources */,
 				FAE668BB1BB4381000A45B41 /* ZiggeoApplication.m in Sources */,
+				FAE72AEF1CB688D500BF2497 /* ZiggeoRecorder2.m in Sources */,
 				FA8827CD1BB55CF70025C71D /* ZiggeoPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,9 +57,10 @@
 }
 
 - (IBAction)record:(id)sender {
-    ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
-    recorder.videoMaximumDuration = 20; //optional video duration limit
-    recorder.coverSelectorEnabled = YES; //enable additional cover selector dialog
+    ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
+    recorder.coverSelectorEnabled = YES;
+    recorder.cameraFlipButtonVisible = YES;
+    recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     [self presentViewController:recorder animated:true completion:nil];
 }
 
