@@ -112,16 +112,25 @@ You can use ZiggeoVideosDelegate in your app to be notified about video uploadin
 	[m_ziggeo videos].delegate = self;
 }
 
--(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask {
+-(void) videoPreparingToUploadWithPath:(NSString*)sourcePath {
+	//this method will be called first before any Ziggeo API interaction
+}
 
+-(void) videoPreparingToUploadWithPath:(NSString*)sourcePath token:(NSString*)token {
+	//this method will be called immediately after empty video creation on Ziggeo platform
+}
+
+
+-(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask {
+	//this method will be called on actual video upload start
 }
 
 -(void) videoUploadCompleteForPath:(NSString*)sourcePath token:(NSString*)token withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
-
+	//video upload finished successfully or failed
 }
 
 -(void) videoUploadProgressForPath:(NSString*)sourcePath token:(NSString*)token totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
-
+	//upload progress callback
 }
 
 ```
