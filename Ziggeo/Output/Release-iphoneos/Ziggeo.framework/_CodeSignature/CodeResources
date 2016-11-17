@@ -6,17 +6,21 @@
 	<dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		6V+RZzOj3+Pu7UTyp1IO1I/Lvrg=
+		QJjv6d7K4jAtlfijR5cHnhGrPD0=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		Xt/4EBRgB8KQLsMylrpiJWafgn8=
+		C2+kC1IOxhFk+zJCt72RxPy+ZPU=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
 		llmqQFpwuzPOWkkFsv5FsX9icus=
 		</data>
 		<key>Delete-50@2x.png</key>
+		<data>
+		UH+XDSCX31qFdHnTF6GUGa4/+JY=
+		</data>
+		<key>Delete-50@3x.png</key>
 		<data>
 		UH+XDSCX31qFdHnTF6GUGa4/+JY=
 		</data>
@@ -62,7 +66,7 @@
 		</data>
 		<key>Headers/ZiggeoRecorder2.h</key>
 		<data>
-		9xMsFDSnMLBQVCmGrN0PHuQy1cg=
+		naV6fb3uS9mhF+hSm9mPh18EtCA=
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
@@ -70,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		futt+snCBCU4TZCVXEgIXZy4qqc=
+		+yxcficKnraK8qp8Q+3XuPB8QBY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -84,11 +88,19 @@
 		<data>
 		ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
 		</data>
+		<key>Pause-50@3x.png</key>
+		<data>
+		ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
+		</data>
 		<key>Play-50.png</key>
 		<data>
 		yrk35FGxT1LPzY3rn3fizsEuo9w=
 		</data>
 		<key>Play-50@2x.png</key>
+		<data>
+		oiQDjw3O3/4Jozm+GRwoq+CVwlc=
+		</data>
+		<key>Play-50@3x.png</key>
 		<data>
 		oiQDjw3O3/4Jozm+GRwoq+CVwlc=
 		</data>
@@ -98,7 +110,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		+q345gLWHDocI2KU2tgpqtrleMI=
+		LFiE1QjmHFfCP8SWP/kMqr5hJyY=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -112,15 +124,23 @@
 		<data>
 		yy3vVaCi2u2+2+HMac92J5WE2sw=
 		</data>
+		<key>SwitchCamera-50@3x.png</key>
+		<data>
+		yy3vVaCi2u2+2+HMac92J5WE2sw=
+		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		YAiD0VjtgSZ9aXdz3xzb0JaJQyI=
+		EOdvqWWSTtYW0BBlHpkK4LVToXo=
 		</data>
 		<key>trash-50.png</key>
 		<data>
 		N+NHjF9wibNOdOk5AJImsrvAA0Q=
 		</data>
 		<key>trash-50@2x.png</key>
+		<data>
+		K7W7OSvwanPl/FJsa/Xsbu8uZqI=
+		</data>
+		<key>trash-50@3x.png</key>
 		<data>
 		K7W7OSvwanPl/FJsa/Xsbu8uZqI=
 		</data>
@@ -132,6 +152,10 @@
 		<data>
 		rYkAgd2I0UTX8qpI+Uj9+V9JpU0=
 		</data>
+		<key>upload-50@3x.png</key>
+		<data>
+		rYkAgd2I0UTX8qpI+Uj9+V9JpU0=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -139,22 +163,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6V+RZzOj3+Pu7UTyp1IO1I/Lvrg=
+			QJjv6d7K4jAtlfijR5cHnhGrPD0=
 			</data>
 			<key>hash2</key>
 			<data>
-			tInFwsFhNX73j5ueHGbf5BdxqACmzLgGc97G9K6qL+E=
+			rtIWIRTzdKQX4dWkCRF6UoeWz5d+ybjOJwx9oSboXv8=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Xt/4EBRgB8KQLsMylrpiJWafgn8=
+			C2+kC1IOxhFk+zJCt72RxPy+ZPU=
 			</data>
 			<key>hash2</key>
 			<data>
-			VzVDaE46CZ9/T+91YRo7beBeMAhp5+VLsTdsfiM0WK4=
+			xob7hyvOR3fAT4g3p8IU6Viu/Mf4dJVM3StiZ3w0r4U=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -169,6 +193,17 @@
 			</data>
 		</dict>
 		<key>Delete-50@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UH+XDSCX31qFdHnTF6GUGa4/+JY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Izxo/xC+4UKvH7nBLK9nUu9k+SEKYvPswuwrD267xYA=
+			</data>
+		</dict>
+		<key>Delete-50@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -293,11 +328,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9xMsFDSnMLBQVCmGrN0PHuQy1cg=
+			naV6fb3uS9mhF+hSm9mPh18EtCA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ieh1F5od09yor+B4HbjAOvZ/EPNnuzGJ1/SdOM/85a4=
+			7LR8qZvF8F3v97wwJfl1xZl/OmDA6B10b2P5kvnwLXo=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoVideos.h</key>
@@ -344,6 +379,17 @@
 			TGbfcbyfqjXWxsbr2EMtGrsKiz4EpH3LDV/ygeEpWHY=
 			</data>
 		</dict>
+		<key>Pause-50@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
+			</data>
+			<key>hash2</key>
+			<data>
+			TGbfcbyfqjXWxsbr2EMtGrsKiz4EpH3LDV/ygeEpWHY=
+			</data>
+		</dict>
 		<key>Play-50.png</key>
 		<dict>
 			<key>hash</key>
@@ -356,6 +402,17 @@
 			</data>
 		</dict>
 		<key>Play-50@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oiQDjw3O3/4Jozm+GRwoq+CVwlc=
+			</data>
+			<key>hash2</key>
+			<data>
+			vj3vg0Y4AoS2Qp1z7OJ7/imH3EG3mVUFzUXalAOSPd4=
+			</data>
+		</dict>
+		<key>Play-50@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -381,11 +438,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+q345gLWHDocI2KU2tgpqtrleMI=
+			LFiE1QjmHFfCP8SWP/kMqr5hJyY=
 			</data>
 			<key>hash2</key>
 			<data>
-			jNDJ91h1V7pILPMKvJqkmJUTKK+DFZXBFqG8pi09eAw=
+			y1XVqXk6jULs0I20qXzaDGaIHk8sRH+0LrepOZQzoXU=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -421,15 +478,26 @@
 			EbojXNZoGiPwMkLVCRN+vjaqhCXA1gkNGpUHr2ZnEOA=
 			</data>
 		</dict>
+		<key>SwitchCamera-50@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yy3vVaCi2u2+2+HMac92J5WE2sw=
+			</data>
+			<key>hash2</key>
+			<data>
+			EbojXNZoGiPwMkLVCRN+vjaqhCXA1gkNGpUHr2ZnEOA=
+			</data>
+		</dict>
 		<key>ZiggeoRecorder2.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YAiD0VjtgSZ9aXdz3xzb0JaJQyI=
+			EOdvqWWSTtYW0BBlHpkK4LVToXo=
 			</data>
 			<key>hash2</key>
 			<data>
-			qH22HZBPWD3wXW7cq4M13CvsiWvkX1awGTRL0cN/XuQ=
+			SOKsJQFmTV3KaK3djE9zXPlqHn9s5KmQfpf+8YpMrPI=
 			</data>
 		</dict>
 		<key>trash-50.png</key>
@@ -454,6 +522,17 @@
 			OO/Prgms2XNis/gmXxFw/KxJm5bkIj7UyLWblSGtqVM=
 			</data>
 		</dict>
+		<key>trash-50@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K7W7OSvwanPl/FJsa/Xsbu8uZqI=
+			</data>
+			<key>hash2</key>
+			<data>
+			OO/Prgms2XNis/gmXxFw/KxJm5bkIj7UyLWblSGtqVM=
+			</data>
+		</dict>
 		<key>upload-50.png</key>
 		<dict>
 			<key>hash</key>
@@ -466,6 +545,17 @@
 			</data>
 		</dict>
 		<key>upload-50@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rYkAgd2I0UTX8qpI+Uj9+V9JpU0=
+			</data>
+			<key>hash2</key>
+			<data>
+			vixcpc9bUTtuHE55yLlhGTeCTHMRCQG9W+6IF/qpIX4=
+			</data>
+		</dict>
+		<key>upload-50@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>

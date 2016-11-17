@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA3CA5D41DDDFFD1003D288D /* Delete-50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3CA5CE1DDDFFD1003D288D /* Delete-50@3x.png */; };
+		FA3CA5D51DDDFFD1003D288D /* Pause-50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3CA5CF1DDDFFD1003D288D /* Pause-50@3x.png */; };
+		FA3CA5D61DDDFFD1003D288D /* Play-50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3CA5D01DDDFFD1003D288D /* Play-50@3x.png */; };
+		FA3CA5D71DDDFFD1003D288D /* SwitchCamera-50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3CA5D11DDDFFD1003D288D /* SwitchCamera-50@3x.png */; };
+		FA3CA5D81DDDFFD1003D288D /* trash-50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3CA5D21DDDFFD1003D288D /* trash-50@3x.png */; };
+		FA3CA5D91DDDFFD1003D288D /* upload-50@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3CA5D31DDDFFD1003D288D /* upload-50@3x.png */; };
 		FA8827CC1BB55CF70025C71D /* ZiggeoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8827CA1BB55CF70025C71D /* ZiggeoPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA8827CD1BB55CF70025C71D /* ZiggeoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827CB1BB55CF70025C71D /* ZiggeoPlayer.m */; };
 		FA8827D11BB5797A0025C71D /* ZiggeoRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8827CF1BB5797A0025C71D /* ZiggeoRecorder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +57,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA3CA5CE1DDDFFD1003D288D /* Delete-50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete-50@3x.png"; path = "art/Delete-50@3x.png"; sourceTree = "<group>"; };
+		FA3CA5CF1DDDFFD1003D288D /* Pause-50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Pause-50@3x.png"; path = "art/Pause-50@3x.png"; sourceTree = "<group>"; };
+		FA3CA5D01DDDFFD1003D288D /* Play-50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play-50@3x.png"; path = "art/Play-50@3x.png"; sourceTree = "<group>"; };
+		FA3CA5D11DDDFFD1003D288D /* SwitchCamera-50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "SwitchCamera-50@3x.png"; path = "art/SwitchCamera-50@3x.png"; sourceTree = "<group>"; };
+		FA3CA5D21DDDFFD1003D288D /* trash-50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trash-50@3x.png"; path = "art/trash-50@3x.png"; sourceTree = "<group>"; };
+		FA3CA5D31DDDFFD1003D288D /* upload-50@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "upload-50@3x.png"; path = "art/upload-50@3x.png"; sourceTree = "<group>"; };
 		FA8827CA1BB55CF70025C71D /* ZiggeoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoPlayer.h; path = Player/ZiggeoPlayer.h; sourceTree = "<group>"; };
 		FA8827CB1BB55CF70025C71D /* ZiggeoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZiggeoPlayer.m; path = Player/ZiggeoPlayer.m; sourceTree = "<group>"; };
 		FA8827CF1BB5797A0025C71D /* ZiggeoRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZiggeoRecorder.h; path = Recorder/ZiggeoRecorder.h; sourceTree = "<group>"; };
@@ -197,6 +209,12 @@
 		FAEA9BB81C60148500B83119 /* Art */ = {
 			isa = PBXGroup;
 			children = (
+				FA3CA5CE1DDDFFD1003D288D /* Delete-50@3x.png */,
+				FA3CA5CF1DDDFFD1003D288D /* Pause-50@3x.png */,
+				FA3CA5D01DDDFFD1003D288D /* Play-50@3x.png */,
+				FA3CA5D11DDDFFD1003D288D /* SwitchCamera-50@3x.png */,
+				FA3CA5D21DDDFFD1003D288D /* trash-50@3x.png */,
+				FA3CA5D31DDDFFD1003D288D /* upload-50@3x.png */,
 				FAE23A6D1CC6356300E61CC6 /* upload-50@2x.png */,
 				FAE23A6B1CC634FA00E61CC6 /* SwitchCamera-50@2x.png */,
 				FAE23A691CC51D7B00E61CC6 /* SwitchCamera-50.png */,
@@ -311,21 +329,27 @@
 			files = (
 				FAE23A631CC4FBB100E61CC6 /* Pause-50@2x.png in Resources */,
 				FAEB5D8F1BC9316D00A64841 /* CoverSelectorController.xib in Resources */,
+				FA3CA5D61DDDFFD1003D288D /* Play-50@3x.png in Resources */,
 				FAE23A6E1CC6356300E61CC6 /* upload-50@2x.png in Resources */,
 				FAF128BC1CB7ED820010B608 /* RecordedVideoPreview.xib in Resources */,
 				FAE23A6A1CC51D7C00E61CC6 /* SwitchCamera-50.png in Resources */,
 				FAE23A5F1CC4F9C000E61CC6 /* Delete-50@2x.png in Resources */,
 				FAE23A601CC4F9C000E61CC6 /* trash-50@2x.png in Resources */,
 				FAE23A671CC4FC9C00E61CC6 /* Pause-50.png in Resources */,
+				FA3CA5D71DDDFFD1003D288D /* SwitchCamera-50@3x.png in Resources */,
 				FAE23A6C1CC634FA00E61CC6 /* SwitchCamera-50@2x.png in Resources */,
 				FAE72AF01CB688D500BF2497 /* ZiggeoRecorder2.xib in Resources */,
 				FAEB5D991BC9CC0600A64841 /* CoverSelectorTableCell.xib in Resources */,
 				FAE23A681CC4FC9C00E61CC6 /* Play-50.png in Resources */,
 				FAE23A641CC4FBB100E61CC6 /* Play-50@2x.png in Resources */,
+				FA3CA5D51DDDFFD1003D288D /* Pause-50@3x.png in Resources */,
+				FA3CA5D41DDDFFD1003D288D /* Delete-50@3x.png in Resources */,
 				FAEA9BBE1C60174200B83119 /* upload-50.png in Resources */,
 				FAEA9BBA1C6014D100B83119 /* Delete-50.png in Resources */,
 				FAE23A5B1CC4F07600E61CC6 /* Record-100.png in Resources */,
 				FAEA9BBD1C60174200B83119 /* trash-50.png in Resources */,
+				FA3CA5D91DDDFFD1003D288D /* upload-50@3x.png in Resources */,
+				FA3CA5D81DDDFFD1003D288D /* trash-50@3x.png in Resources */,
 				FAE23A5C1CC4F07600E61CC6 /* Stop-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -475,6 +500,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 			};
 			name = Debug;
@@ -483,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -495,6 +522,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 			};
 			name = Release;

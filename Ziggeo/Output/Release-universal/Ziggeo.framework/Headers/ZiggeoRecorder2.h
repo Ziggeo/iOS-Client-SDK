@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "RecordedVideoPreview.h"
 #import "ZiggeoApplication.h"
+@import AVFoundation;
 
 @protocol ZiggeoRecorder2Delegate <NSObject>
 -(void) ziggeoRecorderDidCancel;
 @end
 
-@interface ZiggeoRecorder2 : UIViewController <VideoPreviewDelegate>
+@interface ZiggeoRecorder2 : UIViewController <VideoPreviewDelegate, AVCaptureAudioDataOutputSampleBufferDelegate>
 
 - (void)retake;
 - (void)upload:(NSURL*)fileToUpload;
