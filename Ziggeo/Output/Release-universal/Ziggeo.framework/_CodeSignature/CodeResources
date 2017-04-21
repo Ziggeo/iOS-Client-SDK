@@ -6,11 +6,11 @@
 	<dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		S9TIE5yK0OZ9I6WYR5iVot56zuA=
+		tBcU/0werESRTyoNGh3llkvQfeY=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		frEN5uGYS8L+M6RZ0Xrm5vlFlLo=
+		FafV3++Ly0J+W1L85febutS0PcY=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0yxlLqDOCmvMFxe0ApFm6CrkQX0=
+		NXtEq3DyANmQ/B68wf+G6BhXZME=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		SQ24JkBRBHzi3xAOIf8C3hIM/qg=
+		yzbUjq1j7Gw1hd7s5reKNLQh1tA=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		vU2gKyKHazin9aH6sOClblwqolY=
+		fon0ZYGLMe6yd66FT1E/o/dQ+OI=
 		</data>
 		<key>trash-50.png</key>
 		<data>
@@ -163,22 +163,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S9TIE5yK0OZ9I6WYR5iVot56zuA=
+			tBcU/0werESRTyoNGh3llkvQfeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ca0v4lrhYhyo7rftJLXsRvjODQB1dilNX1k8Ixfuw6U=
+			+pqrEOycZ2w5BP0BnjZbUl6l/AYv9UX3oRa3yUWOFOM=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			frEN5uGYS8L+M6RZ0Xrm5vlFlLo=
+			FafV3++Ly0J+W1L85febutS0PcY=
 			</data>
 			<key>hash2</key>
 			<data>
-			grdySSoB81lIK7wXOJ1OTClI4ooPfnFfHSA4ltrkgYc=
+			EgYgFxvNu2FIXIrdV7PLifAtDSLCWUAtr3Z6b94DqbM=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -438,11 +438,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SQ24JkBRBHzi3xAOIf8C3hIM/qg=
+			yzbUjq1j7Gw1hd7s5reKNLQh1tA=
 			</data>
 			<key>hash2</key>
 			<data>
-			DIAdkdWT2CxU1y1DHZ7cj+2zFGM7Lj1pTJB44gQLTgw=
+			rTKytvAy/fQFzdpPlHVKnslai8GmLeZjucbtByuHtGM=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -493,11 +493,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vU2gKyKHazin9aH6sOClblwqolY=
+			fon0ZYGLMe6yd66FT1E/o/dQ+OI=
 			</data>
 			<key>hash2</key>
 			<data>
-			EQ7g+y5U5FihtRAxilZhuZRKgXFoWnJRsqcbdtIrjAs=
+			nBHRZxZzMUXG6xfN43OU9EmZH89bfbpyBDxsWyFXLwc=
 			</data>
 		</dict>
 		<key>trash-50.png</key>

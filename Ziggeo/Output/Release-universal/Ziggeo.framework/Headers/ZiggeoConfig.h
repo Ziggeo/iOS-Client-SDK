@@ -11,6 +11,6 @@
 @property (strong, nonatomic) NSString *server_api_url;
 @property (strong, nonatomic) NSString *cdn_api_url;
 
-- (id)init;
+-(id)initWithToken:(NSString*)token;
 
 @end
