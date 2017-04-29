@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>The application will have access to video recording</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>The application will have access to audio recording</string>
 </dict>
 </plist>
