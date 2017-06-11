@@ -10,6 +10,11 @@ Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playb
 	- Ziggeo.framework
 - Make sure Ziggeo.framework is added to Embedded Binaries and Linked Framework sections in your app target settings
 
+## Building/packaging app
+- Using `universal` framework is great when building apps that will run in simulator and on actual devices.
+- Using `iphoneos` framework is the one you should use for actual devices and when uploading your app to Store.
+
+You can find both in _iOS-Client-SDK/Ziggeo/Output/_ directory.
 
 # Basic usage
 ## Initialize Application
