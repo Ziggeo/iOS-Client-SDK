@@ -1,9 +1,7 @@
 //
 //  ZiggeoRecorderRCT.m
-//  ReactTest2
 //
-//  Created by alex on 29/06/2017.
-//  Copyright © 2017 Facebook. All rights reserved.
+//  Copyright © 2017 Ziggeo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -67,8 +65,6 @@ RCT_REMAP_METHOD(record,
   _resolveBlock = resolve;
   _rejectBlock = reject;
   dispatch_async(dispatch_get_main_queue(), ^{
-    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wait" message:@"Are you sure you want to delete this.  This action cannot be undone" delegate:nil cancelButtonTitle:@"Delete" otherButtonTitles:@"Cancel", nil];
-     [alert show];*/
     Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:_appToken];
     ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
     recorder.coverSelectorEnabled = _coverSelectorEnabled;
@@ -76,7 +72,6 @@ RCT_REMAP_METHOD(record,
     recorder.cameraDevice = _camera;
     recorder.recorderDelegate = self;
     m_ziggeo.videos.delegate = self;
-    //[self presentViewController:recorder animated:true completion:nil];
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:recorder animated:true completion:nil];
   });
 }
@@ -108,17 +103,4 @@ RCT_REMAP_METHOD(record,
 }
 
 
-/*RCT_EXPORT_METHOD(present)
-{
-  dispatch_async(dispatch_get_main_queue(), ^{
-    Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:_appToken];
-    ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
-    recorder.coverSelectorEnabled = _coverSelectorEnabled;
-    recorder.cameraFlipButtonVisible = _cameraFlipButtonVisible;
-    recorder.cameraDevice = _camera;
-    recorder.recorderDelegate = self;
-    //[self presentViewController:recorder animated:true completion:nil];
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:recorder animated:true completion:nil];
-  });
-}*/
 @end

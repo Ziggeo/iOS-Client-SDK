@@ -1,9 +1,7 @@
 //
 //  ZiggeoRecorderRCT.h
-//  ReactTest2
 //
-//  Created by alex on 29/06/2017.
-//  Copyright © 2017 Facebook. All rights reserved.
+//  Copyright © 2017 Ziggeo. All rights reserved.
 //
 
 #ifndef ZiggeoRecorderRCT_h
@@ -14,7 +12,6 @@
 #import <Ziggeo/Ziggeo.h>
 
 @interface RCTZiggeoRecorder : RCTEventEmitter <RCTBridgeModule, ZiggeoRecorder2Delegate, ZiggeoVideosDelegate>
-- (void)present;
 
 @property (strong, nonatomic) NSString *appToken;
 @property (nonatomic) BOOL cameraFlipButtonVisible;
