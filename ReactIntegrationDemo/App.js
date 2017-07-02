@@ -4,7 +4,7 @@ import { NativeEventEmitter, NativeModules } from 'react-native';
 
 export default class App extends React.Component {
     async record() {
-        var appToken = "30392b6a5591929ddd19242c1225b349";
+        var appToken = "ZIGGEO_APP_TOKEN";
         var recorder = NativeModules.ZiggeoRecorder;
         recorder.setAppToken(appToken);
         recorder.setCameraFlipButtonVisible(true);
