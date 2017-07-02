@@ -4,10 +4,11 @@ import { NativeEventEmitter, NativeModules } from 'react-native';
 
 export default class App extends React.Component {
     async record() {
+        var appToken = "30392b6a5591929ddd19242c1225b349";
         var recorder = NativeModules.ZiggeoRecorder;
-        recorder.setAppToken("ZIGGEO_APPLICATION_ID");
+        recorder.setAppToken(appToken);
         recorder.setCameraFlipButtonVisible(true);
-        recorder.setCoverSelectorEnabled(false);
+        recorder.setCoverSelectorEnabled(true);
         recorder.setCamera(recorder.rearCamera);
         const recorderEmitter = new NativeEventEmitter(NativeModules.ZiggeoRecorder);
         const subscription = recorderEmitter.addListener('UploadProgress',(progress)=>console.log("uploaded " + progress.bytesSent + " from " + progress.totalBytes + " total bytes"));
@@ -15,7 +16,9 @@ export default class App extends React.Component {
         {
             //record and upload the video and return its token
             var token = await recorder.record();
-            alert(token);
+            var player = NativeModules.ZiggeoPlayer;
+            player.setAppToken(appToken);
+            player.play(token);
         }
         catch(e)
         {
