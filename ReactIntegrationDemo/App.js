@@ -7,7 +7,7 @@ export default class App extends React.Component {
         var appToken = "ZIGGEO_APP_TOKEN";
         var recorder = NativeModules.ZiggeoRecorder;
         recorder.setAppToken(appToken);
-        recorder.setCameraFlipButtonVisible(true);
+        recorder.setCameraSwitchEnabled(true);
         recorder.setCoverSelectorEnabled(true);
         recorder.setCamera(recorder.rearCamera);
         const recorderEmitter = new NativeEventEmitter(NativeModules.ZiggeoRecorder);
