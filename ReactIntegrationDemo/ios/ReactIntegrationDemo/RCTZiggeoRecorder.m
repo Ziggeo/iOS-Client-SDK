@@ -34,7 +34,7 @@ RCT_EXPORT_METHOD(setAppToken:(NSString *)token)
   _appToken = token;
 }
 
-RCT_EXPORT_METHOD(setCameraFlipButtonVisible:(BOOL)visible)
+RCT_EXPORT_METHOD(setCameraSwitchEnabled:(BOOL)visible)
 {
   RCTLogInfo(@"flip button visible: %i", visible);
   _cameraFlipButtonVisible = visible;
