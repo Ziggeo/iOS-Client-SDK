@@ -61,6 +61,7 @@
     recorder.coverSelectorEnabled = YES;
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+    recorder.useLiveStreaming = YES;
     [self presentViewController:recorder animated:true completion:nil];
 }
 
