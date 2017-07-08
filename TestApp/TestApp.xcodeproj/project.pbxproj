@@ -13,8 +13,8 @@
 		FA8827AA1BB486D40025C71D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8827A81BB486D40025C71D /* Main.storyboard */; };
 		FA8827AC1BB486D40025C71D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8827AB1BB486D40025C71D /* Images.xcassets */; };
 		FA8827AF1BB486D40025C71D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8827AD1BB486D40025C71D /* LaunchScreen.xib */; };
-		FAEE0EDA1BBC1C26008BEEA0 /* Ziggeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEE0ED81BBC1C1F008BEEA0 /* Ziggeo.framework */; };
-		FAEE0EDB1BBC1C26008BEEA0 /* Ziggeo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FAEE0ED81BBC1C1F008BEEA0 /* Ziggeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA99918A1F0D442E000CA2FF /* Ziggeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9991881F0D440A000CA2FF /* Ziggeo.framework */; };
+		FA99918B1F0D442E000CA2FF /* Ziggeo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA9991881F0D440A000CA2FF /* Ziggeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FAEE0EDB1BBC1C26008BEEA0 /* Ziggeo.framework in Embed Frameworks */,
+				FA99918B1F0D442E000CA2FF /* Ziggeo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,7 @@
 		FA8827A91BB486D40025C71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA8827AB1BB486D40025C71D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA8827AE1BB486D40025C71D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		FAEE0ED81BBC1C1F008BEEA0 /* Ziggeo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ziggeo.framework; path = "../Ziggeo/Output/Release-universal/Ziggeo.framework"; sourceTree = "<group>"; };
+		FA9991881F0D440A000CA2FF /* Ziggeo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ziggeo.framework; path = "../Ziggeo/Output/Release-iphoneos/Ziggeo.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAEE0EDA1BBC1C26008BEEA0 /* Ziggeo.framework in Frameworks */,
+				FA99918A1F0D442E000CA2FF /* Ziggeo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +60,7 @@
 		FA8827921BB486D40025C71D = {
 			isa = PBXGroup;
 			children = (
-				FAEE0ED81BBC1C1F008BEEA0 /* Ziggeo.framework */,
+				FA9991881F0D440A000CA2FF /* Ziggeo.framework */,
 				FA88279D1BB486D40025C71D /* TestApp */,
 				FA88279C1BB486D40025C71D /* Products */,
 			);
@@ -130,6 +130,7 @@
 				TargetAttributes = {
 					FA88279A1BB486D40025C71D = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 7BT7647345;
 					};
 				};
 			};
@@ -283,11 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7BT7647345;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products/Release-universal",
 					"$(SRCROOT)/../Ziggeo/Output/Release-universal",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -299,11 +302,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7BT7647345;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products/Release-universal",
 					"$(SRCROOT)/../Ziggeo/Output/Release-universal",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

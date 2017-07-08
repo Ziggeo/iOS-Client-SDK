@@ -10,6 +10,7 @@
 
 @property (strong, nonatomic) NSString *server_api_url;
 @property (strong, nonatomic) NSString *cdn_api_url;
+@property (strong, nonatomic) NSString *wowza_url;
 
 -(id)initWithToken:(NSString*)token;
 

@@ -15,7 +15,7 @@
 -(void) ziggeoRecorderDidCancel;
 @end
 
-@interface ZiggeoRecorder2 : UIViewController <VideoPreviewDelegate, AVCaptureAudioDataOutputSampleBufferDelegate>
+@interface ZiggeoRecorder2 : UIViewController <VideoPreviewDelegate>
 
 - (void)retake;
 - (void)upload:(NSURL*)fileToUpload;
@@ -23,6 +23,7 @@
 @property (nonatomic) UIViewController<VideoPreviewProtocol>* videoPreview;
 @property (nonatomic) bool coverSelectorEnabled;
 @property (nonatomic) bool cameraFlipButtonVisible;
+@property (nonatomic) bool useLiveStreaming;
 @property (nonatomic) UIImagePickerControllerCameraDevice cameraDevice;
 @property (nonatomic) id<ZiggeoRecorder2Delegate> recorderDelegate;
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
