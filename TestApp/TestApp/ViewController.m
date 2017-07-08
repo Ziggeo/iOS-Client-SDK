@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    m_ziggeo = [[Ziggeo alloc] initWithToken:@"APPLICATION_TOKEN"];
+    m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,7 +61,7 @@
     recorder.coverSelectorEnabled = YES;
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-    recorder.useLiveStreaming = YES;
+    recorder.useLiveStreaming = NO;
     [self presentViewController:recorder animated:true completion:nil];
 }
 
