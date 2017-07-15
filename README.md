@@ -105,6 +105,12 @@ New recorder rewritten from scratch. Allows to record video and audio without in
 
 Since ZiggeoRecorder is a subclass of UIImagePickerController, it is possible to use any standard ways to create custom camera UI. Please check CustomUITestApp example and this Apple tutorial for more details: https://developer.apple.com/library/ios/samplecode/PhotoPicker/Introduction/Intro.html 
 
+### Streaming recording
+```
+    recorder.useLiveStreaming = YES;
+```
+Streaming recording mode will upload the video stream during the recording without caching to local file first. Video preview and video re-record are not available in this mode.
+
 ### Delegate
 You can use ZiggeoVideosDelegate in your app to be notified about video uploading events.
 ```
