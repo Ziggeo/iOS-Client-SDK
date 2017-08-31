@@ -6,11 +6,11 @@
 	<dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		thSwBvRU/Pf/cbh1FCajYkhMdsQ=
+		SpULYr2SjKqLfGx2b0mynIkaAy0=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		weNYPvqvhT/jXM+plsq4h3fY+YQ=
+		27cHkS3A6SA1/HuYrXyX0p8u1ZY=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/ZiggeoRecorder2.h</key>
 		<data>
-		t41etxEygDvZV3rTF/mzmgmBWwg=
+		Bd73RFht4oHJtMR9VdQuWUu8a1E=
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		BzyDVNk7ABnqPyvyIOCQJ5U7d9o=
+		DemrOYbBXJEAdaE70YAqGJcksME=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		XBR2Ik/EIYwq+tyInj2oZuXRmKA=
+		r37HTNglxEZPWAVWo4pnUeIs7hc=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		NDgIE1Kz3XQk3+eZCND3oEjSQPM=
+		MGSuBefGFoX/fbe7IRJvvPm1Rgs=
 		</data>
 		<key>trash-50.png</key>
 		<data>
@@ -163,22 +163,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			thSwBvRU/Pf/cbh1FCajYkhMdsQ=
+			SpULYr2SjKqLfGx2b0mynIkaAy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			b7iUJVAOA0/0Nk+uYvHU/ZfH65S4eqYo7XQeF8dkHmo=
+			YUUXmxt841Ua3bEVi2McENjVZ3N5qLBGa7WFUuztE8Q=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			weNYPvqvhT/jXM+plsq4h3fY+YQ=
+			27cHkS3A6SA1/HuYrXyX0p8u1ZY=
 			</data>
 			<key>hash2</key>
 			<data>
-			WoAi9HKvUOq8jEfbQDQ4T7zqiB5Y3Aq7+PUjflTYPc8=
+			RuMkwzOeXBAl4LzJT3xNyj2BfF9YdhhksdofoPe5cgY=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -328,11 +328,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t41etxEygDvZV3rTF/mzmgmBWwg=
+			Bd73RFht4oHJtMR9VdQuWUu8a1E=
 			</data>
 			<key>hash2</key>
 			<data>
-			zBcH9DGbXUB61XZWWlexvRJEEpQpFysoSAwnNdzp7Zc=
+			OdzfjrLguc028alfg8VMtt1fkeLT03TNUJmwwPiLxhk=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoVideos.h</key>
@@ -438,11 +438,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XBR2Ik/EIYwq+tyInj2oZuXRmKA=
+			r37HTNglxEZPWAVWo4pnUeIs7hc=
 			</data>
 			<key>hash2</key>
 			<data>
-			JBXrp+1v6isByiMc17SSMukHfUM0vjDomVh/+frpwsY=
+			haGaJ9FX8fr0Y5RjhSGOZFe5PypgU10QmUPduym7TX4=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -493,11 +493,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NDgIE1Kz3XQk3+eZCND3oEjSQPM=
+			MGSuBefGFoX/fbe7IRJvvPm1Rgs=
 			</data>
 			<key>hash2</key>
 			<data>
-			2xzMqACfW2YwYmvdLNO9R6kH7wYmFQDrIfroIyeE47c=
+			Oi5vdFHaKd/iAn9suhTjsUVmaa0j7fUaNv3h7gvGXUg=
 			</data>
 		</dict>
 		<key>trash-50.png</key>
