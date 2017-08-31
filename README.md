@@ -12,10 +12,10 @@ Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playb
 
 ## Building/packaging app
 - Using `universal` framework is great when building apps that will run in simulator and on actual devices.
-You can find it in _iOS-Client-SDK/Ziggeo/Output/Release-universal directory.
+You can find it in _iOS-Client-SDK/Ziggeo/Output/Release-universal_ directory.
 
 ## Preparing app for the submission to App Store
-- Create "new run script phase" at the application target build settings to strip the unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp example (TestApp target settings -> Build phases -> Run script section)
+- Create "new run script phase" at the application target build settings to strip the unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
 
 # Basic usage
 ## Initialize Application
