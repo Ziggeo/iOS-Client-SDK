@@ -96,13 +96,18 @@ New recorder rewritten from scratch. Allows to record video and audio without in
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceRear;
 ```
 
+### Custom create video parameters (like effects, profiles, etc)
+
+```
+    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+```
+
 ### Custom Recorder UI
 
 ```
     recorder.showsCameraControls = NO;
     recorder.cameraOverlayView = some_view;
 ```
-
 Since ZiggeoRecorder is a subclass of UIImagePickerController, it is possible to use any standard ways to create custom camera UI. Please check CustomUITestApp example and this Apple tutorial for more details: https://developer.apple.com/library/ios/samplecode/PhotoPicker/Introduction/Intro.html 
 
 ### Streaming recording
