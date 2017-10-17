@@ -58,11 +58,11 @@
 
 - (IBAction)record:(id)sender {
     ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
-    recorder.coverSelectorEnabled = YES;
+    recorder.coverSelectorEnabled = NO;
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     recorder.useLiveStreaming = NO;
-    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+//    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
     [self presentViewController:recorder animated:true completion:nil];
 }
 
