@@ -10,14 +10,14 @@ Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playb
 	- Ziggeo.framework
 - Make sure Ziggeo.framework is added to Embedded Binaries and Linked Framework sections in your app target settings
 
-## Building/packaging app
-- Using `universal` framework is great when building apps that will run in simulator and on actual devices.
-You can find it in _iOS-Client-SDK/Ziggeo/Output/Release-universal_ directory.
+## Building/Packaging App
+- Using `universal` framework is ideal for building apps that run on simulators and actual devices.
+  See: _iOS-Client-SDK/Ziggeo/Output/Release-universal_ directory
 
-## Preparing app for the submission to App Store
-- Create "new run script phase" at the application target build settings to strip the unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
+## Preparing App for submission to App Store
+- Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
 
-# Basic usage
+# Basic Usage
 ## Initialize Application
 
 ```
@@ -26,7 +26,7 @@ You can find it in _iOS-Client-SDK/Ziggeo/Output/Release-universal_ directory.
 Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
 ```
 
-## Player
+## Video Player
 
 ### Initialization
 ```
@@ -36,7 +36,7 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
 }
 ```
 
-### Fullscreen playback
+### Fullscreen Playback
 ```
     AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
     playerController.player = [self createPlayer];
@@ -44,7 +44,7 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     [playerController.player play];
 ```
 
-### Embedded playback
+### Embedded Playback
 ```
     ZiggeoPlayer* player = [self createPlayer];
     AVPlayerLayer* playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
@@ -53,51 +53,51 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
     [player play];
 ```
 
-## Recorder
+## Video Recorder
 
 ```
     ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
-## ZiggeoRecorder2 (beta)
+## ZiggeoRecorder2 (Beta)
 New recorder rewritten from scratch. Allows to record video and audio without interrupting 3rd party apps playback (Music app, for example). Some additional setup required for simultaneous recording, see TestApp->AppDelegate.m for details.
 ```
     ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
-### Capture duration limit
+### Capture Duration Limit
 ```
     ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
 	recorder.videoMaximumDuration = 20; //optional capture duration limit
     [self presentViewController:recorder animated:true completion:nil];
 ```
 
-### Enable cover selector dialog
+### Enable Cover Selector Dialog
 ```
     recorder.coverSelectorEnabled = YES;
 ```
 
-### Select existing video instead of capturing a new one
+### Select Existing Video Instead of Capturing a New One
 
 ```
     [recorder selectExistingVideo];
 ```
 
-### Disable camera flip button
+### Disable Camera Flip Button
 
 ```
     recorder.cameraFlipButtonVisible = NO;
 ```
 
-### Set active camera device
+### Set Active Camera Device
 
 ```
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceRear;
 ```
 
-### Custom create video parameters (like effects, profiles, etc)
+### Custom Create Video Parameters (like effects, profiles, etc)
 
 ```
     recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
@@ -111,7 +111,7 @@ New recorder rewritten from scratch. Allows to record video and audio without in
 ```
 Since ZiggeoRecorder is a subclass of UIImagePickerController, it is possible to use any standard ways to create custom camera UI. Please check CustomUITestApp example and this Apple tutorial for more details: https://developer.apple.com/library/ios/samplecode/PhotoPicker/Introduction/Intro.html 
 
-### Streaming recording
+### Streaming Recording
 ```
     recorder.useLiveStreaming = YES;
 ```
@@ -162,12 +162,12 @@ All the API methods are working asynchronously and never blocking the calling th
 
 ## Videos API
 
-### Get video accessor object
+### Get Video Accessor Object
 ```
     ZiggeoVideos* videos = [m_ziggeo videos];
 ```
 
-### Get all videos
+### Get All Videos
 ```
     [videos indexWithData:nil Callback:^(NSArray *jsonArray, NSError *error) {
     	//the completion block will be executed asynchronously on the response received
@@ -175,7 +175,7 @@ All the API methods are working asynchronously and never blocking the calling th
     }];
 ```
 
-### Create new video
+### Create New Video
 #### Basic
 ```
 	[videos createVideoWithData:nil file:videoPath cover:nil callback:nil Progress:nil];
@@ -193,7 +193,7 @@ You can add your custom completion/progress callbacks here to make the SDK infor
     }];
 ```
 
-### Delete video
+### Delete Video
 ```
 	[[self.ziggeo videos] deleteVideoByToken:videoToken 
     	callback:^(NSData *responseData, NSURLResponse *response, NSError *error) {
@@ -201,12 +201,12 @@ You can add your custom completion/progress callbacks here to make the SDK infor
 	}];
 ```
 
-### Get video URL to be used in your own custom player
+### Get Video URL for Your Own Custom Player
 ```
     NSURL* videoURL = [NSURL URLWithString:[videos getURLForVideoByToken:token]];
 ```
 
-### Get remote video thumb asynchronously
+### Get Remote Video Thumbnail asynchronously
 Remote video thumbs are cached on client side, so you can call the method as frequently as you wish without the performance or network load impact
 ```
     [videos getImageForVideoByToken:token 
@@ -215,7 +215,7 @@ Remote video thumbs are cached on client side, so you can call the method as fre
     }];
 ```
 
-### Generate local video thumb asynchronously
+### Generate Local Video Thumbnail asynchronously
 Local video thumbs are cached on client side, so you can call the method as frequently as you wish without the performance impact
 ```
 	[videos getImageForVideoByPath:localVideoPath 
@@ -224,15 +224,15 @@ Local video thumbs are cached on client side, so you can call the method as freq
 	}];
 ```
 
-## Custom Ziggeo API requests
+## Custom Ziggeo API Requests
 The SDK provides an opportunity to make custom requests to Ziggeo Embedded Server API. You can make POST/GET/custom_method requests and receive RAW data, json-dictionary or string as the result.
 
-### Get API accessor object
+### Get API Accessor Object
 ```
 ZiggeoConnect* connection = [m_ziggeo connect];
 ```
 
-### Make POST request and parse JSON response
+### Make POST Request and Parse JSON Response
 ```
 [connection postJsonWithPath:path Data:(NSDictionary*)data 
 	Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
@@ -241,7 +241,7 @@ ZiggeoConnect* connection = [m_ziggeo connect];
 ];
 ```
 
-### Make POST request and get RAW data response
+### Make POST Request and Get RAW Data Response
 ```
 [connection postWithPath:path Data:(NSDictionary*)data 
 	Callback:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -250,7 +250,7 @@ ZiggeoConnect* connection = [m_ziggeo connect];
 ];
 ```
 
-### Make GET request and get string response
+### Make GET Request and Get String Response
 ```
 [connection getStringWithPath:path Data:(NSDictionary*)data 
 	Callback:^(NSString *string, NSURLResponse *response, NSError *error) {
@@ -258,4 +258,3 @@ ZiggeoConnect* connection = [m_ziggeo connect];
 	}
 ];
 ```
-There are bunch of other methods for different http methods and response types.
