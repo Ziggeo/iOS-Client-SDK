@@ -12,7 +12,10 @@
 @import AVFoundation;
 
 @protocol ZiggeoRecorder2Delegate <NSObject>
+@optional
 -(void) ziggeoRecorderDidCancel;
+@optional
+-(void) ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds;
 @end
 
 @interface ZiggeoRecorder2 : UIViewController <VideoPreviewDelegate>
@@ -27,6 +30,8 @@
 @property (nonatomic) UIImagePickerControllerCameraDevice cameraDevice;
 @property (nonatomic) id<ZiggeoRecorder2Delegate> recorderDelegate;
 @property (nonatomic) NSDictionary* extraArgsForCreateVideo;
+@property (nonatomic) double maxRecordedDurationSeconds;
+
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)videoToken;
 
