@@ -6,11 +6,11 @@
 	<dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		P9CIBfkAnKhvlQoE/TvC3sITmw0=
+		FNqsu+kGzAFFtnM/q4YtlYFhXOA=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		xjeYi5Q4t6Hn17JCU+7Kf3H8TGg=
+		JcV/r/6HedYfUcfVs8kAueth2Ms=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Headers/ZiggeoRecorder.h</key>
 		<data>
-		RhNZwmehfYmtMjZnqoNVR8CuH4I=
+		lqbqXEfJcmvsvhIvQIYXnCJP3hY=
 		</data>
 		<key>Headers/ZiggeoRecorder2.h</key>
 		<data>
-		Bd73RFht4oHJtMR9VdQuWUu8a1E=
+		815q316X7eoXmPmkZackmxKOeYk=
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		85124k4VewyOFOPNFpIfn8hrHSo=
+		dmpf5mby+snYvIp/XSubGZI6ExM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,7 +110,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		0vP6B6kEtat4pa4RhSlH+AFhc/w=
+		VZ1aQnVN7/aOxB2N6/68rvsdaLc=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		Hdj8GIXv5xnW5x0PoLxJp/vkCek=
+		HylxRbzRoE1lWNxbWqVGo2ryMx0=
 		</data>
 		<key>trash-50.png</key>
 		<data>
@@ -163,22 +163,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P9CIBfkAnKhvlQoE/TvC3sITmw0=
+			FNqsu+kGzAFFtnM/q4YtlYFhXOA=
 			</data>
 			<key>hash2</key>
 			<data>
-			slwnSyL8ewEbwlXAZEYy1cJpuBoKnQmvxcZr3/0mSVc=
+			Wcq2I90PojI9p+5Hs9QmEvaUlX61nxdFByGxHG8tWSU=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xjeYi5Q4t6Hn17JCU+7Kf3H8TGg=
+			JcV/r/6HedYfUcfVs8kAueth2Ms=
 			</data>
 			<key>hash2</key>
 			<data>
-			5uO/xzAXfWILT3IbS7XqA2txlv7TKVCFC+UaF6MCOoE=
+			k+swQeQ2ymEC1s/wciyPBeuIbwK6R449Zz6+zASP11U=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -317,22 +317,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RhNZwmehfYmtMjZnqoNVR8CuH4I=
+			lqbqXEfJcmvsvhIvQIYXnCJP3hY=
 			</data>
 			<key>hash2</key>
 			<data>
-			+rbJxfDvEACRq9P6U0lQ2U9NxIf5Rs7PmTJ6P6lmbOg=
+			SOEk70UDB9Bj8VJGixEOQ7ZKBTvVzq0oTKzk3yvljJE=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoRecorder2.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Bd73RFht4oHJtMR9VdQuWUu8a1E=
+			815q316X7eoXmPmkZackmxKOeYk=
 			</data>
 			<key>hash2</key>
 			<data>
-			OdzfjrLguc028alfg8VMtt1fkeLT03TNUJmwwPiLxhk=
+			DkcUk7mplpNcYZllJ8YtjoF4nvY5+KesXon+iIwQR28=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoVideos.h</key>
@@ -438,11 +438,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0vP6B6kEtat4pa4RhSlH+AFhc/w=
+			VZ1aQnVN7/aOxB2N6/68rvsdaLc=
 			</data>
 			<key>hash2</key>
 			<data>
-			AUCWheK0M3KjyIFVI7aD9UnyKte+eJnamD60EhmKHEc=
+			0Vy3hhpj7+PlqYTPM/ObQT/MMzqDZxVG9JMlsPiTtdI=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -493,11 +493,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Hdj8GIXv5xnW5x0PoLxJp/vkCek=
+			HylxRbzRoE1lWNxbWqVGo2ryMx0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4d+zadiVOXnkVnk/8OF3eiBV0epclDV0TScH8o+56Xg=
+			gzoS+7VOyyEoYfk5ggFwEGzObQBUpTnF/jvSMFwbcTk=
 			</data>
 		</dict>
 		<key>trash-50.png</key>
