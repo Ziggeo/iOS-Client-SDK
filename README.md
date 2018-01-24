@@ -36,6 +36,14 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
 }
 ```
 
+### Initialization with optional authorization token
+```
+- (ZiggeoPlayer*) createPlayer
+{
+    return [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:@"ZIGGEO_VIDEO_TOKEN" authToken:@"OPTIONAL_AUTH_TOKEN"];
+}
+```
+
 ### Fullscreen Playback
 ```
     AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
