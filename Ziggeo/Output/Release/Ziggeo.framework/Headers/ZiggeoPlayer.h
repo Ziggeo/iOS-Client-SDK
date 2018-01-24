@@ -12,5 +12,6 @@
 @interface ZiggeoPlayer : AVPlayer
 
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)token;
+-(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)token authToken:(NSString*)authToken;
 
 @end
