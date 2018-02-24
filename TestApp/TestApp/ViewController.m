@@ -27,16 +27,17 @@
     [super didReceiveMemoryWarning];
 }
 
-- (ZiggeoPlayer*) createPlayer
-{
-    return [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:@"VIDEO_TOKEN"];
-}
-
 - (IBAction)playFullScreen:(id)sender {
-    AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
-    playerController.player = [self createPlayer];
-    [self presentViewController:playerController animated:true completion:nil];
-    [playerController.player play];
+    //ZiggeoPlayer.cr
+    [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:@"VIDEO_TOKEN" params:@{ @"client_auth" : @"CLIENT_AUTH_TOKEN" } callback:^(ZiggeoPlayer *player) {
+        dispatch_async(dispatch_get_main_queue(), ^
+        {
+            AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
+            playerController.player = player;
+            [self presentViewController:playerController animated:true completion:nil];
+            [playerController.player play];
+        });
+    }];
 }
 
 - (IBAction)playEmbedded:(id)sender {
@@ -47,7 +48,7 @@
         embeddedPlayerLayer = nil;
         embeddedPlayer = nil;
     }
-    ZiggeoPlayer* player = [self createPlayer];
+    ZiggeoPlayer* player = [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:@"VIDEO_TOKEN"];
     AVPlayerLayer* playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
     playerLayer.frame = self.videoViewPlaceholder.frame;
     [self.videoViewPlaceholder.layer addSublayer:playerLayer];
@@ -64,6 +65,7 @@
     recorder.useLiveStreaming = NO;
     recorder.maxRecordedDurationSeconds = 0; //infinite
 //    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+//    recorder.extraArgsForCreateVideo = @{ @"client_auth" : @"CLIENT_AUTH_TOKEN" };
     [self presentViewController:recorder animated:true completion:nil];
 }
 

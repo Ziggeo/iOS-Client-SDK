@@ -33,7 +33,7 @@
 
 - (NSURLSessionTask*) postWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
 
-- (NSURLSessionTask*) postRawDataWithPath:(NSString*)path Data:(NSData*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
+- (NSURLSessionTask*) postRawDataWithPath:(NSString*)path Data:(NSData*)data params:(NSDictionary*)params Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
 
 - (NSURLSessionTask*) postJsonWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 
@@ -42,5 +42,8 @@
 - (NSURLSessionTask*) deleteJsonWithPath:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 
 - (void) appWakeupSignalTaskComplete:(NSString*)sessionID;
+
+- (NSURLSessionTask*) addSessionData:(NSDictionary*)data path:(NSString*)path callback:(NSURLSessionTask* (^)(NSDictionary* dataWithSessionData))callback;
+
 
 @end
