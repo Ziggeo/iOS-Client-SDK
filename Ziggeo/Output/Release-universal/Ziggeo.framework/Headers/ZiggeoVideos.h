@@ -34,7 +34,7 @@
 
 - (NSURLSessionTask*) rerecordVideoWithToken:(NSString*)videoToken file:(NSString*)fileName data:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
 
-- (NSURLSessionTask*) getImageForVideoByToken:(NSString*)token callback:(void (^)(UIImage* image, NSURLResponse* response, NSError* error))callback;
+- (NSURLSessionTask*) getImageForVideoByToken:(NSString*)token data:(NSDictionary*)params callback:(void (^)(UIImage* image, NSURLResponse* response, NSError* error))callback;
 
 - (void) getImageForVideoByPath:(NSString*)path callback:(void (^)(UIImage* image, NSError* error))callback;
 - (void) enforceImageForVideoByPath:(NSString*)path image:(UIImage*)image;
