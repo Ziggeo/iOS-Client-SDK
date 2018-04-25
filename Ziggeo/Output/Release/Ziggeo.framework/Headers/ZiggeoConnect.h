@@ -12,6 +12,8 @@
 }
 
 - (id) initWithApplication:(Ziggeo*)application_;
+@property (nonatomic) NSString* serverAuthToken;
+@property (nonatomic) NSString* clientAuthToken;
 
 - (NSURLSessionTask*) requestWithMethod:(NSString*)method Path:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback;
 
