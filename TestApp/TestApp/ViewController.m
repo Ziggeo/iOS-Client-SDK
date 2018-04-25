@@ -65,7 +65,12 @@
     recorder.useLiveStreaming = NO;
     recorder.maxRecordedDurationSeconds = 0; //infinite
 //    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+// recorder level auth tokens:
 //    recorder.extraArgsForCreateVideo = @{ @"client_auth" : @"CLIENT_AUTH_TOKEN" };
+//    recorder.extraArgsForCreateVideo = @{ @"server_auth" : @"SERVER_AUTH_TOKEN" };
+// global (application level) auth tokens:
+//    m_ziggeo.connect.clientAuthToken = @"CLIENT_AUTH_TOKEN";
+//    m_ziggeo.connect.serverAuthToken = @"SERVER_AUTH_TOKEN";
     [self presentViewController:recorder animated:true completion:nil];
 }
 
