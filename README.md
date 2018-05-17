@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## Upgrading from v.1.0.7 to v.1.0.8
+The update bring new `recordingQuality` parameter.
+
 ## Upgrading from v.1.0.6 to v.1.0.7
 The update bring new `serverAuthToken` and `clientAuthToken` parameters in `ziggeo.connect` object (useful for global auth tokens).
 
@@ -124,6 +127,14 @@ New recorder rewritten from scratch. Allows to record video and audio without in
 
 ```
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+```
+
+### Set Recording Quality
+
+```
+    recorder.recordingQuality = mediumQuality;
+    //recorder.recordingQuality = lowQuality;
+    //recorder.recordingQuality = highestQuality;
 ```
 
 ### Custom Create Video Parameters (like effects, profiles, etc)
