@@ -34,6 +34,13 @@
         {
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
             playerController.player = player;
+            player.didFinishPlaying = ^(NSString *videoToken, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                    [playerController dismissViewControllerAnimated:true completion:nil];
+                });
+            };
+            playerController.showsPlaybackControls = false;
             [self presentViewController:playerController animated:true completion:nil];
             [playerController.player play];
         });
@@ -64,6 +71,8 @@
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     recorder.useLiveStreaming = NO;
     recorder.maxRecordedDurationSeconds = 0; //infinite
+    recorder.autostartRecordingAfterSeconds = 0; //never
+    recorder.controlsVisible = false; //no controls, autostart enabled, max duration = 30
 //    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
 // recorder level auth tokens:
 //    recorder.extraArgsForCreateVideo = @{ @"client_auth" : @"CLIENT_AUTH_TOKEN" };
