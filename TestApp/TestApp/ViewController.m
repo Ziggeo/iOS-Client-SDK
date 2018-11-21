@@ -34,13 +34,16 @@
         {
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
             playerController.player = player;
+            
+            //hide player on playback finished
             player.didFinishPlaying = ^(NSString *videoToken, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^
                 {
                     [playerController dismissViewControllerAnimated:true completion:nil];
                 });
             };
-            playerController.showsPlaybackControls = false;
+            //show playback controls
+            playerController.showsPlaybackControls = true;
             [self presentViewController:playerController animated:true completion:nil];
             [playerController.player play];
         });
