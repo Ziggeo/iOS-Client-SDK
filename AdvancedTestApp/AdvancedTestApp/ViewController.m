@@ -132,7 +132,7 @@
             NSDictionary* item = self.videoJsonArray[indexPath.row];
             cell.token = [item objectForKey:@"token"];;
             cell.thumbView.image = nil;
-            [[self.ziggeo videos] getImageForVideoByToken:cell.token callback:^(UIImage *image, NSURLResponse *response, NSError *error) {
+            [[self.ziggeo videos] getImageForVideoByToken:cell.token data:nil callback:^(UIImage *image, NSURLResponse *response, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^
                 {
                    cell.thumbView.image = image;
@@ -177,7 +177,7 @@
             }
             if(self.videoJsonArray.count==0 && self.uploadingVideos.count == 0) [tableView deleteSections:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 2)] withRowAnimation:UITableViewRowAnimationFade];
             [tableView endUpdates];
-            [[self.ziggeo videos] deleteVideoByToken:videoToken callback:^(NSData *responseData, NSURLResponse *response, NSError *error) {
+            [[self.ziggeo videos] deleteVideoByToken:videoToken data:nil callback:^(NSData *responseData, NSURLResponse *response, NSError *error) {
                 [self refreshVideoJsonArray];
             }];
         }

@@ -7,6 +7,8 @@
 
 #import "AppDelegate.h"
 @import AVFoundation;
+#import "Ziggeo/Ziggeo.h"
+
 
 @interface AppDelegate ()
 
@@ -43,6 +45,14 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+//finish background upload for closed or purged app
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler {
+    Ziggeo* ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
+    [ziggeo.connect postWithPath:identifier Data:nil Callback:^(NSData *data, NSURLResponse *response, NSError *error) {
+        completionHandler();
+    }];
 }
 
 @end

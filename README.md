@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## Upgrading from v 1.1.0 to v.1.1.1
+The update brings new optional features such as light meter, audio level meter and face outlining. These features are also available in the updated ZiggeoRecorder delegate
+
 ## Upgrading from v.1.0.9 to v.1.1.0
 The update bring hidden controls modes for recorder and player.
 
@@ -155,6 +158,21 @@ New recorder rewritten from scratch. Allows to record video and audio without in
     recorder.recordingQuality = mediumQuality;
     //recorder.recordingQuality = lowQuality;
     //recorder.recordingQuality = highestQuality;
+```
+
+### Enable Face Outlining
+```
+recorder.showFaceOutline = YES;
+```
+
+### Enable Light Meter Indicator
+```
+recorder.showLightIndicator = YES;
+```
+
+### Enable Audio Level Indicator
+```
+recorder.showSoundIndicator = YES;
 ```
 
 ### Custom Create Video Parameters (like effects, profiles, etc)

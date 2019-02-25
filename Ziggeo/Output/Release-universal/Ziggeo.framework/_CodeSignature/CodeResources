@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AudioLevelView.nib</key>
+		<data>
+		gIYxdvQxn8MR9moXTxQg7i0EEgs=
+		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		jaLn0rWuPbSdSTI9WWXUKlyIS00=
+		EUdmb8nnWaKiIEMvz9kdtAFAwPk=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		5G01QOTkIdO/ldASWLVsNee33D0=
+		/YOFLu1w9H4NOgl7P669J+9TCUs=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -66,7 +70,7 @@
 		</data>
 		<key>Headers/ZiggeoRecorder2.h</key>
 		<data>
-		uZWzSPrvP27UppzHXLALmAtpuCY=
+		Kuk49YcmfQt5xJkrOOxrqgoECM0=
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
@@ -74,7 +78,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2cBttQOqgPs9758qINeANadPMNo=
+		yVwXfyokU47AopLmYQWCBjVuc4U=
+		</data>
+		<key>LuxMeterView.nib</key>
+		<data>
+		/ulqTpTTiPcaSny3Ds1mXuAYSao=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,7 +118,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		FmuKWF7VA8vWIxSoLiioCIi5WQs=
+		OpYeunR2Lu80CUCVfEOJajBo3gI=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -130,7 +138,19 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		pwQzIibIpB+i1/cERnr/A1hDcrs=
+		94a8YXZOrcz+odHJOAa2WHo9SDE=
+		</data>
+		<key>sun-50.png</key>
+		<data>
+		Nnz3mwcq0l+cIL54CIZelXbI3SI=
+		</data>
+		<key>sun-50_red.png</key>
+		<data>
+		ebZv7h55NXIKobiRfEHk/3SlkVA=
+		</data>
+		<key>sun-50_yellow.png</key>
+		<data>
+		trNlgEFEVESgpKysu/E8HDOOwKw=
 		</data>
 		<key>trash-50.png</key>
 		<data>
@@ -159,26 +179,37 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AudioLevelView.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gIYxdvQxn8MR9moXTxQg7i0EEgs=
+			</data>
+			<key>hash2</key>
+			<data>
+			pBvq7fpDiDajUNpNSRk9uJ5T+nxWMCV8r7CsG0t14EU=
+			</data>
+		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jaLn0rWuPbSdSTI9WWXUKlyIS00=
+			EUdmb8nnWaKiIEMvz9kdtAFAwPk=
 			</data>
 			<key>hash2</key>
 			<data>
-			rKDNQOEBtVYG+Oxn4XlLOQ0DEI0kNtP1e+PiGLR/Wjc=
+			VDISQMSQG4hK43uiT0oYLQGQDaxhzcDE9KJkxRZcZtA=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5G01QOTkIdO/ldASWLVsNee33D0=
+			/YOFLu1w9H4NOgl7P669J+9TCUs=
 			</data>
 			<key>hash2</key>
 			<data>
-			gFAkIhoRjlN5mSJqGmKGYZ5GYOkEBOUy6Vs0hE9myFo=
+			mQ4RS/cB3ot982GFZvt2LFd0Tk7aK6+JzVpOW6X3IZ0=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -328,11 +359,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uZWzSPrvP27UppzHXLALmAtpuCY=
+			Kuk49YcmfQt5xJkrOOxrqgoECM0=
 			</data>
 			<key>hash2</key>
 			<data>
-			yV6yZqBf57Bhmt71pbPnxaKwcRIpa4AJeay7+jdnC5Q=
+			Fr5RY+zOhei9UXLXt78z/9aRPRNcq/QKOS7AesZFF9s=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoVideos.h</key>
@@ -344,6 +375,17 @@
 			<key>hash2</key>
 			<data>
 			3MYTNW4pDtKMDv34fjP6zm3ERvthnb+mgf+8Pu5m9+g=
+			</data>
+		</dict>
+		<key>LuxMeterView.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/ulqTpTTiPcaSny3Ds1mXuAYSao=
+			</data>
+			<key>hash2</key>
+			<data>
+			XrKcPwJrZXwvEAB9fSFKG0d/oaUhPSsjoe6Qw+WbApQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -438,11 +480,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FmuKWF7VA8vWIxSoLiioCIi5WQs=
+			OpYeunR2Lu80CUCVfEOJajBo3gI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ah2zvE02PhU/9A+lZXsEUZg7Oc8jxEXz0Fs2x4g3Qjk=
+			/dNbm04TGRYTgggNcqpa2KKcmsLmRwC920QcCZsPSbU=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -493,11 +535,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pwQzIibIpB+i1/cERnr/A1hDcrs=
+			94a8YXZOrcz+odHJOAa2WHo9SDE=
 			</data>
 			<key>hash2</key>
 			<data>
-			NKskjntXV5XUZnVlMKpPTrvrKkzIqP89RCCRys35nIA=
+			Wl4Kg29pNqkvZH/qnGxu+JNW2qUc0uJCUWHQRPGXzQM=
+			</data>
+		</dict>
+		<key>sun-50.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Nnz3mwcq0l+cIL54CIZelXbI3SI=
+			</data>
+			<key>hash2</key>
+			<data>
+			fZ45oYbwfsV6h1ZEs2Mv7K7LFjKWxyQ3A9S162o5gUY=
+			</data>
+		</dict>
+		<key>sun-50_red.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ebZv7h55NXIKobiRfEHk/3SlkVA=
+			</data>
+			<key>hash2</key>
+			<data>
+			T1Aw54gnxKkvWJHhrabjbdZa5Ph5tji7tH1ZTMf7gsg=
+			</data>
+		</dict>
+		<key>sun-50_yellow.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			trNlgEFEVESgpKysu/E8HDOOwKw=
+			</data>
+			<key>hash2</key>
+			<data>
+			x3C4ht0+IzdPawGcY8r1IEt+nZzSOetbwsh8aHeamsE=
 			</data>
 		</dict>
 		<key>trash-50.png</key>

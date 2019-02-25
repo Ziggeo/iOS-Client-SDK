@@ -9,7 +9,7 @@
 #import "Ziggeo/Ziggeo.h"
 @import AVKit;
 
-@interface ViewController () {
+@interface ViewController () <ZiggeoRecorder2Delegate> {
     Ziggeo* m_ziggeo;
     ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
@@ -28,7 +28,6 @@
 }
 
 - (IBAction)playFullScreen:(id)sender {
-    //ZiggeoPlayer.cr
     [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:@"VIDEO_TOKEN" params:@{ @"client_auth" : @"CLIENT_AUTH_TOKEN" } callback:^(ZiggeoPlayer *player) {
         dispatch_async(dispatch_get_main_queue(), ^
         {
@@ -69,13 +68,18 @@
 
 - (IBAction)record:(id)sender {
     ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
-    recorder.coverSelectorEnabled = NO;
+    recorder.coverSelectorEnabled = YES;
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     recorder.useLiveStreaming = NO;
+    recorder.recordingQuality = HighestQuality;
     recorder.maxRecordedDurationSeconds = 0; //infinite
     recorder.autostartRecordingAfterSeconds = 0; //never
-    recorder.controlsVisible = false; //no controls, autostart enabled, max duration = 30
+    recorder.controlsVisible = true; //no controls, autostart enabled, max duration = 30
+    recorder.recorderDelegate = self;
+    //recorder.showSoundIndicator = false;
+    //recorder.showLightIndicator = false;
+    //recorder.showFaceOutline = false;
 //    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
 // recorder level auth tokens:
 //    recorder.extraArgsForCreateVideo = @{ @"client_auth" : @"CLIENT_AUTH_TOKEN" };
@@ -85,5 +89,18 @@
 //    m_ziggeo.connect.serverAuthToken = @"SERVER_AUTH_TOKEN";
     [self presentViewController:recorder animated:true completion:nil];
 }
+
+-(void) luxMeter:(double)luminousity {
+    //NSLog(@"luminousity: %f", luminousity);
+}
+
+-(void) audioMeter:(double)audioLevel {
+    //NSLog(@"audio: %f", audioLevel);
+}
+
+-(void) faceDetected:(int)faceID rect:(CGRect)rect {
+    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+}
+
 
 @end
