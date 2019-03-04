@@ -33,7 +33,6 @@
         {
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
             playerController.player = player;
-            
             //hide player on playback finished
             player.didFinishPlaying = ^(NSString *videoToken, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^
@@ -77,6 +76,7 @@
     recorder.autostartRecordingAfterSeconds = 0; //never
     recorder.controlsVisible = true; //no controls, autostart enabled, max duration = 30
     recorder.recorderDelegate = self;
+    recorder.videoGravity = AVLayerVideoGravityResizeAspectFill;
     //recorder.showSoundIndicator = false;
     //recorder.showLightIndicator = false;
     //recorder.showFaceOutline = false;
