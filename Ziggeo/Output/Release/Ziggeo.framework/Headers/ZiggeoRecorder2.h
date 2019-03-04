@@ -50,6 +50,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSDictionary* extraArgsForCreateVideo;
 @property (nonatomic) double maxRecordedDurationSeconds;
 @property (nonatomic) double autostartRecordingAfterSeconds;
+@property (nonatomic) AVLayerVideoGravity videoGravity;
 
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)videoToken;
