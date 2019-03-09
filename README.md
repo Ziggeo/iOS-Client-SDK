@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## Upgrading from v 1.1.2 to v.1.1.3
+The update brings custom user data support on new video creation. See Custom User Data for details.
+
 ## Upgrading from v 1.1.1 to v.1.1.2
 The update brings subtitles support for auto-transcripted videos. Another new feature - custom video gravity options for the Recorder.
 
@@ -182,6 +185,11 @@ recorder.showSoundIndicator = YES;
 
 ```
     recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+```
+
+### Custom User Data
+```
+    recorder.extraArgsForCreateVideo = @{@"data": @"{\"foo\":\"bar\"}"}; 
 ```
 
 ### Authorization tokens
