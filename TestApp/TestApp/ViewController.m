@@ -67,20 +67,21 @@
 
 - (IBAction)record:(id)sender {
     ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
-    recorder.coverSelectorEnabled = YES;
+    recorder.coverSelectorEnabled = NO;
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     recorder.useLiveStreaming = NO;
     recorder.recordingQuality = HighestQuality;
     recorder.maxRecordedDurationSeconds = 0; //infinite
     recorder.autostartRecordingAfterSeconds = 0; //never
-    recorder.controlsVisible = true; //no controls, autostart enabled, max duration = 30
+    recorder.controlsVisible = true; //false - no controls, autostart enabled, max duration = 30
     recorder.recorderDelegate = self;
     recorder.videoGravity = AVLayerVideoGravityResizeAspectFill;
     //recorder.showSoundIndicator = false;
     //recorder.showLightIndicator = false;
     //recorder.showFaceOutline = false;
-//    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+    //recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
+    //recorder.extraArgsForCreateVideo = @{@"data": @"{\"foo\":\"bar\"}"}; //custom user data
 // recorder level auth tokens:
 //    recorder.extraArgsForCreateVideo = @{ @"client_auth" : @"CLIENT_AUTH_TOKEN" };
 //    recorder.extraArgsForCreateVideo = @{ @"server_auth" : @"SERVER_AUTH_TOKEN" };
