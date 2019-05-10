@@ -6,15 +6,15 @@
 	<dict>
 		<key>AudioLevelView.nib</key>
 		<data>
-		B6inH1YnSKpN43rIIvBARunjoGE=
+		cZXEnFOUdFNv8sUv0K3hIIz7Ir8=
 		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		qcnsd5AMQQ3FV4dSUPstC+fgsgE=
+		kh8j+3gLPSUoMBUpl759uTCIvwA=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		YQSpRHA2FMYMrL7XOmTNsvDMX+k=
+		v+0Q9Wryeb+VACvQDjgouslbvOA=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -74,15 +74,15 @@
 		</data>
 		<key>Headers/ZiggeoVideos.h</key>
 		<data>
-		8VqMgi2xk9Zyq01R2li6XcQNe1o=
+		nM0llsNOGEdCwTAntG40SIFJfmg=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		yVwXfyokU47AopLmYQWCBjVuc4U=
+		KNaYXLxtelFStg5uqVo5gEczbjo=
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		6UvW8G7qo0AxzFE+MvCZ4uglhCY=
+		acM4JYZjLoDEoIS4CWurBRss9Jg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		yuMOS5ybNEjH7uWRnrIpAvmqOE0=
+		7fF0VAK2zCdvo3GwX/RxUrCC27o=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		KX3OAEJVLZqmoQtNoNN79bD1UFQ=
+		cXFcIhwxJGDWu/QvCB+H2OvjT1g=
 		</data>
 		<key>sun-50.png</key>
 		<data>
@@ -183,33 +183,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B6inH1YnSKpN43rIIvBARunjoGE=
+			cZXEnFOUdFNv8sUv0K3hIIz7Ir8=
 			</data>
 			<key>hash2</key>
 			<data>
-			n2PQaZFcdaBT3qzIOAjB0FAQcWZT2Gi6DAaucaP53Xc=
+			lrFt5kty5e3oMq07TVb8CQBoP4odvPPGvxuoNG6p5cs=
 			</data>
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qcnsd5AMQQ3FV4dSUPstC+fgsgE=
+			kh8j+3gLPSUoMBUpl759uTCIvwA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pt4LJnb9+SPa+J/oXPvTTKQ0R5AYnkjPTJiYP/Ml3gA=
+			+88MJqoteZ41sS7FxAmo8+Mp3A4xDkcQI956uyjoUhA=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YQSpRHA2FMYMrL7XOmTNsvDMX+k=
+			v+0Q9Wryeb+VACvQDjgouslbvOA=
 			</data>
 			<key>hash2</key>
 			<data>
-			lZ8MGn6xowVyC5E2CJbYkwygsFbVovIwxdDbVdadGpA=
+			8NolFlegdXTAN0BLitC2qYYj18V3sE7r94u5c0mUA5Y=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -370,22 +370,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8VqMgi2xk9Zyq01R2li6XcQNe1o=
+			nM0llsNOGEdCwTAntG40SIFJfmg=
 			</data>
 			<key>hash2</key>
 			<data>
-			WgTPiGkZ7axHZ+0bgt3hsSvo6Y89voDuRqqOtwN3rbA=
+			8L+7FwInFQdJvsmiZE6h6bfMV4jskaYPcYFlrgOPOp0=
 			</data>
 		</dict>
 		<key>LuxMeterView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6UvW8G7qo0AxzFE+MvCZ4uglhCY=
+			acM4JYZjLoDEoIS4CWurBRss9Jg=
 			</data>
 			<key>hash2</key>
 			<data>
-			9+G9E5jVbBbkPdbMLum43zE2b4i2LPjMwzyFDg+LUks=
+			126Xy1XQ1G0FJgjOvFfdaiA/VAmMf3ApRc8oBdvhuSc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -480,11 +480,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yuMOS5ybNEjH7uWRnrIpAvmqOE0=
+			7fF0VAK2zCdvo3GwX/RxUrCC27o=
 			</data>
 			<key>hash2</key>
 			<data>
-			gUieA4+IIOK570LGRkFfdl3zA4Jl3ZTjcIRDmtYzF+Q=
+			g22+g3b3VtvFfwlvz87S16C8DbIINSnRa4O8EZcOXD8=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -535,11 +535,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KX3OAEJVLZqmoQtNoNN79bD1UFQ=
+			cXFcIhwxJGDWu/QvCB+H2OvjT1g=
 			</data>
 			<key>hash2</key>
 			<data>
-			cxQt0Y428kf2deSntJfDHx14OiNceerIVBK5DOIUHcA=
+			rOQGHMgQMjI06ckG0bWgzfJ7rzmYRKa1ZBc0pLjXaZI=
 			</data>
 		</dict>
 		<key>sun-50.png</key>
@@ -644,7 +644,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -675,24 +675,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -728,13 +716,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>
