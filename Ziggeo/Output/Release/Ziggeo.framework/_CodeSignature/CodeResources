@@ -6,15 +6,15 @@
 	<dict>
 		<key>AudioLevelView.nib</key>
 		<data>
-		cZXEnFOUdFNv8sUv0K3hIIz7Ir8=
+		AqYi/J55l0d3C3Tc9yyNZpwqUUc=
 		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		kh8j+3gLPSUoMBUpl759uTCIvwA=
+		lf9gPy7ghGxoz56WbOn/qCHUeok=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		v+0Q9Wryeb+VACvQDjgouslbvOA=
+		7+hz24K/S3Z1Cj++yngrbRVfCL8=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		acM4JYZjLoDEoIS4CWurBRss9Jg=
+		4GMCT9jIYkXGh+cDcmQhp/Yy/6I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		7fF0VAK2zCdvo3GwX/RxUrCC27o=
+		6GalgENHOAaXc63ZA0JfW+P0QMk=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		cXFcIhwxJGDWu/QvCB+H2OvjT1g=
+		wTXQZNo3Nl328ugci8aMEDfUQTg=
 		</data>
 		<key>sun-50.png</key>
 		<data>
@@ -183,33 +183,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cZXEnFOUdFNv8sUv0K3hIIz7Ir8=
+			AqYi/J55l0d3C3Tc9yyNZpwqUUc=
 			</data>
 			<key>hash2</key>
 			<data>
-			lrFt5kty5e3oMq07TVb8CQBoP4odvPPGvxuoNG6p5cs=
+			Vyb6WzcoQv/QDfRapAlH1SaKBT8CRDKqLTFGs1Z/Ds8=
 			</data>
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kh8j+3gLPSUoMBUpl759uTCIvwA=
+			lf9gPy7ghGxoz56WbOn/qCHUeok=
 			</data>
 			<key>hash2</key>
 			<data>
-			+88MJqoteZ41sS7FxAmo8+Mp3A4xDkcQI956uyjoUhA=
+			okvlCEGDHOz6wsyVsNCwViw2mNRc16AnuqEkqXgQBUw=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			v+0Q9Wryeb+VACvQDjgouslbvOA=
+			7+hz24K/S3Z1Cj++yngrbRVfCL8=
 			</data>
 			<key>hash2</key>
 			<data>
-			8NolFlegdXTAN0BLitC2qYYj18V3sE7r94u5c0mUA5Y=
+			yZ0ewDzFBDjaKjKt1V4h3g7SeDswWRs384U8vjQYtjU=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -381,11 +381,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			acM4JYZjLoDEoIS4CWurBRss9Jg=
+			4GMCT9jIYkXGh+cDcmQhp/Yy/6I=
 			</data>
 			<key>hash2</key>
 			<data>
-			126Xy1XQ1G0FJgjOvFfdaiA/VAmMf3ApRc8oBdvhuSc=
+			wn6ZDNX6IIlpzkSejIvptbS6KcfDMX9tNiUqHsQOxxs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -480,11 +480,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7fF0VAK2zCdvo3GwX/RxUrCC27o=
+			6GalgENHOAaXc63ZA0JfW+P0QMk=
 			</data>
 			<key>hash2</key>
 			<data>
-			g22+g3b3VtvFfwlvz87S16C8DbIINSnRa4O8EZcOXD8=
+			Pul3OEkUNWBFvf3vYMus/ioub5a5ilZ/PiYS7oD1kek=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -535,11 +535,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cXFcIhwxJGDWu/QvCB+H2OvjT1g=
+			wTXQZNo3Nl328ugci8aMEDfUQTg=
 			</data>
 			<key>hash2</key>
 			<data>
-			rOQGHMgQMjI06ckG0bWgzfJ7rzmYRKa1ZBc0pLjXaZI=
+			/iuil/WscmDIy0fuhPAXjQ0R2yMUAJqfpMoWsiPmkD0=
 			</data>
 		</dict>
 		<key>sun-50.png</key>
