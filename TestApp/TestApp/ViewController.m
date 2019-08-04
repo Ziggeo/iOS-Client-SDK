@@ -71,7 +71,8 @@
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
     recorder.useLiveStreaming = NO;
-    recorder.recordingQuality = MediumQuality;
+    recorder.recordingQuality = LowQuality;
+    recorder.audioSampleRate = 44100;
     recorder.maxRecordedDurationSeconds = 0; //infinite
     recorder.autostartRecordingAfterSeconds = 0; //never
     recorder.controlsVisible = true; //false - no controls, autostart enabled, max duration = 30

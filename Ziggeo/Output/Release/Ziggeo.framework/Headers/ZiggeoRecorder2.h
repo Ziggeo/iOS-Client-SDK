@@ -45,12 +45,18 @@ typedef enum : NSUInteger {
 @property (nonatomic) bool showLightIndicator;
 @property (nonatomic) bool showSoundIndicator;
 @property (nonatomic) UIImagePickerControllerCameraDevice cameraDevice;
-@property (nonatomic) RecordingQuality recordingQuality;
 @property (nonatomic) id<ZiggeoRecorder2Delegate> recorderDelegate;
 @property (nonatomic) NSDictionary* extraArgsForCreateVideo;
 @property (nonatomic) double maxRecordedDurationSeconds;
 @property (nonatomic) double autostartRecordingAfterSeconds;
 @property (nonatomic) AVLayerVideoGravity videoGravity;
+//resolution
+@property (nonatomic) int videoWidth;
+@property (nonatomic) int videoHeight;
+@property (nonatomic) RecordingQuality recordingQuality;
+@property (nonatomic) int videoBitrate;
+@property (nonatomic) int audioSampleRate;
+@property (nonatomic) int audioBitrate;
 
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo;
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)videoToken;
