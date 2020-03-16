@@ -4,17 +4,29 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>AudioLevelView.nib</key>
+		<key>AudioLevelView.nib/objects-13.0+.nib</key>
 		<data>
-		lAbKLZ91jpJ9Sb1458QpKKMqJcY=
+		6ra0agpc09nD2Yk0aFfQ0WKEOn4=
 		</data>
-		<key>CoverSelectorController.nib</key>
+		<key>AudioLevelView.nib/runtime.nib</key>
 		<data>
-		L423iajQeoG9s+naPoQVHV+LzS8=
+		EE264DPlGMyqEihk5ZuJNsMCK78=
 		</data>
-		<key>CoverSelectorTableCell.nib</key>
+		<key>CoverSelectorController.nib/objects-13.0+.nib</key>
 		<data>
-		psUuEEvChMXAHkKUXCHjkYuvaNI=
+		CPdzAvypfI54fc+usdZeUzYh/Nw=
+		</data>
+		<key>CoverSelectorController.nib/runtime.nib</key>
+		<data>
+		WE8XaSV5XbfDOVkOQTNs+UUMg7Y=
+		</data>
+		<key>CoverSelectorTableCell.nib/objects-13.0+.nib</key>
+		<data>
+		YDkqNNfJ+qSrp6LjqAAoxn4oX/A=
+		</data>
+		<key>CoverSelectorTableCell.nib/runtime.nib</key>
+		<data>
+		tXAAB3U1MCdhskm8NXxq/WhA6ac=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -78,11 +90,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		KNaYXLxtelFStg5uqVo5gEczbjo=
+		GF/Y1K4X9TWZGww0eMK8pTskzuM=
 		</data>
-		<key>LuxMeterView.nib</key>
+		<key>LuxMeterView.nib/objects-13.0+.nib</key>
 		<data>
-		0FQq412Rn0cG4yvZ5EbOTMJixr8=
+		+EgE4xL5jVtqVG53Sa41F2Nk7Yk=
+		</data>
+		<key>LuxMeterView.nib/runtime.nib</key>
+		<data>
+		vJEg+GNZycUkxkGgTU3djoTFsBw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -116,9 +132,13 @@
 		<data>
 		sXPSCI5xO/en1IQjeL13oZQW+sI=
 		</data>
-		<key>RecordedVideoPreview.nib</key>
+		<key>RecordedVideoPreview.nib/objects-13.0+.nib</key>
 		<data>
-		y9Ti1GPpOWa+99L1Zeq2u1FYuB8=
+		CEGC8nVAR5sxLs5M2eZAkkkW1Tg=
+		</data>
+		<key>RecordedVideoPreview.nib/runtime.nib</key>
+		<data>
+		cIrQeXHcZyWSeykPd3kiMKc6m88=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -136,9 +156,13 @@
 		<data>
 		yy3vVaCi2u2+2+HMac92J5WE2sw=
 		</data>
-		<key>ZiggeoRecorder2.nib</key>
+		<key>ZiggeoRecorder2.nib/objects-13.0+.nib</key>
 		<data>
-		KQUEDL/OhCH4F7D60jF3tmYcxpo=
+		JROi4SAC0qOiKN1yHFHvtIfApQk=
+		</data>
+		<key>ZiggeoRecorder2.nib/runtime.nib</key>
+		<data>
+		Li4wst9gSeikj0gCRAZIhKpws/k=
 		</data>
 		<key>sun-50.png</key>
 		<data>
@@ -179,37 +203,70 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>AudioLevelView.nib</key>
+		<key>AudioLevelView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lAbKLZ91jpJ9Sb1458QpKKMqJcY=
+			6ra0agpc09nD2Yk0aFfQ0WKEOn4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2PHLYRwFauhDvZD6SIRL9dxLd3NX53lQspjIVLj8owQ=
+			13iTYG+sFFoDsHPDrENFz1XExZBabXV0gXCd8C9AzMg=
 			</data>
 		</dict>
-		<key>CoverSelectorController.nib</key>
+		<key>AudioLevelView.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			L423iajQeoG9s+naPoQVHV+LzS8=
+			EE264DPlGMyqEihk5ZuJNsMCK78=
 			</data>
 			<key>hash2</key>
 			<data>
-			IYi70b08hXHGF0jmxBhGIz425oURvu5FyghRi9A/6/8=
+			4fVC4fbZGzFgA3pM6zknuAc0WIh3HV5ynJ7YfqRH55c=
 			</data>
 		</dict>
-		<key>CoverSelectorTableCell.nib</key>
+		<key>CoverSelectorController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			psUuEEvChMXAHkKUXCHjkYuvaNI=
+			CPdzAvypfI54fc+usdZeUzYh/Nw=
 			</data>
 			<key>hash2</key>
 			<data>
-			l+po+WDwEiRR+LPjju+QeqF/5GQMj6IHmc0dUufnMCg=
+			rKO7mbTpP5Dh/TigKSkk+Er9Y/DB5K6lpAGNMiTejgo=
+			</data>
+		</dict>
+		<key>CoverSelectorController.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WE8XaSV5XbfDOVkOQTNs+UUMg7Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			EErSZ+A/TAymM/9K93ruoEWpalNoHuJzbS4/Cvk19YU=
+			</data>
+		</dict>
+		<key>CoverSelectorTableCell.nib/objects-13.0+.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YDkqNNfJ+qSrp6LjqAAoxn4oX/A=
+			</data>
+			<key>hash2</key>
+			<data>
+			QZScc+4KfV10mEylS3xtzAHZSFslfu9gjF1lnB9V5po=
+			</data>
+		</dict>
+		<key>CoverSelectorTableCell.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tXAAB3U1MCdhskm8NXxq/WhA6ac=
+			</data>
+			<key>hash2</key>
+			<data>
+			gI5u/lM8Au4H3smcfXCQnz85Mp2tefS4Jidt5I1pKy0=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -377,15 +434,26 @@
 			8L+7FwInFQdJvsmiZE6h6bfMV4jskaYPcYFlrgOPOp0=
 			</data>
 		</dict>
-		<key>LuxMeterView.nib</key>
+		<key>LuxMeterView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0FQq412Rn0cG4yvZ5EbOTMJixr8=
+			+EgE4xL5jVtqVG53Sa41F2Nk7Yk=
 			</data>
 			<key>hash2</key>
 			<data>
-			x25zDoJoBzDb+DEXKMslNb4nO77JH2n/sFG0rp3kUMo=
+			E0zRfCWjrGBmLs3wvRa2+tKgUz2kHNllBPNaqdcw+78=
+			</data>
+		</dict>
+		<key>LuxMeterView.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vJEg+GNZycUkxkGgTU3djoTFsBw=
+			</data>
+			<key>hash2</key>
+			<data>
+			hVtDI25Hbj/jUYW4UZM1crnK3Iz1B+C/OrPPfodrwLc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -476,15 +544,26 @@
 			+T7R2nbHzUruR5szEulSv7DDoEFfvFK54cFs2g5lsmY=
 			</data>
 		</dict>
-		<key>RecordedVideoPreview.nib</key>
+		<key>RecordedVideoPreview.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y9Ti1GPpOWa+99L1Zeq2u1FYuB8=
+			CEGC8nVAR5sxLs5M2eZAkkkW1Tg=
 			</data>
 			<key>hash2</key>
 			<data>
-			kBUcpXR8K51eiBJ37dYjvkfbMy0TmbD03egA0STANv0=
+			WtXxrsnnvLe+c1lEHt7JUej7FUUPouTSCvE2eEYkXm4=
+			</data>
+		</dict>
+		<key>RecordedVideoPreview.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			cIrQeXHcZyWSeykPd3kiMKc6m88=
+			</data>
+			<key>hash2</key>
+			<data>
+			iokQQ7ZFjLyKabSkaKr4we+rZwDpexqi7lbv4pdcE8c=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -531,15 +610,26 @@
 			EbojXNZoGiPwMkLVCRN+vjaqhCXA1gkNGpUHr2ZnEOA=
 			</data>
 		</dict>
-		<key>ZiggeoRecorder2.nib</key>
+		<key>ZiggeoRecorder2.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KQUEDL/OhCH4F7D60jF3tmYcxpo=
+			JROi4SAC0qOiKN1yHFHvtIfApQk=
 			</data>
 			<key>hash2</key>
 			<data>
-			ac/Y3sl3G9Vg5pqYJlwt7CsPsvlcfxC3nObD6HvAAjE=
+			76AekM72VV2nQv+jvej/DLM+2d0/PEfNoDTg39N8v+U=
+			</data>
+		</dict>
+		<key>ZiggeoRecorder2.nib/runtime.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Li4wst9gSeikj0gCRAZIhKpws/k=
+			</data>
+			<key>hash2</key>
+			<data>
+			HSlkZKS0Xl/gXlWTG7yM5R0zzKUos19WxLgl9qJi1tU=
 			</data>
 		</dict>
 		<key>sun-50.png</key>
