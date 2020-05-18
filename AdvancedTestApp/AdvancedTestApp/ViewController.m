@@ -43,6 +43,14 @@
     [self refreshVideoJsonArray];
 }
 
+- (void)videoPreparingToUploadWithPath:(NSString *)sourcePath {
+    // stub method. it's required by delegate
+}
+
+- (void)videoPreparingToUploadWithPath:(NSString *)sourcePath token:(NSString *)token {
+    // stub method. it's required by delegate
+}
+
 -(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask {
     [self.uploadingVideos addObject:sourcePath];
     [self refreshVideoJsonArray];
