@@ -3,46 +3,52 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
-## Upgrading from v 1.1.7 to v.1.1.8
+## v 1.1.9 to v.1.1.10
+The update brings a fix for uploading videos from the camera roll in the latest iOS versions.
+
+## v 1.1.8 to v.1.1.9
+The update brings a fix for the compilation error in the advanced test app.
+
+## v 1.1.7 to v.1.1.8
 The update brings minor updates and fixes
 
-## Upgrading from v 1.1.6 to v.1.1.7
+## v 1.1.6 to v.1.1.7
 the update brings iPad video orientation fix 
 
-## Upgrading from v 1.1.5 to v.1.1.6
+## v 1.1.5 to v.1.1.6
 The update brings custom video and audio settings.
 
-## Upgrading from v 1.1.4 to v.1.1.5
+## v 1.1.4 to v.1.1.5
 The update improves custom data support.
 
-## Upgrading from v 1.1.3 to v.1.1.4
+## v 1.1.3 to v.1.1.4
 The update brings minor bugfixes mostly related to video orientation issues on some devices.
 
-## Upgrading from v 1.1.2 to v.1.1.3
+## v 1.1.2 to v.1.1.3
 The update brings custom user data support on new video creation. See Custom User Data for details.
 
-## Upgrading from v 1.1.1 to v.1.1.2
+## v 1.1.1 to v.1.1.2
 The update brings subtitles support for auto-transcripted videos. Another new feature - custom video gravity options for the Recorder.
 
-## Upgrading from v 1.1.0 to v.1.1.1
+## v 1.1.0 to v.1.1.1
 The update brings new optional features such as light meter, audio level meter and face outlining. These features are also available in the updated ZiggeoRecorder delegate
 
-## Upgrading from v.1.0.9 to v.1.1.0
+## v.1.0.9 to v.1.1.0
 The update bring hidden controls modes for recorder and player.
 
-## Upgrading from v.1.0.8 to v.1.0.9
+## v.1.0.8 to v.1.0.9
 The update bring dashboard `/debugger` error reporting.
 
-## Upgrading from v.1.0.7 to v.1.0.8
+## v.1.0.7 to v.1.0.8
 The update bring new `recordingQuality` parameter.
 
-## Upgrading from v.1.0.6 to v.1.0.7
+## v.1.0.6 to v.1.0.7
 The update bring new `serverAuthToken` and `clientAuthToken` parameters in `ziggeo.connect` object (useful for global auth tokens).
 
-## Upgrading from v.1.0.5 to v.1.0.6
+## v.1.0.5 to v.1.0.6
 The update bring minor bugfixes and new `data` parameter in `getImageForVideoByToken` method (useful for auth tokens).
 
-## Upgrading from v.1.0.4 to v.1.0.5
+## v.1.0.4 to v.1.0.5
 
 New changes bring new features without changing the entry or exit points of any methods or functions. You can safely upgrade without any changes to your existing codes.
 
