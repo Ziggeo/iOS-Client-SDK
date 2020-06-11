@@ -12,6 +12,11 @@
 @property (strong, nonatomic) NSString *cdn_api_url;
 @property (strong, nonatomic) NSString *wowza_url;
 
+@property (nonatomic) uint64_t cache_size;
+@property (strong, nonatomic) NSString *cache_root;
+
 -(id)initWithToken:(NSString*)token;
+
+-(void) setRecorderCacheConfig:(NSDictionary *)recorderCacheConfig;
 
 @end
