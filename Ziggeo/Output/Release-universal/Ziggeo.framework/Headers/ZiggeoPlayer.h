@@ -7,9 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
+#import "DVAssetLoaderDelegatesDelegate.h"
+
 @import AVFoundation;
 
-@interface ZiggeoPlayer : AVPlayer
+@interface ZiggeoPlayer : AVPlayer<DVAssetLoaderDelegatesDelegate>
 
 -(id) initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)token;
 @property (nonatomic, copy) void (^didFinishPlaying)(NSString* videoToken, NSError* error);

@@ -8,11 +8,13 @@
 @class ZiggeoConfig;
 @class ZiggeoConnect;
 @class ZiggeoVideos;
+@class ZiggeoCacheManager;
 
 @interface Ziggeo : NSObject {
     ZiggeoConfig* _configObj;
     ZiggeoConnect* _connectObj;
     ZiggeoVideos* _videosObj;
+    ZiggeoCacheManager *_cacheManager;
 }
     
 @property (strong, nonatomic) NSString *token;
@@ -23,6 +25,8 @@
 - (void)logError:(NSString*)message;
 
 - (ZiggeoConfig*)config;
+
+- (ZiggeoCacheManager*)cacheManager;
 
 - (ZiggeoConnect*)connect;
 

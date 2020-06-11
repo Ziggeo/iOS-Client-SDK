@@ -15,6 +15,12 @@ FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Ziggeo/PublicHeader.h>
 
+#import "DVAssetLoader.h"
+#import "DVAssetLoaderDelegate.h"
+#import "DVAssetLoaderDelegatesDelegate.h"
+#import "DVAssetLoaderError.h"
+#import "DVAssetLoaderHelpers.h"
+#import "DVURLAsset.h"
 #import "ZiggeoApplication.h"
 #import "ZiggeoConfig.h"
 #import "ZiggeoConnect.h"
