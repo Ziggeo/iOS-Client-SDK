@@ -1,5 +1,6 @@
 //
-// Created by Admin on 10.06.2020.
+//  ZiggeoCacheManager.h
+//
 // Copyright (c) 2020 Ziggeo. All rights reserved.
 //
 

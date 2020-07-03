@@ -78,6 +78,20 @@
     recorder.controlsVisible = true; //false - no controls, autostart enabled, max duration = 30
     recorder.recorderDelegate = self;
     recorder.videoGravity = AVLayerVideoGravityResizeAspectFill;
+
+    BOOL customizeButtons = NO;
+    if (customizeButtons) {
+        ZiggeoRecorderInterfaceConfig *config = [[ZiggeoRecorderInterfaceConfig alloc] init];
+        config.recordButton.scale = 0.25;
+        config.closeButton.scale = 0.5;
+        config.cameraFlipButton.scale = 0.5;
+        NSURL *flipCameraUrl = [NSBundle.mainBundle URLForResource:@"FlipCamera" withExtension:@"png"];
+        if (flipCameraUrl) {
+            config.cameraFlipButton.imagePath = flipCameraUrl.path;
+        }
+        recorder.interfaceConfig = config;
+    }
+
     //recorder.showSoundIndicator = false;
     //recorder.showLightIndicator = false;
     //recorder.showFaceOutline = false;

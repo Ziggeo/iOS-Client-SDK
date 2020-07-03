@@ -27,6 +27,8 @@ FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
 #import "ZiggeoVideos.h"
 #import "ZiggeoPlayer.h"
 #import "ZiggeoRecorder.h"
+#import "ButtonConfig.h"
+#import "ZiggeoRecorderInterfaceConfig.h"
 #import "ZiggeoRecorder2.h"
 #import "CoverSelectorController.h"
 #import "CoverSelectorTableCell.h"

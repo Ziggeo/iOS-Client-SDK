@@ -11,6 +11,8 @@
 #import "ZiggeoApplication.h"
 @import AVFoundation;
 
+@class ZiggeoRecorderInterfaceConfig;
+
 @protocol ZiggeoRecorder2Delegate <NSObject>
 @optional
 -(void) ziggeoRecorderDidCancel;
@@ -44,6 +46,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) bool showFaceOutline;
 @property (nonatomic) bool showLightIndicator;
 @property (nonatomic) bool showSoundIndicator;
+@property (nonatomic) ZiggeoRecorderInterfaceConfig *interfaceConfig;
 @property (nonatomic) UIImagePickerControllerCameraDevice cameraDevice;
 @property (nonatomic) id<ZiggeoRecorder2Delegate> recorderDelegate;
 @property (nonatomic) NSDictionary* extraArgsForCreateVideo;
