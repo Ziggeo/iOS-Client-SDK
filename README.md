@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.13 to v.1.1.14
+The update brings a fix to the customization of recorder buttons
+
 ## v 1.1.12 to v.1.1.13
 The update brings a new feature - ability to adjust size of buttons and to set custom button icons in the video recorder .
 
