@@ -17,6 +17,8 @@
 @optional
 -(void) ziggeoRecorderDidCancel;
 @optional
+-(void) ziggeoRecorderDidStop;
+@optional
 -(void) ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds;
 @optional
 -(void) luxMeter:(double)luminousity;
