@@ -54,6 +54,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSDictionary* extraArgsForCreateVideo;
 @property (nonatomic) double maxRecordedDurationSeconds;
 @property (nonatomic) double autostartRecordingAfterSeconds;
+@property (nonatomic) double startDelay;
 @property (nonatomic) AVLayerVideoGravity videoGravity;
 //resolution
 @property (nonatomic) int videoWidth;

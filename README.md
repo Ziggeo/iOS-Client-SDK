@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.15 to v.1.1.16
+The update brings a new feature - ability to set recording start delay with countdown after pressing the record button.
+
 ## v 1.1.14 to v.1.1.15
 The update brings a new feature - ability to add event handler to the event when video recording stops.
 
