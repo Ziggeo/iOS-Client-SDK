@@ -10,7 +10,7 @@
 
 @interface ZiggeoCacheManager : NSObject
 
-- (id)initWithZiggeoApplication:(Ziggeo *)ziggeo;
+- (id)initWithZiggeoApplication:(Ziggeo *)ziggeo isPlayer:(bool)isPlayer;
 
 - (NSString *)getCacheDirectory;
 
