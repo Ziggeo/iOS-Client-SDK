@@ -6,15 +6,15 @@
 	<dict>
 		<key>AudioLevelView.nib</key>
 		<data>
-		9tBv+f5977BX2QXwxgMWa4O/xq8=
+		UW53C1SW7nKdxiHlsgYU5+rxHlM=
 		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		5+zngGuHcQMSm4qErNI0uUFR5iE=
+		UoDFLjqW9GdmugCz6HMjC16u1AU=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		vUZn6Bt/w8LWiXiqws8aHZwszK8=
+		FPtkkax/2M2oGe+LqqLN+v2uhoA=
 		</data>
 		<key>Delete-50.png</key>
 		<data>
@@ -78,15 +78,15 @@
 		</data>
 		<key>Headers/ZiggeoApplication.h</key>
 		<data>
-		yUkPEGNeAwk/8t6+DhckARSpyq8=
+		RQW8uZiLHqtuoLsi6D1mAxSOl2Y=
 		</data>
 		<key>Headers/ZiggeoCacheManager.h</key>
 		<data>
-		v4mpEMHlX8pvkLkqX3+OEDrviFA=
+		r3qGdbli4Odn/GqtegMSrXZHsb0=
 		</data>
 		<key>Headers/ZiggeoConfig.h</key>
 		<data>
-		WUJgKUMO0AjWvTF/I8G1PsM6ejw=
+		7FyAn8Spr+r8rR8JVCNPdgcYzJE=
 		</data>
 		<key>Headers/ZiggeoConnect.h</key>
 		<data>
@@ -114,11 +114,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mdDaW+SCzxBeBKLvJAUljIA/2us=
+		i17mkvtSlP+jcPD+MJEtHK33ywI=
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		rYLFcCoBgqy4v5Ip8Tn2+TkIU2I=
+		DqYntHb1RGogBi/lksdxaoIW0iU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -154,7 +154,7 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		tW13Zl8TxWfcjO7P0+PzbYapEgk=
+		hh/Ah5SP6csE73dPN+X/Wt/FxIo=
 		</data>
 		<key>Stop-100.png</key>
 		<data>
@@ -174,7 +174,7 @@
 		</data>
 		<key>ZiggeoRecorder2.nib</key>
 		<data>
-		+b/Q5CEjxxxpMzEuO5u4Jihm3n0=
+		g8dITe4z/MnmvJSFgOlE9KCGvtQ=
 		</data>
 		<key>sun-50.png</key>
 		<data>
@@ -219,33 +219,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9tBv+f5977BX2QXwxgMWa4O/xq8=
+			UW53C1SW7nKdxiHlsgYU5+rxHlM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mg0lo2xAKp39g1sFaVJz9oqJcNzzXpbov3VXIvjwuCw=
+			2VQnrKoXzrNmWSaYiq0EunM3bxx0sjNlZ9HV6Z4Gi2s=
 			</data>
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5+zngGuHcQMSm4qErNI0uUFR5iE=
+			UoDFLjqW9GdmugCz6HMjC16u1AU=
 			</data>
 			<key>hash2</key>
 			<data>
-			8mUTmWq3zu0gMS/ttkUbAiABWA9I29nWpJbkqtmCeGQ=
+			WzRTjMKzJiYhnlx426Z8Dsuqp4Q10XK9815AfChaG0E=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vUZn6Bt/w8LWiXiqws8aHZwszK8=
+			FPtkkax/2M2oGe+LqqLN+v2uhoA=
 			</data>
 			<key>hash2</key>
 			<data>
-			eCv7C12/GLgCQqQubh5Eu5UIZK4wRfGf2GwRkFdL0C0=
+			edrNINKcJeb+LKwrKBP9ntJPRUYnubk30i2E38GE7bc=
 			</data>
 		</dict>
 		<key>Delete-50.png</key>
@@ -417,33 +417,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yUkPEGNeAwk/8t6+DhckARSpyq8=
+			RQW8uZiLHqtuoLsi6D1mAxSOl2Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			YqV1gO/IbnwAp1Wzxd6zcAN3OCaCzd5PbByyCmzeHDk=
+			Dqde8t8hAs0fewt77KDNJjvvltYQEEm9Jt69J2UYZx8=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoCacheManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			v4mpEMHlX8pvkLkqX3+OEDrviFA=
+			r3qGdbli4Odn/GqtegMSrXZHsb0=
 			</data>
 			<key>hash2</key>
 			<data>
-			JMmp123WtDzvzAQ8MvblT5wNcqhUITbKughmJFeIxkI=
+			x0zbpRgXKSx8brIMflihSoIXX1XwuReZLODKJbSuBDI=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoConfig.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WUJgKUMO0AjWvTF/I8G1PsM6ejw=
+			7FyAn8Spr+r8rR8JVCNPdgcYzJE=
 			</data>
 			<key>hash2</key>
 			<data>
-			aHLYMjbFdVJFCEgxgULpw/FDddawCglHKl2JsE3wLMk=
+			cxE+dLXv2zaEQdIdtdoxHES9hfNxT/NKgYXdXRUnmtI=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoConnect.h</key>
@@ -516,11 +516,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rYLFcCoBgqy4v5Ip8Tn2+TkIU2I=
+			DqYntHb1RGogBi/lksdxaoIW0iU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kl7t3SZ0NUm4TtOYyrI+PE9RN1EUNTmJS1EV3XuV1QY=
+			snK5LyEXHLvtBEm3agsVxQyk3P0RvpwPhFKqeyl+wSE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -615,11 +615,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tW13Zl8TxWfcjO7P0+PzbYapEgk=
+			hh/Ah5SP6csE73dPN+X/Wt/FxIo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Su1WXgoCegmr+Fic3NgQYZ90V4Nivgs8cep+VlXT0go=
+			AVbZHT0pPn9uL37BfaX8J55BtPQxbLyLn9Q8zhGvFzo=
 			</data>
 		</dict>
 		<key>Stop-100.png</key>
@@ -670,11 +670,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+b/Q5CEjxxxpMzEuO5u4Jihm3n0=
+			g8dITe4z/MnmvJSFgOlE9KCGvtQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			pSwghZ1Xwt21MPBY/BkZS1bg8s61zbovLbC0sw5gC6w=
+			fTS1ObI9zkYVKN/ZZrscZS8Cc8Cj+aOj7YuBvhpHyOE=
 			</data>
 		</dict>
 		<key>sun-50.png</key>

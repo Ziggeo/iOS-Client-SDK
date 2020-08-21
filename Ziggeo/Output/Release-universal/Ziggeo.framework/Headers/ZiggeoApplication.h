@@ -15,6 +15,7 @@
     ZiggeoConnect* _connectObj;
     ZiggeoVideos* _videosObj;
     ZiggeoCacheManager *_cacheManager;
+    ZiggeoCacheManager *_playerCacheManager;
 }
     
 @property (strong, nonatomic) NSString *token;
@@ -27,6 +28,7 @@
 - (ZiggeoConfig*)config;
 
 - (ZiggeoCacheManager*)cacheManager;
+- (ZiggeoCacheManager*)playerCacheManager;
 
 - (ZiggeoConnect*)connect;
 
