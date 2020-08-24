@@ -18,5 +18,6 @@
 
 - (NSString *)getCacheFileNameForVideoToken:(NSString *)token;
 
-- (void)trimCacheExcludingFile:(NSString *)fileNameToExclude;
+- (void)trimCache;
+
 @end

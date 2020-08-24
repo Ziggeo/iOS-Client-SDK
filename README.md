@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.18 to v.1.1.19
+The update brings a fix to the issue - in some cases cached files were stored when recorder cache size was set to 0.
+
 ## v 1.1.17 to v.1.1.18
 The update brings a new feature - ability to customize player caching parameters using a new method `setPlayerCacheConfig`.
 
