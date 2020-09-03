@@ -8,17 +8,11 @@
 
 
 #import "SampleHandler.h"
-#import <Ziggeo/Streamer.h>
 
 @implementation SampleHandler
 
-@property (nonatomic) LiveStreamer* liveStreamer;
-
 - (void)broadcastStartedWithSetupInfo:(NSDictionary<NSString *,NSObject *> *)setupInfo {
     // User has requested to start the broadcast. Setup info from the UI extension can be supplied but optional.
-
-
-    self.liveStreamer = [[LiveStreamer alloc] initWithTargetAddress:targetAddress streamName:streamAddress];
 }
 
 - (void)broadcastPaused {
@@ -37,14 +31,12 @@
     
     switch (sampleBufferType) {
         case RPSampleBufferTypeVideo:
-            if (self.liveStreamer != nil && _streamingNow) {
-                [self.liveStreamer putVideoSample:sampleBuffer];
-            }
+            // todo write video data to file
+            
             break;
         case RPSampleBufferTypeAudioApp:
-            if (self.liveStreamer != nil) {
-                [self.liveStreamer putAudioSample:sampleBuffer asc:asc pts:pts];
-            }
+            // todo write audio data to file
+            
             break;
         case RPSampleBufferTypeAudioMic:
             // Handle audio sample buffer for mic audio
