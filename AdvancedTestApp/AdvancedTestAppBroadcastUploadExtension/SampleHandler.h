@@ -7,7 +7,8 @@
 //
 
 #import <ReplayKit/ReplayKit.h>
+#import <Ziggeo/Ziggeo.h>
 
-@interface SampleHandler : RPBroadcastSampleHandler
+@interface SampleHandler : ZiggeoScreenRecorderSampleHandler
 
 @end
