@@ -10,7 +10,8 @@
 @import AVFoundation;
 @import AVKit;
 @import MediaPlayer;
-#import "Ziggeo/Ziggeo.h"
+@import ReplayKit;
+@import Ziggeo;
 #import "TableViewVideoCell.h"
 #import "TableViewUploadingVideoCell.h"
 
@@ -109,7 +110,15 @@
         [self presentViewController:recorder animated:YES completion:nil];
     }];
     [selectVideoSourceAlert addAction:selectExistingVideoAction];
-    
+
+    if (@available(iOS 12.0, *)) {
+        UIAlertAction* recordScreenAction = [UIAlertAction actionWithTitle:@"Record screen" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            RPSystemBroadcastPickerView *broadcastPicker = [[RPSystemBroadcastPickerView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+            [self.view addSubview:broadcastPicker];
+        }];
+        [selectVideoSourceAlert addAction:recordScreenAction];
+    }
+
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
     }];
     [selectVideoSourceAlert addAction:cancelAction];
