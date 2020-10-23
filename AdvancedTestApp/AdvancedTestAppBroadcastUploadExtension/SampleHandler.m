@@ -11,4 +11,8 @@
 
 @implementation SampleHandler
 
+- (NSString *)getApplicationGroup {
+    return @"group.Ziggeo.TestApplication.Group";
+}
+
 @end

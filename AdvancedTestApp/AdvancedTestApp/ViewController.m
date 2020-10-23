@@ -10,8 +10,7 @@
 @import AVFoundation;
 @import AVKit;
 @import MediaPlayer;
-@import ReplayKit;
-@import Ziggeo;
+#import "Ziggeo/Ziggeo.h"
 #import "TableViewVideoCell.h"
 #import "TableViewUploadingVideoCell.h"
 
@@ -20,10 +19,13 @@
 @property (atomic) NSMutableArray* uploadingVideos;
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSString *applicationGroup;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    applicationGroup = @"group.Ziggeo.TestApplication.Group";
     self.title = @"Ziggeo Videos";
     NSString* ziggeoToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"token"];
     self.ziggeo = [[Ziggeo alloc] initWithToken:ziggeoToken];
@@ -111,13 +113,11 @@
     }];
     [selectVideoSourceAlert addAction:selectExistingVideoAction];
 
-    if (@available(iOS 12.0, *)) {
-        UIAlertAction* recordScreenAction = [UIAlertAction actionWithTitle:@"Record screen" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            RPSystemBroadcastPickerView *broadcastPicker = [[RPSystemBroadcastPickerView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-            [self.view addSubview:broadcastPicker];
-        }];
-        [selectVideoSourceAlert addAction:recordScreenAction];
-    }
+    UIAlertAction* recordScreenVideoAction = [UIAlertAction actionWithTitle:@"Record screen video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        CGRect rect = CGRectMake(20, 100, 50, 50);
+        [self.ziggeo.videos startScreenRecordingAndAddRecordingButtonToView:self.view frame:rect appGroup:self->applicationGroup];
+    }];
+    [selectVideoSourceAlert addAction:recordScreenVideoAction];
 
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
     }];

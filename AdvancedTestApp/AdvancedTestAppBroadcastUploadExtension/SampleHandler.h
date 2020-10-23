@@ -11,4 +11,6 @@
 
 @interface SampleHandler : ZiggeoScreenRecorderSampleHandler
 
+- (NSString *)getApplicationGroup;
+
 @end
