@@ -12,7 +12,7 @@
 @implementation SampleHandler
 
 - (NSString *)getApplicationGroup {
-    return @"group.Ziggeo.TestApplication.Group";
+    return @"group.Ziggeo.AdvancedTestApp348597897.Group";
 }
 
 @end

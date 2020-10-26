@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    applicationGroup = @"group.Ziggeo.TestApplication.Group";
+    applicationGroup = @"group.Ziggeo.AdvancedTestApp348597897.Group";
     self.title = @"Ziggeo Videos";
     NSString* ziggeoToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"token"];
     self.ziggeo = [[Ziggeo alloc] initWithToken:ziggeoToken];
@@ -115,7 +115,10 @@
 
     UIAlertAction* recordScreenVideoAction = [UIAlertAction actionWithTitle:@"Record screen video" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
         CGRect rect = CGRectMake(20, 100, 50, 50);
-        [self.ziggeo.videos startScreenRecordingAndAddRecordingButtonToView:self.view frame:rect appGroup:self->applicationGroup];
+        ViewController *vc = [[ViewController alloc]init];
+        vc.modalPresentationStyle = UIModalPresentationPopover;
+        [self presentModalViewController:vc animated:YES];
+        [self.ziggeo.videos startScreenRecordingAndAddRecordingButtonToView:vc.view frame:rect appGroup:self->applicationGroup];
     }];
     [selectVideoSourceAlert addAction:recordScreenVideoAction];
 
