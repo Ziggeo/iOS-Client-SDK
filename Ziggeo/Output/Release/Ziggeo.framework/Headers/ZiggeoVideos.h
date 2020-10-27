@@ -30,6 +30,8 @@
 
 - (NSURLSessionTask*) createStreamWithVideoToken:(NSString*)token data:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
 
+- (void) startScreenRecordingAndAddRecordingButtonToView:(UIView *)view frame:(CGRect)frame appGroup:(NSString*)group API_AVAILABLE(ios(10.0), tvos(10.0), macos(11.0));
+
 - (NSURLSessionTask*) createVideoWithData:(NSDictionary*)data file:(NSString*)fileName cover:(UIImage*)cover callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
 
 - (NSURLSessionTask*) rerecordVideoWithToken:(NSString*)videoToken file:(NSString*)fileName data:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
