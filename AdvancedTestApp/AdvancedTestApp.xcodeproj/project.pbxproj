@@ -14,6 +14,10 @@
 		8429108B24FB051300FAAEE1 /* BroadcastSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8429108A24FB051300FAAEE1 /* BroadcastSetupViewController.m */; };
 		8429108F24FB051300FAAEE1 /* AdvancedTestAppBroadcastUploadExtensionSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8429108424FB051300FAAEE1 /* AdvancedTestAppBroadcastUploadExtensionSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8429109224FB051300FAAEE1 /* AdvancedTestAppBroadcastUploadExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8429107724FB051300FAAEE1 /* AdvancedTestAppBroadcastUploadExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D9FA22CF2545EED20093E71A /* Ziggeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA22CA2545EEBB0093E71A /* Ziggeo.framework */; };
+		D9FA22D02545EED20093E71A /* Ziggeo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA22CA2545EEBB0093E71A /* Ziggeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9FA22D12545EED80093E71A /* Ziggeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA22CA2545EEBB0093E71A /* Ziggeo.framework */; };
+		D9FA22D22545EED80093E71A /* Ziggeo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FA22CA2545EEBB0093E71A /* Ziggeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA8827E21BB6CAA70025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827E11BB6CAA70025C71D /* main.m */; };
 		FA8827E51BB6CAA70025C71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827E41BB6CAA70025C71D /* AppDelegate.m */; };
 		FA8827E81BB6CAA70025C71D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827E71BB6CAA70025C71D /* ViewController.m */; };
@@ -116,7 +120,6 @@
 		FA8828071BB6CC140025C71D /* TableViewVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewVideoCell.h; sourceTree = "<group>"; };
 		FA8828081BB6CC140025C71D /* TableViewVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewVideoCell.m; sourceTree = "<group>"; };
 		FA8828101BB6CD750025C71D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		FAFD87A01BBC098100B39B3F /* Ziggeo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ziggeo.framework; path = "../Ziggeo/Output/Release-universal/Ziggeo.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8429107A24FB051300FAAEE1 /* ReplayKit.framework in Frameworks */,
+				D9FA22D12545EED80093E71A /* Ziggeo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAFD87A21BBC0D7800B39B3F /* Ziggeo.framework in Frameworks */,
+				D9FA22CF2545EED20093E71A /* Ziggeo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,10 +183,18 @@
 			path = AdvancedTestAppBroadcastUploadExtensionSetupUI;
 			sourceTree = "<group>";
 		};
+		D9FA22C52545EEBB0093E71A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D9FA22CA2545EEBB0093E71A /* Ziggeo.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FA8827D31BB6CAA70025C71D = {
 			isa = PBXGroup;
 			children = (
-				FAFD87A01BBC098100B39B3F /* Ziggeo.framework */,
+				D9FA22C42545EEBB0093E71A /* Ziggeo.xcodeproj */,
 				FA8827DE1BB6CAA70025C71D /* AdvancedTestApp */,
 				8429107B24FB051300FAAEE1 /* AdvancedTestAppBroadcastUploadExtension */,
 				8429108824FB051300FAAEE1 /* AdvancedTestAppBroadcastUploadExtensionSetupUI */,
@@ -241,6 +253,7 @@
 				8429107324FB051300FAAEE1 /* Sources */,
 				8429107424FB051300FAAEE1 /* Frameworks */,
 				8429107524FB051300FAAEE1 /* Resources */,
+				D9FA22D32545EED80093E71A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,12 +318,12 @@
 					};
 					8429108324FB051300FAAEE1 = {
 						CreatedOnToolsVersion = 11.4;
-						DevelopmentTeam = 7BT7647345;
+						DevelopmentTeam = QZV8S889Y3;
 						ProvisioningStyle = Automatic;
 					};
 					FA8827DB1BB6CAA70025C71D = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 7BT7647345;
+						DevelopmentTeam = QZV8S889Y3;
 					};
 				};
 			};
@@ -465,7 +478,7 @@
 				CODE_SIGN_ENTITLEMENTS = AdvancedTestAppBroadcastUploadExtension/AdvancedTestAppBroadcastUploadExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7BT7647345;
+				DEVELOPMENT_TEAM = QZV8S889Y3;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AdvancedTestAppBroadcastUploadExtension/Info.plist;
@@ -473,7 +486,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp.AdvancedTestAppBroadcastUploadExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp348597897.BroadcastUploadExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,13 +514,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = AdvancedTestAppBroadcastUploadExtension/AdvancedTestAppBroadcastUploadExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7BT7647345;
+				DEVELOPMENT_TEAM = QZV8S889Y3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AdvancedTestAppBroadcastUploadExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp.AdvancedTestAppBroadcastUploadExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp348597897.BroadcastUploadExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -536,7 +549,7 @@
 				CODE_SIGN_ENTITLEMENTS = AdvancedTestAppBroadcastUploadExtensionSetupUI/AdvancedTestAppBroadcastUploadExtensionSetupUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7BT7647345;
+				DEVELOPMENT_TEAM = QZV8S889Y3;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AdvancedTestAppBroadcastUploadExtensionSetupUI/Info.plist;
@@ -544,7 +557,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp.AdvancedTestAppBroadcastUploadExtensionSetupUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp348597897.BroadcastUploadExtensionSetupUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,13 +585,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_ENTITLEMENTS = AdvancedTestAppBroadcastUploadExtensionSetupUI/AdvancedTestAppBroadcastUploadExtensionSetupUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7BT7647345;
+				DEVELOPMENT_TEAM = QZV8S889Y3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = AdvancedTestAppBroadcastUploadExtensionSetupUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp.AdvancedTestAppBroadcastUploadExtensionSetupUI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.AdvancedTestApp348597897.BroadcastUploadExtensionSetupUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
