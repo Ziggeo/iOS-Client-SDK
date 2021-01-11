@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'AdvancedTestApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AdvancedTestApp
+  pod 'iOS-Client-SDK', :path => '..'
+
+end
+
+#target 'AdvancedTestAppBroadcastUploadExtension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AdvancedTestAppBroadcastUploadExtension
+  pod 'iOS-Client-SDK', :path => '..'
+#end
+
+# target 'AdvancedTestAppBroadcastUploadExtensionSetupUI' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AdvancedTestAppBroadcastUploadExtensionSetupUI
+  pod 'iOS-Client-SDK', :path => '..'
+
+#end
