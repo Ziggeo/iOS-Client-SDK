@@ -7,6 +7,7 @@ target 'AdvancedTestApp' do
 
   # Pods for AdvancedTestApp
   pod 'iOS-Client-SDK', :path => '..'
+  pod 'GoogleAds-IMA-iOS-SDK', '3.11.3'
 
 end
 
