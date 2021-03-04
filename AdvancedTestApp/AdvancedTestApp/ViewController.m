@@ -21,6 +21,8 @@
 
 @implementation ViewController {
     NSString *applicationGroup;
+    AVPlayerViewController *_playerController;
+    UIViewController *_adController;
 }
 
 - (void)viewDidLoad {
@@ -42,7 +44,10 @@
     
     UIBarButtonItem *btnCapture = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(startCapture:)];
     self.navigationController.topViewController.navigationItem.rightBarButtonItem = btnCapture;
-    
+
+    _playerController = [[AVPlayerViewController alloc] init];
+    _adController = [[UIViewController alloc] init];
+
     [self refreshVideoJsonArray];
 }
 
@@ -205,22 +210,41 @@
 }
 
 - (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
-    
     AVPlayer* player = nil;
     if(indexPath.section==0) {
         TableViewVideoCell* cell = (TableViewVideoCell*)[tableView cellForRowAtIndexPath:indexPath];
         NSLog(@"video with token %@ going to play", cell.token);
-        player = [[ZiggeoPlayer alloc] initWithZiggeoApplication:self.ziggeo videoToken:cell.token];
+        NSDictionary *params = @{@"server_auth": @"f2aa843895b7c276df956dd93838b17f"};
+        [ZiggeoPlayer createPlayerWithAdditionalParams:self.ziggeo videoToken:cell.token params:params callback:^(ZiggeoPlayer *player) {
+            [self playWithPlayer:player];
+        }];
     } else if(indexPath.section == 1) {
         TableViewUploadingVideoCell* cell = (TableViewUploadingVideoCell*)[tableView cellForRowAtIndexPath:indexPath];
         player = [[AVPlayer alloc] initWithURL: [NSURL fileURLWithPath:cell.sourceVideoPath]];
     }
-    if(player) {
-        AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
-        playerController.player = player;
-        [self presentViewController:playerController animated:YES completion:nil];
-        [player play];
+
+    if (player) {
+        [self playWithPlayer:player];
     }
+}
+
+- (void)playWithPlayer:(AVPlayer *)player {
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        BOOL showAds = true; // todo add switch button which will toggle it on the left from app title
+        NSString *adUrl = @"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator=";
+
+        _playerController.player = player;
+
+        if (showAds && [player isKindOfClass:[ZiggeoPlayer class]]) {
+            [self presentViewController:_adController animated:YES completion:nil]; // note that we don't show _playerController itself.
+            [(ZiggeoPlayer *) player playWithAdsWithAdTagURL:adUrl playerContainer:_adController.view playerViewController:_playerController];
+        } else {
+            [self presentViewController:_playerController animated:YES completion:nil];
+            [player play];
+        }
+        
+    });
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
