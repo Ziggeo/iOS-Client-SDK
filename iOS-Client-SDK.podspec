@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'iOS-Client-SDK'
-  s.version          = '1.1.23'
+  s.version          = '1.1.24'
   s.summary          = 'Ziggeo iOS Client SDK'
   s.description      = 'Ziggeo iOS recording and playback SDK'
 
@@ -20,5 +20,7 @@ Pod::Spec.new do |s|
 
   # s.ios.deployment_target = '9.0'
   s.vendored_frameworks = 'Ziggeo/Output/Ziggeo.xcframework'
+
+  s.dependency 'GoogleAds-IMA-iOS-SDK', '3.11.3'
   
 end
