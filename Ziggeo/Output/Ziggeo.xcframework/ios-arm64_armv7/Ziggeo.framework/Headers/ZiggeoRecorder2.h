@@ -36,6 +36,8 @@ typedef enum : NSUInteger {
 
 @interface ZiggeoRecorder2 : UIViewController <VideoPreviewDelegate>
 
+- (void)startRecordingToFile:(NSString *)outputFilePath;
+- (void)stopRecording;
 - (void)retake;
 - (void)upload:(NSURL*)fileToUpload;
 
