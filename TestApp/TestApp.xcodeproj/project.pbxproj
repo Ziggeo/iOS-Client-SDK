@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27FBF217B9DA9E24526EEA4F /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */; };
 		D9F6AD4A24AB79D60017EF58 /* FlipCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F6AD4924AB79D50017EF58 /* FlipCamera.png */; };
-		FA4651931F580CB7002E4120 /* Ziggeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4651921F580CB7002E4120 /* Ziggeo.framework */; };
-		FA4651941F580CE3002E4120 /* Ziggeo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA4651921F580CB7002E4120 /* Ziggeo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA8827A11BB486D40025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A01BB486D40025C71D /* main.m */; };
 		FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A31BB486D40025C71D /* AppDelegate.m */; };
 		FA8827A71BB486D40025C71D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A61BB486D40025C71D /* ViewController.m */; };
@@ -25,7 +24,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA4651941F580CE3002E4120 /* Ziggeo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,8 +31,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06C7CDA2A8F3CFF1A63EDFE1 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F6AD4924AB79D50017EF58 /* FlipCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlipCamera.png; sourceTree = "<group>"; };
-		FA4651921F580CB7002E4120 /* Ziggeo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ziggeo.framework; path = "../Ziggeo/Output/Release-universal/Ziggeo.framework"; sourceTree = "<group>"; };
+		E4833061BE133DDECE58464E /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		FA88279B1BB486D40025C71D /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA88279F1BB486D40025C71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8827A01BB486D40025C71D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,19 +52,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA4651931F580CB7002E4120 /* Ziggeo.framework in Frameworks */,
+				27FBF217B9DA9E24526EEA4F /* Pods_TestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560DC90299F9EFE545849170 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E843F5AC2EACC8863B1A301 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06C7CDA2A8F3CFF1A63EDFE1 /* Pods-TestApp.debug.xcconfig */,
+				E4833061BE133DDECE58464E /* Pods-TestApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA8827921BB486D40025C71D = {
 			isa = PBXGroup;
 			children = (
-				FA4651921F580CB7002E4120 /* Ziggeo.framework */,
 				FA88279D1BB486D40025C71D /* TestApp */,
 				FA88279C1BB486D40025C71D /* Products */,
+				8E843F5AC2EACC8863B1A301 /* Pods */,
+				560DC90299F9EFE545849170 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,11 +126,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8827BE1BB486D40025C71D /* Build configuration list for PBXNativeTarget "TestApp" */;
 			buildPhases = (
+				A5195753151623E7CC799B66 /* [CP] Check Pods Manifest.lock */,
 				FA8827971BB486D40025C71D /* Sources */,
 				FA8827981BB486D40025C71D /* Frameworks */,
 				FA8827991BB486D40025C71D /* Resources */,
 				FA8827C81BB488230025C71D /* Embed Frameworks */,
 				FA4651951F58114B002E4120 /* ShellScript */,
+				48E373C17EBC1040D1A19B92 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,7 +154,7 @@
 				TargetAttributes = {
 					FA88279A1BB486D40025C71D = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 7BT7647345;
+						DevelopmentTeam = 34VS49Z26P;
 					};
 				};
 			};
@@ -172,6 +192,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		48E373C17EBC1040D1A19B92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
+				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Ziggeo/Ziggeo.framework/Ziggeo",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ziggeo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5195753151623E7CC799B66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA4651951F58114B002E4120 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,9 +366,10 @@
 		};
 		FA8827BF1BB486D40025C71D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06C7CDA2A8F3CFF1A63EDFE1 /* Pods-TestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7BT7647345;
+				DEVELOPMENT_TEAM = 34VS49Z26P;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,6 +378,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -322,9 +386,10 @@
 		};
 		FA8827C01BB486D40025C71D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4833061BE133DDECE58464E /* Pods-TestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7BT7647345;
+				DEVELOPMENT_TEAM = 34VS49Z26P;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,6 +398,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

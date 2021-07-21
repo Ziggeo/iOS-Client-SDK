@@ -9,7 +9,7 @@
 #import "Ziggeo/Ziggeo.h"
 @import AVKit;
 
-@interface ViewController () <ZiggeoRecorder2Delegate> {
+@interface ViewController () <ZiggeoRecorderDelegate> {
     Ziggeo* m_ziggeo;
     ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
@@ -18,9 +18,13 @@
 
 @implementation ViewController
 
+NSString *ZIGGEO_APP_TOKEN = @"344a71099193b17a693ab11fdd0eeb10";
+NSString *ZIGGEO_SERVER_AUTH_TOKEN = @"9569481ec23ba3be88467e17a32f7962";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
+    
+    m_ziggeo = [[Ziggeo alloc] initWithToken:ZIGGEO_APP_TOKEN];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +70,7 @@
 }
 
 - (IBAction)record:(id)sender {
-    ZiggeoRecorder2* recorder = [[ZiggeoRecorder2 alloc] initWithZiggeoApplication:m_ziggeo];
+    ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
     recorder.coverSelectorEnabled = NO;
     recorder.cameraFlipButtonVisible = YES;
     recorder.cameraDevice = UIImagePickerControllerCameraDeviceFront;
@@ -102,7 +106,7 @@
 //    recorder.extraArgsForCreateVideo = @{ @"server_auth" : @"SERVER_AUTH_TOKEN" };
 // global (application level) auth tokens:
 //    m_ziggeo.connect.clientAuthToken = @"CLIENT_AUTH_TOKEN";
-//    m_ziggeo.connect.serverAuthToken = @"SERVER_AUTH_TOKEN";
+    m_ziggeo.connect.serverAuthToken = ZIGGEO_SERVER_AUTH_TOKEN;
     [self presentViewController:recorder animated:true completion:nil];
 }
 

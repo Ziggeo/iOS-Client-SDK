@@ -15,23 +15,23 @@ FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Ziggeo/PublicHeader.h>
 
-#import "DVAssetLoader.h"
-#import "DVAssetLoaderDelegate.h"
-#import "DVAssetLoaderDelegatesDelegate.h"
-#import "DVAssetLoaderError.h"
-#import "DVAssetLoaderHelpers.h"
-#import "DVURLAsset.h"
-#import "ZiggeoApplication.h"
-#import "ZiggeoConfig.h"
-#import "ZiggeoConnect.h"
-#import "ZiggeoVideos.h"
-#import "ZiggeoPlayer.h"
-#import "ZiggeoRecorder.h"
-#import "ButtonConfig.h"
-#import "ZiggeoRecorderInterfaceConfig.h"
-#import "ZiggeoRecorder2.h"
-#import "CoverSelectorController.h"
-#import "CoverSelectorTableCell.h"
-#import "CapturePreviewView.h"
-#import "RecordedVideoPreview.h"
-#import "ZiggeoScreenRecorderSampleHandler.h"
+#import <Ziggeo/DVAssetLoader.h>
+#import <Ziggeo/DVAssetLoaderDelegate.h>
+#import <Ziggeo/DVAssetLoaderDelegatesDelegate.h>
+#import <Ziggeo/DVAssetLoaderError.h>
+#import <Ziggeo/DVAssetLoaderHelpers.h>
+#import <Ziggeo/DVURLAsset.h>
+#import <Ziggeo/ZiggeoApplication.h>
+#import <Ziggeo/ZiggeoConfig.h>
+#import <Ziggeo/ZiggeoConnect.h>
+#import <Ziggeo/ZiggeoVideos.h>
+#import <Ziggeo/ZiggeoPlayer.h>
+#import <Ziggeo/ZiggeoPhotoLibrary.h>
+#import <Ziggeo/ButtonConfig.h>
+#import <Ziggeo/ZiggeoRecorderInterfaceConfig.h>
+#import <Ziggeo/ZiggeoRecorder.h>
+#import <Ziggeo/CoverSelectorController.h>
+#import <Ziggeo/CoverSelectorTableCell.h>
+#import <Ziggeo/CapturePreviewView.h>
+#import <Ziggeo/RecordedVideoPreview.h>
+#import <Ziggeo/ZiggeoScreenRecorderSampleHandler.h>
