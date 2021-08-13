@@ -10,7 +10,26 @@
 #import <UIKit/UIKit.h>
 #import "ZiggeoApplication.h"
 
+@protocol ZiggeoAudioRecorderDelegate <NSObject>
+@optional
+- (void)ziggeoAudioRecorderReady;
+@optional
+- (void)ziggeoAudioRecorderCanceled;
+@optional
+- (void)ziggeoAudioRecorderRecoding;
+@optional
+- (void)ziggeoAudioRecorderCurrentRecordedDurationSeconds:(double)seconds;
+@optional
+- (void)ziggeoAudioRecorderFinished:(double)seconds;
+@optional
+- (void)ziggeoAudioRecorderPlaying;
+@optional
+- (void)ziggeoAudioRecorderPaused;
+@end
+
 @interface ZiggeoAudioRecorder : UIViewController
+
+@property (nonatomic) id<ZiggeoAudioRecorderDelegate> recorderDelegate;
 
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString*)audioToken;

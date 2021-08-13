@@ -6,19 +6,19 @@
 	<dict>
 		<key>AudioLevelView.nib</key>
 		<data>
-		BXodZhjNGTzOy7MncQRZ/EknOQo=
+		sAfVKxby0I8YjCeiBZ3UopBG1zY=
 		</data>
 		<key>AudioVisualizationView.nib</key>
 		<data>
-		pV2eEYgITTl+n/aGjdzB2nLyYvE=
+		F4klnqec5g+mxhWpVvssOfAufxA=
 		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		au6zH73Fs1dwwupZAofxv8vL9lw=
+		BzGehwEbnKre3zyn7QrYGujBfJ4=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		LQQzZuQGCw3I7xiAVevKmG81Zh4=
+		03rEJ29qQkajr30A9SDX8PZNFTo=
 		</data>
 		<key>Headers/ButtonConfig.h</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Headers/ZiggeoAudioRecorder.h</key>
 		<data>
-		ne/HIu3UK+FdvlOyRBuuGbokI98=
+		7Ovk2P/G+PfxaTIGmVCq559YYoM=
 		</data>
 		<key>Headers/ZiggeoCacheManager.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/ZiggeoRecorder.h</key>
 		<data>
-		uSExDPzS2k62C0vetFwhRWhriFk=
+		abVEGX21B9uXvDPNSqoAkVyG7S0=
 		</data>
 		<key>Headers/ZiggeoRecorderInterfaceConfig.h</key>
 		<data>
@@ -126,7 +126,7 @@
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		GfgZbZVyZBNzP7ZoZ1w8/+Xnk3g=
+		UwGaL5LYPL0kOQmbGJRCHNAUtWU=
 		</data>
 		<key>Modules/Ziggeo.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -182,19 +182,19 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		pSTPibFStqcdt7LmGBHGiEo6c2w=
+		GuMEg8XabFsAzRkAHKsVhAVZ5Ss=
 		</data>
 		<key>ZiggeoAudioPlayer.nib</key>
 		<data>
-		s39QMpDOTcwEWnIgGTlLIgNU5Bo=
+		daXOZu/pw39N3rZRnnrZu0FLgas=
 		</data>
 		<key>ZiggeoAudioRecorder.nib</key>
 		<data>
-		5Bw18gXnI21v4KmWxzNMl2X/Krk=
+		RF2ZixiZv4OTU6B5HHTn/W+TQT0=
 		</data>
 		<key>ZiggeoRecorder.nib</key>
 		<data>
-		rb3/14SQoeuAWs+dqeDxooNOFms=
+		dzYezeiB5oXx0oasAtMYsuX7k8k=
 		</data>
 		<key>audio-record-start-black.png</key>
 		<data>
@@ -204,11 +204,23 @@
 		<data>
 		ntZqK/hhBvYaaKeEFIY5z8ygu/o=
 		</data>
+		<key>close_black.png</key>
+		<data>
+		KbasRLEQi3s42Lwf4oLtvFkfDDQ=
+		</data>
 		<key>confirm-black.png</key>
 		<data>
 		W349kz6u5Yxf4YIGmWURc6J/oqU=
 		</data>
 		<key>delete-white.png</key>
+		<data>
+		ISYWlAnR4e99SE8DBYDULPc72ww=
+		</data>
+		<key>delete-white@2x.png</key>
+		<data>
+		UH+XDSCX31qFdHnTF6GUGa4/+JY=
+		</data>
+		<key>delete-white@3x.png</key>
 		<data>
 		UH+XDSCX31qFdHnTF6GUGa4/+JY=
 		</data>
@@ -218,6 +230,14 @@
 		</data>
 		<key>pause-white.png</key>
 		<data>
+		L17x9r60HUB6VOPZWcJqx8YuNbU=
+		</data>
+		<key>pause-white@2x.png</key>
+		<data>
+		ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
+		</data>
+		<key>pause-white@3x.png</key>
+		<data>
 		ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
 		</data>
 		<key>play-black.png</key>
@@ -225,6 +245,14 @@
 		DmLGU6Hn0fWF1AxJuJZbLCLnMRU=
 		</data>
 		<key>play-white.png</key>
+		<data>
+		RbApQnvdJzty3QaULAc3VZlI2OA=
+		</data>
+		<key>play-white@2x.png</key>
+		<data>
+		oiQDjw3O3/4Jozm+GRwoq+CVwlc=
+		</data>
+		<key>play-white@3x.png</key>
 		<data>
 		oiQDjw3O3/4Jozm+GRwoq+CVwlc=
 		</data>
@@ -258,9 +286,25 @@
 		</data>
 		<key>switch-camera-white.png</key>
 		<data>
+		p7DgLFZ/iSftV1TJvMN2AtCFQrE=
+		</data>
+		<key>switch-camera-white@2x.png</key>
+		<data>
+		yy3vVaCi2u2+2+HMac92J5WE2sw=
+		</data>
+		<key>switch-camera-white@3x.png</key>
+		<data>
 		yy3vVaCi2u2+2+HMac92J5WE2sw=
 		</data>
 		<key>trash-white.png</key>
+		<data>
+		u+Zbsqej1ip5TAIftX5RSDHsF8I=
+		</data>
+		<key>trash-white@2x.png</key>
+		<data>
+		K7W7OSvwanPl/FJsa/Xsbu8uZqI=
+		</data>
+		<key>trash-white@3x.png</key>
 		<data>
 		K7W7OSvwanPl/FJsa/Xsbu8uZqI=
 		</data>
@@ -269,6 +313,14 @@
 		KGg8Wdkd9DOszWaewosnzcuUsiA=
 		</data>
 		<key>upload-white.png</key>
+		<data>
+		9lOLQdn9DJXGmtvQ0at1jUnBdQM=
+		</data>
+		<key>upload-white@2x.png</key>
+		<data>
+		rYkAgd2I0UTX8qpI+Uj9+V9JpU0=
+		</data>
+		<key>upload-white@3x.png</key>
 		<data>
 		rYkAgd2I0UTX8qpI+Uj9+V9JpU0=
 		</data>
@@ -279,44 +331,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BXodZhjNGTzOy7MncQRZ/EknOQo=
+			sAfVKxby0I8YjCeiBZ3UopBG1zY=
 			</data>
 			<key>hash2</key>
 			<data>
-			lxxYwAPGmCSPEPJtOAh5bDxVafNEfClTX2Uv8S84fp0=
+			ChYkEZxz/xsUD9grOul3MtRRaRWVREdZu3aeyZ60Ys0=
 			</data>
 		</dict>
 		<key>AudioVisualizationView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pV2eEYgITTl+n/aGjdzB2nLyYvE=
+			F4klnqec5g+mxhWpVvssOfAufxA=
 			</data>
 			<key>hash2</key>
 			<data>
-			b0cv6t0h09pMAzySyBOUdGTuz4F9kEub3ByIpztxoGc=
+			oqGBYz3DwM3EAqigFat9Npr1LvN/+Ddy8Ivhvj+0u64=
 			</data>
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			au6zH73Fs1dwwupZAofxv8vL9lw=
+			BzGehwEbnKre3zyn7QrYGujBfJ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			5/rzew72pd7DrH/uQ4mkWBdQb2xSgc0krjXFpnF9/k8=
+			+FXyDvio7Bua5caZ9YrUfGqkecLIeg+aPTETs32qUuA=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LQQzZuQGCw3I7xiAVevKmG81Zh4=
+			03rEJ29qQkajr30A9SDX8PZNFTo=
 			</data>
 			<key>hash2</key>
 			<data>
-			EtEJDXhLgeL83iA1GhKcSd38dPoO3N16pm4GU4KWxRY=
+			9+qDdhCGFSqj5g0wTIqaWGqka09eAzOSJFFHRgl8kKc=
 			</data>
 		</dict>
 		<key>Headers/ButtonConfig.h</key>
@@ -488,11 +540,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ne/HIu3UK+FdvlOyRBuuGbokI98=
+			7Ovk2P/G+PfxaTIGmVCq559YYoM=
 			</data>
 			<key>hash2</key>
 			<data>
-			MqqDrFEXXAEkdcEk54nhMSIz1qfRBy3lFVCdTG4d8AY=
+			Dyh1DhJIpT5qXeRukL5xDr8InpywhhWOLSZUkDkHkBs=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoCacheManager.h</key>
@@ -554,11 +606,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uSExDPzS2k62C0vetFwhRWhriFk=
+			abVEGX21B9uXvDPNSqoAkVyG7S0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dky+WH8lFZ1zIZch227ciMcjG9y0kBUnixwFBz81Lhc=
+			lhgpeCfaYwzhUyFO8H+YeKZ/Trg28Si0A1H1HFGI4vM=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoRecorderInterfaceConfig.h</key>
@@ -598,11 +650,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GfgZbZVyZBNzP7ZoZ1w8/+Xnk3g=
+			UwGaL5LYPL0kOQmbGJRCHNAUtWU=
 			</data>
 			<key>hash2</key>
 			<data>
-			WWYQhQSzJykTKDbMlyFwvaZY9r6IBW+izWDjagb2vEE=
+			OoFYiWc0/mz4gHQiPJMeS+H1RME4zJQLbABjAeAS6h8=
 			</data>
 		</dict>
 		<key>Modules/Ziggeo.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -752,44 +804,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pSTPibFStqcdt7LmGBHGiEo6c2w=
+			GuMEg8XabFsAzRkAHKsVhAVZ5Ss=
 			</data>
 			<key>hash2</key>
 			<data>
-			6YcsoeDp2T7rfwXDQTZG930l3epbnxYrD91rMInyL9U=
+			s9PCCSCO3GNiWx+sKDoGNYKJtGSD8tqGkequvnhZFLA=
 			</data>
 		</dict>
 		<key>ZiggeoAudioPlayer.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			s39QMpDOTcwEWnIgGTlLIgNU5Bo=
+			daXOZu/pw39N3rZRnnrZu0FLgas=
 			</data>
 			<key>hash2</key>
 			<data>
-			gEF5YfGhX/e1EL66O+Ibi4x622/6Nc8AUIZkJd8hiCQ=
+			ZJuN0wIC4h8P9b1yg/Y3S4ag3LlFA9bRKDluRS3y5OU=
 			</data>
 		</dict>
 		<key>ZiggeoAudioRecorder.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5Bw18gXnI21v4KmWxzNMl2X/Krk=
+			RF2ZixiZv4OTU6B5HHTn/W+TQT0=
 			</data>
 			<key>hash2</key>
 			<data>
-			bs4w7by7I3FRGrSdDrx4vTHb/dL/NT4W87nuFakey6s=
+			vwWwPNNJbzXBZlgXaL/Hv7HtdYJINDsD0yvxr5VRu0s=
 			</data>
 		</dict>
 		<key>ZiggeoRecorder.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rb3/14SQoeuAWs+dqeDxooNOFms=
+			dzYezeiB5oXx0oasAtMYsuX7k8k=
 			</data>
 			<key>hash2</key>
 			<data>
-			4oe48R7Nouy3ZwVAXrzxWyJddYdk8mU+R5uoEr78rjI=
+			jMwg66IOSlWo6JgzEm5AmmfkxEoLNg3fWQ/TcQiTBnw=
 			</data>
 		</dict>
 		<key>audio-record-start-black.png</key>
@@ -814,6 +866,17 @@
 			gCowgeYJPMCRzu4NRq86Up67xZduCqPnj0PAnsMhKiA=
 			</data>
 		</dict>
+		<key>close_black.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			KbasRLEQi3s42Lwf4oLtvFkfDDQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			6AQT9RlFCVJzbgjyDlrmuhqX4b0oBV0knqA2EGtw+kM=
+			</data>
+		</dict>
 		<key>confirm-black.png</key>
 		<dict>
 			<key>hash</key>
@@ -826,6 +889,28 @@
 			</data>
 		</dict>
 		<key>delete-white.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ISYWlAnR4e99SE8DBYDULPc72ww=
+			</data>
+			<key>hash2</key>
+			<data>
+			fA7OlbLtrR+grtyUtyIJ63EBKSkI4wu4Y6sR9NFujvk=
+			</data>
+		</dict>
+		<key>delete-white@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			UH+XDSCX31qFdHnTF6GUGa4/+JY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Izxo/xC+4UKvH7nBLK9nUu9k+SEKYvPswuwrD267xYA=
+			</data>
+		</dict>
+		<key>delete-white@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -851,6 +936,28 @@
 		<dict>
 			<key>hash</key>
 			<data>
+			L17x9r60HUB6VOPZWcJqx8YuNbU=
+			</data>
+			<key>hash2</key>
+			<data>
+			kj2YD9WBAu8Ot8u6yK6tprH7SSAwMcvHBt8rUZj3AEU=
+			</data>
+		</dict>
+		<key>pause-white@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
+			</data>
+			<key>hash2</key>
+			<data>
+			TGbfcbyfqjXWxsbr2EMtGrsKiz4EpH3LDV/ygeEpWHY=
+			</data>
+		</dict>
+		<key>pause-white@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
 			ZFZwoYTJ7Br8xj7MDShlkHJZQZM=
 			</data>
 			<key>hash2</key>
@@ -870,6 +977,28 @@
 			</data>
 		</dict>
 		<key>play-white.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RbApQnvdJzty3QaULAc3VZlI2OA=
+			</data>
+			<key>hash2</key>
+			<data>
+			T//cYzu4/BMdDCynGwGrmzNdMYqrT0rIvcBGsvgrPgw=
+			</data>
+		</dict>
+		<key>play-white@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oiQDjw3O3/4Jozm+GRwoq+CVwlc=
+			</data>
+			<key>hash2</key>
+			<data>
+			vj3vg0Y4AoS2Qp1z7OJ7/imH3EG3mVUFzUXalAOSPd4=
+			</data>
+		</dict>
+		<key>play-white@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -961,6 +1090,28 @@
 		<dict>
 			<key>hash</key>
 			<data>
+			p7DgLFZ/iSftV1TJvMN2AtCFQrE=
+			</data>
+			<key>hash2</key>
+			<data>
+			Gmh43OEiZ/D+t1G2XxQKJnIF0Icjc9aoRnpMvR6S4ZY=
+			</data>
+		</dict>
+		<key>switch-camera-white@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yy3vVaCi2u2+2+HMac92J5WE2sw=
+			</data>
+			<key>hash2</key>
+			<data>
+			EbojXNZoGiPwMkLVCRN+vjaqhCXA1gkNGpUHr2ZnEOA=
+			</data>
+		</dict>
+		<key>switch-camera-white@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
 			yy3vVaCi2u2+2+HMac92J5WE2sw=
 			</data>
 			<key>hash2</key>
@@ -969,6 +1120,28 @@
 			</data>
 		</dict>
 		<key>trash-white.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			u+Zbsqej1ip5TAIftX5RSDHsF8I=
+			</data>
+			<key>hash2</key>
+			<data>
+			rsh+kWQN0YVBvL7GALuYhf73etExujjCwTWtmkdGG0E=
+			</data>
+		</dict>
+		<key>trash-white@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			K7W7OSvwanPl/FJsa/Xsbu8uZqI=
+			</data>
+			<key>hash2</key>
+			<data>
+			OO/Prgms2XNis/gmXxFw/KxJm5bkIj7UyLWblSGtqVM=
+			</data>
+		</dict>
+		<key>trash-white@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
@@ -991,6 +1164,28 @@
 			</data>
 		</dict>
 		<key>upload-white.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9lOLQdn9DJXGmtvQ0at1jUnBdQM=
+			</data>
+			<key>hash2</key>
+			<data>
+			dpAinGsSZH7not/wvsU/wIv5AKcRLCDB7Cq19+36myA=
+			</data>
+		</dict>
+		<key>upload-white@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rYkAgd2I0UTX8qpI+Uj9+V9JpU0=
+			</data>
+			<key>hash2</key>
+			<data>
+			vixcpc9bUTtuHE55yLlhGTeCTHMRCQG9W+6IF/qpIX4=
+			</data>
+		</dict>
+		<key>upload-white@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>

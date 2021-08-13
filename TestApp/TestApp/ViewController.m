@@ -9,7 +9,7 @@
 #import "Ziggeo/Ziggeo.h"
 @import AVKit;
 
-@interface ViewController () <ZiggeoRecorderDelegate> {
+@interface ViewController () <ZiggeoRecorderDelegate, ZiggeoAudioRecorderDelegate> {
     Ziggeo* m_ziggeo;
     ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
@@ -114,6 +114,7 @@ NSString *VIDEO_TOKEN = @"";
 
 - (IBAction)recordAudio:(id)sender {
     ZiggeoAudioRecorder *audioRecorder = [[ZiggeoAudioRecorder alloc] initWithZiggeoApplication:m_ziggeo];
+    audioRecorder.recorderDelegate = self;
     [self presentViewController:audioRecorder animated:true completion:nil];
 }
 
@@ -122,6 +123,7 @@ NSString *VIDEO_TOKEN = @"";
     [self presentViewController:audioPlayer animated:true completion:nil];
 }
 
+//MARK: - ZiggeoRecorderDelegate
 -(void) luxMeter:(double)luminousity {
     //NSLog(@"luminousity: %f", luminousity);
 }
@@ -134,5 +136,33 @@ NSString *VIDEO_TOKEN = @"";
     //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
 }
 
+//MARK: - ZiggeoAudioRecorderDelegate
+- (void)ziggeoAudioRecorderReady {
+//    NSLog(@"ziggeoAudioRecorderReady");
+}
+
+- (void) ziggeoAudioRecorderCanceled {
+//    NSLog(@"ziggeoAudioRecorderCanceled");
+}
+
+- (void)ziggeoAudioRecorderRecoding {
+//    NSLog(@"ziggeoAudioRecorderRecoding");
+}
+
+- (void)ziggeoAudioRecorderCurrentRecordedDurationSeconds:(double)seconds {
+//    NSLog(@"ziggeoAudioRecorderCurrentRecordedDurationSeconds: %f", seconds);
+}
+
+- (void)ziggeoAudioRecorderFinished:(double)seconds {
+//    NSLog(@"ziggeoAudioRecorderFinished: %f", seconds);
+}
+
+- (void)ziggeoAudioRecorderPlaying {
+//    NSLog(@"ziggeoAudioRecorderPlaying");
+}
+
+- (void)ziggeoAudioRecorderPaused {
+//    NSLog(@"ziggeoAudioRecorderPaused");
+}
 
 @end
