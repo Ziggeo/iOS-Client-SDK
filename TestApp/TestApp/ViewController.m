@@ -18,8 +18,10 @@
 
 @implementation ViewController
 
-NSString *ZIGGEO_APP_TOKEN = @"344a71099193b17a693ab11fdd0eeb10";
-NSString *ZIGGEO_SERVER_AUTH_TOKEN = @"9569481ec23ba3be88467e17a32f7962";
+NSString *ZIGGEO_APP_TOKEN = @"";
+NSString *ZIGGEO_SERVER_AUTH_TOKEN = @"";
+NSString *CLIENT_AUTH_TOKEN = @"";
+NSString *VIDEO_TOKEN = @"";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +34,7 @@ NSString *ZIGGEO_SERVER_AUTH_TOKEN = @"9569481ec23ba3be88467e17a32f7962";
 }
 
 - (IBAction)playFullScreen:(id)sender {
-    [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:@"VIDEO_TOKEN" params:@{ @"client_auth" : @"CLIENT_AUTH_TOKEN" } callback:^(ZiggeoPlayer *player) {
+    [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:VIDEO_TOKEN params:@{ @"client_auth" : CLIENT_AUTH_TOKEN } callback:^(ZiggeoPlayer *player) {
         dispatch_async(dispatch_get_main_queue(), ^
         {
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
@@ -60,7 +62,7 @@ NSString *ZIGGEO_SERVER_AUTH_TOKEN = @"9569481ec23ba3be88467e17a32f7962";
         embeddedPlayerLayer = nil;
         embeddedPlayer = nil;
     }
-    ZiggeoPlayer* player = [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:@"VIDEO_TOKEN"];
+    ZiggeoPlayer* player = [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:VIDEO_TOKEN];
     AVPlayerLayer* playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
     playerLayer.frame = self.videoViewPlaceholder.frame;
     [self.videoViewPlaceholder.layer addSublayer:playerLayer];
@@ -108,6 +110,16 @@ NSString *ZIGGEO_SERVER_AUTH_TOKEN = @"9569481ec23ba3be88467e17a32f7962";
 //    m_ziggeo.connect.clientAuthToken = @"CLIENT_AUTH_TOKEN";
     m_ziggeo.connect.serverAuthToken = ZIGGEO_SERVER_AUTH_TOKEN;
     [self presentViewController:recorder animated:true completion:nil];
+}
+
+- (IBAction)recordAudio:(id)sender {
+    ZiggeoAudioRecorder *audioRecorder = [[ZiggeoAudioRecorder alloc] initWithZiggeoApplication:m_ziggeo];
+    [self presentViewController:audioRecorder animated:true completion:nil];
+}
+
+- (IBAction)playAudio:(id)sender {
+    ZiggeoAudioPlayer *audioPlayer = [[ZiggeoAudioPlayer alloc] initWithZiggeoApplication:m_ziggeo audioToken:@"sample.wav"];
+    [self presentViewController:audioPlayer animated:true completion:nil];
 }
 
 -(void) luxMeter:(double)luminousity {

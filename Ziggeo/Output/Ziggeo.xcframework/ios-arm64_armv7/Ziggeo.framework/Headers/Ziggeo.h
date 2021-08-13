@@ -35,3 +35,5 @@ FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
 #import <Ziggeo/CapturePreviewView.h>
 #import <Ziggeo/RecordedVideoPreview.h>
 #import <Ziggeo/ZiggeoScreenRecorderSampleHandler.h>
+#import <Ziggeo/ZiggeoAudioRecorder.h>
+#import <Ziggeo/ZiggeoAudioPlayer.h>

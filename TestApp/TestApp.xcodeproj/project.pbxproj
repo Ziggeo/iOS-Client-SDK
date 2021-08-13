@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14E96EAD26BAE98A009B8B4F /* sample.wav in Resources */ = {isa = PBXBuildFile; fileRef = 14E96EAC26BAE98A009B8B4F /* sample.wav */; };
 		27FBF217B9DA9E24526EEA4F /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */; };
 		D9F6AD4A24AB79D60017EF58 /* FlipCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F6AD4924AB79D50017EF58 /* FlipCamera.png */; };
 		FA8827A11BB486D40025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A01BB486D40025C71D /* main.m */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		06C7CDA2A8F3CFF1A63EDFE1 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		14E96EAC26BAE98A009B8B4F /* sample.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample.wav; sourceTree = "<group>"; };
 		2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F6AD4924AB79D50017EF58 /* FlipCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlipCamera.png; sourceTree = "<group>"; };
 		E4833061BE133DDECE58464E /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				FA8827A31BB486D40025C71D /* AppDelegate.m */,
 				FA8827A51BB486D40025C71D /* ViewController.h */,
 				FA8827A61BB486D40025C71D /* ViewController.m */,
+				14E96EAC26BAE98A009B8B4F /* sample.wav */,
 				FA8827A81BB486D40025C71D /* Main.storyboard */,
 				FA8827AB1BB486D40025C71D /* Images.xcassets */,
 				FA8827AD1BB486D40025C71D /* LaunchScreen.xib */,
@@ -186,6 +189,7 @@
 				D9F6AD4A24AB79D60017EF58 /* FlipCamera.png in Resources */,
 				FA8827AF1BB486D40025C71D /* LaunchScreen.xib in Resources */,
 				FA8827AC1BB486D40025C71D /* Images.xcassets in Resources */,
+				14E96EAD26BAE98A009B8B4F /* sample.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,3 +4,8 @@ framework module Ziggeo {
   export *
   module * { export * }
 }
+
+module Ziggeo.Swift {
+    header "Ziggeo-Swift.h"
+    requires objc
+}
