@@ -9,7 +9,5 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *videoViewPlaceholder;
-
 @end
 

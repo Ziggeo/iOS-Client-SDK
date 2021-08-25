@@ -12,12 +12,17 @@
 
 - (id)initWithZiggeoApplication:(Ziggeo *)ziggeo isPlayer:(bool)isPlayer;
 
-- (NSString *)getCacheDirectory;
+- (NSString *)getAudioCacheDirectory;
+- (NSString *)getVideoCacheDirectory;
+- (NSString *)getImageCacheDirectory;
 
 - (NSString *)getCacheFullFileNameForVideoToken:(NSString *)token;
-
 - (NSString *)getCacheFileNameForVideoToken:(NSString *)token;
+- (NSString *)getCacheFullFileNameForAudioToken:(NSString *)token;
+- (NSString *)getCacheFileNameForAudioToken:(NSString *)token;
 
-- (void)trimCache;
+- (void)trimAudioCache;
+- (void)trimVideoCache;
+- (void)trimImageCache;
 
 @end
