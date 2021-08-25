@@ -1,22 +1,34 @@
 //
-//  ZiggeoRecorder.h
+//  ZiggeoAudioPlayer.h
 //  Ziggeo
 //
-//  Created by alex on 07/04/16.
-//  Copyright © 2016 Ziggeo. All rights reserved.
+//  Copyright (c) 2021 Ziggeo Inc. All rights reserved.
 //
 
-@import AVFoundation;
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
+@class ZiggeoAudioPlayer;
 
-@interface ZiggeoAudioPlayer : UIViewController
 
-- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
-- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString*)audioToken;
-- (void)startRecordingToFile:(NSString *)outputFilePath;
-- (void)stopRecording;
-- (void)retake;
-- (void)upload:(NSURL*)fileToUpload;
+@protocol ZiggeoAudioPlayerDelegate <NSObject>
+
+- (void)audioPlayerDidLoadedItem:(ZiggeoAudioPlayer *)audioPlayer;
+- (void)audioPlayerPlayWith:(ZiggeoAudioPlayer *)audioPlayer Progress:(float)progress;
+- (void)audioPlayerDidFinishItem:(ZiggeoAudioPlayer *)audioPlayer;
+
+@end
+
+
+@interface ZiggeoAudioPlayer : NSObject <DVAssetLoaderDelegatesDelegate>
+
+@property (nonatomic, assign) id<ZiggeoAudioPlayerDelegate>delegate;
+@property (nonatomic, assign) BOOL isPlaying;
+
+- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString*)token;
+- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString*)token audioUrl:(NSString*)url;
+- (void)play;
+- (void)pause;
+- (void)seekToTime:(float)time;
+- (double)duration;
 
 @end

@@ -19,6 +19,16 @@
 
 - (NSURLSessionTask*) backgroundUploadWithPath:(NSString*)path Data:(NSDictionary*)data identifier:(NSString*)identifier File:(NSString*)file Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
 
+- (NSURLSessionTask*)uploadFileWithPath:(NSString *)url
+                             Parameters:(NSDictionary *)parameters
+                             Identifier:(NSString *)identifier
+                               FilePath:(NSString *)filePath
+                               FileName:(NSString *)fileName
+                               MimeType:(NSString *)mimeType
+                          FileExtension:(NSString *)fileExtension
+                               Callback:(void (^)(NSData *data, NSURLResponse *response, NSError *error))callback
+                               Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+
 - (NSURLSessionTask*) requestStringWithMethod:(NSString*)method Path:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSString *string, NSURLResponse *response, NSError *error))callback;
 
 - (NSURLSessionTask*) requestJSONWithMethod:(NSString*)method Path:(NSString*)path Data:(NSDictionary*)data Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;

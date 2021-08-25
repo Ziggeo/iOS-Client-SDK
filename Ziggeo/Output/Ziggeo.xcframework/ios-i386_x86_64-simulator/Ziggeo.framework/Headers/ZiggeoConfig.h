@@ -9,6 +9,8 @@
 @interface ZiggeoConfig : NSObject
 
 @property (strong, nonatomic) NSString *server_api_url;
+@property (strong, nonatomic) NSString *dev_server_api_url;
+@property (strong, nonatomic) NSString *file_server_url;
 @property (strong, nonatomic) NSString *cdn_api_url;
 @property (strong, nonatomic) NSString *wowza_url;
 

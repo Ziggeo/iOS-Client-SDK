@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147880D426CD6CA900BCEBA0 /* MusicPlayingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 147880D226CD6CA900BCEBA0 /* MusicPlayingController.m */; };
+		147880D626CD6CB200BCEBA0 /* MusicPlayingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147880D526CD6CB200BCEBA0 /* MusicPlayingController.xib */; };
+		14CA9D4726CE902A009E7D2F /* close_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 14CA9D4626CE902A009E7D2F /* close_black.png */; };
 		27FBF217B9DA9E24526EEA4F /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */; };
 		D9F6AD4A24AB79D60017EF58 /* FlipCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = D9F6AD4924AB79D50017EF58 /* FlipCamera.png */; };
 		FA8827A11BB486D40025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A01BB486D40025C71D /* main.m */; };
@@ -32,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		06C7CDA2A8F3CFF1A63EDFE1 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		147880D226CD6CA900BCEBA0 /* MusicPlayingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicPlayingController.m; sourceTree = "<group>"; };
+		147880D326CD6CA900BCEBA0 /* MusicPlayingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicPlayingController.h; sourceTree = "<group>"; };
+		147880D526CD6CB200BCEBA0 /* MusicPlayingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayingController.xib; sourceTree = "<group>"; };
+		14CA9D4626CE902A009E7D2F /* close_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close_black.png; sourceTree = "<group>"; };
 		2A01E38CCC15BE30745422D8 /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9F6AD4924AB79D50017EF58 /* FlipCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FlipCamera.png; sourceTree = "<group>"; };
 		E4833061BE133DDECE58464E /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,10 +105,14 @@
 			isa = PBXGroup;
 			children = (
 				D9F6AD4924AB79D50017EF58 /* FlipCamera.png */,
+				14CA9D4626CE902A009E7D2F /* close_black.png */,
 				FA8827A21BB486D40025C71D /* AppDelegate.h */,
 				FA8827A31BB486D40025C71D /* AppDelegate.m */,
 				FA8827A51BB486D40025C71D /* ViewController.h */,
 				FA8827A61BB486D40025C71D /* ViewController.m */,
+				147880D326CD6CA900BCEBA0 /* MusicPlayingController.h */,
+				147880D226CD6CA900BCEBA0 /* MusicPlayingController.m */,
+				147880D526CD6CB200BCEBA0 /* MusicPlayingController.xib */,
 				FA8827A81BB486D40025C71D /* Main.storyboard */,
 				FA8827AB1BB486D40025C71D /* Images.xcassets */,
 				FA8827AD1BB486D40025C71D /* LaunchScreen.xib */,
@@ -184,7 +195,9 @@
 			files = (
 				FA8827AA1BB486D40025C71D /* Main.storyboard in Resources */,
 				D9F6AD4A24AB79D60017EF58 /* FlipCamera.png in Resources */,
+				147880D626CD6CB200BCEBA0 /* MusicPlayingController.xib in Resources */,
 				FA8827AF1BB486D40025C71D /* LaunchScreen.xib in Resources */,
+				14CA9D4726CE902A009E7D2F /* close_black.png in Resources */,
 				FA8827AC1BB486D40025C71D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147880D426CD6CA900BCEBA0 /* MusicPlayingController.m in Sources */,
 				FA8827A71BB486D40025C71D /* ViewController.m in Sources */,
 				FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */,
 				FA8827A11BB486D40025C71D /* main.m in Sources */,

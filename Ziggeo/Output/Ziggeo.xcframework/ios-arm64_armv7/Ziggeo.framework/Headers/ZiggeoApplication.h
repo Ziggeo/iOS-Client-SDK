@@ -9,6 +9,7 @@
 @class ZiggeoConnect;
 @class ZiggeoVideos;
 @class ZiggeoCacheManager;
+@class ZiggeoApiHelper;
 
 @interface Ziggeo : NSObject {
     ZiggeoConfig* _configObj;
@@ -16,22 +17,23 @@
     ZiggeoVideos* _videosObj;
     ZiggeoCacheManager *_cacheManager;
     ZiggeoCacheManager *_playerCacheManager;
+    ZiggeoApiHelper *_apiHelper;
 }
     
 @property (strong, nonatomic) NSString *token;
 @property (nonatomic) bool enableDebugLogs;
 
 - (id)initWithToken:(NSString *)token_;
-- (void)log:(NSString*)message;
-- (void)logError:(NSString*)message;
+- (void)log:(NSString *)message;
+- (void)logError:(NSString *)message;
 
-- (ZiggeoConfig*)config;
+- (ZiggeoConfig *)config;
 
-- (ZiggeoCacheManager*)cacheManager;
-- (ZiggeoCacheManager*)playerCacheManager;
+- (ZiggeoCacheManager *)cacheManager;
+- (ZiggeoCacheManager *)playerCacheManager;
 
-- (ZiggeoConnect*)connect;
-
-- (ZiggeoVideos*)videos;
+- (ZiggeoConnect *)connect;
+- (ZiggeoVideos *)videos;
+- (ZiggeoApiHelper *)apiHelper;
 
 @end
