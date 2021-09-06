@@ -10,21 +10,28 @@
 #import <AVKit/AVKit.h>
 
 @protocol VideoPreviewDelegate
+
 - (void)retake;
-- (void)upload:(NSURL*)fileToUpload;
+- (void)uploadVideo:(NSString *)filePath;
+
 @end
 
+
 @protocol VideoPreviewProtocol
+
 @property (nonatomic) NSURL* videoURL;
 @property (nonatomic) AVLayerVideoGravity videoGravity;
 @property (nonatomic) id<VideoPreviewDelegate> previewDelegate;
+
 @end
 
 
 @interface RecordedVideoPreview : UIViewController <VideoPreviewProtocol>
+
 @property (weak, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (weak, nonatomic) IBOutlet UIView *videoPlaceholder;
 @property (nonatomic) NSURL* videoURL;
 @property (nonatomic) AVLayerVideoGravity videoGravity;
 @property (nonatomic) id<VideoPreviewDelegate> previewDelegate;
+
 @end

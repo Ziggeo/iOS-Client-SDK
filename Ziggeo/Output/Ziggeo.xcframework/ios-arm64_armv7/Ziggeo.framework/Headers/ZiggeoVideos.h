@@ -1,63 +1,76 @@
 //
 //  ZiggeoVideos.h
 //
-//  Copyright (c) 2015 Ziggeo Inc. All rights reserved.
+//  Copyright (c) 2021 Ziggeo Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
 @import UIKit;
 
-@protocol ZiggeoVideosDelegate <NSObject>
 
--(void) videoPreparingToUploadWithPath:(NSString*)sourcePath;
--(void) videoPreparingToUploadWithPath:(NSString*)sourcePath token:(NSString*)token;
+@protocol ZiggeoUploadDelegate <NSObject>
 
--(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask;
--(void) videoUploadCompleteForPath:(NSString*)sourcePath token:(NSString*)token withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json;
--(void) videoUploadProgressForPath:(NSString*)sourcePath token:(NSString*)token totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes;
+@optional
+- (void)preparingToUploadWithPath:(NSString *)sourcePath;
+@optional
+- (void)preparingToUploadWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken;
+@optional
+- (void)failedToUploadWithPath:(NSString *)sourcePath;
+@optional
+- (void)uploadStartedWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask *)uploadingTask;
+@optional
+- (void)uploadProgressForPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes;
+@optional
+- (void)uploadCompletedForPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse *)response error:(NSError *)error json:(NSDictionary *)json;
+@optional
+- (void)deleteWithToken:(NSString *)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse *)response error:(NSError *)error json:(NSDictionary *)json;
+
 @end
 
+
+
 @interface ZiggeoVideos : NSObject{
-    Ziggeo* _application;
+    Ziggeo *_application;
 }
 
-@property (weak) id<ZiggeoVideosDelegate> delegate;
+@property (weak) id<ZiggeoUploadDelegate> uploadDelegate;
 
-- (id) initWithApplication:(Ziggeo*)application_;
+- (id)initWithApplication:(Ziggeo *)application_;
 
-- (NSURLSessionTask*) indexWithData:(NSDictionary*)data Callback:(void (^)(NSArray* jsonArray, NSError* error))callback;
+- (NSString *)getVideoUrlWithVideoToken:(NSString *)videoToken;
 
-- (NSURLSessionTask*) createStreamWithVideoToken:(NSString*)token data:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
+- (void)getVideos:(void (^)(NSArray *jsonArray, NSError *error))callback;
 
-- (void) startScreenRecordingAndAddRecordingButtonToView:(UIView *)view frame:(CGRect)frame appGroup:(NSString*)group API_AVAILABLE(ios(10.0), tvos(10.0), macos(11.0));
+- (void)uploadVideoWithPath:(NSString *)path;
 
-- (NSURLSessionTask*) createVideoWithData:(NSDictionary*)data file:(NSString*)fileName cover:(UIImage*)cover callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+- (void)uploadVideoWithPath:(NSString *)path
+                   Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
+                   Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
+            ConfirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 
-- (NSURLSessionTask*) rerecordVideoWithToken:(NSString*)videoToken file:(NSString*)fileName data:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+- (void)updateVideoWithPath:(NSString *)path
+                 VideoToken:(NSString *)videoToken
+                StreamToken:(NSString *)streamToken
+                   Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
+                   Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
+            ConfirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 
-- (NSURLSessionTask*) getImageForVideoByToken:(NSString*)token data:(NSDictionary*)params callback:(void (^)(UIImage* image, NSURLResponse* response, NSError* error))callback;
+- (void)deleteVideoByToken:(NSString *)videoToken
+               StreamToken:(NSString *)streamToken
+                  Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 
-- (void) getImageForVideoByPath:(NSString*)path callback:(void (^)(UIImage* image, NSError* error))callback;
-- (void) enforceImageForVideoByPath:(NSString*)path image:(UIImage*)image;
+- (void)downloadVideoWithToken:(NSString *)videoToken
+                      Callback:(void (^)(NSString *filePath))callback;
 
-- (NSString*) getURLForVideoByToken:(NSString*)token;
+- (void)getOriginalStreamDescriptionForVideoByToken:(NSString *)token
+                                           Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 
--(NSURLSessionTask*) deleteVideoByToken:(NSString*)token data:(NSDictionary*)data callback:(void (^)(NSData* responseData, NSURLResponse* response, NSError* error))callback;
+- (void)getImageForVideoByToken:(NSString *)videoToken
+                           Data:(NSDictionary *)params
+                       Callback:(void (^)(UIImage *image, NSURLResponse *response, NSError *error))callback;
 
--(NSURLSessionTask*) getDefaultStreamForVideoByToken:(NSString*)token callback:(void (^)(NSString* streamToken, NSURLResponse* response, NSError* error))callback;
-
--(NSURLSessionTask*) getOriginalStreamDescriptionForVideoByToken:(NSString*)token callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
-
--(NSURLSessionTask*) createEmptyVideoWithData:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
-
--(NSURLSessionTask*) createLiveVideoWithData:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
-
--(NSURLSessionTask*) recorderSubmitWithVideoToken:(NSString*)videoToken streamToken:(NSString*)streamToken data:(NSDictionary*)data callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
-
-- (NSURLSessionTask*) attachVideoWithVideoToken:(NSString*)videoToken streamToken:(NSString*)streamToken data:(NSDictionary*)data file:(NSString*)fileName callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
-
-- (NSURLSessionTask*) attachCoverWithVideoToken:(NSString*)videoToken streamToken:(NSString*)streamToken cover:(UIImage*)cover data:(NSDictionary*)data callback:(void (^)(NSData* data, NSURLResponse* response, NSError* error))callback;
-
+- (void)getImageForVideoByPath:(NSString*)path
+                      Callback:(void (^)(UIImage* image, NSError* error))callback;
 
 @end

@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "RecordedVideoPreview.h"
 #import "ZiggeoApplication.h"
+#import "ZiggeoVideos.h"
 
 
 @class ZiggeoRecorderInterfaceConfig;
@@ -51,6 +52,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) ZiggeoRecorderInterfaceConfig *interfaceConfig;
 @property (nonatomic) UIImagePickerControllerCameraDevice cameraDevice;
 @property (nonatomic) id<ZiggeoRecorderDelegate> recorderDelegate;
+@property (nonatomic) id<ZiggeoUploadDelegate> uploadDelegate;
 @property (nonatomic) NSDictionary* extraArgsForCreateVideo;
 @property (nonatomic) double maxRecordedDurationSeconds;
 @property (nonatomic) double autostartRecordingAfterSeconds;
@@ -65,10 +67,10 @@ typedef enum : NSUInteger {
 @property (nonatomic) int audioBitrate;
 
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
-- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString*)videoToken;
+- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString *)videoToken;
 - (void)startRecordingToFile:(NSString *)outputFilePath;
 - (void)stopRecording;
 - (void)retake;
-- (void)upload:(NSURL*)fileToUpload;
+- (void)uploadVideo:(NSString *)filePath;
 
 @end

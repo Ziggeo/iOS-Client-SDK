@@ -3,8 +3,11 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.29 to v.1.1.30
+The update adds the updated uploading apis for videos, audios and images.
+
 ## v 1.1.28 to v.1.1.29
-The update adds audio recording and play functions.
+The update adds the audio recording and play functions.
 
 ## v 1.1.27 to v.1.1.28
 The update fixes the black screen issues when records video using camera.
@@ -127,10 +130,11 @@ Added feature:
 
 ## Building/Packaging App
 - Using `universal` framework is ideal for building apps that run on simulators and actual devices.
-  See: _iOS-Client-SDK/Ziggeo/Output/Release-universal_ directory
+  See: _iOS-Client-SDK/Ziggeo/Output/ directory
 
 ## Preparing App for submission to App Store
 - Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
+
 
 # Basic Usage
 ## Initialize Application
@@ -145,8 +149,7 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
 
 ### Initialization
 ```
-- (ZiggeoPlayer*) createPlayer
-{
+- (ZiggeoPlayer*)createPlayer {
     return [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:@"ZIGGEO_VIDEO_TOKEN"];
 }
 ```
@@ -168,8 +171,7 @@ Add audio category setup to enable playback and recording while application is i
 ### Initialization with optional authorization token
 ```
     [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:@"VIDEO_TOKEN" params:@{ @"client_auth" : @"CLIENT_AUTH_TOKEN" } callback:^(ZiggeoPlayer *player) {
-        dispatch_async(dispatch_get_main_queue(), ^
-        {
+        dispatch_async(dispatch_get_main_queue(), ^{
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
             playerController.player = player;
             [self presentViewController:playerController animated:true completion:nil];
@@ -302,47 +304,139 @@ Since ZiggeoRecorder is a subclass of UIImagePickerController, it is possible to
 Streaming recording mode will upload the video stream during the recording without caching to local file first. Video preview and video re-record are not available in this mode.
 
 ### Delegate
-You can use ZiggeoVideosDelegate in your app to be notified about video uploading events.
+#### ZiggeoRecorderDelegate
+You can use ZiggeoRecorderDelegate in your app to be notified about video recording events.
 ```
-@interface ViewController : UIViewController <ZiggeoVideosDelegate>
+@interface ViewController : UIViewController <ZiggeoRecorderDelegate>
 
 ...
 
 {
 	...
-	[m_ziggeo videos].delegate = self;
+	[m_ziggeo videos].recorderDelegate = self;
 }
 
--(void) videoPreparingToUploadWithPath:(NSString*)sourcePath {
-	//this method will be called first before any Ziggeo API interaction
+- (void)ziggeoRecorderDidCancel {
+    // this method will be called when video recorder is canceled
 }
 
--(void) videoPreparingToUploadWithPath:(NSString*)sourcePath token:(NSString*)token {
-	//this method will be called immediately after empty video creation on Ziggeo platform
+- (void)ziggeoRecorderDidStop {
+    // this method will be called when video recorder is stopped
 }
 
-
--(void) videoUploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token backgroundTask:(NSURLSessionTask*)uploadingTask {
-	//this method will be called on actual video upload start
+- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
+    // this method will be called while video recording
 }
 
--(void) videoUploadCompleteForPath:(NSString*)sourcePath token:(NSString*)token withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
-	//video upload finished successfully or failed
+- (void)luxMeter:(double)luminousity {
+    //
 }
 
--(void) videoUploadProgressForPath:(NSString*)sourcePath token:(NSString*)token totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
-	//upload progress callback
+- (void)audioMeter:(double)audioLevel {
+    //
+}
+
+- (void)faceDetected:(int)faceID rect:(CGRect)rect {
+    // this method will be called when face is detected
 }
 
 ```
 
+#### ZiggeoAudioRecorderDelegate
+You can use ZiggeoAudioRecorderDelegate in your app to be notified about audio recording events.
+```
+@interface ViewController : UIViewController <ZiggeoAudioRecorderDelegate>
+
+...
+
+{
+	...
+	[m_ziggeo audios].recorderDelegate = self;
+}
+
+- (void)ziggeoAudioRecorderReady {
+    // this method will be called when audio recorder is ready
+}
+
+- (void) ziggeoAudioRecorderCanceled {
+    // this method will be called when audio recorder is canceled
+}
+
+- (void)ziggeoAudioRecorderRecoding {
+    // this method will be called when audio recorder starts recording
+}
+
+- (void)ziggeoAudioRecorderCurrentRecordedDurationSeconds:(double)seconds {
+    // this method will be called while audio recorder is recording
+}
+
+- (void)ziggeoAudioRecorderFinished:(double)seconds {
+    // this method will be called when audio recorder is finished
+}
+
+- (void)ziggeoAudioRecorderPlaying {
+    // this method will be called when audio recorder plays the recorded audio
+}
+
+- (void)ziggeoAudioRecorderPaused {
+    // this method will be called when audio recorder pauses the recorded audio
+}
+
+```
+
+#### ZiggeoUploadDelegate
+You can use ZiggeoUploadDelegate in your app to be notified about file(video, audio, image) uploading events.
+```
+@interface ViewController : UIViewController <ZiggeoUploadDelegate>
+
+...
+
+{
+	...
+	[m_ziggeo videos].uploadDelegate = self;
+    [m_ziggeo audios].uploadDelegate = self;
+    [m_ziggeo images].uploadDelegate = self;
+}
+
+- (void)preparingToUploadWithPath:(NSString*)sourcePath {
+    // this method will be called first before any Ziggeo API interaction
+}
+
+- (void)preparingToUploadWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
+    // this method will be called immediately after empty file(video, audio, image) creation on Ziggeo platform
+}
+
+- (void)failedToUploadWithPath:(NSString*)sourcePath {
+    // this method will be called when file(video, audio, image) uploading was failed
+}
+
+- (void)uploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask*)uploadingTask {
+    // this method will be called on actual file(video, audio, image) upload start
+}
+
+- (void)uploadProgressForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
+    // this method will be called while uploading the file(video, audio, image)
+}
+
+- (void)uploadCompletedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
+    // this method will be called when file(video, audio, image) upload finished successfully or failed
+}
+
+- (void)deleteWithToken:(NSString*)token streamToken:(NSString*)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
+    // this method will be called when file(video, audio, image) was deleted
+}
+```
+
+
 # Advanced SDK usage
+
 # Ziggeo API access
 You can use the SDK to access Ziggeo Server API methods in the async manner. The SDK provides next functionality:
 - Create/remove/index videos
 - Custom Ziggeo Embedded Server API requests 
 
 All the API methods are working asynchronously and never blocking the calling thread. You may optionally use custom callbacks (completion blocks) to receive the results.
+
 
 ## Videos API
 
@@ -353,9 +447,8 @@ All the API methods are working asynchronously and never blocking the calling th
 
 ### Get All Videos
 ```
-    [videos indexWithData:nil Callback:^(NSArray *jsonArray, NSError *error) {
-    	//the completion block will be executed asynchronously on the response received
-        NSLog(@"videos: %@\nerror: %@", jsonArray, error);
+    [videos getVideos:^(NSArray *jsonArray, NSError *error) {
+        //the completion block will be executed asynchronously on the response received
     }];
 ```
 
@@ -368,45 +461,123 @@ All the API methods are working asynchronously and never blocking the calling th
 #### Advanced
 You can add your custom completion/progress callbacks here to make the SDK inform your app about uploading progress and response. Cover image is optional and could be nil, making Ziggeo platform to generate default video cover
 ```
-    [videos createVideoWithData:nil file:videoPath cover:(UIImage*)cover
-    	callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-	    	NSLog(@"video upload complete: %@, error = %@", jsonObject, error);
-   		} Progress:^(int bytesSent, int totalBytes) {
-    		NSLog(@"video upload progress: %i/%i", bytesSent, totalBytes);
-    	}
+    [videos uploadVideoWithPath:videoPath Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+
+    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
+
+    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
     }];
 ```
 
 ### Delete Video
 ```
-	[[self.ziggeo videos] deleteVideoByToken:videoToken 
-    	callback:^(NSData *responseData, NSURLResponse *response, NSError *error) {
-		//update UI 	
-	}];
+	[videos deleteVideoByToken:videoToken StreamToken:streamToken Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+
+    }];
 ```
 
 ### Get Video URL for Your Own Custom Player
 ```
-    NSURL* videoURL = [NSURL URLWithString:[videos getURLForVideoByToken:token]];
+    NSURL* videoURL = [NSURL URLWithString:[videos getVideoUrlWithVideoToken:token]];
 ```
 
 ### Get Remote Video Thumbnail asynchronously
 Remote video thumbs are cached on client side, so you can call the method as frequently as you wish without the performance or network load impact
 ```
-    [videos getImageForVideoByToken:token 
-    	callback:^(UIImage *image, NSURLResponse *response, NSError *error) {
-        //update UI with the received image
+    [videos getImageForVideoByToken:videoToken Data:(NSDictionary *)data 
+        Callback:^(UIImage *image, NSURLResponse *response, NSError *error) {
+
     }];
 ```
 
 ### Generate Local Video Thumbnail asynchronously
 Local video thumbs are cached on client side, so you can call the method as frequently as you wish without the performance impact
 ```
-	[videos getImageForVideoByPath:localVideoPath 
-    	callback:^(UIImage *image, NSError *error) {
-    	//update UI with the received image
-	}];
+    [m_ziggeo.videos getImageForVideoByPath:localVideoPath 
+        Callback:^(UIImage *image, NSError *error) {
+            // update UI with the received image
+    }];
 ```
+
+
+## Audios API
+
+### Get Audio Accessor Object
+```
+    ZiggeoAudios* audios = [m_ziggeo audios];
+```
+
+### Get All Audios
+```
+    [audios getAudios:^(NSArray *jsonArray, NSError *error) {
+        // the completion block will be executed asynchronously on the response received
+    }];
+```
+
+### Upload Audio
+```
+    [audios uploadAudioWithPath:audioPath Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
+    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
+        
+    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
+    }];
+```
+
+### Delete Video
+```
+	[audios deleteAudioByToken:audioToken 
+        Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+
+    }];
+```
+
+
+## Image API
+
+### Get Image Accessor Object
+```
+    ZiggeoImages* images = [m_ziggeo images];
+```
+
+### Get All Images
+```
+    [images getImages:^(NSArray *jsonArray, NSError *error) {
+        // the completion block will be executed asynchronously on the response received
+    }];
+```
+
+### Upload Image
+```
+    [images uploadImageWithPath:imagePath Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
+    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
+        
+    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
+    }];
+
+or
+
+    [images uploadImageWithPath:imageFile Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
+    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
+        
+    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+        
+    }];
+```
+
+### Delete Image
+```
+	[images deleteImageByToken:imageToken 
+        Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+
+    }];
+```
+
 
 ## Custom Ziggeo API Requests
 The SDK provides an opportunity to make custom requests to Ziggeo Embedded Server API. You can make POST/GET/custom_method requests and receive RAW data, json-dictionary or string as the result.
@@ -418,9 +589,9 @@ ZiggeoConnect* connection = [m_ziggeo connect];
 
 ### Make POST Request and Parse JSON Response
 ```
-[connection postJsonWithPath:path Data:(NSDictionary*)data 
+[connection postJsonWithPath:path Data:(NSDictionary *)data 
 	Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-    	//jsonObject contains parsed json response received from Ziggeo API Server
+    	//  jsonObject contains parsed json response received from Ziggeo API Server
 	}
 ];
 ```
@@ -429,7 +600,7 @@ ZiggeoConnect* connection = [m_ziggeo connect];
 ```
 [connection postWithPath:path Data:(NSDictionary*)data 
 	Callback:^(NSData *data, NSURLResponse *response, NSError *error) {
-    	//data object contains raw data response received from Ziggeo API Server
+    	// data object contains raw data response received from Ziggeo API Server
 	}
 ];
 ```
@@ -438,7 +609,7 @@ ZiggeoConnect* connection = [m_ziggeo connect];
 ```
 [connection getStringWithPath:path Data:(NSDictionary*)data 
 	Callback:^(NSString *string, NSURLResponse *response, NSError *error) {
-    	//the string contains stringified response received from Ziggeo API Server
+    	// the string contains stringified response received from Ziggeo API Server
 	}
 ];
 ```

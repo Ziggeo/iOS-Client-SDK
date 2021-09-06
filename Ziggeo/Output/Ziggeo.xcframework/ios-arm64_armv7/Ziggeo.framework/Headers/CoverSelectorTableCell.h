@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CoverSelectorTableCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *coverView;
 
 @end

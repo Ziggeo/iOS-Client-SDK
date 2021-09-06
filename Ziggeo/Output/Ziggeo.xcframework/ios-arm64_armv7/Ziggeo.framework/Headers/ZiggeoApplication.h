@@ -7,17 +7,19 @@
 #import <Foundation/Foundation.h>
 @class ZiggeoConfig;
 @class ZiggeoConnect;
-@class ZiggeoVideos;
 @class ZiggeoCacheManager;
-@class ZiggeoApiHelper;
+@class ZiggeoVideos;
+@class ZiggeoAudios;
+@class ZiggeoImages;
 
 @interface Ziggeo : NSObject {
     ZiggeoConfig* _configObj;
     ZiggeoConnect* _connectObj;
-    ZiggeoVideos* _videosObj;
     ZiggeoCacheManager *_cacheManager;
     ZiggeoCacheManager *_playerCacheManager;
-    ZiggeoApiHelper *_apiHelper;
+    ZiggeoVideos *_videos;
+    ZiggeoAudios *_audios;
+    ZiggeoImages *_images;
 }
     
 @property (strong, nonatomic) NSString *token;
@@ -34,6 +36,7 @@
 
 - (ZiggeoConnect *)connect;
 - (ZiggeoVideos *)videos;
-- (ZiggeoApiHelper *)apiHelper;
+- (ZiggeoAudios *)audios;
+- (ZiggeoImages *)images;
 
 @end

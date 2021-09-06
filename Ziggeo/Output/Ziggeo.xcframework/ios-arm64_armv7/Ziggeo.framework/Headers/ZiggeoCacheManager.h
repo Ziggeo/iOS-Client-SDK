@@ -12,17 +12,22 @@
 
 - (id)initWithZiggeoApplication:(Ziggeo *)ziggeo isPlayer:(bool)isPlayer;
 
-- (NSString *)getAudioCacheDirectory;
 - (NSString *)getVideoCacheDirectory;
-- (NSString *)getImageCacheDirectory;
-
-- (NSString *)getCacheFullFileNameForVideoToken:(NSString *)token;
-- (NSString *)getCacheFileNameForVideoToken:(NSString *)token;
-- (NSString *)getCacheFullFileNameForAudioToken:(NSString *)token;
-- (NSString *)getCacheFileNameForAudioToken:(NSString *)token;
-
-- (void)trimAudioCache;
+- (NSString *)getVideoCacheFilePathForToken:(NSString *)token;
+- (NSString *)getVideoCacheFileNameForToken:(NSString *)token;
 - (void)trimVideoCache;
+
+- (NSString *)getAudioCacheDirectory;
+- (NSString *)getAudioCacheFilePathForToken:(NSString *)token;
+- (NSString *)getAudioCacheFileNameForToken:(NSString *)token;
+- (void)trimAudioCache;
+
+- (NSString *)getImageCacheDirectory;
+- (NSString *)getImageCacheFilePathForToken:(NSString *)token;
+- (NSString *)getImageCacheFileNameForToken:(NSString *)token;
 - (void)trimImageCache;
+
+- (bool)fileExists:(NSString *)filePath;
+- (void)removeFile:(NSString *)filePath;
 
 @end
