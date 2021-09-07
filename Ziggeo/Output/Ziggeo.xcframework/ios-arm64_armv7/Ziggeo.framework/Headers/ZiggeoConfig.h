@@ -19,7 +19,7 @@
 @property (strong, nonatomic) NSString *cache_root;
 @property (strong, nonatomic) NSString *player_cache_root;
 
--(id)initWithToken:(NSString*)token;
+-(id)initWithToken:(NSString *)token;
 
 -(void) setRecorderCacheConfig:(NSDictionary *)recorderCacheConfig;
 -(void) setPlayerCacheConfig:(NSDictionary *)config;

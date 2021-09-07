@@ -9,7 +9,7 @@
 @import AVFoundation;
 #import <UIKit/UIKit.h>
 #import "ZiggeoApplication.h"
-#import "ZiggeoApiHelper.h"
+#import "ZiggeoVideos.h"
 
 @protocol ZiggeoAudioRecorderDelegate <NSObject>
 @optional
@@ -32,9 +32,9 @@
 @interface ZiggeoAudioRecorder : UIViewController
 
 @property (nonatomic) id<ZiggeoAudioRecorderDelegate> recorderDelegate;
-@property (nonatomic) id<ZiggeoApiDelegate> apiDelegate;
+@property (nonatomic) id<ZiggeoUploadDelegate> uploadDelegate;
 
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
-- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString*)audioToken;
+- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString *)audioToken;
 
 @end

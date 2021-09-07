@@ -24,7 +24,6 @@ FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
 #import <Ziggeo/ZiggeoApplication.h>
 #import <Ziggeo/ZiggeoConfig.h>
 #import <Ziggeo/ZiggeoConnect.h>
-#import <Ziggeo/ZiggeoVideos.h>
 #import <Ziggeo/ZiggeoPlayer.h>
 #import <Ziggeo/ButtonConfig.h>
 #import <Ziggeo/ZiggeoRecorderInterfaceConfig.h>
@@ -36,7 +35,6 @@ FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
 #import <Ziggeo/ZiggeoRecorder.h>
 #import <Ziggeo/ZiggeoVideoLibrary.h>
 #import <Ziggeo/ZiggeoAudioRecorder.h>
-#import <Ziggeo/ZiggeoAudioPlayer.h>
-#import <Ziggeo/ZiggeoChooseImage.h>
-#import <Ziggeo/ZiggeoTakePhoto.h>
-#import <Ziggeo/ZiggeoApiHelper.h>
+#import <Ziggeo/ZiggeoVideos.h>
+#import <Ziggeo/ZiggeoAudios.h>
+#import <Ziggeo/ZiggeoImages.h>

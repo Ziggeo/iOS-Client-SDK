@@ -26,7 +26,7 @@
 - (void)dvAssetLoaderDelegate:(DVAssetLoaderDelegate *)loaderDelegate
                   didLoadData:(NSData *)data
                        forURL:(NSURL *)url
-                     withMIMEType:(NSString*)mimeType;
+                     withMIMEType:(NSString *)mimeType;
 
 /**
  Called when loader delegate downloaded data range so you can manually operate with a cache.

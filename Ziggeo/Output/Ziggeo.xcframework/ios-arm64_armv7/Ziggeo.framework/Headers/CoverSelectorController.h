@@ -8,17 +8,20 @@
 #import <UIKit/UIKit.h>
 #import "ZiggeoApplication.h"
 
+
 @protocol CoverSelectorDelegate <NSObject>
--(void) coverSelectedForPath:(NSString*)videoPath image:(UIImage*)image;
+
+-(void) coverSelectedForPath:(NSString *)videoPath image:(UIImage*)image;
+
 @end
+
 
 @interface CoverSelectorController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak) id<CoverSelectorDelegate> delegate;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
--(id) initWithSourceVideoPath:(NSString*)path;
-+(void) getDefaultCoverForPath:(NSString*)path handler:(void (^)(UIImage* image))handler;
+-(id) initWithSourceVideoPath:(NSString *)path;
++(void) getDefaultCoverForPath:(NSString *)path handler:(void (^)(UIImage* image))handler;
 
 @end

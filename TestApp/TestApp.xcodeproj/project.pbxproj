@@ -387,8 +387,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products/Release-universal",
-					"$(SRCROOT)/../Ziggeo/Output/Release-universal",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products",
+					"$(SRCROOT)/../Ziggeo/Output",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
@@ -407,8 +407,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products/Release-universal",
-					"$(SRCROOT)/../Ziggeo/Output/Release-universal",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products",
+					"$(SRCROOT)/../Ziggeo/Output",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TestApp/Info.plist;
