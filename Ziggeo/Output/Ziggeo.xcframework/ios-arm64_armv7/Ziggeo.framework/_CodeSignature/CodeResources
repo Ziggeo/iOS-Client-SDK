@@ -6,19 +6,19 @@
 	<dict>
 		<key>AudioLevelView.nib</key>
 		<data>
-		qlwJJF2tZN+LBteGtTq8jSIQ8a8=
+		zNyCE/WDSwHGZgnmflQAlPEG0+I=
 		</data>
 		<key>AudioVisualizationView.nib</key>
 		<data>
-		b1ZBiG4KK4MsG9dLUS7VaXZ3EnI=
+		jMmrz8+nH8LI/ajcgIileSTEqEc=
 		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		6ZQ/V6ZzMwfzzKwYkzbqxyS3VU4=
+		LwLEk7AGxRPOhnGYmprtgV45acE=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		7lyVOwKEGD9Fs5YBXVRqQNgg7TY=
+		oUlDX6wms5vuG702rcUNh5ncCkw=
 		</data>
 		<key>Headers/ButtonConfig.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/ZiggeoAudioRecorder.h</key>
 		<data>
-		rWIqqyTmbDGftNgDEfDOqc6+cHA=
+		waLK8UShqqAuc8Pei9KzmWnyN9U=
 		</data>
 		<key>Headers/ZiggeoAudios.h</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		XPa/SxKbov5AOXO4XxT/Ud11l34=
+		0nanyeIBg57VWCqez0UpJK68xzo=
 		</data>
 		<key>Modules/Ziggeo.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -198,15 +198,15 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		bi/olOMy6t0X8Of8oIQJJpC0kOA=
+		BV4/i+g8+ZLWGzM5Na/PxNNVUM4=
 		</data>
 		<key>ZiggeoAudioRecorder.nib</key>
 		<data>
-		QGKmMeDr5AHiCCStgzCHBMsHNYM=
+		WQM2IuHzIA//IX8ypawE1DF9Vv4=
 		</data>
 		<key>ZiggeoRecorder.nib</key>
 		<data>
-		g6bukKEbuCj6PyKkcS4G0z4LVZs=
+		D56B4CAf5MbZ2WZQHgiK4Ogz7L0=
 		</data>
 		<key>audio-record-start-black.png</key>
 		<data>
@@ -343,44 +343,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qlwJJF2tZN+LBteGtTq8jSIQ8a8=
+			zNyCE/WDSwHGZgnmflQAlPEG0+I=
 			</data>
 			<key>hash2</key>
 			<data>
-			gKDXQKk/X7oVWg805HLlCc78eIkbxTRT1BEZGwfqO3o=
+			mhc8wmxn3DSF/Ucn46qX2H+oIA7gKkxkQciUi1cS4qY=
 			</data>
 		</dict>
 		<key>AudioVisualizationView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			b1ZBiG4KK4MsG9dLUS7VaXZ3EnI=
+			jMmrz8+nH8LI/ajcgIileSTEqEc=
 			</data>
 			<key>hash2</key>
 			<data>
-			+n+LG7HAkRWb71ZGVyDOU7ifj0drN8QEdwAxUQ1CssI=
+			aSVBVOWBwl8cNfouJq5A6tChQTk5o+ng3/g9ae1Dlhs=
 			</data>
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6ZQ/V6ZzMwfzzKwYkzbqxyS3VU4=
+			LwLEk7AGxRPOhnGYmprtgV45acE=
 			</data>
 			<key>hash2</key>
 			<data>
-			E7BgSPhW2h+IDVtyE6lWpHlGopbc0LwywXWr9MKJpT8=
+			sMn2D8aoEuy/9/TJWZUD4QtFb0n05THXy16HFJ3KBeo=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7lyVOwKEGD9Fs5YBXVRqQNgg7TY=
+			oUlDX6wms5vuG702rcUNh5ncCkw=
 			</data>
 			<key>hash2</key>
 			<data>
-			DnIW5meZ0K2boA2cwYiQXJhNolnU/Pu2INYJaDz/Cg4=
+			s0+Hv1AnABejKRYzT9nQNCI6Z82ouHrXdDr16R1tcb0=
 			</data>
 		</dict>
 		<key>Headers/ButtonConfig.h</key>
@@ -541,11 +541,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rWIqqyTmbDGftNgDEfDOqc6+cHA=
+			waLK8UShqqAuc8Pei9KzmWnyN9U=
 			</data>
 			<key>hash2</key>
 			<data>
-			KzemAFK6vb22C+iPw+CTzD8meZY7SSIiH6wtJdt6IZw=
+			yfRjaN9VL1Jg8+VJMY06kCYfJtlTsag90X9dUqWPLY4=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoAudios.h</key>
@@ -673,11 +673,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XPa/SxKbov5AOXO4XxT/Ud11l34=
+			0nanyeIBg57VWCqez0UpJK68xzo=
 			</data>
 			<key>hash2</key>
 			<data>
-			tz964Rz5gbL/BLnjDnZcUBfEplz8ZcMxCgTuuTq1+tE=
+			E1TV5gJNp+6+hVNa4wII80/QbmvYf1LHu8ix+GADo3A=
 			</data>
 		</dict>
 		<key>Modules/Ziggeo.swiftmodule/arm.swiftdoc</key>
@@ -860,33 +860,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bi/olOMy6t0X8Of8oIQJJpC0kOA=
+			BV4/i+g8+ZLWGzM5Na/PxNNVUM4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2vpXYKcNvbuAgQG8bwdaEOkeV2nx7KgpGbfR85FmXb0=
+			+i/R+CRn5aI7XZtLDc5F0KWLKrX4Tk+PrYJxcMnJg+M=
 			</data>
 		</dict>
 		<key>ZiggeoAudioRecorder.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QGKmMeDr5AHiCCStgzCHBMsHNYM=
+			WQM2IuHzIA//IX8ypawE1DF9Vv4=
 			</data>
 			<key>hash2</key>
 			<data>
-			VDGU4SUpShpOFusf/cAtooutHQwrHKuZZMTqDGlVa4U=
+			VOXecRQZ1auIea/eEYWs/M6tnxILIwewUssU6rTB0Dw=
 			</data>
 		</dict>
 		<key>ZiggeoRecorder.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			g6bukKEbuCj6PyKkcS4G0z4LVZs=
+			D56B4CAf5MbZ2WZQHgiK4Ogz7L0=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Gc84OroILFSnA4vuO6/2yjtBEN3ssD5mK/TxAHyuGU=
+			+J1ZCZ7asbEeMAmHHP9Hjy9Xq/G2+1iFI8s7xCwRjHc=
 			</data>
 		</dict>
 		<key>audio-record-start-black.png</key>

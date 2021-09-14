@@ -279,6 +279,14 @@ NSString *Last_Image_Token = @"Image_Token";
 //    NSLog(@"ziggeoAudioRecorderPaused");
 }
 
+- (void)ziggeoAudioRecorderRerecord {
+//    NSLog(@"ziggeoAudioRecorderRerecord");
+}
+
+- (void)ziggeoAudioRecorderManuallySubmitted {
+//    NSLog(@"ziggeoAudioRecorderManuallySubmitted");
+}
+
 
 //MARK: - ZiggeoUploadDelegate
 
