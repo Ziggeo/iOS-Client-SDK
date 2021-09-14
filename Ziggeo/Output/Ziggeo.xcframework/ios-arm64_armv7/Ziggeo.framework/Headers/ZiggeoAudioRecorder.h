@@ -21,11 +21,15 @@
 @optional
 - (void)ziggeoAudioRecorderCurrentRecordedDurationSeconds:(double)seconds;
 @optional
-- (void)ziggeoAudioRecorderFinished:(double)seconds;
+- (void)ziggeoAudioRecorderFinished:(NSString *)path;
 @optional
 - (void)ziggeoAudioRecorderPlaying;
 @optional
 - (void)ziggeoAudioRecorderPaused;
+@optional
+- (void)ziggeoAudioRecorderRerecord;
+@optional
+- (void)ziggeoAudioRecorderManuallySubmitted;
 @end
 
 
