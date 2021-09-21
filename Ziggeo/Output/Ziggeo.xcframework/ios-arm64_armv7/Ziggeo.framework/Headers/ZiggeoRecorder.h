@@ -11,25 +11,10 @@
 #import <UIKit/UIKit.h>
 #import "RecordedVideoPreview.h"
 #import "ZiggeoApplication.h"
-#import "ZiggeoVideos.h"
+#import "ZiggeoConfig.h"
 
 
 @class ZiggeoRecorderInterfaceConfig;
-
-@protocol ZiggeoRecorderDelegate <NSObject>
-@optional
-- (void)ziggeoRecorderDidCancel;
-@optional
-- (void)ziggeoRecorderDidStop;
-@optional
-- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds;
-@optional
-- (void)luxMeter:(double)luminousity;
-@optional
-- (void)audioMeter:(double)audioLevel;
-@optional
-- (void)faceDetected:(int)faceID rect:(CGRect)rect;
-@end
 
 typedef enum : NSUInteger {
     LowQuality,

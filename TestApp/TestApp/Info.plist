@@ -39,6 +39,8 @@
 	<string>The application will have access to video recording</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>The application will have access to audio recording</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The application will have access to choose video or image</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
