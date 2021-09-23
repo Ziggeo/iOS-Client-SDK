@@ -20,7 +20,7 @@ typedef enum {
 } CurrentType;
 
 
-@interface ViewController () <ZiggeoRecorderDelegate, ZiggeoUploadDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoHardwarePermissionCheckDelegate> {
+@interface ViewController () <ZiggeoRecorderDelegate, ZiggeoUploadDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoHardwarePermissionCheckDelegate, ZiggeoPlayerDelegate> {
     Ziggeo* m_ziggeo;
     ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
@@ -36,21 +36,21 @@ typedef enum {
 
 @implementation ViewController
 
-NSString *ZIGGEO_APP_TOKEN = @"344a71099193b17a693ab11fdd0eeb10";
-NSString *SERVER_AUTH_TOKEN = @"2502a8288403cec13382a6f4d8f54f64";
-NSString *CLIENT_AUTH_TOKEN = @"15901364881299187057";
-
-NSString *Last_Video_Token = @"4eaea7e4d3792a6d1b8dc4f2caeea319";
-NSString *Last_Audio_Token = @"zawimvpc7pbivcfgjjspvxfk34p6icnf";
-NSString *Last_Image_Token = @"xzg4saj6u3ojm47los1kzaztju2cl3on";
-
-//NSString *ZIGGEO_APP_TOKEN = @"ZIGGEO_APP_TOKEN";
-//NSString *SERVER_AUTH_TOKEN = @"SERVER_AUTH_TOKEN";
-//NSString *CLIENT_AUTH_TOKEN = @"CLIENT_AUTH_TOKEN";
+//NSString *ZIGGEO_APP_TOKEN = @"344a71099193b17a693ab11fdd0eeb10";
+//NSString *SERVER_AUTH_TOKEN = @"2502a8288403cec13382a6f4d8f54f64";
+//NSString *CLIENT_AUTH_TOKEN = @"15901364881299187057";
 //
-//NSString *Last_Video_Token = @"Video_Token";
-//NSString *Last_Audio_Token = @"Audio_Token";
-//NSString *Last_Image_Token = @"Image_Token";
+//NSString *Last_Video_Token = @"4eaea7e4d3792a6d1b8dc4f2caeea319";
+//NSString *Last_Audio_Token = @"zawimvpc7pbivcfgjjspvxfk34p6icnf";
+//NSString *Last_Image_Token = @"xzg4saj6u3ojm47los1kzaztju2cl3on";
+
+NSString *ZIGGEO_APP_TOKEN = @"ZIGGEO_APP_TOKEN";
+NSString *SERVER_AUTH_TOKEN = @"SERVER_AUTH_TOKEN";
+NSString *CLIENT_AUTH_TOKEN = @"CLIENT_AUTH_TOKEN";
+
+NSString *Last_Video_Token = @"Video_Token";
+NSString *Last_Audio_Token = @"Audio_Token";
+NSString *Last_Image_Token = @"Image_Token";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -131,6 +131,7 @@ NSString *Last_Image_Token = @"xzg4saj6u3ojm47los1kzaztju2cl3on";
     
     [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:Last_Video_Token params:@{ @"client_auth" : CLIENT_AUTH_TOKEN } callback:^(ZiggeoPlayer *player) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            player.playerDelegate = self;
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
             playerController.player = player;
             //hide player on playback finished
@@ -422,7 +423,27 @@ NSString *Last_Image_Token = @"xzg4saj6u3ojm47los1kzaztju2cl3on";
 }
 
 
+// MARK: - ZiggeoPlayerDelegate
 
+- (void)ziggeoPlayerPlaying {
+    
+}
+
+- (void)ziggeoPlayerPaused {
+    
+}
+
+- (void)ziggeoPlayerEnded {
+    
+}
+
+- (void)ziggeoPlayerSeek:(double)positionMillis {
+    
+}
+
+- (void)ziggeoPlayerReadyToPlay {
+    
+}
 
 
 

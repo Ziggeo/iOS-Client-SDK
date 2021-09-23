@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.30 to v.1.1.31
+The update adds the missing events.
+
 ## v 1.1.29 to v.1.1.30
 The update adds the updated uploading apis for videos, audios and images.
 
@@ -316,17 +319,6 @@ You can use ZiggeoRecorderDelegate in your app to be notified about video record
 	[m_ziggeo videos].recorderDelegate = self;
 }
 
-- (void)ziggeoRecorderDidCancel {
-    // this method will be called when video recorder is canceled
-}
-
-- (void)ziggeoRecorderDidStop {
-    // this method will be called when video recorder is stopped
-}
-
-- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
-    // this method will be called while video recording
-}
 
 - (void)luxMeter:(double)luminousity {
     //
@@ -340,49 +332,51 @@ You can use ZiggeoRecorderDelegate in your app to be notified about video record
     // this method will be called when face is detected
 }
 
+- (void)ziggeoRecorderReady {
+    // this method will be called when recorder is ready to recorder
+}
+
+- (void) ziggeoRecorderCanceled {
+    // this method will be called when recorder is canceled
+}
+
+- (void)ziggeoRecorderStarted {
+    // this method will be called when recorder is started
+}
+
+- (void)ziggeoRecorderStopped:(NSString *)path {
+    // this method will be called when recorder is stopped
+}
+
+- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
+    // this method will be called while recording
+}
+
+- (void)ziggeoRecorderPlaying {
+    // this method will be called when recorder plays the recorded audio
+}
+
+- (void)ziggeoRecorderPaused {
+    // this method will be called when recorder pauses the recorded audio
+}
+
+- (void)ziggeoRecorderRerecord {
+    // this method will be called when recorder is rerecorded
+}
+
+- (void)ziggeoRecorderManuallySubmitted {
+    // this method will be called when recorded file(video or audio) is uploaded by the user
+}
+
+- (void)ziggeoStreamingStarted {
+    // Triggered when a streaming process has started (Press on the Record button if countdown 0 or after the countdown goes to 0)
+}
+
+- (void)ziggeoStreamingStopped {
+    // Triggered when a streaming process has stopped (automatically after reaching the maximum duration or manually.)
+}
 ```
 
-#### ZiggeoAudioRecorderDelegate
-You can use ZiggeoAudioRecorderDelegate in your app to be notified about audio recording events.
-```
-@interface ViewController : UIViewController <ZiggeoAudioRecorderDelegate>
-
-...
-
-{
-	...
-	[m_ziggeo audios].recorderDelegate = self;
-}
-
-- (void)ziggeoAudioRecorderReady {
-    // this method will be called when audio recorder is ready
-}
-
-- (void) ziggeoAudioRecorderCanceled {
-    // this method will be called when audio recorder is canceled
-}
-
-- (void)ziggeoAudioRecorderRecoding {
-    // this method will be called when audio recorder starts recording
-}
-
-- (void)ziggeoAudioRecorderCurrentRecordedDurationSeconds:(double)seconds {
-    // this method will be called while audio recorder is recording
-}
-
-- (void)ziggeoAudioRecorderFinished:(NSString *)path {
-    // this method will be called when audio recorder is finished
-}
-
-- (void)ziggeoAudioRecorderPlaying {
-    // this method will be called when audio recorder plays the recorded audio
-}
-
-- (void)ziggeoAudioRecorderPaused {
-    // this method will be called when audio recorder pauses the recorded audio
-}
-
-```
 
 #### ZiggeoUploadDelegate
 You can use ZiggeoUploadDelegate in your app to be notified about file(video, audio, image) uploading events.
@@ -402,28 +396,105 @@ You can use ZiggeoUploadDelegate in your app to be notified about file(video, au
     // this method will be called first before any Ziggeo API interaction
 }
 
-- (void)preparingToUploadWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
-    // this method will be called immediately after empty file(video, audio, image) creation on Ziggeo platform
-}
-
 - (void)failedToUploadWithPath:(NSString*)sourcePath {
     // this method will be called when file(video, audio, image) uploading was failed
 }
 
 - (void)uploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask*)uploadingTask {
-    // this method will be called on actual file(video, audio, image) upload start
+    // this method will be called on actual file(video, audio, image) upload start after empty file(video, audio, image) creation on Ziggeo platform
 }
 
 - (void)uploadProgressForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
     // this method will be called while uploading the file(video, audio, image)
 }
 
-- (void)uploadCompletedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
+- (void)uploadFinishedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
+    // this method will be called after the file(video, audio, image) was uploaded
+}
+
+- (void)uploadVerifiedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
     // this method will be called when file(video, audio, image) upload finished successfully or failed
+}
+
+- (void)uploadProcessingWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken {
+    // this method will be called while processing the file(video, audio, image)
+}
+
+- (void)uploadProcessedWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken {
+    // this method will be called when uploading the file(video, audio, image) was finished by ziggeo servers
 }
 
 - (void)deleteWithToken:(NSString*)token streamToken:(NSString*)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
     // this method will be called when file(video, audio, image) was deleted
+}
+```
+
+
+#### ZiggeoPlayerDelegate
+You can use ZiggeoPlayerDelegate in your app to be notified about file(video, audio) playing events.
+```
+@interface ViewController : UIViewController <ZiggeoPlayerDelegate>
+
+...
+
+{
+	...
+	ZiggeoPlayer *player = [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:videoToken];
+    player.playerDelegate = self;
+}
+
+- (void)ziggeoPlayerPlaying {
+    // Fires any time a playback is started
+}
+
+- (void)ziggeoPlayerPaused {
+    // Fires when the pause button is clicked (and at the end of the video)
+}
+
+- (void)ziggeoPlayerEnded {
+    // Fires when a video playback has ended (reaches the end)
+}
+
+- (void)ziggeoPlayerSeek:(double)positionMillis {
+    // Triggered when the user moves the progress indicator to continue video playback from a different position
+}
+
+- (void)ziggeoPlayerReadyToPlay {
+    // Triggered when a video player is ready to play a video
+}
+```
+
+
+#### ZiggeoHardwarePermissionCheckDelegate
+You can use ZiggeoHardwarePermissionCheckDelegate in your app to be notified about hardware and permission.
+```
+@interface ViewController : UIViewController <ZiggeoHardwarePermissionCheckDelegate>
+
+...
+
+{
+	...
+	[m_ziggeo.config setDelegate:self];
+}
+
+- (void)checkCameraPermission:(BOOL)granted {
+    // this method will return when camera access permission is granted or denied.
+}
+
+- (void)checkMicrophonePermission:(BOOL)granted {
+    // this method will return when microphone access permission is granted or denied.
+}
+
+- (void)checkPhotoLibraryPermission:(BOOL)granted {
+    // this method will return when photo library access permission is granted or denied.
+}
+
+- (void)checkHasCamera:(BOOL)hasCamera {
+    // this method will return whether camera hardware is detected or not.
+}
+
+- (void)checkHasMicrophone:(BOOL)hasMicrophone {
+    // this method will return whether microphone hardware is detected or not.
 }
 ```
 
