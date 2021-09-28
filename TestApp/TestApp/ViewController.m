@@ -20,7 +20,7 @@ typedef enum {
 } CurrentType;
 
 
-@interface ViewController () <ZiggeoRecorderDelegate, ZiggeoAudioRecorderDelegate, ZiggeoUploadDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
+@interface ViewController () <ZiggeoRecorderDelegate, ZiggeoUploadDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoHardwarePermissionCheckDelegate, ZiggeoPlayerDelegate> {
     Ziggeo* m_ziggeo;
     ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
@@ -56,6 +56,7 @@ NSString *Last_Image_Token = @"Image_Token";
     [super viewDidLoad];
     
     m_ziggeo = [[Ziggeo alloc] initWithToken:ZIGGEO_APP_TOKEN];
+    [m_ziggeo.config setDelegate:self];
     
     [self.previewImageView setHidden:true];
     [self.previewVideoView setHidden:true];
@@ -67,7 +68,7 @@ NSString *Last_Image_Token = @"Image_Token";
 }
 
 
-//MARK: Button Click Action
+// MARK: Button Click Action
 
 - (IBAction)onVideoRecord:(id)sender {
     currentType = Video;
@@ -130,6 +131,7 @@ NSString *Last_Image_Token = @"Image_Token";
     
     [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:Last_Video_Token params:@{ @"client_auth" : CLIENT_AUTH_TOKEN } callback:^(ZiggeoPlayer *player) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            player.playerDelegate = self;
             AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
             playerController.player = player;
             //hide player on playback finished
@@ -234,115 +236,9 @@ NSString *Last_Image_Token = @"Image_Token";
     });
 }
 
-//MARK: - ZiggeoRecorderDelegate
 
-- (void)luxMeter:(double)luminousity {
-    //NSLog(@"luminousity: %f", luminousity);
-}
+// MARK: - UINavigationControllerDelegate, UIImagePickerControllerDelegate
 
-- (void)audioMeter:(double)audioLevel {
-    //NSLog(@"audio: %f", audioLevel);
-}
-
-- (void)faceDetected:(int)faceID rect:(CGRect)rect {
-    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-}
-
-
-//MARK: - ZiggeoAudioRecorderDelegate
-
-- (void)ziggeoAudioRecorderReady {
-//    NSLog(@"ziggeoAudioRecorderReady");
-}
-
-- (void) ziggeoAudioRecorderCanceled {
-//    NSLog(@"ziggeoAudioRecorderCanceled");
-}
-
-- (void)ziggeoAudioRecorderRecoding {
-//    NSLog(@"ziggeoAudioRecorderRecoding");
-}
-
-- (void)ziggeoAudioRecorderCurrentRecordedDurationSeconds:(double)seconds {
-//    NSLog(@"ziggeoAudioRecorderCurrentRecordedDurationSeconds: %f", seconds);
-}
-
-- (void)ziggeoAudioRecorderFinished:(double)seconds {
-//    NSLog(@"ziggeoAudioRecorderFinished: %f", seconds);
-}
-
-- (void)ziggeoAudioRecorderPlaying {
-//    NSLog(@"ziggeoAudioRecorderPlaying");
-}
-
-- (void)ziggeoAudioRecorderPaused {
-//    NSLog(@"ziggeoAudioRecorderPaused");
-}
-
-- (void)ziggeoAudioRecorderRerecord {
-//    NSLog(@"ziggeoAudioRecorderRerecord");
-}
-
-- (void)ziggeoAudioRecorderManuallySubmitted {
-//    NSLog(@"ziggeoAudioRecorderManuallySubmitted");
-}
-
-
-//MARK: - ZiggeoUploadDelegate
-
-- (void)preparingToUploadWithPath:(NSString*)sourcePath {
-//    NSLog(@"preparingToUploadWithPath : %@", sourcePath);
-    if (currentType == Video) {
-        [self updateStateLabel:@"Video Upload Started"];
-    } else if (currentType == Audio) {
-        [self updateStateLabel:@"Audio Upload Started"];
-    } else if (currentType == Image) {
-        [self updateStateLabel:@"Image Upload Started"];
-    }
-}
-
-- (void)preparingToUploadWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
-//    NSLog(@"preparingToUploadWithPath : %@ - %@", sourcePath, token);
-}
-
-- (void)failedToUploadWithPath:(NSString*)sourcePath {
-//    NSLog(@"failedToUploadWithPath : %@", sourcePath);
-}
-
-- (void)uploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask*)uploadingTask {
-//    NSLog(@"uploadStartedWithPath : %@ - %@", sourcePath, token);
-}
-
-- (void)uploadProgressForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
-//    NSLog(@"uploadProgressForPath : %@ - %i - %i", token, bytesSent, totalBytes);
-    if (currentType == Video) {
-        [self updateStateLabel:[NSString stringWithFormat:@"Video Uploading : %d / %d", bytesSent, totalBytes]];
-    } else if (currentType == Audio) {
-        [self updateStateLabel:[NSString stringWithFormat:@"Audio Uploading : %d / %d", bytesSent, totalBytes]];
-    } else if (currentType == Image) {
-        [self updateStateLabel:[NSString stringWithFormat:@"Image Uploading : %d / %d", bytesSent, totalBytes]];
-    }
-}
-
-- (void)uploadCompletedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
-    NSLog(@"Ziggeo File Upload Completed : %@", token);
-    if (currentType == Video) {
-        Last_Video_Token = token;
-        [self updateStateLabel:@"Video Upload Completed"];
-    } else if (currentType == Audio) {
-        Last_Audio_Token = token;
-        [self updateStateLabel:@"Audio Upload Completed"];
-    } else if (currentType == Image) {
-        Last_Image_Token = token;
-        [self updateStateLabel:@"Image Upload Completed"];
-    }
-}
-
-- (void)deleteWithToken:(NSString*)token streamToken:(NSString*)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
-//    NSLog(@"deleteWithToken : %@ - %@", token, streamToken);
-}
-
-//MARK: - UINavigationControllerDelegate, UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     NSString *mediaType = info[UIImagePickerControllerMediaType];
     if (CFStringCompare ((__bridge_retained CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
@@ -350,17 +246,17 @@ NSString *Last_Image_Token = @"Image_Token";
         self->m_ziggeo.images.uploadDelegate = self;
         [self->m_ziggeo.images uploadImageWithFile:imageFile];
         [self dismissViewControllerAnimated:YES completion:nil];
+        
     } else if (CFStringCompare ((__bridge_retained CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
         NSString *path = [info[UIImagePickerControllerMediaURL] path];
 
         NSString *documentsDirectory = NSTemporaryDirectory();
         NSString *newFilePath = [documentsDirectory stringByAppendingPathComponent:@"video.mp4"];
-        
+        NSError *error = nil;
         if ([[NSFileManager defaultManager] fileExistsAtPath:newFilePath]) {
-            [[NSFileManager defaultManager] fileExistsAtPath:newFilePath];
+            [[NSFileManager defaultManager] removeItemAtPath:newFilePath error:&error];
         }
         
-        NSError *error = nil;
         BOOL success = [[NSFileManager defaultManager] copyItemAtPath:path toPath:newFilePath error:&error];
         if (success) {
             path = newFilePath;
@@ -378,6 +274,175 @@ NSString *Last_Image_Token = @"Image_Token";
         NSLog(@"Image Picker canceled.");
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+// MARK: - ZiggeoRecorderDelegate
+
+- (void)luxMeter:(double)luminousity {
+    //NSLog(@"luminousity: %f", luminousity);
+}
+
+- (void)audioMeter:(double)audioLevel {
+    //NSLog(@"audio: %f", audioLevel);
+}
+
+- (void)faceDetected:(int)faceID rect:(CGRect)rect {
+    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+}
+
+- (void)ziggeoRecorderReady {
+    NSLog(@"Ziggeo Recorder Ready");
+}
+
+- (void) ziggeoRecorderCanceled {
+    NSLog(@"Ziggeo Recorder Canceled");
+}
+
+- (void)ziggeoRecorderStarted {
+    NSLog(@"Ziggeo Recorder Started");
+}
+
+- (void)ziggeoRecorderStopped:(NSString *)path {
+    NSLog(@"Ziggeo Recorder Stopped : %@", path);
+}
+
+- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
+    NSLog(@"Ziggeo Recorder Current Recorded Duration Seconds : %f", seconds);
+}
+
+- (void)ziggeoRecorderPlaying {
+    NSLog(@"Ziggeo Recorder Playing");
+}
+
+- (void)ziggeoRecorderPaused {
+    NSLog(@"Ziggeo Recorder Paused");
+}
+
+- (void)ziggeoRecorderRerecord {
+    NSLog(@"Ziggeo Recorder Rerecord");
+}
+
+- (void)ziggeoRecorderManuallySubmitted {
+    NSLog(@"Ziggeo Recorder Manually Submitted");
+}
+
+- (void)ziggeoStreamingStarted {
+    NSLog(@"Ziggeo Streaming Started");
+}
+
+- (void)ziggeoStreamingStopped {
+    NSLog(@"Ziggeo Streaming Stopped");
+}
+
+
+// MARK: - ZiggeoUploadDelegate
+
+- (void)preparingToUploadWithPath:(NSString*)sourcePath {
+    NSLog(@"Preparing To Upload : %@", sourcePath);
+    if (currentType == Video) {
+        [self updateStateLabel:@"Video Upload Started"];
+    } else if (currentType == Audio) {
+        [self updateStateLabel:@"Audio Upload Started"];
+    } else if (currentType == Image) {
+        [self updateStateLabel:@"Image Upload Started"];
+    }
+}
+
+- (void)failedToUploadWithPath:(NSString*)sourcePath {
+    NSLog(@"Failed To Upload : %@", sourcePath);
+    [self updateStateLabel:@"Upload Failed"];
+}
+
+- (void)uploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask*)uploadingTask {
+    NSLog(@"Upload Started : %@ - %@", token, streamToken);
+}
+
+- (void)uploadProgressForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
+    NSLog(@"Upload Progress : %@ - %i - %i", token, bytesSent, totalBytes);
+    if (currentType == Video) {
+        [self updateStateLabel:[NSString stringWithFormat:@"Video Uploading : %d / %d", bytesSent, totalBytes]];
+    } else if (currentType == Audio) {
+        [self updateStateLabel:[NSString stringWithFormat:@"Audio Uploading : %d / %d", bytesSent, totalBytes]];
+    } else if (currentType == Image) {
+        [self updateStateLabel:[NSString stringWithFormat:@"Image Uploading : %d / %d", bytesSent, totalBytes]];
+    }
+}
+
+- (void)uploadFinishedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
+    NSLog(@"Upload Finished : %@ - %@", token, streamToken);
+}
+
+- (void)uploadVerifiedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
+    NSLog(@"Upload Verified : %@", token);
+    if (currentType == Video) {
+        Last_Video_Token = token;
+        [self updateStateLabel:@"Video Upload Completed"];
+    } else if (currentType == Audio) {
+        Last_Audio_Token = token;
+        [self updateStateLabel:@"Audio Upload Completed"];
+    } else if (currentType == Image) {
+        Last_Image_Token = token;
+        [self updateStateLabel:@"Image Upload Completed"];
+    }
+}
+
+- (void)uploadProcessingWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken {
+    NSLog(@"Upload Processing : %@ - %@", token, streamToken);
+}
+
+- (void)uploadProcessedWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken {
+    NSLog(@"Upload Processed : %@ - %@", token, streamToken);
+}
+
+- (void)deleteWithToken:(NSString*)token streamToken:(NSString*)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
+    NSLog(@"Delete : %@ - %@", token, streamToken);
+}
+
+
+// MARK: - ZiggeoHardwarePermissionCheckDelegate
+
+- (void)checkCameraPermission:(BOOL)granted {
+    NSLog(@"Check Camera Permission : %d", granted);
+}
+
+- (void)checkMicrophonePermission:(BOOL)granted {
+    NSLog(@"Check Microphone Permission : %d", granted);
+}
+
+- (void)checkPhotoLibraryPermission:(BOOL)granted {
+    NSLog(@"Check Photo Library Permission : %d", granted);
+}
+
+- (void)checkHasCamera:(BOOL)hasCamera {
+    NSLog(@"Check Has Camera : %d", hasCamera);
+}
+
+- (void)checkHasMicrophone:(BOOL)hasMicrophone {
+    NSLog(@"Check Has Microphone : %d", hasMicrophone);
+}
+
+
+// MARK: - ZiggeoPlayerDelegate
+
+- (void)ziggeoPlayerPlaying {
+    
+}
+
+- (void)ziggeoPlayerPaused {
+    
+}
+
+- (void)ziggeoPlayerEnded {
+    
+}
+
+- (void)ziggeoPlayerSeek:(double)positionMillis {
+    
+}
+
+- (void)ziggeoPlayerReadyToPlay {
+    
 }
 
 

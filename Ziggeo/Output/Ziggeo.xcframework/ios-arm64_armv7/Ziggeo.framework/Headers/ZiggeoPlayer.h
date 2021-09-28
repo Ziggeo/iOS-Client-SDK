@@ -15,6 +15,7 @@
 @interface ZiggeoPlayer : AVPlayer <DVAssetLoaderDelegatesDelegate, IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
 
 @property (nonatomic, copy) void (^didFinishPlaying)(NSString * videoToken, NSError* error);
+@property (weak) id<ZiggeoPlayerDelegate> playerDelegate;
 
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString *)token;
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo videoToken:(NSString *)token videoUrl:(NSString *)url;

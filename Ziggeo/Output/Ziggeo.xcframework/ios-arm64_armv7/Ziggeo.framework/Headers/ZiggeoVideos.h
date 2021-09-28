@@ -6,28 +6,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
+#import "ZiggeoConfig.h"
 @import UIKit;
-
-
-@protocol ZiggeoUploadDelegate <NSObject>
-
-@optional
-- (void)preparingToUploadWithPath:(NSString *)sourcePath;
-@optional
-- (void)preparingToUploadWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken;
-@optional
-- (void)failedToUploadWithPath:(NSString *)sourcePath;
-@optional
-- (void)uploadStartedWithPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask *)uploadingTask;
-@optional
-- (void)uploadProgressForPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes;
-@optional
-- (void)uploadCompletedForPath:(NSString *)sourcePath token:(NSString *)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse *)response error:(NSError *)error json:(NSDictionary *)json;
-@optional
-- (void)deleteWithToken:(NSString *)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse *)response error:(NSError *)error json:(NSDictionary *)json;
-
-@end
-
 
 
 @interface ZiggeoVideos : NSObject{

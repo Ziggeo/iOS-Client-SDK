@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
-#import "ZiggeoVideos.h"
+#import "ZiggeoConfig.h"
 @import UIKit;
 
 
