@@ -56,7 +56,7 @@ NSString *Last_Image_Token = @"Image_Token";
     [super viewDidLoad];
     
     m_ziggeo = [[Ziggeo alloc] initWithToken:ZIGGEO_APP_TOKEN];
-    [m_ziggeo.config setDelegate:self];
+    [m_ziggeo checkHardwarePermission:self];
     
     [self.previewImageView setHidden:true];
     [self.previewVideoView setHidden:true];
@@ -262,7 +262,8 @@ NSString *Last_Image_Token = @"Image_Token";
             path = newFilePath;
         }
         self->m_ziggeo.videos.uploadDelegate = self;
-        [self->m_ziggeo.videos uploadVideoWithPath:path];
+        NSDictionary *dic = [NSDictionary dictionaryWithObject:@"TEST_TAG" forKey:@"tags"];
+        [self->m_ziggeo.videos uploadVideoWithPath:path Data: dic];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

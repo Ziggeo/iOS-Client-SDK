@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.31 to v.1.1.32
+The update fixes several issues when playing and uploading files.
+
 ## v 1.1.30 to v.1.1.31
 The update adds the missing events.
 
@@ -474,7 +477,7 @@ You can use ZiggeoHardwarePermissionCheckDelegate in your app to be notified abo
 
 {
 	...
-	[m_ziggeo.config setDelegate:self];
+	[m_ziggeo checkHardwarePermission:self];
 }
 
 - (void)checkCameraPermission:(BOOL)granted {

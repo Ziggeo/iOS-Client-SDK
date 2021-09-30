@@ -5,12 +5,30 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class ZiggeoConfig;
 @class ZiggeoConnect;
 @class ZiggeoCacheManager;
 @class ZiggeoVideos;
 @class ZiggeoAudios;
 @class ZiggeoImages;
+
+
+@protocol ZiggeoHardwarePermissionCheckDelegate <NSObject>
+
+@optional
+- (void)checkCameraPermission:(BOOL)granted;
+@optional
+- (void)checkMicrophonePermission:(BOOL)granted;
+@optional
+- (void)checkPhotoLibraryPermission:(BOOL)granted;
+
+@optional
+- (void)checkHasCamera:(BOOL)hasCamera;
+@optional
+- (void)checkHasMicrophone:(BOOL)hasMicrophone;
+
+@end
 
 @interface Ziggeo : NSObject {
     ZiggeoConfig* _configObj;
@@ -38,5 +56,7 @@
 - (ZiggeoVideos *)videos;
 - (ZiggeoAudios *)audios;
 - (ZiggeoImages *)images;
+- (void)cancelRequest;
+- (void)checkHardwarePermission:(id<ZiggeoHardwarePermissionCheckDelegate>)delegate;
 
 @end

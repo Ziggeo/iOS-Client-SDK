@@ -70,23 +70,6 @@
 @end
 
 
-@protocol ZiggeoHardwarePermissionCheckDelegate <NSObject>
-
-@optional
-- (void)checkCameraPermission:(BOOL)granted;
-@optional
-- (void)checkMicrophonePermission:(BOOL)granted;
-@optional
-- (void)checkPhotoLibraryPermission:(BOOL)granted;
-
-@optional
-- (void)checkHasCamera:(BOOL)hasCamera;
-@optional
-- (void)checkHasMicrophone:(BOOL)hasMicrophone;
-
-@end
-
-
 @protocol ZiggeoPlayerDelegate <NSObject>
 
 @optional
@@ -118,7 +101,6 @@
 @property (strong, nonatomic) NSString *player_cache_root;
 
 - (id)initWithToken:(NSString *)token;
-- (void)setDelegate:(id<ZiggeoHardwarePermissionCheckDelegate>)delegate;
 - (void)setRecorderCacheConfig:(NSDictionary *)recorderCacheConfig;
 - (void)setPlayerCacheConfig:(NSDictionary *)config;
 

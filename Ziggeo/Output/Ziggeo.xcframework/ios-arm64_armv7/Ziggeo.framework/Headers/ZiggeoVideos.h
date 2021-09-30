@@ -22,14 +22,17 @@
 
 - (void)getVideos:(void (^)(NSArray *jsonArray, NSError *error))callback;
 
-- (void)uploadVideoWithPath:(NSString *)path;
+- (void)uploadVideoWithPath:(NSString *)path
+                       Data:(NSDictionary *)data;
 
 - (void)uploadVideoWithPath:(NSString *)path
+                       Data:(NSDictionary *)data
                    Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
                    Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
             ConfirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 
 - (void)updateVideoWithPath:(NSString *)path
+                       Data:(NSDictionary *)data
                  VideoToken:(NSString *)videoToken
                 StreamToken:(NSString *)streamToken
                    Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
@@ -52,5 +55,7 @@
 
 - (void)getImageForVideoByPath:(NSString*)path
                       Callback:(void (^)(UIImage* image, NSError* error))callback;
+
+- (void)cancelRequest;
 
 @end
