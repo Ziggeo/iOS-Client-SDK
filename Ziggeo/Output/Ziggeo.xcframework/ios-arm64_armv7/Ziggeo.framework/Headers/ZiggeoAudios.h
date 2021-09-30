@@ -41,4 +41,6 @@
 - (void)downloadAudioWithToken:(NSString *)audioToken
                       Callback:(void (^)(NSString *filePath))callback;
 
+- (void)cancelRequest;
+
 @end

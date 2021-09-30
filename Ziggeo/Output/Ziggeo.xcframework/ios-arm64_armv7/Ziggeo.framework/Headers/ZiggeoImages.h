@@ -48,4 +48,6 @@
 - (void)downloadImageWithToken:(NSString *)imageToken
                       Callback:(void (^)(NSString *filePath))callback;
 
+- (void)cancelRequest;
+
 @end
