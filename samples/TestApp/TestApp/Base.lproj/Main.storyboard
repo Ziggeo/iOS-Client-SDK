@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3NM-xX-Gv5">
+                                <rect key="frame" x="15" y="193" width="384" height="350"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9a-8a-ueX">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="eHW-fv-0ha"/>
+                                        </constraints>
+                                        <state key="normal" title="Record Video">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onRecordVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERn-uf-Nnq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhZ-Jp-F28">
+                                        <rect key="frame" x="0.0" y="45" width="384" height="35"/>
+                                        <state key="normal" title="Play Video With Token">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlayVideoWithToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GfE-ZC-jI9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmX-Ks-Syu">
+                                        <rect key="frame" x="0.0" y="90" width="384" height="35"/>
+                                        <state key="normal" title="Play Video With Url">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlayVideoWithUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="63g-ow-d1m"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbC-qc-oHV" userLabel="Choose Media">
+                                        <rect key="frame" x="0.0" y="135" width="384" height="35"/>
+                                        <state key="normal" title="Choose Media">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onChooseMedia:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3ro-gS-z8u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWY-Ak-kvs">
+                                        <rect key="frame" x="0.0" y="180" width="384" height="35"/>
+                                        <state key="normal" title="Record Audio">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onRecordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iuM-b8-DIy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfT-7g-dIN">
+                                        <rect key="frame" x="0.0" y="225" width="384" height="35"/>
+                                        <state key="normal" title="Play Audio">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onPlayAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bj3-MV-xci"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuz-P1-fro">
+                                        <rect key="frame" x="0.0" y="270" width="384" height="35"/>
+                                        <state key="normal" title="Take Photo">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onTakePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6m-fp-xHe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-3N-E11">
+                                        <rect key="frame" x="0.0" y="315" width="384" height="35"/>
+                                        <state key="normal" title="Show Image">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onShowImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XsQ-rL-410"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3NM-xX-Gv5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OxX-8W-Pak"/>
+                            <constraint firstItem="3NM-xX-Gv5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rv9-p6-6t0"/>
+                            <constraint firstItem="3NM-xX-Gv5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="dH4-kI-oL3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="134"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jip-rU-FxO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5Oi-Y3-ENG">
+            <objects>
+                <viewController id="FLG-z4-9gd" customClass="ViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="200" sectionHeaderHeight="10" sectionFooterHeight="10" id="zH3-yc-HKA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewVideoCell" rowHeight="200" id="T1Z-eU-0qA" customClass="TableViewVideoCell">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T1Z-eU-0qA" id="aAe-Ei-qp9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z9x-v7-KmX">
+                                            <rect key="frame" x="-8" y="-1" width="616" height="201"/>
+                                            <gestureRecognizers/>
+                                        </imageView>
+                                    </subviews>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="Z9x-v7-KmX" firstAttribute="leading" secondItem="aAe-Ei-qp9" secondAttribute="leadingMargin" constant="-16" id="B7H-X1-HEh"/>
+                                        <constraint firstItem="Z9x-v7-KmX" firstAttribute="top" secondItem="aAe-Ei-qp9" secondAttribute="topMargin" constant="-8" id="OtS-TI-w0G"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Z9x-v7-KmX" secondAttribute="trailing" constant="-16" id="YrN-WW-raZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Z9x-v7-KmX" secondAttribute="bottom" constant="-8" id="ecn-QZ-Qcl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <inset key="separatorInset" minX="5000" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="thumbView" destination="Z9x-v7-KmX" id="FT7-AX-yFs"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewUploadingVideoCell" rowHeight="92" id="Jhs-54-GO5" customClass="TableViewUploadingVideoCell">
+                                <rect key="frame" x="0.0" y="255.5" width="375" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jhs-54-GO5" id="Xfi-7h-emp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWB-ev-6zw">
+                                            <rect key="frame" x="0.0" y="3" width="375" height="86"/>
+                                        </imageView>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vVa-iT-91c">
+                                            <rect key="frame" x="0.0" y="87" width="375" height="2"/>
+                                        </progressView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="lWB-ev-6zw" secondAttribute="bottom" constant="-8" id="0BC-LK-sJW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="lWB-ev-6zw" secondAttribute="trailing" constant="-16" id="9Aw-qE-A6t"/>
+                                        <constraint firstItem="lWB-ev-6zw" firstAttribute="top" secondItem="Xfi-7h-emp" secondAttribute="topMargin" constant="-8" id="9HO-FI-FrN"/>
+                                        <constraint firstItem="lWB-ev-6zw" firstAttribute="leading" secondItem="Xfi-7h-emp" secondAttribute="leadingMargin" constant="-16" id="YAF-fy-kAK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vVa-iT-91c" secondAttribute="trailing" constant="-16" id="ac1-av-Zd2"/>
+                                        <constraint firstItem="vVa-iT-91c" firstAttribute="leading" secondItem="Xfi-7h-emp" secondAttribute="leadingMargin" constant="-16" id="fFc-z2-JOK"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vVa-iT-91c" secondAttribute="bottom" constant="-8" id="o03-LG-xMM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="progressView" destination="vVa-iT-91c" id="0il-ER-HjM"/>
+                                    <outlet property="thumbView" destination="lWB-ev-6zw" id="rjt-UH-ek9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="BRi-WV-QMt"/>
+                    <connections>
+                        <outlet property="tableView" destination="zH3-yc-HKA" id="ac9-Mm-1bJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyI-xs-OOV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928" y="-380"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wwj-1a-Ene">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jip-rU-FxO" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="HHQ-8e-skb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FLG-z4-9gd" kind="relationship" relationship="rootViewController" id="y8f-kN-2yY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1aL-zL-eUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="-380"/>
+        </scene>
+    </scenes>
+</document>
