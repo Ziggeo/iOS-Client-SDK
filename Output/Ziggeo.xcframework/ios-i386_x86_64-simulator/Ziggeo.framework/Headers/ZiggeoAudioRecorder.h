@@ -15,6 +15,5 @@
 @interface ZiggeoAudioRecorder : UIViewController
 
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
-- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo audioToken:(NSString *)audioToken;
 
 @end

@@ -6,6 +6,7 @@ target 'TestApp' do
   use_frameworks!
 
   # Pods for AdvancedTestApp
-  pod 'iOS-Client-SDK', :path => '../..'
+#  pod 'iOS-Client-SDK', :path => '../..'
+  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
 
 end

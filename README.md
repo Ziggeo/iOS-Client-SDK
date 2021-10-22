@@ -137,15 +137,34 @@ Added feature:
 
 ## Building/Packaging App
 - Using `universal` framework is ideal for building apps that run on simulators and actual devices.
-  See: _iOS-Client-SDK/Output/ directory
+  See: iOS-Client-SDK/Output/ directory
+
+## CocoaPods Support (optional)
+- Install CocoaPods
+  ```
+  $ sudo gem install cocoapods
+  ```
+- Create new iOS project
+- Init pods in the xcode project directory
+  ```
+  $ pod init
+  ```
+- Add framework to Podfile
+  ```
+  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
+  ```
+- Install framework
+  ```
+  $ pod install
+  ```
+- Reopen the project using the .xcworkspace
 
 ## Preparing App for submission to App Store
-- Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
+- Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
 
 
 # Basic Usage
 ## Initialize Application
-
 ```
 #import "Ziggeo/Ziggeo.h"
 
@@ -212,7 +231,9 @@ Add audio category setup to enable playback and recording while application is i
 
 ### Upload From File Selector
 ```
-[m_ziggeo uploadFromFileSelector:@{}];
+NSMutableDictionary *data = [NSMutableDictionary dictionary];
+//data[@"media_types"] = @[@"video", @"audio", @"image"];
+[m_ziggeo uploadFromFileSelector:data];
 ```
 
 ### Cancel Request
@@ -227,7 +248,6 @@ Add audio category setup to enable playback and recording while application is i
 
 
 ## Config
-
 ### Uploading Config
 ```
 NSDictionary *config = [NSDictionary dictionaryWithObject:@"iOS_Choose_Media" forKey:@"tags"];
@@ -347,14 +367,14 @@ map[@"hidePlayerControls"] = @"false";
 [m_ziggeo setAdsURL:@"ADS_URL"];
 ```
 
-
 ### Delegate
-#### ZiggeoRecorderDelegate
-You can use ZiggeoRecorderDelegate in your app to be notified about video recording events.
+#### ZiggeoDelegate
 ```
-@interface ViewController : UIViewController <ZiggeoRecorderDelegate>
+@interface ViewController : UIViewController <ZiggeoDelegate>
+```
 
-...
+You can use ZiggeoDelegate in your app to be notified about video recording events.
+```
 - (void)luxMeter:(double)luminousity {
     //
 }
@@ -412,12 +432,8 @@ You can use ZiggeoRecorderDelegate in your app to be notified about video record
 }
 ```
 
-
-#### ZiggeoUploadDelegate
-You can use ZiggeoUploadDelegate in your app to be notified about file(video, audio, image) uploading events.
+You can use ZiggeoDelegate in your app to be notified about file(video, audio, image) uploading events.
 ```
-@interface ViewController : UIViewController <ZiggeoUploadDelegate>
-
 - (void)preparingToUploadWithPath:(NSString*)sourcePath {
     // this method will be called first before any Ziggeo API interaction
 }
@@ -455,9 +471,7 @@ You can use ZiggeoUploadDelegate in your app to be notified about file(video, au
 }
 ```
 
-
-#### ZiggeoPlayerDelegate
-You can use ZiggeoPlayerDelegate in your app to be notified about file(video, audio) playing events.
+You can use ZiggeoDelegate in your app to be notified about file(video, audio) playing events.
 ```
 - (void)ziggeoPlayerPlaying {
     // Fires any time a playback is started
@@ -480,12 +494,8 @@ You can use ZiggeoPlayerDelegate in your app to be notified about file(video, au
 }
 ```
 
-
-#### ZiggeoHardwarePermissionCheckDelegate
-You can use ZiggeoHardwarePermissionCheckDelegate in your app to be notified about hardware and permission.
+You can use ZiggeoDelegate in your app to be notified about hardware and permission.
 ```
-@interface ViewController : UIViewController <ZiggeoHardwarePermissionCheckDelegate>
-
 - (void)checkCameraPermission:(BOOL)granted {
     // this method will return when camera access permission is granted or denied.
 }

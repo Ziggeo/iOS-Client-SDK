@@ -47,14 +47,14 @@ typedef enum {
 } Ziggeo_Theme_Key_Type;
 
 
-// MARK: - ZiggeoUploadDelegate
-@protocol ZiggeoUploadDelegate <NSObject>
+// MARK: - ZiggeoDelegate
+@protocol ZiggeoDelegate <NSObject>
 
+// ZiggeoUploadDelegate
 @optional
 - (void)preparingToUploadWithPath:(NSString *)sourcePath;
 @optional
 - (void)failedToUploadWithPath:(NSString *)sourcePath;
-
 @optional
 - (void)uploadStartedWithPath:(NSString *)sourcePath
                         token:(NSString *)token
@@ -92,12 +92,7 @@ typedef enum {
                   error:(NSError *)error
                    json:(NSDictionary *)json;
 
-@end
-
-
-// MARK: - ZiggeoHardwarePermissionCheckDelegate
-@protocol ZiggeoHardwarePermissionCheckDelegate <NSObject>
-
+// ZiggeoHardwarePermissionCheckDelegate
 @optional
 - (void)checkCameraPermission:(BOOL)granted;
 @optional
@@ -109,12 +104,7 @@ typedef enum {
 @optional
 - (void)checkHasMicrophone:(BOOL)hasMicrophone;
 
-@end
-
-
-// MARK: - ZiggeoRecorderDelegate
-@protocol ZiggeoRecorderDelegate <NSObject>
-
+// ZiggeoRecorderDelegate
 @optional
 - (void)luxMeter:(double)luminousity;
 @optional
@@ -144,12 +134,7 @@ typedef enum {
 @optional
 - (void)ziggeoStreamingStopped;
 
-@end
-
-
-// MARK: - ZiggeoPlayerDelegate
-@protocol ZiggeoPlayerDelegate <NSObject>
-
+// ZiggeoPlayerDelegate
 @optional
 - (void)ziggeoPlayerPlaying;
 @optional
@@ -175,11 +160,11 @@ typedef enum {
     
 @property (strong, nonatomic) NSString *token;
 @property (nonatomic) bool enableDebugLogs;
-@property (weak) id<ZiggeoRecorderDelegate, ZiggeoUploadDelegate, ZiggeoHardwarePermissionCheckDelegate, ZiggeoPlayerDelegate> delegate;
+@property (weak) id<ZiggeoDelegate> delegate;
 
 
 - (id)initWithToken:(NSString *)token;
-- (id)initWithToken:(NSString *)token Delegate:(id<ZiggeoRecorderDelegate, ZiggeoUploadDelegate, ZiggeoHardwarePermissionCheckDelegate, ZiggeoPlayerDelegate>)delegate;
+- (id)initWithToken:(NSString *)token Delegate:(id<ZiggeoDelegate>)delegate;
 
 - (NSString *)getPathWithType:(Media_Type)type token:(NSString *)mediaToken;
 - (void)log:(NSString *)message;
@@ -194,7 +179,7 @@ typedef enum {
 - (ZiggeoUploadingHandler *)uploadingHandler;
 
 - (NSDictionary *)extraArgsForRecorder;
-//- (NSDictionary *)themeArgsForRecorder;
+- (NSDictionary *)themeArgsForRecorder;
 //- (NSDictionary *)extraArgsForPlayer;
 //- (NSDictionary *)themeArgsForPlayer;
 - (NSDictionary *)uploadingConfig;

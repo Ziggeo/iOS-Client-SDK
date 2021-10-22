@@ -19,7 +19,7 @@ typedef enum {
 } CurrentType;
 
 
-@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoRecorderDelegate, ZiggeoUploadDelegate, ZiggeoHardwarePermissionCheckDelegate, ZiggeoPlayerDelegate> {
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoDelegate> {
     Ziggeo* m_ziggeo;
     ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
@@ -60,8 +60,11 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
     config[@"tags"] = @"iOS_Video_Record";
     [m_ziggeo setUploadingConfig:config];
     
+    NSMutableDictionary *themeMap = [NSMutableDictionary dictionary];
+//    themeMap[@"blur_effect"] = @"false";
+    [m_ziggeo setThemeArgsForRecorder:themeMap];
+    
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
-//    map[@"blur_effect"] = @"false";
 //    map[@"effect_profile"] = @"12345";
 //    map[@"data"] = @{@"foo": @"bar"};
 //    map[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
@@ -79,15 +82,6 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
     [m_ziggeo playVideo:Last_Video_Token];
 }
 
-- (IBAction)onPlayVideoWithUrl:(id)sender {
-    NSMutableDictionary *map = [NSMutableDictionary dictionary];
-    map[@"hidePlayerControls"] = @"false";
-    [m_ziggeo setThemeArgsForPlayer:map];
-
-    NSString *url = [m_ziggeo getPathWithType:video token:Last_Video_Token];
-    [m_ziggeo playFromUri:url];
-}
-
 - (IBAction)onChooseMedia:(id)sender {
     currentType = Unknown;
     
@@ -95,7 +89,7 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
     [m_ziggeo setUploadingConfig:config];
     
     NSMutableDictionary *data = [NSMutableDictionary dictionary];
-    data[@"media_types"] = @[@"video", @"audio", @"image"];
+//    data[@"media_types"] = @[@"video", @"audio", @"image"];
     [m_ziggeo uploadFromFileSelector:data];
 }
 

@@ -10,7 +10,7 @@
 
 @interface ZiggeoUploadingHandler : NSObject
 
-- (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
+- (id)initWithZiggeoApplication:(Ziggeo *)ziggeo;
 - (void)getListWithType:(Media_Type)type
                    data:(NSDictionary *)data
                callback:(void (^)(NSArray *jsonArray, NSError *error))callback;
