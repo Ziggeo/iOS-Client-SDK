@@ -1,0 +1,12 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '9.0'
+
+target 'TestApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AdvancedTestApp
+#  pod 'iOS-Client-SDK', :path => '../..'
+  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
+
+end

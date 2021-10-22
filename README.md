@@ -3,6 +3,9 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+## v 1.1.32 to v.1.1.33
+The update merges several apis for videos, audios and images.
+
 ## v 1.1.31 to v.1.1.32
 The update fixes several issues when playing and uploading files.
 
@@ -18,8 +21,6 @@ The update adds the audio recording and play functions.
 ## v 1.1.27 to v.1.1.28
 The update fixes the black screen issues when records video using camera.
 And the updated changes the several file names.
-    `ZiggeoRecorder2` -> `ZiggeoRecorder`
-    `ZiggeoRecorder` -> `ZiggerPhotoLibrary`
 
 ## v 1.1.26 to v.1.1.27
 The update fixes issues when the files could to be uploaded several times. 
@@ -136,32 +137,47 @@ Added feature:
 
 ## Building/Packaging App
 - Using `universal` framework is ideal for building apps that run on simulators and actual devices.
-  See: _iOS-Client-SDK/Ziggeo/Output/ directory
+  See: iOS-Client-SDK/Output/ directory
+
+## CocoaPods Support (optional)
+- Install CocoaPods
+  ```
+  $ sudo gem install cocoapods
+  ```
+- Create new iOS project
+- Init pods in the xcode project directory
+  ```
+  $ pod init
+  ```
+- Add framework to Podfile
+  ```
+  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
+  ```
+- Install framework
+  ```
+  $ pod install
+  ```
+- Reopen the project using the .xcworkspace
 
 ## Preparing App for submission to App Store
-- Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the _iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
+- Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
 
 
 # Basic Usage
 ## Initialize Application
-
 ```
 #import "Ziggeo/Ziggeo.h"
 
-Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
+Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN" Delegate:self];];
 ```
 
-## Video Player
-
-### Initialization
+## Usage
+### Record Video
 ```
-- (ZiggeoPlayer*)createPlayer {
-    return [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:@"ZIGGEO_VIDEO_TOKEN"];
-}
+    [m_ziggeo record];
 ```
 
 Add audio category setup to enable playback and recording while application is in silent mode. This category will also allow to record background audio.
-
 ```
 //AppDelegate.m
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -173,156 +189,192 @@ Add audio category setup to enable playback and recording while application is i
 }
 ```
 
-
-### Initialization with optional authorization token
+### Play Video With Token
 ```
-    [ZiggeoPlayer createPlayerWithAdditionalParams:m_ziggeo videoToken:@"VIDEO_TOKEN" params:@{ @"client_auth" : @"CLIENT_AUTH_TOKEN" } callback:^(ZiggeoPlayer *player) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
-            playerController.player = player;
-            [self presentViewController:playerController animated:true completion:nil];
-            [playerController.player play];
-        });
-    }];
+[m_ziggeo playVideo:@"VIDEO_TOKEN"];
 ```
 
-### Fullscreen Playback
+### Play Video With Url
 ```
-    AVPlayerViewController* playerController = [[AVPlayerViewController alloc] init];
-    playerController.player = [self createPlayer];
-    [self presentViewController:playerController animated:true completion:nil];
-    [playerController.player play];
+[m_ziggeo playFromUri:Video_Url];
 ```
 
-### Embedded Playback
+### Record Audio
 ```
-    ZiggeoPlayer* player = [self createPlayer];
-    AVPlayerLayer* playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
-    playerLayer.frame = self.videoViewPlaceholder.frame;
-    [self.videoViewPlaceholder.layer addSublayer:playerLayer];
-    [player play];
+[m_ziggeo startAudioRecorder];
 ```
 
-## Video Recorder
-
+### Play Audio
 ```
-    ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
-    [self presentViewController:recorder animated:true completion:nil];
+[m_ziggeo startAudioPlayer:@"AUDIO_TOKEN"];
 ```
 
-## ZiggeoRecorder (Beta)
-New recorder rewritten from scratch. Allows to record video and audio without interrupting 3rd party apps playback (Music app, for example). Some additional setup required for simultaneous recording, see TestApp->AppDelegate.m for details.
+### Record Image
 ```
-    ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
-    [self presentViewController:recorder animated:true completion:nil];
+[m_ziggeo startImageRecorder];
 ```
 
-### Capture Duration Limit
+### Show Image
 ```
-    ZiggeoRecorder* recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
-	recorder.videoMaximumDuration = 20; //optional capture duration limit
-    [self presentViewController:recorder animated:true completion:nil];
+[m_ziggeo showImage:@"IMAGE_TOKEN"];
+```
+
+### Start Screen Recorder
+```
+[m_ziggeo startScreenRecorder];
+```
+
+### Upload From Path
+```
+[m_ziggeo uploadFromPath:@"FILE_PATH" :@{}];
+```
+
+### Upload From File Selector
+```
+NSMutableDictionary *data = [NSMutableDictionary dictionary];
+//data[@"media_types"] = @[@"video", @"audio", @"image"];
+[m_ziggeo uploadFromFileSelector:data];
+```
+
+### Cancel Request
+```
+[m_ziggeo cancelRequest];
+```
+
+### Start QR Scanner
+```
+[m_ziggeo startQrScanner:@{}];
+```
+
+
+## Config
+### Uploading Config
+```
+NSDictionary *config = [NSDictionary dictionaryWithObject:@"iOS_Choose_Media" forKey:@"tags"];
+[m_ziggeo setUploadingConfig:config];
+```
+
+### Streaming Recording
+```
+[m_ziggeo setLiveStreamingEnabled:YES];
+```
+Streaming recording mode will upload the video stream during the recording without caching to local file first. Video preview and video re-record are not available in this mode.
+
+### Autostart Recording After
+```
+[m_ziggeo setAutostartRecordingAfter:0];
+```
+
+### Start Delay
+```
+[m_ziggeo setStartDelay:0];
+```
+
+### Extra Argment For Recorder
+```
+NSMutableDictionary *map = [NSMutableDictionary dictionary];
+map[@"blur_effect"] = @"false";
+map[@"effect_profile"] = @"12345";
+map[@"data"] = @{@"foo": @"bar"};
+map[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
+map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
+[m_ziggeo setExtraArgsForRecorder:map];
+```
+
+### Extra Argment For Recorder
+```
+NSMutableDictionary *map = [NSMutableDictionary dictionary];
+map[@"hideRecorderControls"] = @"false";
+[m_ziggeo setThemeArgsForRecorder:map];
 ```
 
 ### Enable Cover Selector Dialog
 ```
-    recorder.coverSelectorEnabled = YES;
+[m_ziggeo setCoverSelectorEnabled:YES];
 ```
 
-### Select Existing Video Instead of Capturing a New One
-
+### Capture Duration Limit
 ```
-    [recorder selectExistingVideo];
-```
-
-### Disable Camera Flip Button
-
-```
-    recorder.cameraFlipButtonVisible = NO;
+[m_ziggeo setMaxRecordingDuration:20];
 ```
 
-### Set Active Camera Device
-
+### Set Video Width
 ```
-    recorder.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+[m_ziggeo setVideoWidth:1920];
+```
+
+### Set Video Height
+```
+[m_ziggeo setVideoHeight:1080];
+```
+
+### Set Video Bitrate
+```
+[m_ziggeo setVideoBitrate:1024 * 1024 * 2];
+```
+
+### Set Audio Sample Rate
+```
+[m_ziggeo setAudioSampleRate:44100];
+```
+
+### Set Audio Bitrate
+```
+[m_ziggeo setAudioBitrate:128 * 1024];
+```
+
+### Set CAmera Switch Enabled
+```
+[m_ziggeo setCameraSwitchEnabled:YES];
+```
+
+### Set Send Immediately
+```
+[m_ziggeo setSendImmediately:YES];
 ```
 
 ### Set Recording Quality
-
 ```
-    recorder.recordingQuality = mediumQuality;
-    //recorder.recordingQuality = lowQuality;
-    //recorder.recordingQuality = highestQuality;
-```
-
-### Enable Face Outlining
-```
-recorder.showFaceOutline = YES;
+//[m_ziggeo setQuality:LowQuality];
+[m_ziggeo setQuality:MediumQuality];
+//[m_ziggeo setQuality:HighestQuality];
 ```
 
-### Enable Light Meter Indicator
+### Set Camera
 ```
-recorder.showLightIndicator = YES;
-```
-
-### Enable Audio Level Indicator
-```
-recorder.showSoundIndicator = YES;
+[m_ziggeo setCamera:0];
 ```
 
-### Custom Create Video Parameters (like effects, profiles, etc)
-
+### Set Extra Argument For Player
 ```
-    recorder.extraArgsForCreateVideo = @{ @"effect_profile" : @"12345" };
-```
-
-### Custom User Data
-```
-    recorder.extraArgsForCreateVideo = @{@"data": @"{\"foo\":\"bar\"}"}; 
+[m_ziggeo setExtraArgsForPlayer:@{}];
 ```
 
-### Authorization tokens
-
-Recorder-level auth tokens:
+### Set Theme Argument For Player 
 ```
-    recorder.extraArgsForCreateVideo = @{ @"client_auth" : @"CLIENT_AUTH_TOKEN" };
-    recorder.extraArgsForCreateVideo = @{ @"server_auth" : @"SERVER_AUTH_TOKEN" };
-```
-
-Global (application-level) auth tokens:
-```
-    m_ziggeo.connect.clientAuthToken = @"CLIENT_AUTH_TOKEN";
-    m_ziggeo.connect.serverAuthToken = @"SERVER_AUTH_TOKEN";
+NSMutableDictionary *map = [NSMutableDictionary dictionary];
+map[@"hidePlayerControls"] = @"false";
+[m_ziggeo setThemeArgsForPlayer:map];
 ```
 
-### Custom Recorder UI
+### Set Player Cache Config
+```
+[m_ziggeo setPlayerCacheConfig:@{}];
+```
 
+### Set Ads Url
 ```
-    recorder.showsCameraControls = NO;
-    recorder.cameraOverlayView = some_view;
+[m_ziggeo setAdsURL:@"ADS_URL"];
 ```
-Since ZiggeoRecorder is a subclass of UIImagePickerController, it is possible to use any standard ways to create custom camera UI. Please check CustomUITestApp example and this Apple tutorial for more details: https://developer.apple.com/library/ios/samplecode/PhotoPicker/Introduction/Intro.html 
-
-### Streaming Recording
-```
-    recorder.useLiveStreaming = YES;
-```
-Streaming recording mode will upload the video stream during the recording without caching to local file first. Video preview and video re-record are not available in this mode.
 
 ### Delegate
-#### ZiggeoRecorderDelegate
-You can use ZiggeoRecorderDelegate in your app to be notified about video recording events.
+#### ZiggeoDelegate
 ```
-@interface ViewController : UIViewController <ZiggeoRecorderDelegate>
+@interface ViewController : UIViewController <ZiggeoDelegate>
+```
 
-...
-
-{
-	...
-	[m_ziggeo videos].recorderDelegate = self;
-}
-
-
+You can use ZiggeoDelegate in your app to be notified about video recording events.
+```
 - (void)luxMeter:(double)luminousity {
     //
 }
@@ -380,21 +432,8 @@ You can use ZiggeoRecorderDelegate in your app to be notified about video record
 }
 ```
 
-
-#### ZiggeoUploadDelegate
-You can use ZiggeoUploadDelegate in your app to be notified about file(video, audio, image) uploading events.
+You can use ZiggeoDelegate in your app to be notified about file(video, audio, image) uploading events.
 ```
-@interface ViewController : UIViewController <ZiggeoUploadDelegate>
-
-...
-
-{
-	...
-	[m_ziggeo videos].uploadDelegate = self;
-    [m_ziggeo audios].uploadDelegate = self;
-    [m_ziggeo images].uploadDelegate = self;
-}
-
 - (void)preparingToUploadWithPath:(NSString*)sourcePath {
     // this method will be called first before any Ziggeo API interaction
 }
@@ -432,20 +471,8 @@ You can use ZiggeoUploadDelegate in your app to be notified about file(video, au
 }
 ```
 
-
-#### ZiggeoPlayerDelegate
-You can use ZiggeoPlayerDelegate in your app to be notified about file(video, audio) playing events.
+You can use ZiggeoDelegate in your app to be notified about file(video, audio) playing events.
 ```
-@interface ViewController : UIViewController <ZiggeoPlayerDelegate>
-
-...
-
-{
-	...
-	ZiggeoPlayer *player = [[ZiggeoPlayer alloc] initWithZiggeoApplication:m_ziggeo videoToken:videoToken];
-    player.playerDelegate = self;
-}
-
 - (void)ziggeoPlayerPlaying {
     // Fires any time a playback is started
 }
@@ -467,19 +494,8 @@ You can use ZiggeoPlayerDelegate in your app to be notified about file(video, au
 }
 ```
 
-
-#### ZiggeoHardwarePermissionCheckDelegate
-You can use ZiggeoHardwarePermissionCheckDelegate in your app to be notified about hardware and permission.
+You can use ZiggeoDelegate in your app to be notified about hardware and permission.
 ```
-@interface ViewController : UIViewController <ZiggeoHardwarePermissionCheckDelegate>
-
-...
-
-{
-	...
-	[m_ziggeo checkHardwarePermission:self];
-}
-
 - (void)checkCameraPermission:(BOOL)granted {
     // this method will return when camera access permission is granted or denied.
 }
@@ -499,191 +515,4 @@ You can use ZiggeoHardwarePermissionCheckDelegate in your app to be notified abo
 - (void)checkHasMicrophone:(BOOL)hasMicrophone {
     // this method will return whether microphone hardware is detected or not.
 }
-```
-
-
-# Advanced SDK usage
-
-# Ziggeo API access
-You can use the SDK to access Ziggeo Server API methods in the async manner. The SDK provides next functionality:
-- Create/remove/index videos
-- Custom Ziggeo Embedded Server API requests 
-
-All the API methods are working asynchronously and never blocking the calling thread. You may optionally use custom callbacks (completion blocks) to receive the results.
-
-
-## Videos API
-
-### Get Video Accessor Object
-```
-    ZiggeoVideos* videos = [m_ziggeo videos];
-```
-
-### Get All Videos
-```
-    [videos getVideos:^(NSArray *jsonArray, NSError *error) {
-        //the completion block will be executed asynchronously on the response received
-    }];
-```
-
-### Create New Video
-#### Basic
-```
-	[videos createVideoWithData:nil file:videoPath cover:nil callback:nil Progress:nil];
-```
-
-#### Advanced
-You can add your custom completion/progress callbacks here to make the SDK inform your app about uploading progress and response. Cover image is optional and could be nil, making Ziggeo platform to generate default video cover
-```
-    [videos uploadVideoWithPath:videoPath Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-
-    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
-
-    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-```
-
-### Delete Video
-```
-	[videos deleteVideoByToken:videoToken StreamToken:streamToken Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-
-    }];
-```
-
-### Get Video URL for Your Own Custom Player
-```
-    NSURL* videoURL = [NSURL URLWithString:[videos getVideoUrlWithVideoToken:token]];
-```
-
-### Get Remote Video Thumbnail asynchronously
-Remote video thumbs are cached on client side, so you can call the method as frequently as you wish without the performance or network load impact
-```
-    [videos getImageForVideoByToken:videoToken Data:(NSDictionary *)data 
-        Callback:^(UIImage *image, NSURLResponse *response, NSError *error) {
-
-    }];
-```
-
-### Generate Local Video Thumbnail asynchronously
-Local video thumbs are cached on client side, so you can call the method as frequently as you wish without the performance impact
-```
-    [m_ziggeo.videos getImageForVideoByPath:localVideoPath 
-        Callback:^(UIImage *image, NSError *error) {
-            // update UI with the received image
-    }];
-```
-
-
-## Audios API
-
-### Get Audio Accessor Object
-```
-    ZiggeoAudios* audios = [m_ziggeo audios];
-```
-
-### Get All Audios
-```
-    [audios getAudios:^(NSArray *jsonArray, NSError *error) {
-        // the completion block will be executed asynchronously on the response received
-    }];
-```
-
-### Upload Audio
-```
-    [audios uploadAudioWithPath:audioPath Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
-        
-    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-```
-
-### Delete Video
-```
-	[audios deleteAudioByToken:audioToken 
-        Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-
-    }];
-```
-
-
-## Image API
-
-### Get Image Accessor Object
-```
-    ZiggeoImages* images = [m_ziggeo images];
-```
-
-### Get All Images
-```
-    [images getImages:^(NSArray *jsonArray, NSError *error) {
-        // the completion block will be executed asynchronously on the response received
-    }];
-```
-
-### Upload Image
-```
-    [images uploadImageWithPath:imagePath Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
-        
-    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-
-or
-
-    [images uploadImageWithPath:imageFile Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    } Progress:^(int totalBytesSent, int totalBytesExpectedToSend) {
-        
-    } ConfirmCallback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-        
-    }];
-```
-
-### Delete Image
-```
-	[images deleteImageByToken:imageToken 
-        Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-
-    }];
-```
-
-
-## Custom Ziggeo API Requests
-The SDK provides an opportunity to make custom requests to Ziggeo Embedded Server API. You can make POST/GET/custom_method requests and receive RAW data, json-dictionary or string as the result.
-
-### Get API Accessor Object
-```
-ZiggeoConnect* connection = [m_ziggeo connect];
-```
-
-### Make POST Request and Parse JSON Response
-```
-[connection postJsonWithPath:path Data:(NSDictionary *)data 
-	Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
-    	//  jsonObject contains parsed json response received from Ziggeo API Server
-	}
-];
-```
-
-### Make POST Request and Get RAW Data Response
-```
-[connection postWithPath:path Data:(NSDictionary*)data 
-	Callback:^(NSData *data, NSURLResponse *response, NSError *error) {
-    	// data object contains raw data response received from Ziggeo API Server
-	}
-];
-```
-
-### Make GET Request and Get String Response
-```
-[connection getStringWithPath:path Data:(NSDictionary*)data 
-	Callback:^(NSString *string, NSURLResponse *response, NSError *error) {
-    	// the string contains stringified response received from Ziggeo API Server
-	}
-];
 ```
