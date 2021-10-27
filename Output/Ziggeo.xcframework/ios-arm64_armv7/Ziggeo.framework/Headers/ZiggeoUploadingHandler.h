@@ -48,7 +48,7 @@
               confirmJsonObject:(NSDictionary *)confirmJsonObject
                 confirmResponse:(NSURLResponse *)confirmResponse
                    confirmError:(NSError *)confirmError;
-- (void)cancelRequest;
+- (void)cancelUpload:(NSString *)path :(bool)delete_file;
 - (void)getOriginalStreamDescriptionForVideoByToken:(NSString *)token
                                            Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 

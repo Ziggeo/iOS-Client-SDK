@@ -221,7 +221,7 @@ typedef enum {
 - (void)startScreenRecorder;
 - (void)uploadFromPath:(NSString *)fileName :(NSDictionary *)data;
 - (void)uploadFromFileSelector:(NSDictionary *)data;
-- (void)cancelRequest;
+- (void)cancelUpload:(NSString *)path :(bool)delete_file;
 - (void)startQrScanner:(NSDictionary *)data;
 
 // ZiggeoPlayer

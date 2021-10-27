@@ -14,11 +14,11 @@
 		</data>
 		<key>AudioLevelView.nib</key>
 		<data>
-		9rXQGiPEyWtXHqs5V63XSa3z/9A=
+		YN1aSQd7dl2nzwLDUTg3FzIuLhg=
 		</data>
 		<key>AudioVisualizationView.nib</key>
 		<data>
-		8gi4AD2Dsam5tAcFKyvYUAXho5o=
+		m8m+ZwlWUgajEwpPYxidXKfO8EA=
 		</data>
 		<key>BFRImageViewerLocalizations.bundle/en.lproj/Localizable.strings</key>
 		<dict>
@@ -40,11 +40,11 @@
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		5uXeMgFOXQnDWVJmMYHqWRAl38I=
+		NLvt2kYSxOZxf4VIfv0jyqYvKNM=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		wPwf/C0cMJs7ENmU4/wQKRaldk0=
+		ROP4RK4S9LFwiA/EVnpXqDcZmrg=
 		</data>
 		<key>FLVMuxer.vcxproj</key>
 		<data>
@@ -108,7 +108,7 @@
 		</data>
 		<key>Headers/ZiggeoApplication.h</key>
 		<data>
-		nAaZ32C2N7Mn02iYGxhun9UhjGs=
+		2ldspHUTiPkrJGFe06C6ICUxvbI=
 		</data>
 		<key>Headers/ZiggeoAudioPlayer.h</key>
 		<data>
@@ -148,7 +148,7 @@
 		</data>
 		<key>Headers/ZiggeoUploadingHandler.h</key>
 		<data>
-		PpfjCsWvz6AI2nBVj9RcTxlOKPs=
+		hKuoWiSLkqsU/5VHontbzZYZPOQ=
 		</data>
 		<key>Headers/ZiggeoVideoLibrary.h</key>
 		<data>
@@ -160,7 +160,7 @@
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		qcgxu6Qo8OUzliITtquN+Agomd0=
+		em3L1d0R0U2seSHvLsKXiUS5bkI=
 		</data>
 		<key>Media.vcxproj</key>
 		<data>
@@ -232,27 +232,27 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		hicwr9W4Dkiv+zMgXZRUuv+BwA8=
+		6pmqsHlqi2ZshBASBsXRzshfT/s=
 		</data>
 		<key>ZiggeoAudioPlayer.nib/objects-11.0+.nib</key>
 		<data>
-		VGZRPSqhH6Z6H93cjRFCMMs/nEo=
+		RC88VqLj2lK8KxNhdGa96+8+Q/k=
 		</data>
 		<key>ZiggeoAudioPlayer.nib/runtime.nib</key>
 		<data>
-		+kMM+5PDq6x0FAgX61W3bqEG/yA=
+		8oce0qOnWVd3zLrNQE5dUl0SMBc=
 		</data>
 		<key>ZiggeoAudioRecorder.nib/objects-11.0+.nib</key>
 		<data>
-		x6LEayKGmpUrbBqUtFLixmuok3Y=
+		BPaGjU9/cmcOqv9NsJ8C2fnK1lg=
 		</data>
 		<key>ZiggeoAudioRecorder.nib/runtime.nib</key>
 		<data>
-		My8whX2V9NcuuMEtJOUMTNKHwxs=
+		2Dx7fQ9K22SNU/mMQmJL3SO8uS8=
 		</data>
 		<key>ZiggeoRecorder.nib</key>
 		<data>
-		8RigOezGJC1GZ+RDUu2NlS9Bcqw=
+		gZh67zUtcNJE4MPYCN5JrOOkw/4=
 		</data>
 		<key>audio-record-start-black.png</key>
 		<data>
@@ -415,22 +415,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9rXQGiPEyWtXHqs5V63XSa3z/9A=
+			YN1aSQd7dl2nzwLDUTg3FzIuLhg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ii3sL6Ohtde9J9FVtgsPZ/Ju8dHMgygb/+X4Qp5WYl4=
+			bG2dGZ6pI8e226Q9tc7Gdjt1EwANyJE52HnPjJSrvBk=
 			</data>
 		</dict>
 		<key>AudioVisualizationView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8gi4AD2Dsam5tAcFKyvYUAXho5o=
+			m8m+ZwlWUgajEwpPYxidXKfO8EA=
 			</data>
 			<key>hash2</key>
 			<data>
-			FytX9hThcGAta4FkYX6ukvvkeaD7BW7qQ4s8XAbgf4M=
+			7g2KKsMJiPgbwj0iVgxF1xJIlvO/M2uK/P6ECI7SuYM=
 			</data>
 		</dict>
 		<key>BFRImageViewerLocalizations.bundle/en.lproj/Localizable.strings</key>
@@ -463,22 +463,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5uXeMgFOXQnDWVJmMYHqWRAl38I=
+			NLvt2kYSxOZxf4VIfv0jyqYvKNM=
 			</data>
 			<key>hash2</key>
 			<data>
-			parrq68nRdK4epXRV0MrYvUQ65ecHmsgCaxvB60rkm0=
+			qXKygE71WUgB16eHhPHrHTK7wHg3X1B8w7firtRhip0=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wPwf/C0cMJs7ENmU4/wQKRaldk0=
+			ROP4RK4S9LFwiA/EVnpXqDcZmrg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hr+2vFF+NhpI4T6NrHz3QSc6qfa+VBixaQyP2gTcnsE=
+			88EWZXz/WrCzfhxMM0iOn2JPYgyrSYFQnC2DOZ5qI2Q=
 			</data>
 		</dict>
 		<key>FLVMuxer.vcxproj</key>
@@ -650,11 +650,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nAaZ32C2N7Mn02iYGxhun9UhjGs=
+			2ldspHUTiPkrJGFe06C6ICUxvbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			vOh4TE00wIA7PwV2vMEJbPQNNEn+7VHxUdz0KLGmP+k=
+			PvZLCfFBu99jabYVUd1tIJfQ3r9mwQdZpoCfoH0EJus=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoAudioPlayer.h</key>
@@ -760,11 +760,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PpfjCsWvz6AI2nBVj9RcTxlOKPs=
+			hKuoWiSLkqsU/5VHontbzZYZPOQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			aj2CY0G/E6PiX5GIIm6UWJYU1Cu1BX0+qmh1ZoQ6UWs=
+			TUGTEohC589lev49k7lEHT+XgwGxLt0YHdwp9UCo7hI=
 			</data>
 		</dict>
 		<key>Headers/ZiggeoVideoLibrary.h</key>
@@ -782,11 +782,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qcgxu6Qo8OUzliITtquN+Agomd0=
+			em3L1d0R0U2seSHvLsKXiUS5bkI=
 			</data>
 			<key>hash2</key>
 			<data>
-			iJY5pzFB22dtdkKDjiUHGIyWweNlzhUQnXGm3lGzYFA=
+			7wArkLFJuwswkLrxd91Eg4KOsYlQePuHmkv2929UilA=
 			</data>
 		</dict>
 		<key>Media.vcxproj</key>
@@ -980,66 +980,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hicwr9W4Dkiv+zMgXZRUuv+BwA8=
+			6pmqsHlqi2ZshBASBsXRzshfT/s=
 			</data>
 			<key>hash2</key>
 			<data>
-			RQiQB7lfLz+vgrSdEnoM0YPwwfJZs8q3LpBExmFXovo=
+			2207x34HkHlUAzRsQNYTOmwQ+eL6kTSLIR8+bdaxiO0=
 			</data>
 		</dict>
 		<key>ZiggeoAudioPlayer.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VGZRPSqhH6Z6H93cjRFCMMs/nEo=
+			RC88VqLj2lK8KxNhdGa96+8+Q/k=
 			</data>
 			<key>hash2</key>
 			<data>
-			xFxNdBegdd7ry5kIV5VmcecmnP/3OWKJ6VtKqwY3II8=
+			btrCRP3E5IklyLMXY25u5D1Ij+vRZmZw8V/SvT2Rg3U=
 			</data>
 		</dict>
 		<key>ZiggeoAudioPlayer.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+kMM+5PDq6x0FAgX61W3bqEG/yA=
+			8oce0qOnWVd3zLrNQE5dUl0SMBc=
 			</data>
 			<key>hash2</key>
 			<data>
-			8zLnuDHhbOPTZRJLNFkoHSpe3t3oH8n62MLncgdKPP0=
+			QKll7ZehajWn0QZcpqcN5rc/w/j04ZcBF0ZKlqHJQVA=
 			</data>
 		</dict>
 		<key>ZiggeoAudioRecorder.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x6LEayKGmpUrbBqUtFLixmuok3Y=
+			BPaGjU9/cmcOqv9NsJ8C2fnK1lg=
 			</data>
 			<key>hash2</key>
 			<data>
-			pPe5rhsXJTwZLXkb71t3JM7qnlEEw2GzdXNouDh0xws=
+			tFFcpq+nuQikVpF22ZaUotsM0h7jbMfRCGVHQM/eR9g=
 			</data>
 		</dict>
 		<key>ZiggeoAudioRecorder.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			My8whX2V9NcuuMEtJOUMTNKHwxs=
+			2Dx7fQ9K22SNU/mMQmJL3SO8uS8=
 			</data>
 			<key>hash2</key>
 			<data>
-			I5Vq+09eSRH4ePbxReOa+erUmbnWot+CV/Z6pcrA/c4=
+			USqsBJ4ATE1cg6qnYVRInps000fSUZtuTayc0Qvhous=
 			</data>
 		</dict>
 		<key>ZiggeoRecorder.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8RigOezGJC1GZ+RDUu2NlS9Bcqw=
+			gZh67zUtcNJE4MPYCN5JrOOkw/4=
 			</data>
 			<key>hash2</key>
 			<data>
-			iQZXPUFYvFFHHyQe2ExnCC8tmuvrGSWyxH0hvjAetck=
+			tvR39WBQEWOexxJsxrkjrchB8zEU2wW2voUoNHwIVFo=
 			</data>
 		</dict>
 		<key>audio-record-start-black.png</key>
