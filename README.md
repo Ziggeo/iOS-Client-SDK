@@ -236,9 +236,9 @@ NSMutableDictionary *data = [NSMutableDictionary dictionary];
 [m_ziggeo uploadFromFileSelector:data];
 ```
 
-### Cancel Request
+### Cancel Uploading
 ```
-[m_ziggeo cancelRequest];
+[m_ziggeo cancelUpload:path :delete_file];
 ```
 
 ### Start QR Scanner
