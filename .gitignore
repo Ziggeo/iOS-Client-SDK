@@ -20,3 +20,4 @@ DerivedData
 # Pods - for those of you who use CocoaPods
 Pods
 Podfile.lock
+samples/TestApp_Local

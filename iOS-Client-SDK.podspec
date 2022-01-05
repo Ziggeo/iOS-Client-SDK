@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'iOS-Client-SDK'
-  s.version          = '1.1.33'
+  s.version          = '1.1.34'
   s.summary          = 'Ziggeo iOS Client SDK'
   s.description      = 'Ziggeo iOS recording and playback SDK'
 
@@ -17,11 +17,12 @@ Pod::Spec.new do |s|
   s.author           = { 'Ziggeo Inc' => 'support@ziggeo.com' }
   s.source           = { :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :tag => s.version.to_s }
   
-  s.platform         = :ios, "9.0"
+  s.platform         = :ios, "10.0"
 
-  # s.ios.deployment_target = '9.0'
+  # s.ios.deployment_target = '10.0'
   s.vendored_frameworks = 'Output/Ziggeo.xcframework'
+  # s.static_framework = true
 
   s.dependency 'GoogleAds-IMA-iOS-SDK', '3.11.3'
-
+  s.dependency 'PINRemoteImage/iOS', '~> 3.0.0'
 end

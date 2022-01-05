@@ -31,13 +31,13 @@ typedef enum {
 
 @implementation ViewController
 
-NSString *ZIGGEO_APP_TOKEN = @"ZIGGEO_APP_TOKEN";   // @"344a71099193b17a693ab11fdd0eeb10"
-NSString *SERVER_AUTH_TOKEN = @"SERVER_AUTH_TOKEN"; // @"2502a8288403cec13382a6f4d8f54f64";
-NSString *CLIENT_AUTH_TOKEN = @"CLIENT_AUTH_TOKEN"; // @"15901364881299187057";
+NSString *ZIGGEO_APP_TOKEN = @"ZIGGEO_APP_TOKEN";
+NSString *SERVER_AUTH_TOKEN = @"SERVER_AUTH_TOKEN";
+NSString *CLIENT_AUTH_TOKEN = @"CLIENT_AUTH_TOKEN";
 
-NSString *Last_Video_Token = @"Video_Token";    // @"4eaea7e4d3792a6d1b8dc4f2caeea319";
-NSString *Last_Audio_Token = @"Audio_Token";    // @"zawimvpc7pbivcfgjjspvxfk34p6icnf";
-NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2cl3on";
+NSString *Last_Video_Token = @"Last_Video_Token";
+NSString *Last_Audio_Token = @"Last_Audio_Token";
+NSString *Last_Image_Token = @"Last_Image_Token";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,17 +55,21 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
 
 - (IBAction)onRecordVideo:(id)sender {
     currentType = Video;
-        
+
     NSMutableDictionary *config = [NSMutableDictionary dictionary];
     config[@"tags"] = @"iOS_Video_Record";
+    config[@"effect_profile"] = @"1234,5678";
     [m_ziggeo setUploadingConfig:config];
     
     NSMutableDictionary *themeMap = [NSMutableDictionary dictionary];
-//    themeMap[@"blur_effect"] = @"false";
     [m_ziggeo setThemeArgsForRecorder:themeMap];
     
+    [m_ziggeo setBlurringEffect:true];
+    [m_ziggeo setBlurringMaskColor:UIColor.whiteColor];
+    [m_ziggeo setBlurringMaskAlpha:0.7];
+//    [m_ziggeo setMaxRecordingDuration:30];
+    
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
-//    map[@"effect_profile"] = @"12345";
 //    map[@"data"] = @{@"foo": @"bar"};
 //    map[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
 //    map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
@@ -85,7 +89,8 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
 - (IBAction)onChooseMedia:(id)sender {
     currentType = Unknown;
     
-    NSDictionary *config = [NSDictionary dictionaryWithObject:@"iOS_Choose_Media" forKey:@"tags"];
+    NSMutableDictionary *config = [NSMutableDictionary dictionary];
+    config[@"tags"] = @"iOS_Choose_Media";
     [m_ziggeo setUploadingConfig:config];
     
     NSMutableDictionary *data = [NSMutableDictionary dictionary];
@@ -96,7 +101,8 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
 - (IBAction)onRecordAudio:(id)sender {
     currentType = Audio;
     
-    NSDictionary *config = [NSDictionary dictionaryWithObject:@"iOS_Audio_Record" forKey:@"tags"];
+    NSMutableDictionary *config = [NSMutableDictionary dictionary];
+    config[@"tags"] = @"iOS_Audio_Record";
     [m_ziggeo setUploadingConfig:config];
     
     [m_ziggeo startAudioRecorder];
@@ -109,8 +115,10 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
 - (IBAction)onTakePhoto:(id)sender {
     currentType = Image;
     
-    NSDictionary *config = [NSDictionary dictionaryWithObject:@"iOS_Take_Photo" forKey:@"tags"];
+    NSMutableDictionary *config = [NSMutableDictionary dictionary];
+    config[@"tags"] = @"iOS_Take_Photo";
     [m_ziggeo setUploadingConfig:config];
+    
     [m_ziggeo startImageRecorder];
 }
 
@@ -268,7 +276,5 @@ NSString *Last_Image_Token = @"Image_Token";    // @"xzg4saj6u3ojm47los1kzaztju2
 - (void)ziggeoPlayerReadyToPlay {
     
 }
-
-
 
 @end
