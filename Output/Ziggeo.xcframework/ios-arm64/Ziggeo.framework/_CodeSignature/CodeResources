@@ -14,19 +14,19 @@
 		</data>
 		<key>AudioLevelView.nib</key>
 		<data>
-		3yXsvdHvAYCHghp/bedbE3RYpXE=
+		Yxz4u+quYXpDMgi4AuW2eWZiCto=
 		</data>
 		<key>AudioVisualizationView.nib</key>
 		<data>
-		yNPO4gFs66xcJXP9R2NRS7Ydlak=
+		rgg/l32M6AmdcY3goAgnQLY5FTo=
 		</data>
 		<key>CoverSelectorController.nib</key>
 		<data>
-		DhO9UUbJL5FlABIOBTHyuSwJG3k=
+		7zggBoLm8t9FxRW12dkTq1w/u9M=
 		</data>
 		<key>CoverSelectorTableCell.nib</key>
 		<data>
-		qT0UiDdeBYmR6YRbbctkS2Xsn1E=
+		O6k/dU7UO0A/+3jhlSzgMRxMGpU=
 		</data>
 		<key>FLVMuxer.vcxproj</key>
 		<data>
@@ -154,7 +154,7 @@
 		</data>
 		<key>LuxMeterView.nib</key>
 		<data>
-		WYcTyamut+ZwDj9bOt0JwMZRNOo=
+		xLbdefwtlTbvhpBx1LpbkDWabCE=
 		</data>
 		<key>Media.vcxproj</key>
 		<data>
@@ -174,7 +174,7 @@
 		</data>
 		<key>Modules/Ziggeo.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		40ZLo26r5zTXljr++rQ7TkJk/Gk=
+		5rGZb0UQ2994UIuh8u1/X/lk5k0=
 		</data>
 		<key>Modules/Ziggeo.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -186,7 +186,7 @@
 		</data>
 		<key>Modules/Ziggeo.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		40ZLo26r5zTXljr++rQ7TkJk/Gk=
+		5rGZb0UQ2994UIuh8u1/X/lk5k0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -202,19 +202,19 @@
 		</data>
 		<key>RecordedVideoPreview.nib</key>
 		<data>
-		3nxGw7jB9aARvJumuG46MmwDPLE=
+		jmhyZ6tfY43qmVKIrU1TslBL2/c=
 		</data>
 		<key>ZiggeoAudioPlayer.nib</key>
 		<data>
-		ePHfsQGQObTdlWRjo5coDLHLYzw=
+		2BONxSdpvDyiZkv2ZYu26RmRZrI=
 		</data>
 		<key>ZiggeoAudioRecorder.nib</key>
 		<data>
-		nZZ3hiNORl6UL8PCdmgBUsVznUw=
+		ko2OU7VxCTNzH2bPrpetoKe/aqc=
 		</data>
 		<key>ZiggeoRecorder.nib</key>
 		<data>
-		7bsA9HDw15rea2ou8Xbqg84dj64=
+		wC+gwrz2XaO3RGql1Dv5AfoPI3c=
 		</data>
 		<key>audio-record-start-black.png</key>
 		<data>
@@ -365,28 +365,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gKi+SyDif3RvBoe6JwHjY87o5SVd5XgOZLvUiAfGp0o=
+			133JrnDDWwPlPr57p8hucVx0xJuhnri0x7Nk6t0pPfQ=
 			</data>
 		</dict>
 		<key>AudioVisualizationView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Qpi4wisZG6fvz9LKL63NyLeUv766rezeLUQmpPfrOIA=
+			gpPgP55+WsfwEDFqZwJ5ov9dnJ7WeTP35dwXG0uCq40=
 			</data>
 		</dict>
 		<key>CoverSelectorController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IMyK+UB/umCjDCruO0mzT1+fHvg3r+6ya2ISBm+UQc0=
+			FEl8KBuqGi9zP3qPe4a8azz63wUvly3c40mtwDnn9M0=
 			</data>
 		</dict>
 		<key>CoverSelectorTableCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7eBNtjvGVs6tCFzI3wOaOzJUDnU6adp2/msfH1NittY=
+			Hk5KkXc6Iebys0dHp+kofsUx31gCbveoEiCUkieQhcI=
 			</data>
 		</dict>
 		<key>FLVMuxer.vcxproj</key>
@@ -603,7 +603,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hCYjSsv3QDF2fFEx24jwCZeETyN2BiKyE2w52i9d1N4=
+			p5fnaKUydubJvTdBVqkqvzPUhRRmTKKmseHML5nqWnE=
 			</data>
 		</dict>
 		<key>Media.vcxproj</key>
@@ -638,7 +638,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oPlBDB1+9UuYorUnARKyMJBeKFuyAS/r9xqtsJXuAQc=
+			5QD3G5VY0MTLfBuqAaRy7lw+WXAIARBbC3MaCk3EbTA=
 			</data>
 		</dict>
 		<key>Modules/Ziggeo.swiftmodule/arm64.swiftdoc</key>
@@ -659,7 +659,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oPlBDB1+9UuYorUnARKyMJBeKFuyAS/r9xqtsJXuAQc=
+			5QD3G5VY0MTLfBuqAaRy7lw+WXAIARBbC3MaCk3EbTA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -687,28 +687,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			srNxou+XobOaNWu0G7WP81eA9PxFFewS7HBb45OKHv8=
+			MPzyMA+t8WJjrWPs0uYiwI/5/supI48K3X+v8GQGSE0=
 			</data>
 		</dict>
 		<key>ZiggeoAudioPlayer.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+GGC0CZQM8vcL/2i2DFe65wtyUkk8iwlDnM1uLJdG9A=
+			Xq5uHO7292OGqZZxDG53ZWUf+oVojD+ZY7EjPZjlFtU=
 			</data>
 		</dict>
 		<key>ZiggeoAudioRecorder.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mn/fxgu7c3f/0gt/Lt6ORdtJOTBh2xfKI6e5UwHUaIE=
+			pmnwkm9QKWUyAFD3hoXa9T6IAwSp7tOwit5/blSC1PE=
 			</data>
 		</dict>
 		<key>ZiggeoRecorder.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1f8eBh3Ob1I0lgXg+d6MN6sGkRGWBlWG4cF6DnVV9P4=
+			2GPqgnLvccTHU03BEABZN1HB2Zu59dsgxmtFoqhkvUI=
 			</data>
 		</dict>
 		<key>audio-record-start-black.png</key>

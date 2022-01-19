@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   # s.static_framework = true
 
   s.dependency 'GoogleAds-IMA-iOS-SDK', '3.11.3'
-  s.dependency 'PINRemoteImage/iOS', '~> 3.0.0'
+  
 end
