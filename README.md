@@ -3,6 +3,12 @@ Ziggeo iOS SDK 2.0
 
 Ziggeo API (http://ziggeo.com) allows you to integrate video recording and playback with only two lines of code in your site, service or app. This is the iOS SDK repository. 
 
+
+## v 1.1.34 to v.1.1.35
+The update adds the blurring effect using mediapipe selfiesegmentation.
+SelfieSegmentation.framework does not contain bitcode.
+Users have to set "Enable Bitcode" to "No" on the Build Settings of the project.
+
 ## v 1.1.33 to v.1.1.34
 The update implements `getVideoUrl` function.
 
@@ -136,7 +142,8 @@ Added feature:
 - Add the following frameworks
 	- AVFoundation.framework
 	- Ziggeo.framework
-- Make sure Ziggeo.framework is added to Embedded Binaries and Linked Framework sections in your app target settings
+    - SelfieSegmentation.framework
+- Make sure Ziggeo.framework and SelfieSegmentation.framework are added to Embedded Binaries and Linked Framework sections in your app target settings
 
 ## Building/Packaging App
 - Using `universal` framework is ideal for building apps that run on simulators and actual devices.
@@ -161,6 +168,8 @@ Added feature:
   $ pod install
   ```
 - Reopen the project using the .xcworkspace
+- Set "Enable Bitcode" to "No" on the Build Settings of the project.
+![bitcode.png](docs/images/bitcode.png)
 
 ## Preparing App for submission to App Store
 - Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
@@ -284,11 +293,9 @@ map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
 [m_ziggeo setExtraArgsForRecorder:map];
 ```
 
-### Set Blurring Effect
+### Set Blur Mode
 ```
-[m_ziggeo setBlurringEffect:true];
-[m_ziggeo setBlurringMaskColor:UIColor.whiteColor];
-[m_ziggeo setBlurringMaskAlpha:0.7];
+[m_ziggeo setBlurMode:true];
 ```
 
 ### Extra Argment For Recorder
@@ -352,7 +359,8 @@ map[@"hideRecorderControls"] = @"false";
 
 ### Set Camera
 ```
-[m_ziggeo setCamera:0];
+[m_ziggeo setCamera:REAR_CAMERA];
+//[m_ziggeo setCamera:FRONT_CAMERA];
 ```
 
 ### Set Extra Argument For Player

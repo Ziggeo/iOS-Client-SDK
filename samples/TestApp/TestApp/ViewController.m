@@ -64,16 +64,15 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     NSMutableDictionary *themeMap = [NSMutableDictionary dictionary];
     [m_ziggeo setThemeArgsForRecorder:themeMap];
     
-    [m_ziggeo setBlurringEffect:true];
-    [m_ziggeo setBlurringMaskColor:UIColor.whiteColor];
-    [m_ziggeo setBlurringMaskAlpha:0.7];
-//    [m_ziggeo setMaxRecordingDuration:30];
-    
     NSMutableDictionary *map = [NSMutableDictionary dictionary];
 //    map[@"data"] = @{@"foo": @"bar"};
 //    map[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
 //    map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
     [m_ziggeo setExtraArgsForRecorder:map];
+
+    [m_ziggeo setBlurMode:true];
+    [m_ziggeo setCamera:REAR_CAMERA];
+//    [m_ziggeo setMaxRecordingDuration:30];
     
     [m_ziggeo record];
 }
