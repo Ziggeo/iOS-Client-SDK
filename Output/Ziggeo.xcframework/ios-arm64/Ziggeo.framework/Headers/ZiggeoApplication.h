@@ -48,6 +48,17 @@ typedef enum {
     KEY_HIDE_PLAYER_CONTROLS
 } Ziggeo_Theme_Key_Type;
 
+static NSString *REAR_CAMERA = @"rearCamera";
+static NSString *FRONT_CAMERA = @"frontCamera";
+static NSString *HIGH_QUALITY = @"highQuality";
+static NSString *MEDIUM_QUALITY = @"mediumQuality";
+static NSString *LOW_QUALITY = @"lowQuality";
+static NSString *ERR_UNKNOWN = @"ERR_UNKNOWN";
+static NSString *ERR_DURATION_EXCEEDED = @"ERR_DURATION_EXCEEDED";
+static NSString *ERR_FILE_DOES_NOT_EXIST = @"ERR_FILE_DOES_NOT_EXIST";
+static NSString *ERR_PERMISSION_DENIED = @"ERR_PERMISSION_DENIED";
+static NSString *MAX_DURATION = @"max_duration";
+static NSString *ENFORCE_DURATION = @"enforce_duration";
 
 // MARK: - ZiggeoDelegate
 @protocol ZiggeoDelegate <NSObject>
@@ -206,6 +217,7 @@ typedef enum {
 - (void)setLiveStreamingEnabled:(BOOL)enabled;
 - (void)setAutostartRecordingAfter:(int)seconds;
 - (void)setStartDelay:(int)seconds;
+- (void)setBlurMode:(BOOL)enabled;
 - (void)setExtraArgsForRecorder:(NSDictionary *)map;
 - (void)setThemeArgsForRecorder:(NSDictionary *)map;
 - (void)setCoverSelectorEnabled:(BOOL)enabled;
@@ -218,7 +230,7 @@ typedef enum {
 - (void)setCameraSwitchEnabled:(BOOL)enabled;
 - (void)setSendImmediately:(BOOL)sendImmediately;
 - (void)setQuality:(int)quality;
-- (void)setCamera:(int)facing;
+- (void)setCamera:(NSString *)facing;
 
 - (void)record;
 - (void)startImageRecorder;
@@ -242,12 +254,5 @@ typedef enum {
 - (NSString *)getVideoUrl:(NSString *)token;
 - (NSString *)getAudioUrl:(NSString *)token;
 - (NSString *)getImageUrl:(NSString *)token;
-
-// Blurring Effect
-- (void)setFrontCamera:(bool)flag;
-- (void)setBlurringEffect:(bool)flag;
-- (void)setBlurringMaskColor:(UIColor *)color;
-- (void)setBlurringMaskAlpha:(CGFloat)alpha;
-- (void)setBlurringMaskImage:(UIImage *)image;
 
 @end

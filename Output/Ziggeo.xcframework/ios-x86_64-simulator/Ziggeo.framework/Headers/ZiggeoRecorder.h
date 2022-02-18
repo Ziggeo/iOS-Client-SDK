@@ -48,10 +48,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) int audioBitrate;
 // blurring
 @property (nonatomic) bool useFrontCamera;
-@property (nonatomic) bool useBlurringEffect;
-@property (nonatomic) UIColor *blurringMaskColor;
-@property (nonatomic) double blurringMaskAlpha;
-@property (nonatomic) UIImage *blurringMaskImage;
+@property (nonatomic) bool blurMode;
 
 
 - (id)initWithZiggeoApplication:(Ziggeo*)ziggeo;
