@@ -9,10 +9,9 @@
 @import AVFoundation;
 
 #import <UIKit/UIKit.h>
-#import "RecordedVideoPreview.h"
 #import "ZiggeoApplication.h"
 #import "ZiggeoConfig.h"
-
+#import "ZiggeoRecordedVideoPreview.h"
 
 @class ZiggeoRecorderInterfaceConfig;
 
@@ -23,7 +22,7 @@ typedef enum : NSUInteger {
 } RecordingQuality;
 
 
-@interface ZiggeoRecorder : UIViewController <VideoPreviewDelegate>
+@interface ZiggeoRecorder : UIViewController
 
 @property (nonatomic) UIViewController<VideoPreviewProtocol>* videoPreview;
 @property (nonatomic) bool coverSelectorEnabled;

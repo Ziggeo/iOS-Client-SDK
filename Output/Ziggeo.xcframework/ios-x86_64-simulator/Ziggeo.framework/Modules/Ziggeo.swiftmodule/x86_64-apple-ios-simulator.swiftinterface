@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Ziggeo
 import AVFoundation
 import Accelerate
@@ -7,6 +7,7 @@ import Foundation
 import Swift
 import UIKit
 @_exported import Ziggeo
+import _Concurrency
 @objc final public class Chronometer : ObjectiveC.NSObject {
   final public var isPlaying: Swift.Bool
   final public var timerCurrentValue: Swift.Double
@@ -17,73 +18,72 @@ import UIKit
   @objc final public func pause()
   @objc final public func stop()
   @objc deinit
-  @objc override dynamic public init()
 }
 @_hasMissingDesignatedInitializers final public class AudioContext {
   final public let audioURL: Foundation.URL
   final public let totalSamples: Swift.Int
   final public let asset: AVFoundation.AVAsset
   final public let assetTrack: AVFoundation.AVAssetTrack
-  public static func load(fromAudioURL audioURL: Foundation.URL, completionHandler: @escaping (Ziggeo.AudioContext?) -> ())
+  public static func load(fromAudioURL audioURL: Foundation.URL, completionHandler: @escaping (_ audioContext: Ziggeo.AudioContext?) -> ())
   final public func render(targetSamples: Swift.Int = 100) -> [Swift.Float]
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class BaseNibView : UIKit.UIView {
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class BaseNibView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc override dynamic public func awakeFromNib()
   @objc deinit
 }
-@_inheritsConvenienceInitializers @objc public class AudioVisualizationView : Ziggeo.BaseNibView {
+@_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class AudioVisualizationView : Ziggeo.BaseNibView {
   @objc public enum AudioVisualizationMode : Swift.Int {
     case read = 0
     case write = 1
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
   }
-  @objc @IBInspectable public var meteringLevelBarWidth: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarWidth: CoreGraphics.CGFloat {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var meteringLevelBarInterItem: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarInterItem: CoreGraphics.CGFloat {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var meteringLevelBarCornerRadius: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarCornerRadius: CoreGraphics.CGFloat {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var meteringLevelBarSingleStick: Swift.Bool {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarSingleStick: Swift.Bool {
     @objc get
     @objc set(value)
   }
-  @objc public var audioVisualizationMode: Ziggeo.AudioVisualizationView.AudioVisualizationMode
-  public var audioVisualizationTimeInterval: Swift.Double
-  public var currentGradientPercentage: Swift.Float?
-  @objc public var meteringLevels: [Swift.Float]? {
+  @objc @_Concurrency.MainActor(unsafe) public var audioVisualizationMode: Ziggeo.AudioVisualizationView.AudioVisualizationMode
+  @_Concurrency.MainActor(unsafe) public var audioVisualizationTimeInterval: Swift.Double
+  @_Concurrency.MainActor(unsafe) public var currentGradientPercentage: Swift.Float?
+  @objc @_Concurrency.MainActor(unsafe) public var meteringLevels: [Swift.Float]? {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var gradientStartColor: UIKit.UIColor {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var gradientStartColor: UIKit.UIColor {
     @objc get
     @objc set(value)
   }
-  @objc @IBInspectable public var gradientEndColor: UIKit.UIColor {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var gradientEndColor: UIKit.UIColor {
     @objc get
     @objc set(value)
   }
-  @objc dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
-  @objc public func reset()
-  @objc public func add(meteringLevel: Swift.Float)
-  @objc public func scaleSoundDataToFitScreen() -> [Swift.Float]
-  @objc public func play(from url: Foundation.URL)
-  @objc public func play(for duration: Foundation.TimeInterval)
-  @objc public func pause()
-  @objc public func stop()
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) public func reset()
+  @objc @_Concurrency.MainActor(unsafe) public func add(meteringLevel: Swift.Float)
+  @objc @_Concurrency.MainActor(unsafe) public func scaleSoundDataToFitScreen() -> [Swift.Float]
+  @objc @_Concurrency.MainActor(unsafe) public func play(from url: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) public func play(for duration: Foundation.TimeInterval)
+  @objc @_Concurrency.MainActor(unsafe) public func pause()
+  @objc @_Concurrency.MainActor(unsafe) public func stop()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc public class ViewModel : ObjectiveC.NSObject {

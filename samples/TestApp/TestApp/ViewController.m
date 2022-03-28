@@ -21,7 +21,6 @@ typedef enum {
 
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoDelegate> {
     Ziggeo* m_ziggeo;
-    ZiggeoPlayer* embeddedPlayer;
     AVPlayerLayer* embeddedPlayerLayer;
     CurrentType currentType;
 }

@@ -7,12 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
-#import "DVAssetLoaderDelegatesDelegate.h"
-#import <GoogleInteractiveMediaAds/GoogleInteractiveMediaAds.h>
+
 
 @import AVFoundation;
 
-@interface ZiggeoPlayer : AVPlayer <DVAssetLoaderDelegatesDelegate, IMAAdsLoaderDelegate, IMAAdsManagerDelegate>
+@interface ZiggeoPlayer : AVPlayer
 
 @property (nonatomic, copy) void (^didFinishPlaying)(NSString * videoToken, NSError* error);
 
@@ -23,6 +22,5 @@
 + (void)createPlayerWithAdditionalParams:(Ziggeo*)ziggeo videoToken:(NSString *)token videoUrl:(NSString *)url params:(NSDictionary*)params callback:(void (^)(ZiggeoPlayer* player))callback;
 + (void)createPlayerWithServerAuthToken:(Ziggeo*)ziggeo videoToken:(NSString *)token authToken:(NSString *)authToken callback:(void (^)(ZiggeoPlayer* player))callback;
 + (void)createPlayerWithClientAuthToken:(Ziggeo*)ziggeo videoToken:(NSString *)token authToken:(NSString *)authToken callback:(void (^)(ZiggeoPlayer* player))callback;
-- (void)playWithAdsWithAdTagURL:(NSString *)adTagURL playerContainer:(UIView *)playerContainer playerViewController:(AVPlayerViewController *)playerViewController;
 
 @end
