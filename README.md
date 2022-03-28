@@ -74,12 +74,7 @@ You will want to either download the SDK zip file or to pull it in as git reposi
 ### Dependencies<a name="dependencies"></a>
 
 Please use latest build tools and sdk version when compiling.
-
-- Add the following frameworks
-	- AVFoundation.framework
-	- Ziggeo.framework
-	- SelfieSegmentation.framework
-- Make sure `Ziggeo.framework` and `SelfieSegmentation.framework` are added to *Embedded Binaries and Linked Framework* sections in your app target settings
+- Add NSPhotoLibraryUsageDescription, NSCameraUsageDescription and NSMicrophoneUsageDescription sections into the info.plist file
 
 ### Install<a name="install"></a>
 
