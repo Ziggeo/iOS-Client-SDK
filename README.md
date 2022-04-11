@@ -143,6 +143,7 @@ To have your app capture video content from the camera, all you need is to use t
 ```
 	[m_ziggeo record];
 ```
+
 #### Video (Screen) Recorder<a name="screen-recorder"></a>
 
 By utilizing the following you will be creating a foreground service for screen recording
@@ -272,7 +273,7 @@ If you set it up with 30 this would be equal to 30 seconds of recording, after w
 - Note: Duration is in seconds.
 
 ```
-[m_ziggeo setMaxRecordingDuration:20];
+[m_ziggeo setMaxRecordingDuration:30];
 ```
 
 **Set countdown time**
@@ -400,7 +401,6 @@ Sets the blur mode for the recorder, blurring out the background behind the pers
 ```
 [m_ziggeo setBlurMode:true];
 ```
-
 
 **Set Extra Arguments**
 This can be used to specify effect profiles, video profiles, custom data, tags, etc.
@@ -562,23 +562,11 @@ This event fires once recording has just started. This is useful if you want to 
 
 It can also be useful if you are using embedded recorder and you want to stop all other activities and bring more focus to the capture.
 
-```
-(void)ziggeoRecorderStarted {
-	// this method will be called when recorder is started
-}
-```
-
-**Recording in progress**
-
-This event is raised when recording is in process. This is a continuous update notification that will fire through entire duration of recording process.
-
-- Note: `seconds` parameter will let you know how much time has passed since the recording had started.
-
 Standard Recording
 
 ```
-(void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
-	// this method will be called while recording
+(void)ziggeoRecorderStarted {
+	// this method will be called when recorder is started
 }
 ```
 
@@ -591,6 +579,19 @@ Streaming Recording
 ```
 
 - Note: Streaming is when recording is sent to Ziggeo servers as soon as recording happens. You need to turn this feature on to be utilized.
+
+**Recording in progress**
+
+This event is raised when recording is in process. This is a continuous update notification that will fire through entire duration of recording process.
+
+- Note: `seconds` parameter will let you know how much time has passed since the recording had started.
+
+
+```
+(void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
+	// this method will be called while recording
+}
+```
 
 **Face Detected**
 
