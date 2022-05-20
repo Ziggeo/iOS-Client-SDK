@@ -17,9 +17,8 @@ Pod::Spec.new do |s|
   s.author           = { 'Ziggeo Inc' => 'support@ziggeo.com' }
   s.source           = { :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :tag => s.version.to_s }
   
-  s.platform         = :ios, "11.0"
+  s.platform         = :ios, "10.0"
 
-  # s.ios.deployment_target = '11.0'
   s.vendored_frameworks = 'Output/SelfieSegmentation.framework', 'Output/Ziggeo.framework'
   
 end

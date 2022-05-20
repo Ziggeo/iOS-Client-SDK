@@ -1,9 +1,9 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '10.0'
 
 target 'TestApp' do
   
   # Pods for AdvancedTestApp
-  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => '1.1.36-no-blurring'
+  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'no-blurring'
 
 end
