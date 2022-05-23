@@ -98,9 +98,9 @@ $ pod init
 pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
 ```
 
-If you are going to add the framework without MediaPipe Selfie Segmentation, please below command.
+If you are going to add the framework including MediaPipe Selfie Segmentation, please below command.
 ```
-pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'no-blurring'
+pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
 ```
 
 - Install framework
