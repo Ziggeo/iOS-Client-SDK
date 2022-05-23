@@ -285,7 +285,7 @@ SWIFT_CLASS("_TtC6Ziggeo22AudioVisualizationView")
 - (void)stop;
 @end
 
-typedef SWIFT_ENUM(NSInteger, AudioVisualizationMode, closed) {
+typedef SWIFT_ENUM(NSInteger, AudioVisualizationMode, open) {
   AudioVisualizationModeRead = 0,
   AudioVisualizationModeWrite = 1,
 };
