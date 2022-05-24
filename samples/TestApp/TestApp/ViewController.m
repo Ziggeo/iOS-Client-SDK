@@ -68,8 +68,6 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 //    map[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
 //    map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
     [m_ziggeo setExtraArgsForRecorder:map];
-
-    [m_ziggeo setBlurMode:false];
     [m_ziggeo setCamera:REAR_CAMERA];
 //    [m_ziggeo setMaxRecordingDuration:30];
     
