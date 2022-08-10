@@ -77,7 +77,7 @@ Please use latest build tools and sdk version when compiling.
 - Add NSPhotoLibraryUsageDescription, NSCameraUsageDescription and NSMicrophoneUsageDescription sections into the info.plist file
 
 ```
-#import <ZiggeoSwiftFramework/ZiggeoSwiftFramework.h>
+#import <Ziggeo/Ziggeo.h>
 ```
 
 ### Install<a name="install"></a>
