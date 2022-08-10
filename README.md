@@ -76,6 +76,10 @@ You will want to either download the SDK zip file or to pull it in as git reposi
 Please use latest build tools and sdk version when compiling.
 - Add NSPhotoLibraryUsageDescription, NSCameraUsageDescription and NSMicrophoneUsageDescription sections into the info.plist file
 
+```
+#import <ZiggeoSwiftFramework/ZiggeoSwiftFramework.h>
+```
+
 ### Install<a name="install"></a>
 
 iOS Objective-C SDK offers you several ways to add Ziggeo to your project. The recommended is through CocoaPods
@@ -89,6 +93,7 @@ $ sudo gem install cocoapods
 
 - Create new iOS project
 - Init pods in the xcode project directory
+
 ```
 $ pod init
 ```
@@ -133,13 +138,26 @@ Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN" Delegate:se
 ```
 - You can grab your appToken by logging [into your](https://ziggeo.com/signin) account and under application you will use > Overview you will see the app token.
 
+### Send Email To Support<a name="send-email-to-support"></a>
+
+```
+[m_ziggeo sendEmailToSupport];
+```
+
+### Send Email To Support<a name="send-email-to-support"></a>
+
+```
+[m_ziggeo sendReport:@[@"LOG_1", @"LOG_2", ...]];
+```
+
 ### Recorder<a name="recorder"></a>
 
 Ziggeo supports different media formats and offers multiple recorder options for you.
 1. Video Camera Recorder
 2. Video Screen Recorder
-3. Audio Recorder
-4. Image Capture (Snapshot Recorder)
+3. Video Trim
+4. Audio Recorder
+5. Image Capture (Snapshot Recorder)
 
 Each will be showcased within its own section bellow.
 
@@ -161,6 +179,16 @@ By utilizing the following you will be creating a foreground service for screen 
 [m_ziggeo startScreenRecorder];
 ```
 
+#### Video Trim <a name="video-trim"></a>
+
+You can trim video from path.
+
+**Trim Video From Path**
+
+```
+[m_ziggeo trimVideo:@"FILE_PATH"];
+```
+
 #### Audio Recorder<a name="audio-recorder"></a>
 
 Audio Recorder is perfect when you want to capture the content that does not show the face or any imaging, focusing only on the audio aspect of the capture.
@@ -170,6 +198,7 @@ Audio Recorder is perfect when you want to capture the content that does not sho
 ```
 
 #### Image Capture<a name="image-capture"></a>
+
 ```
 [m_ziggeo startImageRecorder];
 ```
@@ -179,8 +208,15 @@ Audio Recorder is perfect when you want to capture the content that does not sho
 Sometimes you might want to upload something instead of showing the recorder. With the above, you can do the same.
 
 **Upload From Path**
+
 ```
 [m_ziggeo uploadFromPath:@"FILE_PATH" :@{}];
+```
+
+**Upload From Multiple Path**
+
+```
+[m_ziggeo uploadFromPath:@[@"FILE_PATH_1", @"FILE_PATH_2", ...] :@{}];
 ```
 
 **Upload using File Selector**
@@ -211,16 +247,42 @@ Player can be used to play local videos, videos from other services and of cours
 [m_ziggeo playVideo:@"VIDEO_TOKEN"];
 ```
 
+**Play Mutliple Videos using Tokens**
+
+```
+[m_ziggeo playVideos:@[@"VIDEO_TOKEN_1", @"VIDEO_TOKEN_2", ...]];
+```
+
 **Playback from third-party source**
 
 ```
-[m_ziggeo playFromUri:Video_Url];
+[m_ziggeo playFromUrl:@"VIDEO_URL"];
+```
+
+**Play Mutliple Videos using urls**
+
+```
+[m_ziggeo playFromUrls:@[@"VIDEO_URL_1", @"VIDEO_URL_2", ...]];
 ```
 
 #### Audio Player<a name="audio-player"></a>
 
 ```
 [m_ziggeo startAudioPlayer:@"AUDIO_TOKEN"];
+```
+or
+```
+[m_ziggeo playAudio:@"AUDIO_TOKEN"];
+```
+
+**Play Mutliple Audios**
+
+```
+[m_ziggeo startAudiosPlayer:@[@"AUDIO_TOKEN_1", @"AUDIO_TOKEN_2", ...]];
+```
+or
+```
+[m_ziggeo playAudios:@[@"AUDIO_TOKEN_1", @"AUDIO_TOKEN_2", ...]];
 ```
 
 #### Image Preview<a name="image-preview"></a>
@@ -229,12 +291,19 @@ Player can be used to play local videos, videos from other services and of cours
 [m_ziggeo showImage:@"IMAGE_TOKEN"];
 ```
 
+**Show Mutliple Images**
+
+```
+[m_ziggeo showImages:@[@"IMAGE_TOKEN_1", @"IMAGE_TOKEN_2", ...]];
+```
+
+
 ### QR Scanner<a name="qr-scanner"></a>
 
 QR Scanner makes it easy for your code to retrieve data from the captured QR code.
 
 ```
-[m_ziggeo startQrScanner:@{}];
+[m_ziggeo startQrScanner];
 ```
 
 ### Configs<a name="configs"></a>
@@ -251,6 +320,7 @@ Similar calls would be made for player as well as for the recorder. You can see 
 
 ```
 NSMutableDictionary *map = [NSMutableDictionary dictionary];
+map[@"blur_effect"] = @"false";
 map[@"hideRecorderControls"] = @"false";
 [m_ziggeo setThemeArgsForRecorder:map];
 ```
@@ -268,7 +338,8 @@ map[@"hidePlayerControls"] = @"false";
 For uploading we are utilizing a helper config, while other parameters can be set up as they are needed.
 
 ```
-NSDictionary *config = [NSDictionary dictionaryWithObject:@"iOS_Choose_Media" forKey:@"tags"];
+NSMutableDictionary *config = [NSMutableDictionary dictionary];
+config[@"tags"] = @"iOS_Choose_Media";
 [m_ziggeo setUploadingConfig:config];
 ```
 
@@ -497,7 +568,9 @@ We have separated the events that are available to you into several different ca
 Before doing that, you will need to register a callback and this is done with the `ZiggeoDelegate`.
 
 ```
-@interface ViewController : UIViewController <ZiggeoDelegate>
+@interface ViewController : UIViewController <ZiggeoDelegate> {
+	...
+}
 ```
 
 #### Global Callbacks<a name="callbacks-global"></a>
@@ -595,7 +668,6 @@ This event is raised when recording is in process. This is a continuous update n
 
 - Note: `seconds` parameter will let you know how much time has passed since the recording had started.
 
-
 ```
 (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
 	// this method will be called while recording
@@ -627,7 +699,6 @@ Want to detect if someone cancels the recording? Use this event to know when som
 **Recording Finished**
 
 This event will be raised when recording had just finished. It will happen in cases when the end user clicks on Stop button as well as if there was duration or size limit that was reached.
-
 
 Standard recording
 
@@ -854,7 +925,37 @@ Are you interested in knowing microphone health status? This event will be raise
 
 ### API<a name="api"></a>
 
-* This is not available in our iOS SDK at this time
+The SDK provides an opportunity to make custom requests to Ziggeo Embedded Server API. You can make POST/GET/custom_method requests and receive RAW data, json-dictionary or string as the result.
+
+You will first need to get API Accessor Object
+
+```
+ZiggeoConnect *connection = self.application.connect;
+```
+
+#### Make POST Request and Parse JSON Response
+
+```
+[connection postJsonWithPath:(NSString *) Data:(NSDictionary *) Callback:^(NSDictionary *jsonObject, NSURLResponse *response, NSError *error) {
+    //jsonObject contains parsed json response received from Ziggeo API Server
+}];
+```
+
+#### Make POST Request and Get RAW Data Response
+
+```
+[connection postWithPath:(NSString *) Data:(NSDictionary *) Callback:^(NSData *data, NSURLResponse *response, NSError *error) {
+	//data contains RAW data received from Ziggeo API Server
+}];
+```
+
+#### Make GET Request and Get String Response
+
+```
+[connection getStringWithPath:(NSString *) Data:(NSDictionary *) Callback:^(NSString *string, NSURLResponse *response, NSError *error) {
+	//the string contains stringified response received from Ziggeo API Server
+}];
+```
 
 #### Request Cancellation<a name="api-cancel"></a>
 
@@ -907,7 +1008,9 @@ map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
   See: iOS-Client-SDK/Output/ directory
 
 ### Preparing App for submission to App Store
+
 - Create "new run script phase" in the application target build settings to strip unused architectures. Use the script provided with the iOS-Client-SDK/TestApp_ example (TestApp target settings -> Build phases -> Run script section)
+- Clean and rebuild the application
 
 ## Update Information<a name="update"></a>
 
