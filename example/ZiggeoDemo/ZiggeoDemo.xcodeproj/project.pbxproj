@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BF7D0C6BC8922D4EE0247AD /* Pods_ZiggeoDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CDE28D098A99DA86105649 /* Pods_ZiggeoDemo.framework */; };
+		07198EE385E5F71B302DE21C /* Pods_ZiggeoDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F159292C34738E4BB72CFEF /* Pods_ZiggeoDemo.framework */; };
 		D8B31D3C28815FE300C03825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D3B28815FE300C03825 /* AppDelegate.swift */; };
 		D8B31D4328815FE300C03825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D4128815FE300C03825 /* Main.storyboard */; };
 		D8B31D4528815FE600C03825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D4428815FE600C03825 /* Assets.xcassets */; };
@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		487079823587C1B85AEAB4C5 /* Pods-ZiggeoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiggeoDemo.release.xcconfig"; path = "Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo.release.xcconfig"; sourceTree = "<group>"; };
+		9F159292C34738E4BB72CFEF /* Pods_ZiggeoDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiggeoDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B31D3828815FE300C03825 /* ZiggeoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZiggeoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B31D3B28815FE300C03825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B31D4228815FE300C03825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		D8D480FB288FEEE700B5961A /* TopClientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopClientsViewController.swift; sourceTree = "<group>"; };
 		D8D480FC288FEEE700B5961A /* VideoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
 		D93667DD5EFE95DE2A145D85 /* Pods-ZiggeoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiggeoDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		F1CDE28D098A99DA86105649 /* Pods_ZiggeoDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiggeoDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BF7D0C6BC8922D4EE0247AD /* Pods_ZiggeoDemo.framework in Frameworks */,
+				07198EE385E5F71B302DE21C /* Pods_ZiggeoDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 		A090511D32C1D5E44BB4DDF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1CDE28D098A99DA86105649 /* Pods_ZiggeoDemo.framework */,
+				9F159292C34738E4BB72CFEF /* Pods_ZiggeoDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 34VS49Z26P;
+				DEVELOPMENT_TEAM = MD9AQL359V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,7 +629,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 34VS49Z26P;
+				DEVELOPMENT_TEAM = MD9AQL359V;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

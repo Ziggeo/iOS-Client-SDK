@@ -17,11 +17,7 @@ Pod::Spec.new do |spec|
   spec.author           = { 'Ziggeo Inc' => 'support@ziggeo.com' }
   spec.source           = { :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :tag => spec.version.to_s }
   
-  spec.platform         = :ios, "11.0"
-
-  spec.dependency 'PINRemoteImage'
-  spec.dependency 'ImageSlideshow'
-  spec.dependency 'ImageSlideshow/Alamofire'
+  spec.platform         = :ios, "10.0"
 
   spec.ios.deployment_target = '10.0'
   spec.vendored_frameworks = 'ZiggeoSDK/Ziggeo.framework'

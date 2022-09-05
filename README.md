@@ -168,7 +168,7 @@ Each will be showcased within its own section bellow.
 To have your app capture video content from the camera, all you need is to use the following
 
 ```
-	[m_ziggeo record];
+[m_ziggeo record];
 ```
 
 #### Video (Screen) Recorder<a name="screen-recorder"></a>
