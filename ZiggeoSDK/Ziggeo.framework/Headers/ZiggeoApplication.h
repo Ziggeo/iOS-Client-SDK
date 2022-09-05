@@ -63,6 +63,7 @@ static NSString *ERR_FILE_DOES_NOT_EXIST = @"ERR_FILE_DOES_NOT_EXIST";
 static NSString *ERR_PERMISSION_DENIED = @"ERR_PERMISSION_DENIED";
 static NSString *MAX_DURATION = @"max_duration";
 static NSString *ENFORCE_DURATION = @"enforce_duration";
+static NSString *CLOSE_AFTER_SUCCESS_FUL_SCAN = @"closeAfterSuccessfulScan";
 
 static NSString *ZIGGEO_STATUS_EMPTY = @"EMPTY";
 static NSString *ZIGGEO_STATUS_DELETED = @"DELETED";
@@ -263,6 +264,7 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 - (void)playAudios:(NSArray *)tokens;
 - (void)showImage:(NSString *)token;
 - (void)showImages:(NSArray *)tokens;
+- (void)startScreenRecorder;
 - (void)startScreenRecorderWithAddRecordingButtonToView:(UIView *)view
                                                   frame:(CGRect)frame
                                                appGroup:(NSString *)appGroup;
@@ -273,6 +275,7 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
        ConfirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 - (void)uploadFromFileSelector:(NSDictionary *)data;
 - (void)cancelUpload:(NSString *)path :(bool)delete_file;
+- (void)startQrScanner:(NSDictionary *)config;
 - (void)startQrScanner;
 
 // ZiggeoPlayer
