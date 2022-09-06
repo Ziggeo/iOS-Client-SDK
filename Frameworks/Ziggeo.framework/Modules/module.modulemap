@@ -1,0 +1,11 @@
+framework module Ziggeo {
+  umbrella header "Ziggeo.h"
+
+  export *
+  module * { export * }
+}
+
+module Ziggeo.Swift {
+    header "Ziggeo-Swift.h"
+    requires objc
+}

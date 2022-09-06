@@ -1,0 +1,8 @@
+platform :ios, '10.0'
+
+target 'TestApp' do
+  
+  pod 'iOS-Client-SDK', :path => '../..'
+#  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
+
+end
