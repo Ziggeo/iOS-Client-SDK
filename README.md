@@ -119,7 +119,7 @@ $ pod install
 
 - Reopen the project using the .xcworkspace
 - If you use the SDK flavor with background blurring, set `ENABLED_BITCODE` to `No`"** on the *Build Settings* of the project.
-![bitcode.png](docs/images/bitcode.png)
+![bitcode.png](Docs/Images/bitcode.png)
 
 ## Demo<a name="demo"></a>
 

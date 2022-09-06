@@ -20,6 +20,6 @@ Pod::Spec.new do |spec|
   spec.platform         = :ios, "10.0"
 
   spec.ios.deployment_target = '10.0'
-  spec.vendored_frameworks = 'ZiggeoSDK/Ziggeo.framework'
+  spec.vendored_frameworks = 'Frameworks/Ziggeo.framework'
   
 end
