@@ -20,6 +20,6 @@ Pod::Spec.new do |spec|
   spec.platform         = :ios, "11.0"
 
   spec.ios.deployment_target = '11.0'
-  spec.vendored_frameworks = 'ZiggeoSDK/SelfieSegmentation.framework', 'ZiggeoSDK/Ziggeo.framework'
+  spec.vendored_frameworks = 'Frameworks/SelfieSegmentation.framework', 'Frameworks/Ziggeo.framework'
   
 end
