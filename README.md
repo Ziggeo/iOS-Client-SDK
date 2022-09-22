@@ -77,7 +77,7 @@ Please use latest build tools and sdk version when compiling.
 - Add NSPhotoLibraryUsageDescription, NSCameraUsageDescription and NSMicrophoneUsageDescription sections into the info.plist file
 
 ```
-#import <Ziggeo/Ziggeo.h>
+#import <ZiggeoMediaSDK/ZiggeoMediaSDK.h>
 ```
 
 ### Install<a name="install"></a>
@@ -103,13 +103,13 @@ If you are going to be using the SDK flavor with background blurring, you need t
 So if your app needs to set the `ENABLED_BITCODE` option to `Yes`, you can not use the SDK flavor with background blurring.
 In this ase, use
 ```
-pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
+pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
 ```
 
 If your app does not need to set the `ENABLED_BITCODE` option to `Yes`, you can use the SDK flavor with background blurring.
 In this ase, use
 ```
-pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
+pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
 ```
 
 - Install framework
@@ -132,7 +132,7 @@ This section will introduce you to the most common ways you would integrate our 
 ### Init<a name="init"></a>
 
 ```
-#import "Ziggeo/Ziggeo.h"
+#import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
 
 Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN" Delegate:self];];
 ```
@@ -1005,7 +1005,7 @@ map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
 
 ### Building/Packaging App
 - Using `universal` framework is ideal for building apps that run on simulators and actual devices.
-  See: iOS-Client-SDK/Output/ directory
+  See: ZiggeoMediaSDK/Output/ directory
 
 ### Preparing App for submission to App Store
 

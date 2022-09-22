@@ -8,7 +8,7 @@
 #import <AVKit/AVKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ViewController.h"
-#import "Ziggeo/Ziggeo.h"
+#import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
 
 
 typedef enum {

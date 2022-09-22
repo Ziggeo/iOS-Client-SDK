@@ -1,0 +1,11 @@
+framework module ZiggeoMediaSDK {
+  umbrella header "ZiggeoMediaSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module ZiggeoMediaSDK.Swift {
+    header "ZiggeoMediaSDK-Swift.h"
+    requires objc
+}

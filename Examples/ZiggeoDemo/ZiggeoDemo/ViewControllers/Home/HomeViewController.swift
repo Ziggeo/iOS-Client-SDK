@@ -8,7 +8,7 @@
 import UIKit
 import ActiveLabel
 import SideMenu
-import Ziggeo
+import ZiggeoMediaSDK
 import AVKit
 import AVFoundation
 import MobileCoreServices
