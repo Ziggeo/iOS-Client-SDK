@@ -7,7 +7,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "AppDelegate.h"
-#import "Ziggeo/Ziggeo.h"
+#import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
 
 
 @interface AppDelegate ()

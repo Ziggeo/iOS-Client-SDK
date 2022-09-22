@@ -1,5 +1,5 @@
 import UIKit
-import Ziggeo
+import ZiggeoMediaSDK
 
 class RecordingTableViewCell: UITableViewCell {
 

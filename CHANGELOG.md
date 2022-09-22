@@ -1,5 +1,9 @@
 # Changelog
 
+Version 1.1.39 *(2022-09-23)*
+-----------------------------
+* The update changes the pod name to `ZiggeoMediaSDK`.
+
 Version 1.1.38 *(2022-08-10)*
 -----------------------------
 * The update adds multiple file uploads, multiple video plays, multiple audio plays and multiple image views.
