@@ -7,7 +7,7 @@
 
 import UIKit
 import AVKit
-import Ziggeo
+import ZiggeoMediaSDK
 import SVProgressHUD
 
 
