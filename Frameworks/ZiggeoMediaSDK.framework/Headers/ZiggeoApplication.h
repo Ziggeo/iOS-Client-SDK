@@ -256,14 +256,13 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 - (void)trimVideo:(NSString *)videoUrl;
 
 - (void)record;
+- (void)playVideo:(NSArray *)tokens;
+- (void)playFromUri:(NSArray *)path_or_urls;
 - (void)startImageRecorder;
+- (void)showImage:(NSArray *)tokens;
 - (void)startAudioRecorder;
-- (void)startAudioPlayer:(NSString *)token;
-- (void)startAudiosPlayer:(NSArray *)tokens;
-- (void)playAudio:(NSString *)token;
-- (void)playAudios:(NSArray *)tokens;
-- (void)showImage:(NSString *)token;
-- (void)showImages:(NSArray *)tokens;
+- (void)startAudioPlayer:(NSArray *)tokens;
+
 - (void)startScreenRecorder;
 - (void)startScreenRecorderWithAddRecordingButtonToView:(UIView *)view
                                                   frame:(CGRect)frame
@@ -278,11 +277,6 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 - (void)startQrScanner:(NSDictionary *)config;
 - (void)startQrScanner;
 
-// ZiggeoPlayer
-- (void)playVideo:(NSString *)token;
-- (void)playVideos:(NSArray *)tokens;
-- (void)playFromUri:(NSString *)path_or_url;
-- (void)playFromUris:(NSArray *)path_or_urls;
 - (void)setExtraArgsForPlayer:(NSDictionary *)map;
 - (void)setThemeArgsForPlayer:(NSDictionary *)map;
 - (void)setPlayerCacheConfig:(NSDictionary *)config; //

@@ -195,8 +195,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
-				"${PODS_ROOT}/../../../Frameworks/SelfieSegmentation.framework",
-				"${PODS_ROOT}/../../../Frameworks/ZiggeoMediaSDK.framework",
+				"${PODS_ROOT}/ZiggeoMediaSDK/Frameworks/SelfieSegmentation.framework",
+				"${PODS_ROOT}/ZiggeoMediaSDK/Frameworks/ZiggeoMediaSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
