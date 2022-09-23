@@ -1,19 +1,19 @@
 //
-//  Ziggeo.h
-//  Ziggeo
+//  ZiggeoMediaSDK.h
+//  ZiggeoMediaSDK
 //
 //  Copyright (c) 2015 Ziggeo Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for Ziggeo.
-FOUNDATION_EXPORT double ZiggeoVersionNumber;
+//! Project version number for ZiggeoMediaSDK.
+FOUNDATION_EXPORT double ZiggeoMediaSDKVersionNumber;
 
-//! Project version string for Ziggeo.
-FOUNDATION_EXPORT const unsigned char ZiggeoVersionString[];
+//! Project version string for ZiggeoMediaSDK.
+FOUNDATION_EXPORT const unsigned char ZiggeoMediaSDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Ziggeo/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <ZiggeoMediaSDK/PublicHeader.h>
 
 #import <ZiggeoMediaSDK/ZiggeoApplication.h>
 #import <ZiggeoMediaSDK/ZiggeoConnect.h>
