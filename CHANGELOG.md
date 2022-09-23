@@ -3,6 +3,7 @@
 Version 1.1.39-blurring *(2022-09-23)*
 -----------------------------
 * The update changes the pod name to `ZiggeoMediaSDK`.
+* The update does not use `Ziggeo.framework`, and use `ZiggeoMediaSDK.framework`.
 
 Version 1.1.38-blurring *(2022-08-10)*
 -----------------------------
