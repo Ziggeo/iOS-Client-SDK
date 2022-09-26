@@ -4,7 +4,8 @@ use_frameworks!
 
 target 'ZiggeoDemo' do
 
-  pod 'iOS-Client-SDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'  
+  pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
+
   pod 'ActiveLabel'
   pod 'SideMenu'
   pod 'SVProgressHUD'

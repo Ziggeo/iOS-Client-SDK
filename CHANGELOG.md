@@ -1,5 +1,11 @@
 # Changelog
 
+Version 1.1.39-blurring *(2022-09-26)*
+-----------------------------
+* The update changes the pod name to `ZiggeoMediaSDK`.
+* The update does not use `Ziggeo.framework`, and use `ZiggeoMediaSDK.framework`.
+* The update changes `playVideo`, `showImage`, `startAudioPlayer` and `playFromUrl` functions to support multiple items.
+
 Version 1.1.38-blurring *(2022-08-10)*
 -----------------------------
 * The update adds multiple file uploads, multiple video plays, multiple audio plays and multiple image views.
