@@ -8,7 +8,7 @@
 #import <AVKit/AVKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ViewController.h"
-#import "Ziggeo/Ziggeo.h"
+#import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
 
 
 typedef enum {
@@ -81,7 +81,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     map[@"hidePlayerControls"] = @"false";
     [m_ziggeo setThemeArgsForPlayer:map];
     
-    [m_ziggeo playVideo:Last_Video_Token];
+    [m_ziggeo playVideo:@[Last_Video_Token]];
 }
 
 - (IBAction)onChooseMedia:(id)sender {
@@ -107,7 +107,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onPlayAudio:(id)sender {
-    [m_ziggeo startAudioPlayer:Last_Audio_Token];
+    [m_ziggeo startAudioPlayer:@[Last_Audio_Token]];
 }
 
 - (IBAction)onTakePhoto:(id)sender {
@@ -121,7 +121,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onShowImage:(id)sender {
-    [m_ziggeo showImage:Last_Image_Token];
+    [m_ziggeo showImage:@[Last_Image_Token]];
 }
 
 

@@ -20,6 +20,4 @@ DerivedData
 # Pods - for those of you who use CocoaPods
 Pods
 Podfile.lock
-example/TestApp_Local
-example/ZiggeoDemo/Pods
-example/ZiggeoDemo/Podfile.lock
+Examples/TestApp_Local
