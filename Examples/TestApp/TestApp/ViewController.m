@@ -92,7 +92,8 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     [m_ziggeo setUploadingConfig:config];
     
     NSMutableDictionary *data = [NSMutableDictionary dictionary];
-//    data[@"media_types"] = @[@"video", @"audio", @"image"];
+//    data[ARG_MEDIA_TYPE] = @[@"video", @"image"];
+//    data[ARG_DURATION] = @"20";
     [m_ziggeo uploadFromFileSelector:data];
 }
 
@@ -126,25 +127,16 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 
 // MARK: - ZiggeoRecorderDelegate
-
-- (void)luxMeter:(double)luminousity {
-    //NSLog(@"luminousity: %f", luminousity);
-}
-
-- (void)audioMeter:(double)audioLevel {
-    //NSLog(@"audio: %f", audioLevel);
-}
-
-- (void)faceDetected:(int)faceID rect:(CGRect)rect {
-    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-}
-
 - (void)ziggeoRecorderReady {
     NSLog(@"Ziggeo Recorder Ready");
 }
 
 - (void) ziggeoRecorderCanceled {
     NSLog(@"Ziggeo Recorder Canceled");
+}
+
+- (void)ziggeoRecorderCountdown:(int)secondsLeft {
+    NSLog(@"Ziggeo Recorder Countdown left: %d", secondsLeft);
 }
 
 - (void)ziggeoRecorderStarted {
@@ -183,8 +175,26 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     NSLog(@"Ziggeo Streaming Stopped");
 }
 
+- (void)luxMeter:(double)luminousity {
+    //NSLog(@"luminousity: %f", luminousity);
+}
+
+- (void)audioMeter:(double)audioLevel {
+    //NSLog(@"audio: %f", audioLevel);
+}
+
+- (void)faceDetected:(int)faceID rect:(CGRect)rect {
+    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+}
 
 // MARK: - ZiggeoUploadDelegate
+- (void)ziggeoUploadCancelledByUser {
+    NSLog(@"Upload cancelled by user");
+}
+
+- (void)ziggeoUploadSelected:(NSArray *)paths {
+    NSLog(@"Upload Selected: %@", paths);
+}
 
 - (void)preparingToUploadWithPath:(NSString*)sourcePath {
     NSLog(@"Preparing To Upload : %@", sourcePath);
@@ -231,7 +241,6 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 
 // MARK: - ZiggeoHardwarePermissionCheckDelegate
-
 - (void)checkCameraPermission:(BOOL)granted {
     NSLog(@"Check Camera Permission : %d", granted);
 }
@@ -254,7 +263,6 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 
 // MARK: - ZiggeoPlayerDelegate
-
 - (void)ziggeoPlayerPlaying {
     
 }
@@ -272,6 +280,10 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (void)ziggeoPlayerReadyToPlay {
+    
+}
+
+- (void)ziggeoPlayerCancelledByUser {
     
 }
 
