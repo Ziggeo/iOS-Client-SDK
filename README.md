@@ -217,7 +217,8 @@ Sometimes you might want to upload something instead of showing the recorder. Wi
 
 ```
 NSMutableDictionary *data = [NSMutableDictionary dictionary];
-//data[@"media_types"] = @[@"video", @"audio", @"image"];
+//data[ARG_MEDIA_TYPE] = @[@"video", @"image"];
+//data[ARG_DURATION] = @"20";
 [m_ziggeo uploadFromFileSelector:data];
 ```
 
@@ -253,10 +254,22 @@ Player can be used to play local videos, videos from other services and of cours
 [m_ziggeo startAudioPlayer:@[@"AUDIO_TOKEN_1", @"AUDIO_TOKEN_2", ...]];
 ```
 
+#### Audio Player From Paths<a name="audio-player"></a>
+
+```
+[m_ziggeo startAudioPlayerWithPaths:@[@"AUDIO_PATH_1", @"AUDIO_PATH_2", ...]];
+```
+
 #### Image Preview<a name="image-preview"></a>
 
 ```
 [m_ziggeo showImage:@[@"IMAGE_TOKEN_1", @"IMAGE_TOKEN_2", ...]];
+```
+
+#### Image Preview From Paths<a name="image-preview"></a>
+
+```
+[m_ziggeo showImageWithPaths:@[@"IMAGE_PATH_1", @"IMAGE_PATH_2", ...]];
 ```
 
 
@@ -702,6 +715,22 @@ Rerecording is a common way to provide the end user of capturing multiple sample
 }
 ```
 
+**Uploading cancelled**
+
+```
+(void)ziggeoUploadCancelledByUser {
+	// this method will be called when user call the cancelUpload function.    
+}
+```
+
+**Uploading selected**
+
+```
+(void)ziggeoUploadSelected:(NSArray<NSString *> *)paths {
+    // this method will be called when user select the files for uploading.
+}
+```
+
 **Uploading started**
 
 Want to know when upload starts? In that case you will want to listen to this event. It will be raised every time uploads start to happen.
@@ -849,6 +878,16 @@ Want to know when the media playback ends? This event will be raised any time th
 }
 ```
 
+**Playback Cancelled**
+
+This method will be called when user touch close button.
+
+```
+(void)ziggeoPlayerCancelledByUser {
+	// Fires when user close player
+}
+```
+
 **Playback seeking**
 
 Want to know if and where to someone changes the point of playback (seeks the media)? This event will be raised when the person watching the media moves the player's progress indicator to a new position. This will fire for both going forward as well as going back in playback.
@@ -967,7 +1006,7 @@ map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
 
 ### Building/Packaging App
 - Using `universal` framework is ideal for building apps that run on simulators and actual devices.
-  See: ZiggeoMediaSDK/Output/ directory
+  See: ZiggeoMediaSDK/Frameworks/ directory
 
 ### Preparing App for submission to App Store
 

@@ -70,7 +70,8 @@ class HomeViewController: UIViewController {
         Common.ziggeo?.setUploadingConfig(config)
 
         var data: [String: Any] = [:]
-//        data["media_types"] = ["video", "audio", "image"]
+//        data[ARG_MEDIA_TYPE] = ["video", "image"]
+//        data[ARG_DURATION] = "20"
         Common.ziggeo?.upload(fromFileSelector: data)
     }
     
@@ -313,19 +314,6 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
 // MARK: - ZiggeoDelegate
 extension HomeViewController: ZiggeoDelegate {
     // ZiggeoRecorderDelegate
-    
-    func ziggeoRecorderLuxMeter(_ luminousity: Double) {
-        
-    }
-    
-    func ziggeoRecorderAudioMeter(_ audioLevel: Double) {
-        
-    }
-
-    func ziggeoRecorderFaceDetected(_ faceID: Int32, rect: CGRect) {
-        
-    }
-    
     func ziggeoRecorderReady() {
         Common.addLog("Recorder Ready")
     }
@@ -334,6 +322,10 @@ extension HomeViewController: ZiggeoDelegate {
         Common.addLog("Recorder Canceled")
     }
     
+    func ziggeoRecorderCountdown(_ secondsLeft: Int32) {
+        Common.addLog("Ziggeo Recorder Countdown left: \(secondsLeft)")
+    }
+
     func ziggeoRecorderStarted() {
         Common.addLog("Recorder Started")
     }
@@ -362,7 +354,6 @@ extension HomeViewController: ZiggeoDelegate {
         Common.addLog("Recorder Manually Submitted")
     }
     
-    
     func ziggeoStreamingStarted() {
         Common.addLog("Streaming Started")
     }
@@ -370,9 +361,28 @@ extension HomeViewController: ZiggeoDelegate {
     func ziggeoStreamingStopped() {
         Common.addLog("Streaming Stopped")
     }
+    
+    func ziggeoRecorderLuxMeter(_ luminousity: Double) {
+        
+    }
+    
+    func ziggeoRecorderAudioMeter(_ audioLevel: Double) {
+        
+    }
 
+    func ziggeoRecorderFaceDetected(_ faceID: Int32, rect: CGRect) {
+        
+    }
 
     // ZiggeoUploadDelegate
+    func ziggeoUploadCancelledByUser() {
+        Common.addLog("Upload cancelled by user")
+    }
+    
+    func ziggeoUploadSelected(_ paths: [String]!) {
+        Common.addLog("Upload Selected: \(paths)")
+    }
+    
     func preparingToUpload(withPath sourcePath: String) {
         Common.addLog("Preparing To Upload: \(sourcePath)")
     }
@@ -450,5 +460,9 @@ extension HomeViewController: ZiggeoDelegate {
     
     func ziggeoPlayerReadyToPlay() {
         Common.addLog("Player Ready To Play")
+    }
+    
+    func ziggeoPlayerCancelledByUser() {
+        Common.addLog("Player Cancelled By User")
     }
 }

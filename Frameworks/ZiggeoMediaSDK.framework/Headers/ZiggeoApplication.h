@@ -61,7 +61,8 @@ static NSString *ERR_UNKNOWN = @"ERR_UNKNOWN";
 static NSString *ERR_DURATION_EXCEEDED = @"ERR_DURATION_EXCEEDED";
 static NSString *ERR_FILE_DOES_NOT_EXIST = @"ERR_FILE_DOES_NOT_EXIST";
 static NSString *ERR_PERMISSION_DENIED = @"ERR_PERMISSION_DENIED";
-static NSString *MAX_DURATION = @"max_duration";
+static NSString *ARG_DURATION = @"max_duration";
+static NSString *ARG_MEDIA_TYPE = @"media_type";
 static NSString *ENFORCE_DURATION = @"enforce_duration";
 static NSString *CLOSE_AFTER_SUCCESS_FUL_SCAN = @"closeAfterSuccessfulScan";
 
@@ -71,6 +72,7 @@ static NSString *ZIGGEO_STATUS_VERIFIED = @"VERIFIED";
 static NSString *ZIGGEO_STATUS_PROCESSING = @"PROCESSING";
 static NSString *ZIGGEO_STATUS_FAILED = @"FAILED";
 static NSString *ZIGGEO_STATUS_READY = @"READY";
+
 
 // MARK: - ZiggeoDelegate
 @protocol ZiggeoDelegate <NSObject>
@@ -129,13 +131,16 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 @optional
 - (void)checkHasMicrophone:(BOOL)hasMicrophone;
 
+
+// ZiggeoUploadDelegate
+@optional
+- (void)ziggeoUploadCancelledByUser;
+@optional
+- (void)ziggeoUploadSelected:(NSArray<NSString *> *)paths;
+
 // ZiggeoRecorderDelegate
 @optional
-- (void)ziggeoRecorderLuxMeter:(double)luminousity;
-@optional
-- (void)ziggeoRecorderAudioMeter:(double)audioLevel;
-@optional
-- (void)ziggeoRecorderFaceDetected:(int)faceID rect:(CGRect)rect;
+- (void)ziggeoRecorderCountdown:(int)secondsLeft;
 @optional
 - (void)ziggeoRecorderReady;
 @optional
@@ -143,21 +148,27 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 @optional
 - (void)ziggeoRecorderStarted;
 @optional
-- (void)ziggeoRecorderStopped:(NSString *)path;
-@optional
 - (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds;
-@optional
-- (void)ziggeoRecorderPlaying;
 @optional
 - (void)ziggeoRecorderPaused;
 @optional
+- (void)ziggeoRecorderStopped:(NSString *)path;
+@optional
 - (void)ziggeoRecorderRerecord;
+@optional
+- (void)ziggeoRecorderPlaying;
 @optional
 - (void)ziggeoRecorderManuallySubmitted;
 @optional
 - (void)ziggeoStreamingStarted;
 @optional
 - (void)ziggeoStreamingStopped;
+@optional
+- (void)ziggeoRecorderLuxMeter:(double)luminousity;
+@optional
+- (void)ziggeoRecorderAudioMeter:(double)audioLevel;
+@optional
+- (void)ziggeoRecorderFaceDetected:(int)faceID rect:(CGRect)rect;
 
 // ZiggeoPlayerDelegate
 @optional
@@ -170,6 +181,8 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 - (void)ziggeoPlayerSeek:(double)positionMillis;
 @optional
 - (void)ziggeoPlayerReadyToPlay;
+@optional
+- (void)ziggeoPlayerCancelledByUser;
 
 @end
 
@@ -260,8 +273,10 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 - (void)playFromUri:(NSArray *)path_or_urls;
 - (void)startImageRecorder;
 - (void)showImage:(NSArray *)tokens;
+- (void)showImageWithPaths:(NSArray *)paths;
 - (void)startAudioRecorder;
 - (void)startAudioPlayer:(NSArray *)tokens;
+- (void)startAudioPlayerWithPaths:(NSArray *)paths;
 
 - (void)startScreenRecorder;
 - (void)startScreenRecorderWithAddRecordingButtonToView:(UIView *)view
