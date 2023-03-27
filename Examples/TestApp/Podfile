@@ -2,6 +2,6 @@ platform :ios, '11.0'
 
 target 'TestApp' do
   
- pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
+    pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
 
 end

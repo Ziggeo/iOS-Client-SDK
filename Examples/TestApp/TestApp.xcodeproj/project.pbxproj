@@ -195,11 +195,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
-				"${PODS_ROOT}/ZiggeoMediaSDK/Frameworks/SelfieSegmentation.framework",
-				"${PODS_ROOT}/ZiggeoMediaSDK/Frameworks/ZiggeoMediaSDK.framework",
+				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
+				"${PODS_ROOT}/../../../Frameworks/SelfieSegmentation.framework",
+				"${PODS_ROOT}/../../../Frameworks/ZiggeoMediaSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelfieSegmentation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZiggeoMediaSDK.framework",
 			);

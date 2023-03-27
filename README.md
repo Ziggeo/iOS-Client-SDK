@@ -26,9 +26,14 @@
 		2. [Recorder Configs](#recorder-config)
 	6. [Events / Callbacks](#events)
 		1. [Global Callbacks](#callbacks-global)
-		2. [Recorder Callbacks](#callbacks-recorder)
-		3. [Player Callbacks](#callbacks-player)
-		4. [Sensor Callbacks](#callbacks-sensor)
+		2. [Hardware Permission Callbacks](#callbacks-hardware-permission)
+		3. [Uploading Callbacks](#callbacks-uploading)
+		4. [File Selector Callbacks](#callbacks-file-selector)
+		5. [Recorder Callbacks](#callbacks-recorder)
+		6. [Sensor Callbacks](#callbacks-sensor)
+		7. [Player Callbacks](#callbacks-player)
+		8. [Screen Recorder Callbacks](#callbacks-screen-recorder)
+		9. [QR Scanner Callbacks](#callbacks-qr-scanner)
 	7. [API](#api)
 		1. [Request Cancellation](#api-cancel)
 		2. [Videos API](#api-videos)
@@ -134,7 +139,15 @@ This section will introduce you to the most common ways you would integrate our 
 ```
 #import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
 
-Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN" Delegate:self];];
+Ziggeo* m_ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
+[m_ziggeo setQRScannerDelegate:self];
+[m_ziggeo setHardwarePermissionDelegate:self];
+[m_ziggeo setUploadingDelegate:self];
+[m_ziggeo setFileSelectorDelegate:self];
+[m_ziggeo setRecorderDelegate:self];
+[m_ziggeo setSensorDelegate:self];
+[m_ziggeo setPlayerDelegate:self];
+[m_ziggeo setScreenRecorderDelegate:self];
 ```
 - You can grab your appToken by logging [into your](https://ziggeo.com/signin) account and under application you will use > Overview you will see the app token.
 
@@ -176,7 +189,7 @@ To have your app capture video content from the camera, all you need is to use t
 By utilizing the following you will be creating a foreground service for screen recording
 
 ```
-[m_ziggeo startScreenRecorder];
+[m_ziggeo startScreenRecorderWithAppGroup:"YOUR_APP_GROUP_NAME" preferredExtension:"Preferred_Extension_Name"];
 ```
 
 #### Video Trim <a name="video-trim"></a>
@@ -540,10 +553,10 @@ Callbacks allow you to know when something happens. They fire in case of some ev
 
 We have separated the events that are available to you into several different categories.
 
-Before doing that, you will need to register a callback and this is done with the `ZiggeoDelegate`.
+Before doing that, you will need to register a callback and this is done with the `ZiggeoHardwarePermissionDelegate`, `ZiggeoUploadingDelegate`, `ZiggeoFileSelectorDelegate`, `ZiggeoRecorderDelegate`, `ZiggeoSensorDelegate`, `ZiggeoPlayerDelegate`, `ZiggeoScreenRecorderDelegate`, `ZiggeoQRScannerDelegate`.
 
 ```
-@interface ViewController : UIViewController <ZiggeoDelegate> {
+@interface ViewController : UIViewController <ZiggeoHardwarePermissionDelegate, ZiggeoUploadingDelegate, ZiggeoFileSelectorDelegate, ZiggeoRecorderDelegate, ZiggeoSensorDelegate, ZiggeoPlayerDelegate, ZiggeoScreenRecorderDelegate, ZiggeoQRScannerDelegate> {
 	...
 }
 ```
@@ -552,13 +565,7 @@ Before doing that, you will need to register a callback and this is done with th
 
 * No global callbacks are available at this time
 
-#### Recorder Callbacks<a name="callbacks-recorder"></a>
-
-The callbacks in this section are specific to recorder only. This means that they will not fire at all for the player embeds.
-
-The callbacks are listed in the order that they should appear in within your code.
-
-- Note: Some callbacks might not be called. For example if video is uploaded and not recorded, recording specific callbacks will never fire.
+#### Hardware Permission Callbacks<a name="callbacks-hardware-permission"></a>
 
 **Permissions**
 
@@ -576,7 +583,6 @@ Same callback will fire for both Success and Failure, you will need to check the
 (void)checkPhotoLibraryPermission:(BOOL)granted {
 	// this method will return when photo library access permission is granted or denied.
 }
-
 ```
 
 **Camera availability**
@@ -603,133 +609,7 @@ Most devices will have microphone available. It could however happen that it is 
 }
 ```
 
-**Ready to record**
-
-In most cases, once permissions are given, the recording can start and as such this callback will fire. It means that camera is ready and that all permissions are granted. All that is left is to start recording.
-
-```
-(void)ziggeoRecorderReady {
-	// this method will be called when recorder is ready to recorder
-}
-```
-
-**Recording has started**
-
-This event fires once recording has just started. This is useful if you want to know that the video was recording and not upload since upload events will fire for all.
-
-It can also be useful if you are using embedded recorder and you want to stop all other activities and bring more focus to the capture.
-
-Standard Recording
-
-```
-(void)ziggeoRecorderStarted {
-	// this method will be called when recorder is started
-}
-```
-
-Streaming Recording
-
-```
-(void)ziggeoStreamingStarted {
-	// Triggered when a streaming process has started (Press on the Record button if countdown 0 or after the countdown goes to 0)
-}
-```
-
-- Note: Streaming is when recording is sent to Ziggeo servers as soon as recording happens. You need to turn this feature on to be utilized.
-
-**Recording in progress**
-
-This event is raised when recording is in process. This is a continuous update notification that will fire through entire duration of recording process.
-
-- Note: `seconds` parameter will let you know how much time has passed since the recording had started.
-
-```
-(void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
-	// this method will be called while recording
-}
-```
-
-**Face Detected**
-
-When face is detected on the video and if you are listening to the callback you will get information about the face. Please note that the face detection will not recognize who someone is, rather just a simple way of knowing that there is a face over the video.
-
-- Note: If the same person leaves the video and comes back, they will have a different face ID even if it is the same person.
-
-```
-(void)faceDetected:(int)faceID rect:(CGRect)rect {
-    // this method will be called when face is detected
-}
-```
-
-**Recording cancelled**
-
-Want to detect if someone cancels the recording? Use this event to know when someone cancelled the recording and closed the screen.
-
-```
-(void) ziggeoRecorderCanceled {
-	// this method will be called when recorder is canceled
-}
-```
-
-**Recording Finished**
-
-This event will be raised when recording had just finished. It will happen in cases when the end user clicks on Stop button as well as if there was duration or size limit that was reached.
-
-Standard recording
-
-```
-(void)ziggeoRecorderStopped:(NSString *)path {
-	// this method will be called when recorder is stopped
-}
-```
-
-Streaming Recording
-
-```
-(void)ziggeoStreamingStopped {
-	// Triggered when a streaming process has stopped (automatically after reaching the maximum duration or manually).
-}
-```
-
-**Confirm Recording**
-
-Need to make sure someone confirms the video submission? Use this callback and record its action on your side as you like.
-
-As this might be a requirement in some countries you are utilizing your app, you can easily use this for any sort of confirmation of captured video.
-
-- Note: Our code only fires this event. It is up to you to then use this event to capture and save that someone confirmed the use of the video and in what way. This is done so as it offers you most flexibility in what you want to do and how.
-
-```
-(void)ziggeoRecorderManuallySubmitted {
-	// this method will be called when recorded file(video or audio) is uploaded by the user
-}
-```
-
-**Re-Recording**
-
-Rerecording is a common way to provide the end user of capturing multiple samples before they have one that they are satisfied with to submit.
-
-```
-(void)ziggeoRecorderRerecord {
-	// this method will be called when recorder is rerecorded
-}
-```
-
-**Uploading cancelled**
-
-```
-(void)ziggeoUploadCancelledByUser {
-	// this method will be called when user call the cancelUpload function.    
-}
-```
-
-**Uploading selected**
-
-```
-(void)ziggeoUploadSelected:(NSArray<NSString *> *)paths {
-    // this method will be called when user select the files for uploading.
-}
-```
+#### Uploading Callbacks<a name="callbacks-uploading"></a>
 
 **Uploading started**
 
@@ -761,7 +641,7 @@ If by some chance it turns out to fail, then other callback would be raised to h
 Do you want to know the progress of the uploads? This event will be continuously raised as the uploaded data changes, allowing you to track the progress of every upload.  
 
 ```
-(void)uploadProgressForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
+(void)uploadProgressWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
 	// this method will be called while uploading the file(video, audio, image)
 }
 ```
@@ -777,7 +657,7 @@ Do you want to know the progress of the uploads? This event will be continuously
 Want to know once upload finishes? Then you would want to listen to this event. Our SDK will raise it once all uploading is complete.
 
 ```
-(void)uploadFinishedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
+(void)uploadFinishedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
 	// this method will be called after the file(video, audio, image) was uploaded
 }
 ```
@@ -814,89 +694,159 @@ Interested in knowing when the media is successfully processed? Listening for th
 }
 ```
 
-#### Player Callbacks<a name="callbacks-player"></a>
-
-We differentiate between player and the player shown automatically immediately after recording. You will find events for both types here.
-
-**Media playback available**
-
-Want to know once the player can play the video? This event will let you know once the media is available for playback. By listening to it, you can avoid listening to progress events as it will fire once the media is ready regardless if it has to be processed first, or if it is waiting to download the media to make it available for playback
-
+**Processing Cancelled**
 ```
-(void)ziggeoPlayerReadyToPlay {
-	// Triggered when a video player is ready to play a video
+(void)cancelUploadByPath:(NSString *)sourcePath deleteFile:(BOOL)deleteFile {
+   // this method will be called when uploading the file(video, audio, image) was cancelled
 }
 ```
 
-**Playback started**
-
-Want to react when playback is started? This event will be raised every time the playback is started.
-
-Standard player
-
 ```
-(void)ziggeoPlayerPlaying {
-	// Fires any time a playback is started
+(void)cancelCurrentUpload:(BOOL)deleteFile {
+	// this method will be called when uploading current file(video, audio, image) was cancelled
 }
 ```
 
-Player after recording
+#### File Selector Callbacks<a name="callbacks-file-selector"></a>
+
+**Uploading cancelled**
 
 ```
-(void)ziggeoRecorderPlaying {
+(void)uploadCancelledByUser {
+	// this method will be called when user call the cancelUpload function.    
+}
+```
+
+**Uploading selected**
+
+```
+(void)uploadSelected:(NSArray<NSString *> *)paths {
+    // this method will be called when user select the files for uploading.
+}
+```
+
+#### Recorder Callbacks<a name="callbacks-recorder"></a>
+
+The callbacks in this section are specific to recorder only. This means that they will not fire at all for the player embeds.
+
+The callbacks are listed in the order that they should appear in within your code.
+
+- Note: Some callbacks might not be called. For example if video is uploaded and not recorded, recording specific callbacks will never fire.
+
+
+**Ready to record**
+
+In most cases, once permissions are given, the recording can start and as such this callback will fire. It means that camera is ready and that all permissions are granted. All that is left is to start recording.
+
+```
+(void)recorderReady {
+	// this method will be called when recorder is ready to recorder
+}
+```
+
+**Recording has started**
+
+This event fires once recording has just started. This is useful if you want to know that the video was recording and not upload since upload events will fire for all.
+
+It can also be useful if you are using embedded recorder and you want to stop all other activities and bring more focus to the capture.
+
+Standard Recording
+
+```
+(void)recorderStarted {
+	// this method will be called when recorder is started
+}
+```
+
+Streaming Recording
+
+```
+(void)streamingStarted {
+	// Triggered when a streaming process has started (Press on the Record button if countdown 0 or after the countdown goes to 0)
+}
+```
+
+- Note: Streaming is when recording is sent to Ziggeo servers as soon as recording happens. You need to turn this feature on to be utilized.
+
+**Recording in progress**
+
+This event is raised when recording is in process. This is a continuous update notification that will fire through entire duration of recording process.
+
+- Note: `seconds` parameter will let you know how much time has passed since the recording had started.
+
+```
+(void)recorderCurrentRecordedDurationSeconds:(double)seconds {
+	// this method will be called while recording
+}
+```
+
+**Recording cancelled**
+
+Want to detect if someone cancels the recording? Use this event to know when someone cancelled the recording and closed the screen.
+
+```
+(void)recorderCancelledByUser {
+	// this method will be called when recorder is canceled
+}
+```
+
+**Recording Finished**
+
+This event will be raised when recording had just finished. It will happen in cases when the end user clicks on Stop button as well as if there was duration or size limit that was reached.
+
+Standard recording
+
+```
+(void)recorderStopped:(NSString *)path {
+	// this method will be called when recorder is stopped
+}
+```
+
+Streaming Recording
+
+```
+(void)streamingStopped {
+	// Triggered when a streaming process has stopped (automatically after reaching the maximum duration or manually).
+}
+```
+
+**Confirm Recording**
+
+Need to make sure someone confirms the video submission? Use this callback and record its action on your side as you like.
+
+As this might be a requirement in some countries you are utilizing your app, you can easily use this for any sort of confirmation of captured video.
+
+- Note: Our code only fires this event. It is up to you to then use this event to capture and save that someone confirmed the use of the video and in what way. This is done so as it offers you most flexibility in what you want to do and how.
+
+```
+(void)recorderManuallySubmitted {
+	// this method will be called when recorded file(video or audio) is uploaded by the user
+}
+```
+
+**Re-Recording**
+
+Rerecording is a common way to provide the end user of capturing multiple samples before they have one that they are satisfied with to submit.
+
+```
+(void)recorderRerecord {
+	// this method will be called when recorder is rerecorded
+}
+```
+
+**Play Recorded Video**
+
+```
+(void)recorderPlaying {
 	// this method will be called when recorder plays the recorded audio
 }
 ```
 
-**Playback paused**
-
-What to react when someone pause's the video?. This event will be raised when the Pause button is clicked.
-
-- Note: It will also fire at the end of the video
+**Pause Recorded Video**
 
 ```
-(void)ziggeoPlayerPaused {
-	// Fires when the pause button is clicked (and at the end of the video)
-}
-```
-
-Player after recording
-
-```
-(void)ziggeoRecorderPaused {
+(void)recorderPaused {
 	// this method will be called when recorder pauses the playback of recorded media
-}
-```
-
-**Playback Ended**
-
-Want to know when the media playback ends? This event will be raised any time the playback reaches the end of media length.
-
-```
-(void)ziggeoPlayerEnded {
-	// Fires when a video playback has ended (reaches the end)
-}
-```
-
-**Playback Cancelled**
-
-This method will be called when user touch close button.
-
-```
-(void)ziggeoPlayerCancelledByUser {
-	// Fires when user close player
-}
-```
-
-**Playback seeking**
-
-Want to know if and where to someone changes the point of playback (seeks the media)? This event will be raised when the person watching the media moves the player's progress indicator to a new position. This will fire for both going forward as well as going back in playback.
-
-- Note: The value returned will be milliseconds of time when seek operation was set to, looking from the start.
-
-```
-(void)ziggeoPlayerSeek:(double)positionMillis {
-	// Triggered when the user moves the progress indicator to continue video playback from a different position
 }
 ```
 
@@ -921,6 +871,107 @@ Are you interested in knowing microphone health status? This event will be raise
 ```
 (void)audioMeter:(double)audioLevel {
 	//
+}
+```
+
+**Face Detected**
+
+When face is detected on the video and if you are listening to the callback you will get information about the face. Please note that the face detection will not recognize who someone is, rather just a simple way of knowing that there is a face over the video.
+
+- Note: If the same person leaves the video and comes back, they will have a different face ID even if it is the same person.
+
+```
+(void)faceDetected:(int)faceID rect:(CGRect)rect {
+    // this method will be called when face is detected
+}
+```
+
+#### Player Callbacks<a name="callbacks-player"></a>
+
+We differentiate between player and the player shown automatically immediately after recording. You will find events for both types here.
+
+**Media playback available**
+
+Want to know once the player can play the video? This event will let you know once the media is available for playback. By listening to it, you can avoid listening to progress events as it will fire once the media is ready regardless if it has to be processed first, or if it is waiting to download the media to make it available for playback
+
+```
+(void)playerReadyToPlay {
+	// Triggered when a video player is ready to play a video
+}
+```
+
+**Playback started**
+
+Want to react when playback is started? This event will be raised every time the playback is started.
+
+```
+(void)playerPlaying {
+	// Fires any time a playback is started
+}
+```
+
+**Playback paused**
+
+What to react when someone pause's the video?. This event will be raised when the Pause button is clicked.
+
+- Note: It will also fire at the end of the video
+
+```
+(void)playerPaused {
+	// Fires when the pause button is clicked (and at the end of the video)
+}
+```
+
+**Playback Ended**
+
+Want to know when the media playback ends? This event will be raised any time the playback reaches the end of media length.
+
+```
+(void)playerEnded {
+	// Fires when a video playback has ended (reaches the end)
+}
+```
+
+**Playback Cancelled**
+
+This method will be called when user touch close button.
+
+```
+(void)playerCancelledByUser {
+	// Fires when user close player
+}
+```
+
+**Playback seeking**
+
+Want to know if and where to someone changes the point of playback (seeks the media)? This event will be raised when the person watching the media moves the player's progress indicator to a new position. This will fire for both going forward as well as going back in playback.
+
+- Note: The value returned will be milliseconds of time when seek operation was set to, looking from the start.
+
+```
+(void)playerSeek:(double)positionMillis {
+	// Triggered when the user moves the progress indicator to continue video playback from a different position
+}
+```
+
+#### Screen Recorder Callbacks<a name="callbacks-screen-recorder"></a>
+
+
+#### QR Scanner Callbacks<a name="callbacks-qr-scanner"></a>
+
+**QR Code Scan scanned**
+
+```
+(void)qrCodeScaned:(NSString *)qrCode {
+	// this method will ba called when qr code was detected. 
+}
+```
+
+**QR Code Scan cancelled**
+
+```
+(void)qrCodeScanCancelledByUser {
+	// this method will be called when qr code Scan is canceled
 }
 ```
 
