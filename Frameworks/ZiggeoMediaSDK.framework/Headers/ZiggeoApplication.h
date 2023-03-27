@@ -61,7 +61,8 @@ static NSString *ERR_UNKNOWN = @"ERR_UNKNOWN";
 static NSString *ERR_DURATION_EXCEEDED = @"ERR_DURATION_EXCEEDED";
 static NSString *ERR_FILE_DOES_NOT_EXIST = @"ERR_FILE_DOES_NOT_EXIST";
 static NSString *ERR_PERMISSION_DENIED = @"ERR_PERMISSION_DENIED";
-static NSString *MAX_DURATION = @"max_duration";
+static NSString *ARG_DURATION = @"max_duration";
+static NSString *ARG_MEDIA_TYPE = @"media_type";
 static NSString *ENFORCE_DURATION = @"enforce_duration";
 static NSString *CLOSE_AFTER_SUCCESS_FUL_SCAN = @"closeAfterSuccessfulScan";
 
@@ -72,10 +73,26 @@ static NSString *ZIGGEO_STATUS_PROCESSING = @"PROCESSING";
 static NSString *ZIGGEO_STATUS_FAILED = @"FAILED";
 static NSString *ZIGGEO_STATUS_READY = @"READY";
 
-// MARK: - ZiggeoDelegate
-@protocol ZiggeoDelegate <NSObject>
 
-// ZiggeoUploadDelegate
+// MARK: - ZiggeoHardwarePermissionDelegate
+@protocol ZiggeoHardwarePermissionDelegate <NSObject>
+
+@optional
+- (void)checkCameraPermission:(BOOL)granted;
+@optional
+- (void)checkMicrophonePermission:(BOOL)granted;
+@optional
+- (void)checkPhotoLibraryPermission:(BOOL)granted;
+@optional
+- (void)checkHasCamera:(BOOL)hasCamera;
+@optional
+- (void)checkHasMicrophone:(BOOL)hasMicrophone;
+
+@end
+
+// MARK: - ZiggeoUploadingDelegate
+@protocol ZiggeoUploadingDelegate <NSObject>
+
 @optional
 - (void)preparingToUploadWithPath:(NSString *)sourcePath;
 @optional
@@ -116,69 +133,101 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
            withResponse:(NSURLResponse *)response
                   error:(NSError *)error
                    json:(NSDictionary *)json;
-
-// ZiggeoHardwarePermissionCheckDelegate
 @optional
-- (void)checkCameraPermission:(BOOL)granted;
+- (void)cancelUploadByPath:(NSString *)sourcePath
+                deleteFile:(BOOL)deleteFile;
 @optional
-- (void)checkMicrophonePermission:(BOOL)granted;
-@optional
-- (void)checkPhotoLibraryPermission:(BOOL)granted;
-@optional
-- (void)checkHasCamera:(BOOL)hasCamera;
-@optional
-- (void)checkHasMicrophone:(BOOL)hasMicrophone;
-
-// ZiggeoRecorderDelegate
-@optional
-- (void)ziggeoRecorderLuxMeter:(double)luminousity;
-@optional
-- (void)ziggeoRecorderAudioMeter:(double)audioLevel;
-@optional
-- (void)ziggeoRecorderFaceDetected:(int)faceID rect:(CGRect)rect;
-@optional
-- (void)ziggeoRecorderReady;
-@optional
-- (void)ziggeoRecorderCanceled;
-@optional
-- (void)ziggeoRecorderStarted;
-@optional
-- (void)ziggeoRecorderStopped:(NSString *)path;
-@optional
-- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds;
-@optional
-- (void)ziggeoRecorderPlaying;
-@optional
-- (void)ziggeoRecorderPaused;
-@optional
-- (void)ziggeoRecorderRerecord;
-@optional
-- (void)ziggeoRecorderManuallySubmitted;
-@optional
-- (void)ziggeoStreamingStarted;
-@optional
-- (void)ziggeoStreamingStopped;
-
-// ZiggeoPlayerDelegate
-@optional
-- (void)ziggeoPlayerPlaying;
-@optional
-- (void)ziggeoPlayerPaused;
-@optional
-- (void)ziggeoPlayerEnded;
-@optional
-- (void)ziggeoPlayerSeek:(double)positionMillis;
-@optional
-- (void)ziggeoPlayerReadyToPlay;
+- (void)cancelCurrentUpload:(BOOL)deleteFile;
 
 @end
 
 
+// MARK: - ZiggeoFileSelectorDelegate
+@protocol ZiggeoFileSelectorDelegate <NSObject>
 
-// MARK: - ZiggeoDelegate
-@protocol ZiggeoQRCodeReaderDelegate <NSObject>
+@optional
+- (void)uploadSelected:(NSArray<NSString *> *)paths;
+@optional
+- (void)uploadCancelledByUser;
 
-- (void)ziggeoQRCodeScaned:(NSString *)qrCode;
+@end
+
+
+// MARK: - ZiggeoRecorderDelegate
+@protocol ZiggeoRecorderDelegate <NSObject>
+
+@optional
+- (void)recorderCountdown:(int)secondsLeft;
+@optional
+- (void)recorderReady;
+@optional
+- (void)recorderStarted;
+@optional
+- (void)recorderCurrentRecordedDurationSeconds:(double)seconds;
+@optional
+- (void)recorderPaused;
+@optional
+- (void)recorderStopped:(NSString *)path;
+@optional
+- (void)recorderRerecord;
+@optional
+- (void)recorderPlaying;
+@optional
+- (void)recorderManuallySubmitted;
+@optional
+- (void)streamingStarted;
+@optional
+- (void)streamingStopped;
+@optional
+- (void)recorderCancelledByUser;
+
+@end
+
+// MARK: - ZiggeoSensorDelegate
+@protocol ZiggeoSensorDelegate <NSObject>
+
+@optional
+- (void)luxMeter:(double)luminousity;
+@optional
+- (void)audioMeter:(double)audioLevel;
+@optional
+- (void)faceDetected:(int)faceID rect:(CGRect)rect;
+
+@end
+
+
+// MARK: - ZiggeoPlayerDelegate
+@protocol ZiggeoPlayerDelegate <NSObject>
+
+@optional
+- (void)playerPlaying;
+@optional
+- (void)playerPaused;
+@optional
+- (void)playerEnded;
+@optional
+- (void)playerSeek:(double)positionMillis;
+@optional
+- (void)playerReadyToPlay;
+@optional
+- (void)playerCancelledByUser;
+
+@end
+
+
+// MARK: - ZiggeoQRScannerDelegate
+@protocol ZiggeoQRScannerDelegate <NSObject>
+
+@optional
+- (void)qrCodeScaned:(NSString *)qrCode;
+@optional
+- (void)qrCodeScanCancelledByUser;
+
+@end
+
+
+// MARK: - ZiggeoScreenRecorderDelegate
+@protocol ZiggeoScreenRecorderDelegate <NSObject>
 
 @end
 
@@ -193,20 +242,42 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
     ZiggeoVideos *_videos;
     ZiggeoAudios *_audios;
     ZiggeoImages *_images;
+    
+    id<ZiggeoQRScannerDelegate> qrScannerDelegate;
+    id<ZiggeoHardwarePermissionDelegate> hardwarePermissionDelegate;
+    id<ZiggeoUploadingDelegate> uploadingDelegate;
+    id<ZiggeoSensorDelegate> sensorDelegate;
+    id<ZiggeoFileSelectorDelegate> fileSelectorDelegate;
+    id<ZiggeoRecorderDelegate> recorderDelegate;
+    id<ZiggeoPlayerDelegate> playerDelegate;
+    id<ZiggeoScreenRecorderDelegate> screenRecorderDelegate;
 }
     
 @property (strong, nonatomic) NSString *token;
 @property (nonatomic) bool enableDebugLogs;
-@property (weak) id<ZiggeoDelegate> ziggeoDelegate;
-@property (weak) id<ZiggeoQRCodeReaderDelegate> qrCodeReaderDelegate;
 
 
+- (id)init;
 - (id)initWithToken:(NSString *)token;
-- (id)initWithToken:(NSString *)token Delegate:(id<ZiggeoDelegate>)delegate;
-- (id)initWithQrCodeReaderDelegate:(id<ZiggeoQRCodeReaderDelegate>)delegate;
 - (UIViewController *)getParentViewController;
 - (void)log:(NSString *)message;
 - (void)logError:(NSString *)message;
+- (void)setQRScannerDelegate:(id<ZiggeoQRScannerDelegate>)delegate;
+- (id<ZiggeoQRScannerDelegate>)getQRScannerDelegate;
+- (void)setHardwarePermissionDelegate:(id<ZiggeoHardwarePermissionDelegate>)delegate;
+- (id<ZiggeoHardwarePermissionDelegate>)getHardwarePermissionDelegate;
+- (void)setUploadingDelegate:(id<ZiggeoUploadingDelegate>)delegate;
+- (id<ZiggeoUploadingDelegate>)getUploadingDelegate;
+- (void)setFileSelectorDelegate:(id<ZiggeoFileSelectorDelegate>)delegate;
+- (id<ZiggeoFileSelectorDelegate>)getFileSelectorDelegate;
+- (void)setRecorderDelegate:(id<ZiggeoRecorderDelegate>)delegate;
+- (id<ZiggeoRecorderDelegate>)getRecorderDelegate;
+- (void)setSensorDelegate:(id<ZiggeoSensorDelegate>)delegate;
+- (id<ZiggeoSensorDelegate>)getSensorDelegate;
+- (void)setPlayerDelegate:(id<ZiggeoPlayerDelegate>)delegate;
+- (id<ZiggeoPlayerDelegate>)getPlayerDelegate;
+- (void)setScreenRecorderDelegate:(id<ZiggeoScreenRecorderDelegate>)delegate;
+- (id<ZiggeoScreenRecorderDelegate>)getScreenRecorderDelegate;
 
 - (ZiggeoConfig *)config;
 - (ZiggeoCacheManager *)cacheManager;
@@ -234,7 +305,7 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 
 // ZiggeoRecorder
 - (void)setRecorderCacheConfig:(NSDictionary *)config;
-- (void)setRecorderInterfaceConfig:(NSDictionary *)config; //
+- (void)setRecorderInterfaceConfig:(NSDictionary *)config;
 - (void)setUploadingConfig:(NSDictionary *)config;
 - (void)setLiveStreamingEnabled:(BOOL)enabled;
 - (void)setAutostartRecordingAfter:(int)seconds;
@@ -260,13 +331,14 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
 - (void)playFromUri:(NSArray *)path_or_urls;
 - (void)startImageRecorder;
 - (void)showImage:(NSArray *)tokens;
+- (void)showImageWithPaths:(NSArray *)paths;
 - (void)startAudioRecorder;
 - (void)startAudioPlayer:(NSArray *)tokens;
+- (void)startAudioPlayerWithPaths:(NSArray *)paths;
 
-- (void)startScreenRecorder;
-- (void)startScreenRecorderWithAddRecordingButtonToView:(UIView *)view
-                                                  frame:(CGRect)frame
-                                               appGroup:(NSString *)appGroup;
+- (void)startScreenRecorderWithAppGroup:(NSString *)appGroup
+                     preferredExtension:(nonnull NSString *)preferredExtension;
+
 - (void)uploadFromPath:(NSString *)fileName
                   Data:(NSDictionary *)data
               Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
@@ -274,12 +346,12 @@ static NSString *ZIGGEO_STATUS_READY = @"READY";
        ConfirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 - (void)uploadFromFileSelector:(NSDictionary *)data;
 - (void)cancelUpload:(NSString *)path :(bool)delete_file;
-- (void)startQrScanner:(NSDictionary *)config;
 - (void)startQrScanner;
+- (void)startQrScanner:(NSDictionary *)config;
 
 - (void)setExtraArgsForPlayer:(NSDictionary *)map;
 - (void)setThemeArgsForPlayer:(NSDictionary *)map;
-- (void)setPlayerCacheConfig:(NSDictionary *)config; //
+- (void)setPlayerCacheConfig:(NSDictionary *)config;
 - (void)setAdsURL:(NSString *)url;
 
 @end

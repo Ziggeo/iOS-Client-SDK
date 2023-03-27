@@ -191,6 +191,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import ObjectiveC;
+@import Photos;
 @import UIKit;
 #endif
 
@@ -209,6 +210,18 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+@class PHAsset;
+@class NSNumber;
+
+SWIFT_CLASS("_TtC14ZiggeoMediaSDK10AssetStore")
+@interface AssetStore : NSObject
+@property (nonatomic, readonly, copy) NSArray<PHAsset *> * _Nonnull assets;
+- (nonnull instancetype)initWithAssets:(NSArray<PHAsset *> * _Nonnull)assets OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) NSInteger count;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 @class NSCoder;
 
@@ -258,7 +271,6 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK11BaseNibView")
 - (void)awakeFromNib;
 @end
 
-@class NSNumber;
 enum AudioVisualizationMode : NSInteger;
 @class UIColor;
 @class NSURL;
@@ -282,10 +294,11 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK22AudioVisualizationView")
 - (void)playFrom:(NSURL * _Nonnull)url;
 - (void)playFor:(NSTimeInterval)duration;
 - (void)pause;
+- (void)resume;
 - (void)stop;
 @end
 
-typedef SWIFT_ENUM(NSInteger, AudioVisualizationMode, closed) {
+typedef SWIFT_ENUM(NSInteger, AudioVisualizationMode, open) {
   AudioVisualizationModeRead = 0,
   AudioVisualizationModeWrite = 1,
 };
@@ -297,19 +310,181 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK11Chronometer")
 - (nonnull instancetype)initWithTimeInterval:(NSTimeInterval)timeInterval OBJC_DESIGNATED_INITIALIZER;
 - (void)startWithShouldFire:(BOOL)fire;
 - (void)pause;
+- (void)resume;
 - (void)stop;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class BSImagePickerSettings;
+@class UIBarButtonItem;
+@class UIButton;
+@class NSString;
+@class UIViewController;
+@class NSBundle;
+
+SWIFT_CLASS_NAMED("ImagePickerController")
+@interface BSImagePickerController : UINavigationController
+@property (nonatomic, strong) BSImagePickerSettings * _Nonnull settings;
+@property (nonatomic, strong) UIBarButtonItem * _Nonnull doneButton;
+@property (nonatomic, strong) UIBarButtonItem * _Nonnull cancelButton;
+@property (nonatomic, strong) UIButton * _Nonnull albumButton;
+@property (nonatomic, readonly, copy) NSArray<PHAsset *> * _Nonnull selectedAssets;
+/// Title to use for button
+@property (nonatomic, copy) NSString * _Nonnull doneButtonTitle;
+- (nonnull instancetype)initWithSelectedAssets:(NSArray<PHAsset *> * _Nonnull)selectedAssets OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (void)deselectWithAsset:(PHAsset * _Nonnull)asset;
+- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+
+@interface BSImagePickerController (SWIFT_EXTENSION(ZiggeoMediaSDK))
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) PHAuthorizationStatus currentAuthorization;)
++ (PHAuthorizationStatus)currentAuthorization SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class UIPresentationController;
+
+@interface BSImagePickerController (SWIFT_EXTENSION(ZiggeoMediaSDK)) <UIAdaptivePresentationControllerDelegate>
+- (BOOL)presentationControllerShouldDismiss:(UIPresentationController * _Nonnull)presentationController SWIFT_WARN_UNUSED_RESULT SWIFT_AVAILABILITY(ios,introduced=13);
+- (void)presentationControllerDidDismiss:(UIPresentationController * _Nonnull)presentationController SWIFT_AVAILABILITY(ios,introduced=13);
+@end
+
+
+
+
+
+@interface BSImagePickerController (SWIFT_EXTENSION(ZiggeoMediaSDK))
+- (void)imagePicker:(BSImagePickerController * _Nonnull)imagePicker didSelectAsset:(PHAsset * _Nonnull)asset;
+- (void)imagePicker:(BSImagePickerController * _Nonnull)imagePicker didDeselectAsset:(PHAsset * _Nonnull)asset;
+- (void)imagePicker:(BSImagePickerController * _Nonnull)imagePicker didFinishWithAssets:(NSArray<PHAsset *> * _Nonnull)assets;
+- (void)imagePicker:(BSImagePickerController * _Nonnull)imagePicker didCancelWithAssets:(NSArray<PHAsset *> * _Nonnull)assets;
+- (void)imagePicker:(BSImagePickerController * _Nonnull)imagePicker didReachSelectionLimit:(NSInteger)count;
+@end
+
+
+IB_DESIGNABLE
+SWIFT_CLASS("_TtC14ZiggeoMediaSDK9ImageView")
+@interface ImageView : UIView
+@property (nonatomic, getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
+@property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+@property (nonatomic) UIViewContentMode contentMode;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+@class UIImage;
+
+@interface ImageView (SWIFT_EXTENSION(ZiggeoMediaSDK))
+/// See UIImageView documentation
+@property (nonatomic, strong) IBInspectable UIImage * _Nullable image;
+/// See UIImageView documentation
+@property (nonatomic, strong) IBInspectable UIImage * _Nullable highlightedImage;
+/// See UIImageView documentation
+@property (nonatomic) IBInspectable BOOL isHighlighted;
+@end
+
+@class Theme;
+@class BSImagePickerSelection;
+@class BSImagePickerList;
+@class BSImagePickerFetch;
+@class Dismiss;
+@class Preview;
+
+SWIFT_CLASS_NAMED("Settings")
+@interface BSImagePickerSettings : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) BSImagePickerSettings * _Nonnull shared;)
++ (BSImagePickerSettings * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// Theme settings
+@property (nonatomic, strong) Theme * _Nonnull theme;
+/// Selection settings
+@property (nonatomic, strong) BSImagePickerSelection * _Nonnull selection;
+/// List settings
+@property (nonatomic, strong) BSImagePickerList * _Nonnull list;
+/// Fetch settings
+@property (nonatomic, strong) BSImagePickerFetch * _Nonnull fetch;
+/// Dismiss settings
+@property (nonatomic, strong) Dismiss * _Nonnull dismiss;
+/// Preview options
+@property (nonatomic, strong) Preview * _Nonnull preview;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("Selection")
+@interface BSImagePickerSelection : NSObject
+/// Max number of selections allowed
+@property (nonatomic) NSInteger max;
+/// Min number of selections you have to make
+@property (nonatomic) NSInteger min;
+/// If it reaches the max limit, unselect the first selection, and allow the new selection
+@property (nonatomic) BOOL unselectOnReachingMax;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("List")
+@interface BSImagePickerList : NSObject
+/// How much spacing between cells
+@property (nonatomic) CGFloat spacing;
+/// How many cells per row
+@property (nonatomic, copy) NSInteger (^ _Nonnull cellsPerRow)(UIUserInterfaceSizeClass, UIUserInterfaceSizeClass);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class BSImagePickerAlbum;
+@class BSImagePickerAssets;
+@class Preview;
+
+SWIFT_CLASS_NAMED("Fetch")
+@interface BSImagePickerFetch : NSObject
+/// Album fetch settings
+@property (nonatomic, strong) BSImagePickerAlbum * _Nonnull album;
+/// Asset fetch settings
+@property (nonatomic, strong) BSImagePickerAssets * _Nonnull assets;
+/// Preview fetch settings
+@property (nonatomic, strong) Preview * _Nonnull preview;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class PHFetchOptions;
+@class PHAssetCollection;
+
+SWIFT_CLASS_NAMED("Album")
+@interface BSImagePickerAlbum : NSObject
+/// Fetch options for albums/collections
+@property (nonatomic, strong) PHFetchOptions * _Nonnull options;
+/// Fetch results for asset collections you want to present to the user
+/// Some other fetch results that you might wanna use:
+/// PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: options),
+/// PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: options),
+/// PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumSelfPortraits, options: options),
+/// PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumPanoramas, options: options),
+/// PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumVideos, options: options),
+@property (nonatomic, copy) NSArray<PHFetchResult<PHAssetCollection *> *> * _Nonnull fetchResults;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("Assets")
+@interface BSImagePickerAssets : NSObject
+@property (nonatomic) float maxDuration;
+@property (nonatomic, strong) PHFetchOptions * _Nonnull options;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 /// Used in skipDirection: method.
-typedef SWIFT_ENUM(NSInteger, SkipDirection, closed) {
+typedef SWIFT_ENUM(NSInteger, SkipDirection, open) {
   SkipDirectionBackward = 0,
   SkipDirectionForward = 1,
 };
 
 @class NSDictionary;
-@class NSString;
 
 SWIFT_CLASS("_TtC14ZiggeoMediaSDK15SpringboardData")
 @interface SpringboardData : NSObject
@@ -354,6 +529,27 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK14TPGAudioPlayer")
 
 
 
+
+@interface UIViewController (SWIFT_EXTENSION(ZiggeoMediaSDK))
+/// Present a image picker
+/// \param imagePicker The image picker to present
+///
+/// \param animated Should presentation be animated
+///
+/// \param select Selection callback
+///
+/// \param deselect Deselection callback
+///
+/// \param cancel Cancel callback
+///
+/// \param finish Finish callback
+///
+/// \param completion Presentation completion callback
+///
+- (void)presentImagePickerWithMax:(NSInteger)max mediaTypes:(NSArray<NSString *> * _Nonnull)mediaTypes maxDuration:(float)maxDuration animated:(BOOL)animated select:(void (^ _Nullable)(PHAsset * _Nonnull))select deselect:(void (^ _Nullable)(PHAsset * _Nonnull))deselect cancel:(void (^ _Nullable)(NSArray<PHAsset *> * _Nonnull))cancel finish:(void (^ _Nullable)(NSArray<PHAsset *> * _Nonnull))finish completion:(void (^ _Nullable)(void))completion;
+@end
+
+
 SWIFT_CLASS("_TtC14ZiggeoMediaSDK9ViewModel")
 @interface ViewModel : NSObject
 @property (nonatomic, copy) NSURL * _Nullable audioFilePathLocal;
@@ -364,6 +560,8 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK9ViewModel")
 - (void)askAudioRecordingPermissionWithCompletion:(void (^ _Nullable)(BOOL))completion;
 - (void)startRecordingWithCompletion:(void (^ _Nonnull)(NSURL * _Nullable, NSArray<NSNumber *> * _Nullable, NSError * _Nullable))completion;
 - (BOOL)stopRecordingAndReturnError:(NSError * _Nullable * _Nullable)error;
+- (BOOL)pauseRecordingAndReturnError:(NSError * _Nullable * _Nullable)error;
+- (BOOL)resumeRecordingAndReturnError:(NSError * _Nullable * _Nullable)error;
 - (BOOL)resetRecordingAndReturnError:(NSError * _Nullable * _Nullable)error;
 - (double)startPlaying SWIFT_WARN_UNUSED_RESULT;
 - (void)setCurrentTime:(NSTimeInterval)currentTime;
@@ -371,7 +569,6 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK9ViewModel")
 @end
 
 @class Ziggeo;
-@class NSBundle;
 
 SWIFT_CLASS("_TtC14ZiggeoMediaSDK17ZiggeoVideoEditor")
 @interface ZiggeoVideoEditor : UIViewController

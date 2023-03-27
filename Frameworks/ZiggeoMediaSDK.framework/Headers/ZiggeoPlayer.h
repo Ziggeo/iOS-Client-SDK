@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
-
-
 @import AVFoundation;
+
 
 @interface ZiggeoPlayer : AVQueuePlayer
 
@@ -55,5 +54,10 @@
                              videoToken:(NSString *)token
                               authToken:(NSString *)authToken
                                callback:(void (^)(ZiggeoPlayer* player))callback;
+
+- (void)playWithAdsWithAdTagURL:(NSString *)adTagURL
+                playerContainer:(UIView *)playerContainer
+             rootViewController:(UIViewController *)rootViewController
+           playerViewController:(AVPlayerViewController *)playerViewController;
 
 @end
