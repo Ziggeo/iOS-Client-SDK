@@ -4,6 +4,10 @@ use_frameworks!
 
 target 'ZiggeoDemo' do
 
+  target 'BroadcastExtension' do
+    inherit! :search_paths
+  end
+
   pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
   
   pod 'ActiveLabel'
