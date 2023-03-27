@@ -19,7 +19,7 @@ typedef enum {
 } CurrentType;
 
 
-@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoDelegate> {
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoHardwarePermissionDelegate, ZiggeoUploadingDelegate, ZiggeoFileSelectorDelegate, ZiggeoRecorderDelegate, ZiggeoSensorDelegate, ZiggeoPlayerDelegate, ZiggeoScreenRecorderDelegate, ZiggeoQRScannerDelegate> {
     Ziggeo* m_ziggeo;
     AVPlayerLayer* embeddedPlayerLayer;
     CurrentType currentType;
@@ -41,7 +41,15 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    m_ziggeo = [[Ziggeo alloc] initWithToken:ZIGGEO_APP_TOKEN Delegate:self];
+    m_ziggeo = [[Ziggeo alloc] initWithToken:ZIGGEO_APP_TOKEN];
+    [m_ziggeo setHardwarePermissionDelegate:self];
+    [m_ziggeo setUploadingDelegate:self];
+    [m_ziggeo setFileSelectorDelegate:self];
+    [m_ziggeo setRecorderDelegate:self];
+    [m_ziggeo setSensorDelegate:self];
+    [m_ziggeo setPlayerDelegate:self];
+    [m_ziggeo setScreenRecorderDelegate:self];
+    
     currentType = Unknown;
 }
 
@@ -51,25 +59,20 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 
 // MARK: Button Click Action
-
 - (IBAction)onRecordVideo:(id)sender {
     currentType = Video;
-
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"tags"] = @"iOS_Video_Record";
-    config[@"effect_profile"] = @"1234,5678";
-    [m_ziggeo setUploadingConfig:config];
     
     NSMutableDictionary *themeMap = [NSMutableDictionary dictionary];
     [m_ziggeo setThemeArgsForRecorder:themeMap];
     
-    NSMutableDictionary *map = [NSMutableDictionary dictionary];
-//    map[@"data"] = @{@"foo": @"bar"};
-//    map[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
-//    map[@"server_auth"] = @"SERVER_AUTH_TOKEN";
-    [m_ziggeo setExtraArgsForRecorder:map];
+    NSMutableDictionary *config = [NSMutableDictionary dictionary];
+//    config[@"data"] = @{@"foo": @"bar"};
+//    config[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
+//    config[@"server_auth"] = @"SERVER_AUTH_TOKEN";
+    config[@"tags"] = @"iOS_Video_Record";
+    config[@"effect_profile"] = @"1234,5678";
+    [m_ziggeo setExtraArgsForRecorder:config];
 
-    [m_ziggeo setBlurMode:true];
     [m_ziggeo setCamera:REAR_CAMERA];
 //    [m_ziggeo setMaxRecordingDuration:30];
     
@@ -77,9 +80,9 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onPlayVideoWithToken:(id)sender {
-    NSMutableDictionary *map = [NSMutableDictionary dictionary];
-    map[@"hidePlayerControls"] = @"false";
-    [m_ziggeo setThemeArgsForPlayer:map];
+    NSMutableDictionary *config = [NSMutableDictionary dictionary];
+    config[@"hidePlayerControls"] = @"false";
+    [m_ziggeo setThemeArgsForPlayer:config];
     
     [m_ziggeo playVideo:@[Last_Video_Token]];
 }
@@ -102,7 +105,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     
     NSMutableDictionary *config = [NSMutableDictionary dictionary];
     config[@"tags"] = @"iOS_Audio_Record";
-    [m_ziggeo setUploadingConfig:config];
+    [m_ziggeo setExtraArgsForRecorder:config];
     
     [m_ziggeo startAudioRecorder];
 }
@@ -126,76 +129,28 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 
-// MARK: - ZiggeoRecorderDelegate
-- (void)ziggeoRecorderReady {
-    NSLog(@"Ziggeo Recorder Ready");
+// MARK: - ZiggeoHardwarePermissionDelegate
+- (void)checkCameraPermission:(BOOL)granted {
+    NSLog(@"Check Camera Permission : %d", granted);
 }
 
-- (void) ziggeoRecorderCanceled {
-    NSLog(@"Ziggeo Recorder Canceled");
+- (void)checkMicrophonePermission:(BOOL)granted {
+    NSLog(@"Check Microphone Permission : %d", granted);
 }
 
-- (void)ziggeoRecorderCountdown:(int)secondsLeft {
-    NSLog(@"Ziggeo Recorder Countdown left: %d", secondsLeft);
+- (void)checkPhotoLibraryPermission:(BOOL)granted {
+    NSLog(@"Check Photo Library Permission : %d", granted);
 }
 
-- (void)ziggeoRecorderStarted {
-    NSLog(@"Ziggeo Recorder Started");
+- (void)checkHasCamera:(BOOL)hasCamera {
+    NSLog(@"Check Has Camera : %d", hasCamera);
 }
 
-- (void)ziggeoRecorderStopped:(NSString *)path {
-    NSLog(@"Ziggeo Recorder Stopped : %@", path);
+- (void)checkHasMicrophone:(BOOL)hasMicrophone {
+    NSLog(@"Check Has Microphone : %d", hasMicrophone);
 }
 
-- (void)ziggeoRecorderCurrentRecordedDurationSeconds:(double)seconds {
-    NSLog(@"Ziggeo Recorder Current Recorded Duration Seconds : %f", seconds);
-}
-
-- (void)ziggeoRecorderPlaying {
-    NSLog(@"Ziggeo Recorder Playing");
-}
-
-- (void)ziggeoRecorderPaused {
-    NSLog(@"Ziggeo Recorder Paused");
-}
-
-- (void)ziggeoRecorderRerecord {
-    NSLog(@"Ziggeo Recorder Rerecord");
-}
-
-- (void)ziggeoRecorderManuallySubmitted {
-    NSLog(@"Ziggeo Recorder Manually Submitted");
-}
-
-- (void)ziggeoStreamingStarted {
-    NSLog(@"Ziggeo Streaming Started");
-}
-
-- (void)ziggeoStreamingStopped {
-    NSLog(@"Ziggeo Streaming Stopped");
-}
-
-- (void)luxMeter:(double)luminousity {
-    //NSLog(@"luminousity: %f", luminousity);
-}
-
-- (void)audioMeter:(double)audioLevel {
-    //NSLog(@"audio: %f", audioLevel);
-}
-
-- (void)faceDetected:(int)faceID rect:(CGRect)rect {
-    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-}
-
-// MARK: - ZiggeoUploadDelegate
-- (void)ziggeoUploadCancelledByUser {
-    NSLog(@"Upload cancelled by user");
-}
-
-- (void)ziggeoUploadSelected:(NSArray<NSString *> *)paths {
-    NSLog(@"Upload Selected: %@", paths);
-}
-
+// MARK: - ZiggeoUploadingDelegate
 - (void)preparingToUploadWithPath:(NSString*)sourcePath {
     NSLog(@"Preparing To Upload : %@", sourcePath);
 }
@@ -208,11 +163,11 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     NSLog(@"Upload Started : %@ - %@", token, streamToken);
 }
 
-- (void)uploadProgressForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
+- (void)uploadProgressWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
     NSLog(@"Upload Progress : %@ - %i - %i", token, bytesSent, totalBytes);
 }
 
-- (void)uploadFinishedForPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
+- (void)uploadFinishedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
     NSLog(@"Upload Finished : %@ - %@", token, streamToken);
 }
 
@@ -239,52 +194,112 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     NSLog(@"Delete : %@ - %@", token, streamToken);
 }
 
-
-// MARK: - ZiggeoHardwarePermissionCheckDelegate
-- (void)checkCameraPermission:(BOOL)granted {
-    NSLog(@"Check Camera Permission : %d", granted);
+- (void)cancelUploadByPath:(NSString *)sourcePath deleteFile:(BOOL)deleteFile {
 }
 
-- (void)checkMicrophonePermission:(BOOL)granted {
-    NSLog(@"Check Microphone Permission : %d", granted);
+- (void)cancelCurrentUpload:(BOOL)deleteFile {
 }
 
-- (void)checkPhotoLibraryPermission:(BOOL)granted {
-    NSLog(@"Check Photo Library Permission : %d", granted);
+// MARL: - ZiggeoFileSelectorDelegate
+- (void)uploadSelected:(NSArray *)paths {
+    NSLog(@"Upload Selected: %@", paths);
 }
 
-- (void)checkHasCamera:(BOOL)hasCamera {
-    NSLog(@"Check Has Camera : %d", hasCamera);
+- (void)uploadCancelledByUser {
+    NSLog(@"Upload Cancelled By User");
 }
 
-- (void)checkHasMicrophone:(BOOL)hasMicrophone {
-    NSLog(@"Check Has Microphone : %d", hasMicrophone);
+// MARK: - ZiggeoRecorderDelegate
+- (void)recorderReady {
+    NSLog(@"Recorder Ready");
 }
 
+- (void)recorderCountdown:(int)secondsLeft {
+    NSLog(@"Recorder Countdown left: %d", secondsLeft);
+}
+
+- (void)recorderStarted {
+    NSLog(@"Ziggeo Recorder Started");
+}
+
+- (void)recorderStopped:(NSString *)path {
+    NSLog(@"Ziggeo Recorder Stopped : %@", path);
+}
+
+- (void)recorderCurrentRecordedDurationSeconds:(double)seconds {
+    NSLog(@"Recorder Current Recorded Duration Seconds : %f", seconds);
+}
+
+- (void)recorderPlaying {
+    NSLog(@"Recorder Playing");
+}
+
+- (void)recorderPaused {
+    NSLog(@"Recorder Paused");
+}
+
+- (void)recorderRerecord {
+    NSLog(@"Recorder Rerecord");
+}
+
+- (void)recorderManuallySubmitted {
+    NSLog(@"Recorder Manually Submitted");
+}
+
+- (void)streamingStarted {
+    NSLog(@"Streaming Started");
+}
+
+- (void)streamingStopped {
+    NSLog(@"Streaming Stopped");
+}
+
+- (void)recorderCancelledByUser {
+    NSLog(@"Recorder Cancelled By User");
+}
+
+
+// MARK: - ZiggeoSensorDelegate
+- (void)luxMeter:(double)luminousity {
+    //NSLog(@"luminousity: %f", luminousity);
+}
+
+- (void)audioMeter:(double)audioLevel {
+    //NSLog(@"audio: %f", audioLevel);
+}
+
+- (void)faceDetected:(int)faceID rect:(CGRect)rect {
+    //NSLog(@"face %i detected with bounds: x = %f y = %f, size = %f x %f", faceID, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+}
 
 // MARK: - ZiggeoPlayerDelegate
-- (void)ziggeoPlayerPlaying {
-    
+- (void)playerPlaying {
 }
 
-- (void)ziggeoPlayerPaused {
-    
+- (void)playerPaused {
 }
 
-- (void)ziggeoPlayerEnded {
-    
+- (void)playerEnded {
 }
 
-- (void)ziggeoPlayerSeek:(double)positionMillis {
-    
+- (void)playerSeek:(double)positionMillis {
 }
 
-- (void)ziggeoPlayerReadyToPlay {
-    
+- (void)playerReadyToPlay {
 }
 
-- (void)ziggeoPlayerCancelledByUser {
-    
+- (void)playerCancelledByUser {
+    NSLog(@"Player Cancelled By User");
 }
+
+// MARK: - ZiggeoQRScannerDelegate
+- (void)qrCodeScaned:(NSString *)qrCode {
+}
+
+- (void)qrCodeScanCancelledByUser {
+    NSLog(@"QR Code Scan Cancelled By User");
+}
+
+// MARK: - ZiggeoScreenRecorderDelegate
 
 @end

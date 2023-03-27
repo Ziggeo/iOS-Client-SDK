@@ -298,7 +298,7 @@ SWIFT_CLASS("_TtC14ZiggeoMediaSDK22AudioVisualizationView")
 - (void)stop;
 @end
 
-typedef SWIFT_ENUM(NSInteger, AudioVisualizationMode, closed) {
+typedef SWIFT_ENUM(NSInteger, AudioVisualizationMode, open) {
   AudioVisualizationModeRead = 0,
   AudioVisualizationModeWrite = 1,
 };
@@ -479,7 +479,7 @@ SWIFT_CLASS_NAMED("Assets")
 @end
 
 /// Used in skipDirection: method.
-typedef SWIFT_ENUM(NSInteger, SkipDirection, closed) {
+typedef SWIFT_ENUM(NSInteger, SkipDirection, open) {
   SkipDirectionBackward = 0,
   SkipDirectionForward = 1,
 };

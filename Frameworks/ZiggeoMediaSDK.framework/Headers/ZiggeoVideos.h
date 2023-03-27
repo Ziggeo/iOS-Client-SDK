@@ -12,7 +12,7 @@
 @import UIKit;
 
 
-@interface ZiggeoVideos : NSObject{
+@interface ZiggeoVideos : NSObject<NSFilePresenter> {
     Ziggeo *m_ziggeo;
 }
 
@@ -48,5 +48,10 @@
 - (NSURLSessionTask *)update:(NSString *)token
                  ModelInJson:(NSString *)modelInJson
                     Callback:(void (^)(ContentModel *content, NSURLResponse *response,  NSError *error))callback;
+
+- (void)startScreenRecorderWithAppGroup:(NSString *)appGroup
+                     preferredExtension:(nonnull NSString *)preferredExtension;
+
+- (void)setAppGroup:(NSString *)groupID;
 
 @end
