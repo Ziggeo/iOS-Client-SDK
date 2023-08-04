@@ -17,38 +17,52 @@
 }
 
 - (id)initWithZiggeoApplication:(Ziggeo *)ziggeo;
-
 - (NSURLSessionTask *)index:(NSDictionary *)data
-                   Callback:(void (^)(NSArray *jsonArray, NSError *error))callback;
-
+                   callback:(void (^)(NSArray *jsonArray, NSError *error))callback;
 - (NSURLSessionTask *)create:(NSString *)file_path
-                        Data:(NSDictionary *)data
-                    Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
-                    Progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
-             ConfirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
-
+                        data:(NSDictionary *)data
+                    callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
+                    progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
+             confirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 - (NSURLSessionTask *)get:(NSString *)token
-                     Data:(NSDictionary *)data
-                 Callback:(void (^)(ContentModel *content, NSURLResponse *response, NSError *error))callback;
-
+                     data:(NSDictionary *)data
+                 callback:(void (^)(ContentModel *content, NSURLResponse *response, NSError *error))callback;
 - (void)download:(NSString *)token
-        Callback:(void (^)(NSString *filePath))callback;
-
+        callback:(void (^)(NSString *filePath))callback;
 - (NSString *)getVideoUrl:(NSString *)token;
-
 - (NSString *)getImageUrl:(NSString *)token;
-
+- (NSURLSessionTask*)attachVideoWithVideoToken:(NSString*)videoToken
+                                   streamToken:(NSString*)streamToken
+                                          data:(NSDictionary*)data
+                                          file:(NSString*)fileName
+                                      callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback
+                                      progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+- (NSURLSessionTask*)createVideoWithData:(NSDictionary*)data
+                                    file:(NSString*)fileName
+                                   cover:(UIImage*)cover
+                                callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback
+                                progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+- (NSURLSessionTask *)rerecordVideoWithToken:(NSString*)videoToken
+                                        file:(NSString*)fileName
+                                        data:(NSDictionary*)data
+                                    callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
+                                    progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress;
+- (NSURLSessionTask*)createEmptyVideoWithData:(NSDictionary*)data
+                                     callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
+- (NSURLSessionTask*)createLiveVideoWithData:(NSDictionary*)data
+                                    callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
+- (NSURLSessionTask*)recorderSubmitWithVideoToken:(NSString*)videoToken
+                                      streamToken:(NSString*)streamToken
+                                             data:(NSDictionary*)data
+                                         callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
 - (NSURLSessionTask *)destroy:(NSString *)token
-                     Callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
-
+                     callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 - (NSURLSessionTask *)update:(NSString *)token
-                        Data:(NSDictionary *)data
-                    Callback:(void (^)(ContentModel *content, NSURLResponse *response,  NSError *error))callback;
-
+                        data:(NSDictionary *)data
+                    callback:(void (^)(ContentModel *content, NSURLResponse *response,  NSError *error))callback;
 - (NSURLSessionTask *)update:(NSString *)token
-                 ModelInJson:(NSString *)modelInJson
-                    Callback:(void (^)(ContentModel *content, NSURLResponse *response,  NSError *error))callback;
-
+                 modelInJson:(NSString *)modelInJson
+                    callback:(void (^)(ContentModel *content, NSURLResponse *response,  NSError *error))callback;
 - (void)startScreenRecorderWithAppGroup:(NSString *)appGroup
                      preferredExtension:(nonnull NSString *)preferredExtension;
 - (void)setAppGroup:(NSString *)groupID;

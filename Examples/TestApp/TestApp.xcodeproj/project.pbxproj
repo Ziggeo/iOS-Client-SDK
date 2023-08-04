@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF357ED6AB1F9B9D2C5A4871 /* libPods-TestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7363BDF3C077E59027C0CD9D /* libPods-TestApp.a */; };
+		6FE3A851649C5DD0A9C18ADC /* libPods-TestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A6652F1A846CAF88E50BD3 /* libPods-TestApp.a */; };
 		FA8827A11BB486D40025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A01BB486D40025C71D /* main.m */; };
 		FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A31BB486D40025C71D /* AppDelegate.m */; };
 		FA8827A71BB486D40025C71D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A61BB486D40025C71D /* ViewController.m */; };
@@ -30,9 +30,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		240DB0EA1C475FCD610035EC /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
-		7363BDF3C077E59027C0CD9D /* libPods-TestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86CA46056E9031AE3F0175F6 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		164B77A19A0995115F5F9773 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
+		17A6652F1A846CAF88E50BD3 /* libPods-TestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D02978A6FBABC079005960B /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FA88279B1BB486D40025C71D /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA88279F1BB486D40025C71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8827A01BB486D40025C71D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF357ED6AB1F9B9D2C5A4871 /* libPods-TestApp.a in Frameworks */,
+				6FE3A851649C5DD0A9C18ADC /* libPods-TestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,16 +60,16 @@
 		8E843F5AC2EACC8863B1A301 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				86CA46056E9031AE3F0175F6 /* Pods-TestApp.debug.xcconfig */,
-				240DB0EA1C475FCD610035EC /* Pods-TestApp.release.xcconfig */,
+				7D02978A6FBABC079005960B /* Pods-TestApp.debug.xcconfig */,
+				164B77A19A0995115F5F9773 /* Pods-TestApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AE9545121BB3C671A530BD62 /* Frameworks */ = {
+		B24BA9F3B9C77789304E4C02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7363BDF3C077E59027C0CD9D /* libPods-TestApp.a */,
+				17A6652F1A846CAF88E50BD3 /* libPods-TestApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,7 +80,7 @@
 				FA88279D1BB486D40025C71D /* TestApp */,
 				FA88279C1BB486D40025C71D /* Products */,
 				8E843F5AC2EACC8863B1A301 /* Pods */,
-				AE9545121BB3C671A530BD62 /* Frameworks */,
+				B24BA9F3B9C77789304E4C02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,13 +123,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8827BE1BB486D40025C71D /* Build configuration list for PBXNativeTarget "TestApp" */;
 			buildPhases = (
-				2DD750A617D7627A56B76EC2 /* [CP] Check Pods Manifest.lock */,
+				6AB8E3DBFEE091DE7A1D8015 /* [CP] Check Pods Manifest.lock */,
 				FA8827971BB486D40025C71D /* Sources */,
 				FA8827981BB486D40025C71D /* Frameworks */,
 				FA8827991BB486D40025C71D /* Resources */,
 				FA8827C81BB488230025C71D /* Embed Frameworks */,
 				FA4651951F58114B002E4120 /* ShellScript */,
-				1C7BD49DBD9575C3CD03B17B /* [CP] Embed Pods Frameworks */,
+				772F126BE5CD9117B69D0800 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,29 +188,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C7BD49DBD9575C3CD03B17B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
-				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
-				"${PODS_ROOT}/../../../Frameworks/SelfieSegmentation.framework",
-				"${PODS_ROOT}/../../../Frameworks/ZiggeoMediaSDK.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelfieSegmentation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZiggeoMediaSDK.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2DD750A617D7627A56B76EC2 /* [CP] Check Pods Manifest.lock */ = {
+		6AB8E3DBFEE091DE7A1D8015 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,6 +208,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		772F126BE5CD9117B69D0800 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
+				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
+				"${PODS_ROOT}/ZiggeoMediaSDK/Frameworks/SelfieSegmentation.framework",
+				"${PODS_ROOT}/ZiggeoMediaSDK/Frameworks/ZiggeoMediaSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SelfieSegmentation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZiggeoMediaSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA4651951F58114B002E4120 /* ShellScript */ = {
@@ -364,7 +364,7 @@
 		};
 		FA8827BF1BB486D40025C71D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86CA46056E9031AE3F0175F6 /* Pods-TestApp.debug.xcconfig */;
+			baseConfigurationReference = 7D02978A6FBABC079005960B /* Pods-TestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MD9AQL359V;
@@ -379,6 +379,7 @@
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = "1.1.41-blurring";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -386,13 +387,14 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		FA8827C01BB486D40025C71D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 240DB0EA1C475FCD610035EC /* Pods-TestApp.release.xcconfig */;
+			baseConfigurationReference = 164B77A19A0995115F5F9773 /* Pods-TestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MD9AQL359V;
@@ -407,6 +409,7 @@
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = "1.1.41-blurring";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -414,6 +417,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

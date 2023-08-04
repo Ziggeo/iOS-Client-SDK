@@ -68,7 +68,7 @@ class Common: NSObject {
     static var recordingVideosController: RecordingVideosViewController?
     static var recordingAudiosController: RecordingAudiosViewController?
     static var recordingImagesController: RecordingImagesViewController?
-    static var currentTab = Media_Type_Video
+    static var currentTab = MEDIA_TYPE_VIDEO
 }
 
 extension Common {

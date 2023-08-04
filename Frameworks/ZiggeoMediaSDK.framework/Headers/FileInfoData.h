@@ -17,8 +17,12 @@
 @property (strong, nonatomic) NSString *mimeType;
 @property (strong, nonatomic) NSString *name;
 
-- (id)initWithPath:(NSString *)path mimeType:(NSString *)mimeType name:(NSString *)name;
-- (id)initWithUrl:(NSURL *)url mimeType:(NSString *)mimeType name:(NSString *)name;
+- (id)initWithPath:(NSString *)path
+          mimeType:(NSString *)mimeType
+              name:(NSString *)name;
+- (id)initWithUrl:(NSURL *)url
+         mimeType:(NSString *)mimeType
+             name:(NSString *)name;
 
 @end
 
