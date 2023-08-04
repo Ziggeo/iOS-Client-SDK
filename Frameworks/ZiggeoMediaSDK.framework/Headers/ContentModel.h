@@ -25,6 +25,5 @@
 - (void)setInfo:(NSDictionary *)json;
 - (void)clear;
 
-
 @end
 

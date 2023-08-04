@@ -62,70 +62,79 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 - (IBAction)onRecordVideo:(id)sender {
     currentType = Video;
     
-    NSMutableDictionary *themeMap = [NSMutableDictionary dictionary];
-    [m_ziggeo setThemeArgsForRecorder:themeMap];
-    
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-//    config[@"data"] = @{@"foo": @"bar"};
-//    config[@"client_auth"] = @"CLIENT_AUTH_TOKEN";
-//    config[@"server_auth"] = @"SERVER_AUTH_TOKEN";
-    config[@"tags"] = @"iOS_Video_Record";
-    config[@"effect_profile"] = @"1234,5678";
-    [m_ziggeo setExtraArgsForRecorder:config];
-
-    [m_ziggeo setCamera:REAR_CAMERA];
-//    [m_ziggeo setMaxRecordingDuration:30];
+    RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
+    [recorderConfig setShouldAutoStartRecording:true];
+    [recorderConfig setStartDelay:DEFAULT_START_DELAY];
+    [recorderConfig setShouldDisableCameraSwitch:false];
+    [recorderConfig setVideoQuality:QUALITY_HIGH];
+    [recorderConfig setFacing:FACING_BACK];
+    [recorderConfig setMaxDuration:0];
+    [recorderConfig setShouldSendImmediately:true];
+    [recorderConfig setLiveStreaming:false];
+    [recorderConfig setShouldEnableCoverShot:true];
+    [recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
+    [recorderConfig setExtraArgs:@{@"tags": @"iOS,Video,Record",
+                                   @"client_auth" : @"CLIENT_AUTH_TOKEN",
+                                   @"server_auth" : @"SERVER_AUTH_TOKEN",
+                                   @"data" : @{@"foo": @"bar"},
+                                   @"effect_profile" : @"1234,5678"}];
+    [m_ziggeo setRecorderConfig:recorderConfig];
     
     [m_ziggeo record];
 }
 
 - (IBAction)onPlayVideoWithToken:(id)sender {
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"hidePlayerControls"] = @"false";
-    [m_ziggeo setThemeArgsForPlayer:config];
-    
-    [m_ziggeo playVideo:@[Last_Video_Token]];
+    PlayerConfig *playerConfig = [[PlayerConfig alloc] init];
+    [playerConfig setAdsUri:@"https://pubads.g.doubleclick.net/gampad/ads?"
+     @"iu=/21775744923/external/single_ad_samples&sz=640x480&cust_params=sample_ct%3Dlinear&"
+     @"ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&"
+     @"impl=s&correlator="];
+    [m_ziggeo setPlayerConfig:playerConfig];
+
+    [m_ziggeo playVideo:Last_Video_Token];
 }
 
 - (IBAction)onChooseMedia:(id)sender {
     currentType = Unknown;
     
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"tags"] = @"iOS_Choose_Media";
-    [m_ziggeo setUploadingConfig:config];
-    
-    NSMutableDictionary *data = [NSMutableDictionary dictionary];
-//    data[ARG_MEDIA_TYPE] = @[@"video", @"image"];
-//    data[ARG_DURATION] = @"20";
-    [m_ziggeo uploadFromFileSelector:data];
+    FileSelectorConfig *fileSelectorConfig = [[FileSelectorConfig alloc] init];
+    [fileSelectorConfig setMaxDuration:0];
+    [fileSelectorConfig setMinDuration:0];
+    [fileSelectorConfig setShouldAllowMultipleSelection:true];
+    [fileSelectorConfig setMediaType:MEDIA_TYPE_VIDEO | MEDIA_TYPE_AUDIO | MEDIA_TYPE_IMAGE];
+    [fileSelectorConfig setExtraArgs:@{@"tags" : @"iOS,Choose,Media"}];
+    [m_ziggeo setFileSelectorConfig:fileSelectorConfig];
+
+    [m_ziggeo startFileSelector];
 }
 
 - (IBAction)onRecordAudio:(id)sender {
     currentType = Audio;
     
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"tags"] = @"iOS_Audio_Record";
-    [m_ziggeo setExtraArgsForRecorder:config];
+    RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
+    [recorderConfig setIsPausedMode:true];
+    [recorderConfig setExtraArgs:@{@"tags": @"iOS,Audio,Record"}];
+    [m_ziggeo setRecorderConfig:recorderConfig];
     
     [m_ziggeo startAudioRecorder];
 }
 
 - (IBAction)onPlayAudio:(id)sender {
-    [m_ziggeo startAudioPlayer:@[Last_Audio_Token]];
+    [m_ziggeo startAudioPlayer:Last_Audio_Token];
 }
 
 - (IBAction)onTakePhoto:(id)sender {
     currentType = Image;
     
-    NSMutableDictionary *config = [NSMutableDictionary dictionary];
-    config[@"tags"] = @"iOS_Take_Photo";
-    [m_ziggeo setUploadingConfig:config];
+    UploadingConfig *uploadingConfig = [[UploadingConfig alloc] init];
+    [uploadingConfig setExtraArgs:@{@"tags": @"iOS,Take,Photo"}];
+    [m_ziggeo setUploadingConfig:uploadingConfig];
     
     [m_ziggeo startImageRecorder];
 }
 
 - (IBAction)onShowImage:(id)sender {
-    [m_ziggeo showImage:@[Last_Image_Token]];
+    [m_ziggeo showImage:Last_Image_Token];
 }
 
 
@@ -155,8 +164,8 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     NSLog(@"Preparing To Upload : %@", sourcePath);
 }
 
-- (void)failedToUploadWithPath:(NSString*)sourcePath {
-    NSLog(@"Failed To Upload : %@", sourcePath);
+- (void)errorWithInfo:(RecordingInfo *)info error:(NSError *)error lostConnectionAction:(int)lostConnectionAction {
+    NSLog(@"Error To Upload : %@ : %@ : %d", info, error, lostConnectionAction);
 }
 
 - (void)uploadStartedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken backgroundTask:(NSURLSessionTask*)uploadingTask {
@@ -164,7 +173,11 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (void)uploadProgressWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken totalBytesSent:(int)bytesSent totalBytesExpectedToSend:(int)totalBytes {
-    NSLog(@"Upload Progress : %@ - %i - %i", token, bytesSent, totalBytes);
+    CGFloat percent = 0;
+    if (totalBytes > 0) {
+        percent = (CGFloat)bytesSent / (CGFloat)totalBytes * 100;
+    }
+    NSLog(@"Upload Progress : %@ - %.2f%%", token, percent);
 }
 
 - (void)uploadFinishedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken {
@@ -283,6 +296,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (void)playerSeek:(double)positionMillis {
+    NSLog(@"seek: %lf", positionMillis);
 }
 
 - (void)playerReadyToPlay {

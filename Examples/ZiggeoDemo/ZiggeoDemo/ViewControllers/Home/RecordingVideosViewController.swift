@@ -42,7 +42,7 @@ class RecordingVideosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Common.currentTab = Media_Type_Video
+        Common.currentTab = MEDIA_TYPE_VIDEO
     }
     
     // MARK: - Functions
@@ -92,7 +92,7 @@ extension RecordingVideosViewController: UITableViewDelegate, UITableViewDataSou
         Common.ziggeo?.videos().get(self.recordings[indexPath.row].token, data: [:], callback: { content, response, error in
             SVProgressHUD.dismiss()
             if let vc = Common.getStoryboardViewController("RecordingDetailViewController") as? RecordingDetailViewController {
-                vc.mediaType = Media_Type_Video
+                vc.mediaType = MEDIA_TYPE_VIDEO
                 vc.recording = content
                 vc.recordingDelegate = self
                 Common.mainNavigationController?.pushViewController(vc, animated: true)

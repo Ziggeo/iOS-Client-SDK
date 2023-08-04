@@ -31,7 +31,7 @@ class RecordingDetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIView!
     
     // MARK: - Public variables
-    var mediaType = Media_Type_Video
+    var mediaType = MEDIA_TYPE_VIDEO
     var recording: ContentModel?
     var recordingDelegate: RecordingDelegate?
     
@@ -44,11 +44,11 @@ class RecordingDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         if (recording != nil) {
-            if (mediaType == Media_Type_Video) {
+            if (mediaType == MEDIA_TYPE_VIDEO) {
                 imageView.contentMode = UIView.ContentMode.scaleAspectFill
                 let imageUrlString = Common.ziggeo?.videos().getImageUrl(recording!.token)
                 imageView.setURL(imageUrlString, placeholder: nil)
-            } else if (mediaType == Media_Type_Audio) {
+            } else if (mediaType == MEDIA_TYPE_AUDIO) {
                 imageView.contentMode = UIView.ContentMode.scaleAspectFit
                 imageView.image = UIImage(named: "bg_audio")
             } else {
@@ -88,7 +88,7 @@ class RecordingDetailViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [self] (action) in
             if (self.recording != nil) {
                 SVProgressHUD.show()
-                if (self.mediaType == Media_Type_Video) {
+                if (self.mediaType == MEDIA_TYPE_VIDEO) {
                     Common.ziggeo?.videos().destroy(self.recording!.token, callback: { jsonObject, response, error in
                         SVProgressHUD.dismiss()
                         self.isEditMode = false
@@ -96,7 +96,7 @@ class RecordingDetailViewController: UIViewController {
                         self.navigationController?.popViewController(animated: true)
                     })
 
-                } else if (self.mediaType == Media_Type_Audio) {
+                } else if (self.mediaType == MEDIA_TYPE_AUDIO) {
                     Common.ziggeo?.audios().destroy(self.recording!.token, callback: { jsonObject, response, error in
                         SVProgressHUD.dismiss()
                         self.isEditMode = false
@@ -123,14 +123,14 @@ class RecordingDetailViewController: UIViewController {
             let data = ["title": titleTextField.text,
                         "description": descriptionTextField.text]
 
-            if (self.mediaType == Media_Type_Video) {
+            if (self.mediaType == MEDIA_TYPE_VIDEO) {
                 Common.ziggeo?.videos().update(recording!.token, data: data as [AnyHashable : Any], callback: { content, response, error in
                     SVProgressHUD.dismiss()
                     self.isEditMode = false
                     self.refreshButtons()
                 })
 
-            } else if (self.mediaType == Media_Type_Audio) {
+            } else if (self.mediaType == MEDIA_TYPE_AUDIO) {
                 Common.ziggeo?.audios().update(recording!.token, data: data as [AnyHashable : Any], callback: { content, response, error in
                     SVProgressHUD.dismiss()
                     self.isEditMode = false
@@ -149,7 +149,7 @@ class RecordingDetailViewController: UIViewController {
     
     @IBAction func onPlay(_ sender: Any) {
         if (recording != nil) {
-            if (mediaType == Media_Type_Video) {
+            if (mediaType == MEDIA_TYPE_VIDEO) {
                 if (UserDefaults.standard.bool(forKey: Common.Custom_Player_Key) == true) {
                     guard let urlString = Common.ziggeo?.videos().getVideoUrl(recording!.token) else {
                         return
@@ -160,14 +160,14 @@ class RecordingDetailViewController: UIViewController {
                     present(vc, animated: true, completion: nil)
                     
                 } else {
-                    Common.ziggeo?.playVideo([recording!.token!])
+                    Common.ziggeo?.playVideo(recording!.token!)
                 }
                 
-            } else if (mediaType == Media_Type_Audio) {
-                Common.ziggeo?.startAudioPlayer([recording!.token!])
+            } else if (mediaType == MEDIA_TYPE_AUDIO) {
+                Common.ziggeo?.startAudioPlayer(recording!.token!)
                 
             } else {
-                Common.ziggeo?.showImage([recording!.token!])
+                Common.ziggeo?.showImage(recording!.token!)
             }
         }
     }
