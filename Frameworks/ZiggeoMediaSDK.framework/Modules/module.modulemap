@@ -6,6 +6,6 @@ framework module ZiggeoMediaSDK {
 }
 
 module ZiggeoMediaSDK.Swift {
-    header "ZiggeoMediaSDK-Swift.h"
-    requires objc
+  header "ZiggeoMediaSDK-Swift.h"
+  requires objc
 }

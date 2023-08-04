@@ -6,9 +6,9 @@
 //  Copyright © 2016 Ziggeo Inc. All rights reserved.
 //
 
-
 @import Foundation;
 @import UIKit;
+
 
 @interface ButtonConfig : NSObject
 

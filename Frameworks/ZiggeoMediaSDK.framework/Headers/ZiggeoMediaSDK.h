@@ -24,7 +24,15 @@ FOUNDATION_EXPORT const unsigned char ZiggeoMediaSDKVersionString[];
 #import <ZiggeoMediaSDK/ZiggeoPlayer.h>
 #import <ZiggeoMediaSDK/ZiggeoConfig.h>
 #import <ZiggeoMediaSDK/ZiggeoRecordedVideoPreview.h>
-#import <ZiggeoMediaSDK/ButtonConfig.h>
 #import <ZiggeoMediaSDK/ZiggeoRecorderInterfaceConfig.h>
 #import <ZiggeoMediaSDK/ContentModel.h>
 #import <ZiggeoMediaSDK/ZiggeoScreenRecorderSampleHandler.h>
+#import <ZiggeoMediaSDK/ButtonConfig.h>
+#import <ZiggeoMediaSDK/FileSelectorConfig.h>
+#import <ZiggeoMediaSDK/UploadingConfig.h>
+#import <ZiggeoMediaSDK/PlayerConfig.h>
+#import <ZiggeoMediaSDK/QrScannerConfig.h>
+#import <ZiggeoMediaSDK/CameraRecorderStyle.h>
+#import <ZiggeoMediaSDK/VideoSize.h>
+#import <ZiggeoMediaSDK/RecorderConfig.h>
+#import <ZiggeoMediaSDK/RecordingInfo.h>

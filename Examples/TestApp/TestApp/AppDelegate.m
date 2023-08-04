@@ -47,7 +47,7 @@
 //finish background upload for closed or purged app
 - (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler {
     Ziggeo* ziggeo = [[Ziggeo alloc] initWithToken:@"ZIGGEO_APP_TOKEN"];
-    [ziggeo.connect postWithPath:identifier Data:nil Callback:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [ziggeo.connect postWithPath:identifier data:nil callback:^(NSData *data, NSURLResponse *response, NSError *error) {
         completionHandler();
     }];
 }

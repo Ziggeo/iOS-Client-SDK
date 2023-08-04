@@ -6,7 +6,6 @@
 //  Copyright © 2016 Ziggeo Inc. All rights reserved.
 //
 
-
 #import <Foundation/Foundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AVFoundation/AVFoundation.h>
@@ -28,7 +27,6 @@
 @property (strong, nonatomic) NSString *player_cache_root;
 
 - (id)initWithToken:(NSString *)token;
-
 - (void)setRecorderCacheConfig:(NSDictionary *)config;
 - (void)setPlayerCacheConfig:(NSDictionary *)config;
 
