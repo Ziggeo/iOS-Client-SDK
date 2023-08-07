@@ -11,18 +11,10 @@
 #import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
 
 
-typedef enum {
-    Video,
-    Audio,
-    Image,
-    Unknown,
-} CurrentType;
-
-
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoHardwarePermissionDelegate, ZiggeoUploadingDelegate, ZiggeoFileSelectorDelegate, ZiggeoRecorderDelegate, ZiggeoSensorDelegate, ZiggeoPlayerDelegate, ZiggeoScreenRecorderDelegate, ZiggeoQRScannerDelegate> {
     Ziggeo* m_ziggeo;
     AVPlayerLayer* embeddedPlayerLayer;
-    CurrentType currentType;
+    int currentType;
 }
 
 @end
@@ -50,7 +42,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     [m_ziggeo setPlayerDelegate:self];
     [m_ziggeo setScreenRecorderDelegate:self];
     
-    currentType = Unknown;
+    currentType = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +52,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 // MARK: Button Click Action
 - (IBAction)onRecordVideo:(id)sender {
-    currentType = Video;
+    currentType = VIDEO;
     
     RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
     [recorderConfig setShouldAutoStartRecording:true];
@@ -95,13 +87,13 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onChooseMedia:(id)sender {
-    currentType = Unknown;
+    currentType = 0;
     
     FileSelectorConfig *fileSelectorConfig = [[FileSelectorConfig alloc] init];
     [fileSelectorConfig setMaxDuration:0];
     [fileSelectorConfig setMinDuration:0];
     [fileSelectorConfig setShouldAllowMultipleSelection:true];
-    [fileSelectorConfig setMediaType:MEDIA_TYPE_VIDEO | MEDIA_TYPE_AUDIO | MEDIA_TYPE_IMAGE];
+    [fileSelectorConfig setMediaType:VIDEO | AUDIO | IMAGE];
     [fileSelectorConfig setExtraArgs:@{@"tags" : @"iOS,Choose,Media"}];
     [m_ziggeo setFileSelectorConfig:fileSelectorConfig];
 
@@ -109,7 +101,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onRecordAudio:(id)sender {
-    currentType = Audio;
+    currentType = AUDIO;
     
     RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
     [recorderConfig setIsPausedMode:true];
@@ -124,7 +116,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onTakePhoto:(id)sender {
-    currentType = Image;
+    currentType = IMAGE;
     
     UploadingConfig *uploadingConfig = [[UploadingConfig alloc] init];
     [uploadingConfig setExtraArgs:@{@"tags": @"iOS,Take,Photo"}];
@@ -186,11 +178,11 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 - (void)uploadVerifiedWithPath:(NSString*)sourcePath token:(NSString*)token streamToken:(NSString *)streamToken withResponse:(NSURLResponse*)response error:(NSError*)error json:(NSDictionary*)json {
     NSLog(@"Upload Verified : %@", token);
-    if (currentType == Video) {
+    if (currentType == VIDEO) {
         Last_Video_Token = token;
-    } else if (currentType == Audio) {
+    } else if (currentType == AUDIO) {
         Last_Audio_Token = token;
-    } else if (currentType == Image) {
+    } else if (currentType == IMAGE) {
         Last_Image_Token = token;
     }
 }
