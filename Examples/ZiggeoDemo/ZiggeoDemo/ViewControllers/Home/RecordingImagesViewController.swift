@@ -59,7 +59,7 @@ class RecordingImagesViewController: UIViewController {
             if (array != nil) {
                 for i in 0..<array!.count {
                     if let item = array![i] as? ContentModel {
-                        if item.stateString != ZIGGEO_STATUS_EMPTY && item.stateString != ZIGGEO_STATUS_DELETED {
+                        if item.stateString != STATUS_EMPTY && item.stateString != STATUS_DELETED {
                             self.recordings.append(item)
                         }
                     }
