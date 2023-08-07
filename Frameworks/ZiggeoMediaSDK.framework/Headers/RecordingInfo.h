@@ -14,7 +14,7 @@
 @interface RecordingInfo : NSObject
 
 @property (strong, nonatomic) NSString *token;
-@property (nonatomic) MEDIA_TYPE fileType;
+@property (nonatomic) int fileType;
 @property (nonatomic) Boolean uploaded;
 @property (nonatomic) Boolean verified;
 @property (nonatomic) Boolean processed;
@@ -39,8 +39,8 @@
         streamToken:(NSString *)streamToken;
 - (NSString *)getToken;
 - (void)setToken:(NSString *)token;
-- (MEDIA_TYPE)getFileType;
-- (void)setFileType:(MEDIA_TYPE)fileType;
+- (int)getFileType;
+- (void)setFileType:(int)fileType;
 - (Boolean)getUploaded;
 - (void)setUploaded:(Boolean)uploaded;
 - (Boolean)getVerified;

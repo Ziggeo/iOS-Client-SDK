@@ -77,7 +77,7 @@ class HomeViewController: UIViewController {
         fileSelectorConfig.maxDuration = 0
         fileSelectorConfig.minDuration = 0
         fileSelectorConfig.shouldAllowMultipleSelection = true
-        fileSelectorConfig.mediaType = Int32(MEDIA_TYPE_VIDEO.rawValue | MEDIA_TYPE_AUDIO.rawValue | MEDIA_TYPE_IMAGE.rawValue)
+        fileSelectorConfig.mediaType = VIDEO | AUDIO | IMAGE
         fileSelectorConfig.extraArgs = ["tags" : "iOS,Choose,Media"]
         Common.ziggeo?.setFileSelectorConfig(fileSelectorConfig)
         
@@ -149,7 +149,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onPlayAll(_ sender: Any) {
-        if (Common.currentTab == MEDIA_TYPE_VIDEO) {
+        if (Common.currentTab == VIDEO) {
             var tokens: [String] = []
             if (Common.recordingVideosController != nil) {
                 for recording in Common.recordingVideosController!.recordings {
@@ -163,7 +163,7 @@ class HomeViewController: UIViewController {
                 Common.showAlertView("Video recordings are empty.")
             }
             
-        } else if (Common.currentTab == MEDIA_TYPE_AUDIO) {
+        } else if (Common.currentTab == AUDIO) {
             var tokens: [String] = []
             if (Common.recordingAudiosController != nil) {
                 for recording in Common.recordingAudiosController!.recordings {
