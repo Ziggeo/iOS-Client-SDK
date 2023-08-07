@@ -632,10 +632,10 @@ This value allows you to enable or disable mutliple selection. Default value is 
 
 You can set this value to display only certain types of media. If you do not set this value, all types of media are displayed.
 
-- Note: You can set `MEDIA_TYPE_VIDEO`, `MEDIA_TYPE_AUDIO` and `MEDIA_TYPE_IMAGE`.
+- Note: You can set `VIDEO`, `AUDIO` and `IMAGE`.
 
 ```
-[fileSelectorConfig setMediaType:MEDIA_TYPE_VIDEO | MEDIA_TYPE_AUDIO | MEDIA_TYPE_IMAGE];
+[fileSelectorConfig setMediaType:VIDEO | AUDIO | IMAGE];
 ```
 
 #### Uploading Config<a name="uploading-config"></a>

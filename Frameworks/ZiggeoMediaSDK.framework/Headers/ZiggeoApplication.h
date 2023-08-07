@@ -25,52 +25,10 @@
 @class RecorderConfig;
 @class AspectRatio;
 
-typedef enum {
-    MEDIA_TYPE_VIDEO = 0x01,
-    MEDIA_TYPE_AUDIO = 0x02,
-    MEDIA_TYPE_IMAGE = 0x04
-} MEDIA_TYPE;
 
-typedef enum {
-    BYTES_SENT,
-    BYTES_TOTAL,
-    FILE_NAME,
-    PATH,
-    QR,
-    TOKEN,
-//    ERROR,
-    PERMISSIONS,
-    SOUND_LEVEL,
-    SECONDS_LEFT,
-    MILLIS_PASSED,
-    MILLIS,
-    FILES,
-    VALUE,
-    MEDIA_TYPES,
-    BLUR_EFFECT,
-    CLIENT_AUTH,
-    SERVER_AUTH,
-    TAGS
-} Ziggeo_Key_Type;
-
-typedef enum {
-    KEY_HIDE_RECORDER_CONTROLS,
-    KEY_HIDE_PLAYER_CONTROLS
-} Ziggeo_Theme_Key_Type;
-
-static NSString *REAR_CAMERA = @"rearCamera";
-static NSString *FRONT_CAMERA = @"frontCamera";
-static NSString *HIGH_QUALITY = @"highQuality";
-static NSString *MEDIUM_QUALITY = @"mediumQuality";
-static NSString *LOW_QUALITY = @"lowQuality";
-static NSString *ERR_UNKNOWN = @"ERR_UNKNOWN";
-static NSString *ERR_DURATION_EXCEEDED = @"ERR_DURATION_EXCEEDED";
-static NSString *ERR_FILE_DOES_NOT_EXIST = @"ERR_FILE_DOES_NOT_EXIST";
-static NSString *ERR_PERMISSION_DENIED = @"ERR_PERMISSION_DENIED";
-static NSString *ARG_DURATION = @"max_duration";
-static NSString *ARG_MEDIA_TYPE = @"media_type";
-static NSString *ENFORCE_DURATION = @"enforce_duration";
-static NSString *CLOSE_AFTER_SUCCESS_FUL_SCAN = @"closeAfterSuccessfulScan";
+static int VIDEO = 0x01;
+static int AUDIO = 0x02;
+static int IMAGE = 0x05;
 
 static NSString *ZIGGEO_STATUS_EMPTY = @"EMPTY";
 static NSString *ZIGGEO_STATUS_DELETED = @"DELETED";
@@ -78,6 +36,29 @@ static NSString *ZIGGEO_STATUS_VERIFIED = @"VERIFIED";
 static NSString *ZIGGEO_STATUS_PROCESSING = @"PROCESSING";
 static NSString *ZIGGEO_STATUS_FAILED = @"FAILED";
 static NSString *ZIGGEO_STATUS_READY = @"READY";
+
+static NSString *ARG_PATH = @"ARG_PATH";
+static NSString *ARG_TOKEN = @"ARG_TOKEN";
+static NSString *ARG_IMAGE_MODE_ONLY = @"ARG_IMAGE_MODE_ONLY";
+static NSString *ARG_URI = @"ARG_URI";
+static NSString *ARG_COVER_SHOT_PATH = @"ARG_COVER_SHOT_PATH";
+static NSString *ARG_FORCE_SEND = @"ARG_FORCE_SEND";
+static NSString *ARG_SHOW_COVER_SHOT_SELECTION_POPUP = @"ARG_SHOW_COVER_SHOT_SELECTION_POPUP";
+static NSString *ARG_SHOW_STOP_RECORDING_CONFIRMATION = @"ARG_SHOW_STOP_RECORDING_CONFIRMATION";
+static NSString *ARG_SHOW_CONFIRMATION_ON_PLAYER = @"ARG_SHOW_CONFIRMATION_ON_PLAYER";
+static NSString *ARG_FILE_TO_CONFIRM = @"ARG_FILE_TO_CONFIRM";
+static NSString *ARG_SELECTED_FILTER = @"ARG_SELECTED_FILTER";
+static NSString *ARG_SELECTED_VIEW_MODE = @"ARG_SELECTED_VIEW_MODE";
+static NSString *ARG_PACKAGE_NAME = @"appname";
+static NSString *ARG_CLIENT_AUTH = @"client_auth";
+static NSString *ARG_SERVER_AUTH = @"server_auth";
+static NSString *ARG_DATA = @"ARG_DATA";
+
+static long UPDATE_DELAY = 1000L;
+
+static int HIGH_VOLUME = 1;
+static int MIDDLE_VOLUME = 2;
+static int LOW_VOLUME = 3;
 
 static long DEFAULT_SYNC_INTERVAL = 2 * 60 * 60 * 1000; // 2 hours
 
@@ -408,8 +389,6 @@ static AspectRatio *RATIO_1_1 = nil;
 - (PlayerConfig *)playerConfig;
 - (QrScannerConfig *)qrScannerConfig;
 - (RecorderConfig *)recorderConfig;
-- (NSString *)ziggeoKeyTypeToString:(Ziggeo_Key_Type)keyType;
-- (NSString *)ziggeoThemeKeyTypeToString:(Ziggeo_Theme_Key_Type)keyType;
 
 // MARK: - Set Config Variables
 - (void)setRecorderCacheConfig:(NSDictionary *)config;
