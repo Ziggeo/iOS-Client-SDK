@@ -367,10 +367,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7C9963Q3QW;
 				ENABLE_BITCODE = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products",
-					"$(SRCROOT)/../Output",
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -397,10 +396,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7C9963Q3QW;
 				ENABLE_BITCODE = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products",
-					"$(SRCROOT)/../Output",
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
