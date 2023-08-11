@@ -109,16 +109,28 @@ $ pod init
 
 - Add framework to Podfile
 If you are going to be using the SDK flavor with background blurring, you need to set the `ENABLED_BITCODE` option to `No`, otherwise you will not be able to compile your app.
-So if your app needs to set the `ENABLED_BITCODE` option to `Yes`, you can not use the SDK flavor with background blurring.
-In this ase, use
+Building with bitcode is deprecated. Please update your project and/or target settings to disable bitcode.
+If you don't need to use background blurring, use
 ```
 pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
 ```
 
-If your app does not need to set the `ENABLED_BITCODE` option to `Yes`, you can use the SDK flavor with background blurring.
-In this ase, use
+If you want to use background blurring, use
 ```
 pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
+```
+
+- 
+`ZiggeoMediaSDK` uses `GoogleAds-IMA-iOS-SDK` for ads. You need to add below commands to `Podfile` for building this sdk.
+```
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+    end
+  end
+end
 ```
 
 - Install framework
@@ -127,12 +139,14 @@ $ pod install
 ```
 
 - Reopen the project using the .xcworkspace
-- If you use the SDK flavor with background blurring, set `ENABLED_BITCODE` to `No`"** on the *Build Settings* of the project.
+- If you use the SDK flavor with background blurring, set `ENABLED_BITCODE` to `No` on the `Build Settings` of the project.
 ![bitcode.png](Images/bitcode.png)
+- Navigate to `Build Settings` of your project and add `Any iOS Simulator SDK` with value `arm64` inside `Excluded Architectures`.
+![excluded_architectures.png](Images/excluded_architectures.png)
 
 ## Demo<a name="demo"></a>
 
-[This repository](https://github.com/Ziggeo/iOS-Client-SDK) has "samples" directory which would allow you to see how it can be used.
+[This repository](https://github.com/Ziggeo/iOS-Client-SDK) has "Examples" directory which would allow you to see how it can be used.
 
 ## Codes<a name="codes"></a>
 

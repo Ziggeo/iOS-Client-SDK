@@ -30,30 +30,6 @@ static int VIDEO = 0x01;
 static int AUDIO = 0x02;
 static int IMAGE = 0x05;
 
-static NSString *ZIGGEO_STATUS_EMPTY = @"EMPTY";
-static NSString *ZIGGEO_STATUS_DELETED = @"DELETED";
-static NSString *ZIGGEO_STATUS_VERIFIED = @"VERIFIED";
-static NSString *ZIGGEO_STATUS_PROCESSING = @"PROCESSING";
-static NSString *ZIGGEO_STATUS_FAILED = @"FAILED";
-static NSString *ZIGGEO_STATUS_READY = @"READY";
-
-static NSString *ARG_PATH = @"ARG_PATH";
-static NSString *ARG_TOKEN = @"ARG_TOKEN";
-static NSString *ARG_IMAGE_MODE_ONLY = @"ARG_IMAGE_MODE_ONLY";
-static NSString *ARG_URI = @"ARG_URI";
-static NSString *ARG_COVER_SHOT_PATH = @"ARG_COVER_SHOT_PATH";
-static NSString *ARG_FORCE_SEND = @"ARG_FORCE_SEND";
-static NSString *ARG_SHOW_COVER_SHOT_SELECTION_POPUP = @"ARG_SHOW_COVER_SHOT_SELECTION_POPUP";
-static NSString *ARG_SHOW_STOP_RECORDING_CONFIRMATION = @"ARG_SHOW_STOP_RECORDING_CONFIRMATION";
-static NSString *ARG_SHOW_CONFIRMATION_ON_PLAYER = @"ARG_SHOW_CONFIRMATION_ON_PLAYER";
-static NSString *ARG_FILE_TO_CONFIRM = @"ARG_FILE_TO_CONFIRM";
-static NSString *ARG_SELECTED_FILTER = @"ARG_SELECTED_FILTER";
-static NSString *ARG_SELECTED_VIEW_MODE = @"ARG_SELECTED_VIEW_MODE";
-static NSString *ARG_PACKAGE_NAME = @"appname";
-static NSString *ARG_CLIENT_AUTH = @"client_auth";
-static NSString *ARG_SERVER_AUTH = @"server_auth";
-static NSString *ARG_DATA = @"ARG_DATA";
-
 static long UPDATE_DELAY = 1000L;
 
 static int HIGH_VOLUME = 1;
@@ -129,6 +105,30 @@ static AspectRatio *FALLBACK_ASPECT_RATIO = nil;
 static AspectRatio *RATIO_16_9 = nil;
 static AspectRatio *RATIO_4_3 = nil;
 static AspectRatio *RATIO_1_1 = nil;
+
+static NSString *STATUS_EMPTY = @"EMPTY";
+static NSString *STATUS_DELETED = @"DELETED";
+static NSString *STATUS_VERIFIED = @"VERIFIED";
+static NSString *STATUS_PROCESSING = @"PROCESSING";
+static NSString *STATUS_FAILED = @"FAILED";
+static NSString *STATUS_READY = @"READY";
+
+static NSString *ARG_PATH = @"ARG_PATH";
+static NSString *ARG_TOKEN = @"ARG_TOKEN";
+static NSString *ARG_IMAGE_MODE_ONLY = @"ARG_IMAGE_MODE_ONLY";
+static NSString *ARG_URI = @"ARG_URI";
+static NSString *ARG_COVER_SHOT_PATH = @"ARG_COVER_SHOT_PATH";
+static NSString *ARG_FORCE_SEND = @"ARG_FORCE_SEND";
+static NSString *ARG_SHOW_COVER_SHOT_SELECTION_POPUP = @"ARG_SHOW_COVER_SHOT_SELECTION_POPUP";
+static NSString *ARG_SHOW_STOP_RECORDING_CONFIRMATION = @"ARG_SHOW_STOP_RECORDING_CONFIRMATION";
+static NSString *ARG_SHOW_CONFIRMATION_ON_PLAYER = @"ARG_SHOW_CONFIRMATION_ON_PLAYER";
+static NSString *ARG_FILE_TO_CONFIRM = @"ARG_FILE_TO_CONFIRM";
+static NSString *ARG_SELECTED_FILTER = @"ARG_SELECTED_FILTER";
+static NSString *ARG_SELECTED_VIEW_MODE = @"ARG_SELECTED_VIEW_MODE";
+static NSString *ARG_PACKAGE_NAME = @"appname";
+static NSString *ARG_CLIENT_AUTH = @"client_auth";
+static NSString *ARG_SERVER_AUTH = @"server_auth";
+static NSString *ARG_DATA = @"ARG_DATA";
 
 
 // MARK: - ZiggeoHardwarePermissionDelegate
@@ -226,7 +226,6 @@ static AspectRatio *RATIO_1_1 = nil;
 - (void)errorWithError:(NSError *)error;
 
 @end
-
 
 
 // MARK: - ZiggeoFileSelectorDelegate

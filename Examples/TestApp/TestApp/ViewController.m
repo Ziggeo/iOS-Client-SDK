@@ -64,6 +64,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     [recorderConfig setShouldSendImmediately:true];
     [recorderConfig setLiveStreaming:false];
     [recorderConfig setShouldEnableCoverShot:true];
+    [recorderConfig setBlurMode:true];
     [recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
     [recorderConfig setExtraArgs:@{@"tags": @"iOS,Video,Record",
                                    @"client_auth" : @"CLIENT_AUTH_TOKEN",
