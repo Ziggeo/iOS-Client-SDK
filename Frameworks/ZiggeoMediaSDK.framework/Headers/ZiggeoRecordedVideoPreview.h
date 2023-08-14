@@ -12,7 +12,7 @@
 @protocol VideoPreviewDelegate
 
 - (void)retake;
-- (void)uploadVideo:(NSString *)filePath;
+- (void)uploadVideo:(NSURL *)fileURL;
 
 @end
 
