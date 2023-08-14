@@ -1,6 +1,6 @@
 # Changelog
 
-Version 1.1.41 *(2023-08-07)*
+Version 1.1.41 *(2023-08-14)*
 -----------------------------
 * The update changes `playVideo`, `showImage` and `playAudio` functions to use only a item.
 * The update adds `playVideos`, `showImages` and `playAudios` functions to support multiple items.
