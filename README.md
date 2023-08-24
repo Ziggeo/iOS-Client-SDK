@@ -109,19 +109,19 @@ $ pod init
 
 - Add framework to Podfile
 If you are going to be using the SDK flavor with background blurring, you need to set the `ENABLED_BITCODE` option to `No`, otherwise you will not be able to compile your app.
-Building with bitcode is deprecated. Please update your project and/or target settings to disable bitcode.
+So if your app needs to set the `ENABLED_BITCODE` option to `Yes`, you can not use the SDK flavor with background blurring.
 If you don't need to use background blurring, use
 ```
 pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git'
 ```
 
+If your app does not need to set the `ENABLED_BITCODE` option to `No`, you can use the SDK flavor with background blurring.
 If you want to use background blurring, use
 ```
 pod 'ZiggeoMediaSDK', :git => 'https://github.com/Ziggeo/iOS-Client-SDK.git', :branch => 'blurring'
 ```
 
-- 
-`ZiggeoMediaSDK` uses `GoogleAds-IMA-iOS-SDK` for ads. You need to add below commands to `Podfile` for building this sdk.
+- `ZiggeoMediaSDK` uses `GoogleAds-IMA-iOS-SDK` for ads. You need to add below commands to `Podfile` for building this sdk.
 ```
 post_install do |installer|
   installer.pods_project.targets.each do |target|
@@ -445,7 +445,7 @@ If you want to set the resolution of the video, you would need to specify the as
 - Note: You can choose `DEFAULT_ASPECT_RATIO`, `FALLBACK_ASPECT_RATIO`, `RATIO_16_9`, `RATIO_4_3` and `RATIO_1_1`.
 
 ```
-[recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];;
+[recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
 ```
 
 **Set Video Width**
