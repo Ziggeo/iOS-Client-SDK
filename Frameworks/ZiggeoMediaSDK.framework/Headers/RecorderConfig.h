@@ -43,11 +43,11 @@
 - (void)setShouldShowFaceOutline:(bool)shouldShowFaceOutline;
 - (UIImage *)getFaceOutlineDrawable;
 - (void)setFaceOutlineDrawable:(UIImage *)faceOutlineDrawable;
-- (bool)isLiveStreaming;
+- (bool)getIsLiveStreaming;
 - (void)setLiveStreaming:(bool)liveStreaming;
 - (bool)getShouldAutoStartRecording;
 - (void)setShouldAutoStartRecording:(bool)shouldAutoStartRecording;
-- (bool)isImageOnlyMode;
+- (bool)getIsImageOnlyMode;
 - (void)setImageOnlyMode:(bool)imageOnlyMode;
 - (bool)getIsPausedMode;
 - (void)setIsPausedMode:(bool)isPausedMode;

@@ -61,8 +61,6 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     [recorderConfig setVideoQuality:QUALITY_HIGH];
     [recorderConfig setFacing:FACING_BACK];
     [recorderConfig setMaxDuration:0];
-    [recorderConfig setShouldSendImmediately:false];
-    [recorderConfig setLiveStreaming:false];
     [recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
     [recorderConfig setExtraArgs:@{@"tags": @"iOS,Video,Record",
                                    @"client_auth" : @"CLIENT_AUTH_TOKEN",
