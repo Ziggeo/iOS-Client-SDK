@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5DE5D05D9031D77DA57E385E /* libPods-TestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E482DFE6C6252A236F369F2C /* libPods-TestApp.a */; };
+		D8301F462A97BB9900A171DA /* CustomUIRecroderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8301F432A97BB9900A171DA /* CustomUIRecroderView.xib */; };
+		D8301F472A97BB9900A171DA /* CustomUIRecroderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8301F452A97BB9900A171DA /* CustomUIRecroderViewController.m */; };
 		FA8827A11BB486D40025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A01BB486D40025C71D /* main.m */; };
 		FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A31BB486D40025C71D /* AppDelegate.m */; };
 		FA8827A71BB486D40025C71D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A61BB486D40025C71D /* ViewController.m */; };
@@ -30,6 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D8301F432A97BB9900A171DA /* CustomUIRecroderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomUIRecroderView.xib; sourceTree = "<group>"; };
+		D8301F442A97BB9900A171DA /* CustomUIRecroderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIRecroderViewController.h; sourceTree = "<group>"; };
+		D8301F452A97BB9900A171DA /* CustomUIRecroderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUIRecroderViewController.m; sourceTree = "<group>"; };
 		E482DFE6C6252A236F369F2C /* libPods-TestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64282275C67D1B1FB0917D7 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FA88279B1BB486D40025C71D /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +79,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D8301F422A97BB9900A171DA /* CustomUIRecroder */ = {
+			isa = PBXGroup;
+			children = (
+				D8301F432A97BB9900A171DA /* CustomUIRecroderView.xib */,
+				D8301F442A97BB9900A171DA /* CustomUIRecroderViewController.h */,
+				D8301F452A97BB9900A171DA /* CustomUIRecroderViewController.m */,
+			);
+			path = CustomUIRecroder;
+			sourceTree = "<group>";
+		};
 		FA8827921BB486D40025C71D = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +114,7 @@
 				FA8827A31BB486D40025C71D /* AppDelegate.m */,
 				FA8827A51BB486D40025C71D /* ViewController.h */,
 				FA8827A61BB486D40025C71D /* ViewController.m */,
+				D8301F422A97BB9900A171DA /* CustomUIRecroder */,
 				FA8827A81BB486D40025C71D /* Main.storyboard */,
 				FA8827AB1BB486D40025C71D /* Images.xcassets */,
 				FA8827AD1BB486D40025C71D /* LaunchScreen.xib */,
@@ -182,6 +198,7 @@
 				FA8827AA1BB486D40025C71D /* Main.storyboard in Resources */,
 				FA8827AF1BB486D40025C71D /* LaunchScreen.xib in Resources */,
 				FA8827AC1BB486D40025C71D /* Images.xcassets in Resources */,
+				D8301F462A97BB9900A171DA /* CustomUIRecroderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +271,7 @@
 			files = (
 				FA8827A71BB486D40025C71D /* ViewController.m in Sources */,
 				FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */,
+				D8301F472A97BB9900A171DA /* CustomUIRecroderViewController.m in Sources */,
 				FA8827A11BB486D40025C71D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
