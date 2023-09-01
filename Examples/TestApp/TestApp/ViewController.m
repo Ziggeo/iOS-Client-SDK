@@ -9,6 +9,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ViewController.h"
 #import "ZiggeoMediaSDK/ZiggeoMediaSDK.h"
+#import "CustomUIRecroderViewController.h"
 
 
 @interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZiggeoHardwarePermissionDelegate, ZiggeoUploadingDelegate, ZiggeoFileSelectorDelegate, ZiggeoRecorderDelegate, ZiggeoSensorDelegate, ZiggeoPlayerDelegate, ZiggeoScreenRecorderDelegate, ZiggeoQRScannerDelegate> {
@@ -124,6 +125,34 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 
 - (IBAction)onShowImage:(id)sender {
     [m_ziggeo showImage:Last_Image_Token];
+}
+
+- (IBAction)onCustomUIRecorder:(id)sender {
+    RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
+    [recorderConfig setShouldAutoStartRecording:false];
+    [recorderConfig setVideoQuality:QUALITY_HIGH];
+    [recorderConfig setFacing:FACING_BACK];
+    [recorderConfig setMaxDuration:0];
+    [recorderConfig setShouldSendImmediately:true];
+    [recorderConfig.style setHideControls:true];
+    [recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
+    [recorderConfig setExtraArgs:@{@"tags": @"iOS,Video,Custom UI Record",
+                                   @"client_auth" : @"CLIENT_AUTH_TOKEN",
+                                   @"server_auth" : @"SERVER_AUTH_TOKEN",
+                                   @"data" : @{@"foo": @"bar"},
+                                   @"effect_profile" : @"1234,5678"}];
+    [m_ziggeo setRecorderConfig:recorderConfig];
+    
+    ZiggeoRecorder *m_recorder = [[ZiggeoRecorder alloc] initWithZiggeoApplication:m_ziggeo];
+    
+    CustomUIRecroderViewController *customUIRecroderVC = [[CustomUIRecroderViewController alloc] initWithNibName:@"CustomUIRecroderView" bundle:nil];
+    customUIRecroderVC.m_recorder = m_recorder;
+    customUIRecroderVC.view.frame = CGRectMake(0, 0, m_recorder.view.bounds.size.width, m_recorder.view.bounds.size.height);
+    [m_recorder.view addSubview:customUIRecroderVC.view];
+    [self addChildViewController:customUIRecroderVC];
+
+    m_recorder.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:m_recorder animated:true completion:nil];
 }
 
 
