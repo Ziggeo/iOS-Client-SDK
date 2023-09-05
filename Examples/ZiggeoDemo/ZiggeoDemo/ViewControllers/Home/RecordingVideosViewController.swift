@@ -42,7 +42,7 @@ class RecordingVideosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        Common.currentTab = Media_Type_Video
+        Common.currentTab = VIDEO
     }
     
     // MARK: - Functions
@@ -60,7 +60,7 @@ class RecordingVideosViewController: UIViewController {
             if (array != nil) {
                 for i in 0..<array!.count {
                     if let item = array![i] as? ContentModel {
-                        if item.stateString != ZIGGEO_STATUS_EMPTY && item.stateString != ZIGGEO_STATUS_DELETED {
+                        if item.stateString != STATUS_EMPTY && item.stateString != STATUS_DELETED {
                             self.recordings.append(item)
                         }
                     }
@@ -92,7 +92,7 @@ extension RecordingVideosViewController: UITableViewDelegate, UITableViewDataSou
         Common.ziggeo?.videos().get(self.recordings[indexPath.row].token, data: [:], callback: { content, response, error in
             SVProgressHUD.dismiss()
             if let vc = Common.getStoryboardViewController("RecordingDetailViewController") as? RecordingDetailViewController {
-                vc.mediaType = Media_Type_Video
+                vc.mediaType = VIDEO
                 vc.recording = content
                 vc.recordingDelegate = self
                 Common.mainNavigationController?.pushViewController(vc, animated: true)

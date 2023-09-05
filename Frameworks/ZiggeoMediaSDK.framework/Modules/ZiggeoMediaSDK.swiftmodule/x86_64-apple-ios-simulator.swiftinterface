@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZiggeoMediaSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
 import Accelerate
 import AssetsLibrary
@@ -16,6 +17,7 @@ import Swift
 import UIKit
 @_exported import ZiggeoMediaSDK
 import _Concurrency
+import _StringProcessing
 import os
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor(unsafe) public class AudioVisualizationView : ZiggeoMediaSDK.BaseNibView {
   @objc public enum AudioVisualizationMode : Swift.Int {
@@ -27,40 +29,40 @@ import os
       get
     }
   }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarWidth: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarWidth: CoreFoundation.CGFloat {
     @objc get
-    @objc set(value)
+    @objc set
   }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarInterItem: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarInterItem: CoreFoundation.CGFloat {
     @objc get
-    @objc set(value)
+    @objc set
   }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarCornerRadius: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarCornerRadius: CoreFoundation.CGFloat {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var meteringLevelBarSingleStick: Swift.Bool {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc @_Concurrency.MainActor(unsafe) public var audioVisualizationMode: ZiggeoMediaSDK.AudioVisualizationView.AudioVisualizationMode
   @_Concurrency.MainActor(unsafe) public var audioVisualizationTimeInterval: Swift.Double
   @_Concurrency.MainActor(unsafe) public var currentGradientPercentage: Swift.Float?
   @objc @_Concurrency.MainActor(unsafe) public var meteringLevels: [Swift.Float]? {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var gradientStartColor: UIKit.UIColor {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var gradientEndColor: UIKit.UIColor {
     @objc get
-    @objc set(value)
+    @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @objc @_Concurrency.MainActor(unsafe) public func reset()
   @objc @_Concurrency.MainActor(unsafe) public func add(meteringLevel: Swift.Float)
   @objc @_Concurrency.MainActor(unsafe) public func scaleSoundDataToFitScreen() -> [Swift.Float]
@@ -83,7 +85,7 @@ import os
 @objc @_inheritsConvenienceInitializers public class TPGAudioPlayer : ObjectiveC.NSObject {
   @objc public var isPlaying: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc public var durationInSeconds: Swift.Double {
     @objc get
@@ -106,7 +108,7 @@ import os
   @objc deinit
 }
 @objc(BSImagePickerController) @objcMembers @_Concurrency.MainActor(unsafe) open class ImagePickerController : UIKit.UINavigationController {
-  @_Concurrency.MainActor(unsafe) weak public var imagePickerDelegate: ZiggeoMediaSDK.ImagePickerControllerDelegate?
+  @_Concurrency.MainActor(unsafe) weak public var imagePickerDelegate: (any ZiggeoMediaSDK.ImagePickerControllerDelegate)?
   @objc @_Concurrency.MainActor(unsafe) public var settings: ZiggeoMediaSDK.Settings
   @objc @_Concurrency.MainActor(unsafe) public var doneButton: UIKit.UIBarButtonItem
   @objc @_Concurrency.MainActor(unsafe) public var cancelButton: UIKit.UIBarButtonItem
@@ -140,7 +142,7 @@ import os
   @objc public var audioDidFinish: (() -> ())?
   @objc override dynamic public init()
   @objc public func askAudioRecordingPermission(completion: ((Swift.Bool) -> Swift.Void)? = nil)
-  @objc public func startRecording(completion: @escaping (Foundation.URL?, [Swift.Float]?, Swift.Error?) -> Swift.Void)
+  @objc public func startRecording(completion: @escaping (Foundation.URL?, [Swift.Float]?, (any Swift.Error)?) -> Swift.Void)
   @objc public func stopRecording() throws
   @objc public func pauseRecording() throws
   @objc public func resumeRecording() throws
@@ -151,7 +153,7 @@ import os
   @objc deinit
 }
 @objc extension UIKit.UIViewController {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func presentImagePicker(max: Swift.Int, mediaTypes: [Swift.String], maxDuration: Swift.Float = 0.0, animated: Swift.Bool = true, select: ((_ asset: Photos.PHAsset) -> Swift.Void)?, deselect: ((_ asset: Photos.PHAsset) -> Swift.Void)?, cancel: (([Photos.PHAsset]) -> Swift.Void)?, finish: (([Photos.PHAsset]) -> Swift.Void)?, completion: (() -> Swift.Void)? = nil)
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func presentImagePicker(max: Swift.Int, mediaTypes: [Swift.String], maxDuration: Swift.Float = 0.0, minDuration: Swift.Float = 0.0, animated: Swift.Bool = true, select: ((_ asset: Photos.PHAsset) -> Swift.Void)?, deselect: ((_ asset: Photos.PHAsset) -> Swift.Void)?, cancel: (([Photos.PHAsset]) -> Swift.Void)?, finish: (([Photos.PHAsset]) -> Swift.Void)?, completion: (() -> Swift.Void)? = nil)
 }
 extension ZiggeoMediaSDK.ImagePickerController {
   @objc @_Concurrency.MainActor(unsafe) public static var currentAuthorization: Photos.PHAuthorizationStatus {
@@ -165,28 +167,36 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
   @objc @_Concurrency.MainActor(unsafe) dynamic public func imagePicker(_ imagePicker: ZiggeoMediaSDK.ImagePickerController, didCancelWithAssets assets: [Photos.PHAsset])
   @objc @_Concurrency.MainActor(unsafe) dynamic public func imagePicker(_ imagePicker: ZiggeoMediaSDK.ImagePickerController, didReachSelectionLimit count: Swift.Int)
 }
+@objc @_Concurrency.MainActor(unsafe) open class ZiggeoVideoEditor : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public init(application: ZiggeoMediaSDK.Ziggeo, videoUrl: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didReceiveMemoryWarning()
+  @_Concurrency.MainActor(unsafe) open func setUrl(_ urlString: Swift.String)
+  @objc deinit
+}
 @_inheritsConvenienceInitializers @objc(BSImagePickerSettings) @objcMembers public class Settings : ObjectiveC.NSObject {
-  @objc public static var shared: ZiggeoMediaSDK.Settings
+  @objc public static let shared: ZiggeoMediaSDK.Settings
   @objc @_inheritsConvenienceInitializers public class Theme : ObjectiveC.NSObject {
     public var backgroundColor: UIKit.UIColor {
       get
-      set(value)
+      set
     }
     public var dropDownBackgroundColor: UIKit.UIColor {
       get
-      set(value)
+      set
     }
     public var selectionFillColor: UIKit.UIColor {
       get
-      set(value)
+      set
     }
     public var selectionStrokeColor: UIKit.UIColor {
       get
-      set(value)
+      set
     }
     public var selectionShadowColor: UIKit.UIColor {
       get
-      set(value)
+      set
     }
     public enum SelectionStyle {
       case checked
@@ -199,19 +209,19 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
     }
     public var selectionStyle: ZiggeoMediaSDK.Settings.Theme.SelectionStyle {
       get
-      set(value)
+      set
     }
     public var previewTitleAttributes: [Foundation.NSAttributedString.Key : Any] {
       get
-      set(value)
+      set
     }
     public var previewSubtitleAttributes: [Foundation.NSAttributedString.Key : Any] {
       get
-      set(value)
+      set
     }
     public var albumTitleAttributes: [Foundation.NSAttributedString.Key : Any] {
       get
-      set(value)
+      set
     }
     @objc override dynamic public init()
     @objc deinit
@@ -219,27 +229,27 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
   @_inheritsConvenienceInitializers @objc(BSImagePickerSelection) @objcMembers public class Selection : ObjectiveC.NSObject {
     @objc public var max: Swift.Int {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc public var min: Swift.Int {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc public var unselectOnReachingMax: Swift.Bool {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc override dynamic public init()
     @objc deinit
   }
   @_inheritsConvenienceInitializers @objc(BSImagePickerList) @objcMembers public class List : ObjectiveC.NSObject {
-    @objc public var spacing: CoreGraphics.CGFloat {
+    @objc public var spacing: CoreFoundation.CGFloat {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc public var cellsPerRow: (_ verticalSize: UIKit.UIUserInterfaceSizeClass, _ horizontalSize: UIKit.UIUserInterfaceSizeClass) -> Swift.Int {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc override dynamic public init()
     @objc deinit
@@ -247,7 +257,7 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
   @objc @_inheritsConvenienceInitializers public class Preview : ObjectiveC.NSObject {
     public var enabled: Swift.Bool {
       get
-      set(value)
+      set
     }
     @objc override dynamic public init()
     @objc deinit
@@ -256,11 +266,11 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
     @_inheritsConvenienceInitializers @objc(BSImagePickerAlbum) @objcMembers public class Album : ObjectiveC.NSObject {
       @objc public var options: Photos.PHFetchOptions {
         @objc get
-        @objc set(value)
+        @objc set
       }
       @objc public var fetchResults: [Photos.PHFetchResult<Photos.PHAssetCollection>] {
         @objc get
-        @objc set(value)
+        @objc set
       }
       @objc override dynamic public init()
       @objc deinit
@@ -277,15 +287,19 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
       }
       public var supportedMediaTypes: Swift.Set<ZiggeoMediaSDK.Settings.Fetch.Assets.MediaTypes> {
         get
-        set(value)
+        set
       }
       @objc public var maxDuration: Swift.Float {
         @objc get
-        @objc set(value)
+        @objc set
+      }
+      @objc public var minDuration: Swift.Float {
+        @objc get
+        @objc set
       }
       @objc public var options: Photos.PHFetchOptions {
         @objc get
-        @objc set(value)
+        @objc set
       }
       @objc override dynamic public init()
       @objc deinit
@@ -293,30 +307,30 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
     @objc @_inheritsConvenienceInitializers public class Preview : ObjectiveC.NSObject {
       public var photoOptions: Photos.PHImageRequestOptions {
         get
-        set(value)
+        set
       }
       public var livePhotoOptions: Photos.PHLivePhotoRequestOptions {
         get
-        set(value)
+        set
       }
       public var videoOptions: Photos.PHVideoRequestOptions {
         get
-        set(value)
+        set
       }
       @objc override dynamic public init()
       @objc deinit
     }
     @objc public var album: ZiggeoMediaSDK.Settings.Fetch.Album {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc public var assets: ZiggeoMediaSDK.Settings.Fetch.Assets {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc public var preview: ZiggeoMediaSDK.Settings.Fetch.Preview {
       @objc get
-      @objc set(value)
+      @objc set
     }
     @objc override dynamic public init()
     @objc deinit
@@ -324,48 +338,40 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
   @objc @_inheritsConvenienceInitializers public class Dismiss : ObjectiveC.NSObject {
     public var enabled: Swift.Bool {
       get
-      set(value)
+      set
     }
     public var allowSwipe: Swift.Bool {
       get
-      set(value)
+      set
     }
     @objc override dynamic public init()
     @objc deinit
   }
   @objc public var theme: ZiggeoMediaSDK.Settings.Theme {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc public var selection: ZiggeoMediaSDK.Settings.Selection {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc public var list: ZiggeoMediaSDK.Settings.List {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc public var fetch: ZiggeoMediaSDK.Settings.Fetch {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc public var dismiss: ZiggeoMediaSDK.Settings.Dismiss {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc public var preview: ZiggeoMediaSDK.Settings.Preview {
     @objc get
-    @objc set(value)
+    @objc set
   }
   @objc override dynamic public init()
-  @objc deinit
-}
-@objc @_Concurrency.MainActor(unsafe) open class ZiggeoVideoEditor : UIKit.UIViewController {
-  @objc @_Concurrency.MainActor(unsafe) public init(application: ZiggeoMediaSDK.Ziggeo, videoUrl: Swift.String)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didReceiveMemoryWarning()
-  @_Concurrency.MainActor(unsafe) open func setUrl(_ urlString: Swift.String)
   @objc deinit
 }
 extension ZiggeoMediaSDK.ImagePickerController : UIKit.UIAdaptivePresentationControllerDelegate {
@@ -385,57 +391,57 @@ extension ZiggeoMediaSDK.ImagePickerController : UIKit.UIAdaptivePresentationCon
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class BaseNibView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @IBDesignable @_Concurrency.MainActor(unsafe) public class ImageView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var isUserInteractionEnabled: Swift.Bool {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(value)
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var tintColor: UIKit.UIColor! {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(value)
+    @objc get
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public var contentMode: UIKit.UIView.ContentMode {
-    @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set(value)
+    @objc get
+    @objc set
   }
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @objc deinit
 }
 extension ZiggeoMediaSDK.ImageView {
-  @_Concurrency.MainActor(unsafe) public convenience init(image: UIKit.UIImage?)
-  @_Concurrency.MainActor(unsafe) public convenience init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) convenience public init(image: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) convenience public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var image: UIKit.UIImage? {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var highlightedImage: UIKit.UIImage? {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var isHighlighted: Swift.Bool {
     @objc get
-    @objc set(newValue)
+    @objc set
   }
   @_Concurrency.MainActor(unsafe) open var animationImages: [UIKit.UIImage]? {
     get
-    set(newValue)
+    set
   }
   @_Concurrency.MainActor(unsafe) open var highlightedAnimationImages: [UIKit.UIImage]? {
     get
-    set(newValue)
+    set
   }
   @_Concurrency.MainActor(unsafe) open var animationDuration: Foundation.TimeInterval {
     get
-    set(newValue)
+    set
   }
   @_Concurrency.MainActor(unsafe) open var animationRepeatCount: Swift.Int {
     get
-    set(newValue)
+    set
   }
   @_Concurrency.MainActor(unsafe) open func startAnimating()
   @_Concurrency.MainActor(unsafe) open func stopAnimating()
@@ -454,10 +460,10 @@ extension ZiggeoMediaSDK.ImageView {
   @objc deinit
 }
 extension Foundation.NSNotification.Name {
-  public static var mediaLoadProgress: Foundation.Notification.Name
-  public static var playerStalled: Foundation.Notification.Name
-  public static var playerDidReachEnd: Foundation.Notification.Name
-  public static var playerTimeDidChange: Foundation.Notification.Name
+  public static let mediaLoadProgress: Foundation.Notification.Name
+  public static let playerStalled: Foundation.Notification.Name
+  public static let playerDidReachEnd: Foundation.Notification.Name
+  public static let playerTimeDidChange: Foundation.Notification.Name
 }
 public protocol ImagePickerControllerDelegate : AnyObject {
   func imagePicker(_ imagePicker: ZiggeoMediaSDK.ImagePickerController, didSelectAsset asset: Photos.PHAsset)
@@ -466,3 +472,13 @@ public protocol ImagePickerControllerDelegate : AnyObject {
   func imagePicker(_ imagePicker: ZiggeoMediaSDK.ImagePickerController, didCancelWithAssets assets: [Photos.PHAsset])
   func imagePicker(_ imagePicker: ZiggeoMediaSDK.ImagePickerController, didReachSelectionLimit count: Swift.Int)
 }
+extension ZiggeoMediaSDK.AudioVisualizationView.AudioVisualizationMode : Swift.Equatable {}
+extension ZiggeoMediaSDK.AudioVisualizationView.AudioVisualizationMode : Swift.Hashable {}
+extension ZiggeoMediaSDK.AudioVisualizationView.AudioVisualizationMode : Swift.RawRepresentable {}
+extension ZiggeoMediaSDK.SkipDirection : Swift.Equatable {}
+extension ZiggeoMediaSDK.SkipDirection : Swift.Hashable {}
+extension ZiggeoMediaSDK.SkipDirection : Swift.RawRepresentable {}
+extension ZiggeoMediaSDK.Settings.Theme.SelectionStyle : Swift.Equatable {}
+extension ZiggeoMediaSDK.Settings.Theme.SelectionStyle : Swift.Hashable {}
+extension ZiggeoMediaSDK.Settings.Fetch.Assets.MediaTypes : Swift.Equatable {}
+extension ZiggeoMediaSDK.Settings.Fetch.Assets.MediaTypes : Swift.Hashable {}

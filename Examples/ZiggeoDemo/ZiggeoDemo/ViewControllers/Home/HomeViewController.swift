@@ -73,21 +73,26 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onPicker(_ sender: Any) {
-        var config: [String: Any] = [:]
-        config["tags"] = "iOS_Choose_Media"
+        var extraArgs: [String: Any] = [:]
+        extraArgs["tags"] = "iOS_Choose_Media"
+        let config = UploadingConfig();
+        config.extraArgs = extraArgs
         Common.ziggeo?.setUploadingConfig(config)
 
         var data: [String: Any] = [:]
 //        data[ARG_MEDIA_TYPE] = ["video", "image"]
 //        data[ARG_DURATION] = "20"
-        Common.ziggeo?.upload(fromFileSelector: data)
+    //todo
+//        Common.ziggeo?.upload(fromFileSelector: data)
         
         self.hideMenu()
     }
     
     @IBAction func onCameraImage(_ sender: Any) {
-        var config: [String: Any] = [:]
-        config["tags"] = "iOS_Take_Photo"
+        var extraArgs: [String: Any] = [:]
+        extraArgs["tags"] = "iOS_Take_Photo"
+        let config = UploadingConfig();
+        config.extraArgs = extraArgs
         Common.ziggeo?.setUploadingConfig(config)
 
         Common.ziggeo?.startImageRecorder()
@@ -96,9 +101,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onVocieRecord(_ sender: Any) {
-        var config: [String: Any] = [:]
-        config["tags"] = "iOS_Audio_Record"
-        Common.ziggeo?.setExtraArgsForRecorder(config)
+        var extraArgs: [String: Any] = [:]
+        extraArgs["tags"] = "iOS_Audio_Record"
+        let config = UploadingConfig();
+        config.extraArgs = extraArgs
+//        Common.ziggeo?.setExtraArgsForRecorder(config)
         
         Common.ziggeo?.startAudioRecorder()
         
@@ -122,7 +129,7 @@ class HomeViewController: UIViewController {
             let startDelayString = UserDefaults.standard.string(forKey: Common.Start_Delay_Key)
             if (startDelayString != nil && startDelayString != "") {
                 let startDelay = Int(startDelayString!) ?? 0
-                Common.ziggeo?.setStartDelay(Int32(startDelay))
+                Common.ziggeo?.recorderConfig().startDelay = Int32(startDelay)
             }
 
             var config: [String: Any] = [:]
@@ -130,9 +137,9 @@ class HomeViewController: UIViewController {
             config["data"] = ["source":"app"]
             config["tags"] = "iOS_Video_Record"
             config["expiration_days"] = 1
-            Common.ziggeo?.setExtraArgsForRecorder(config)
-            
-            Common.ziggeo?.setCamera(REAR_CAMERA)
+            //todo
+//            Common.ziggeo?.setExtraArgsForRecorder(config)
+            Common.ziggeo?.recorderConfig().facing = FACING_BACK;
 
             Common.ziggeo?.record()
         }
@@ -141,7 +148,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func onPlayAll(_ sender: Any) {
-        if (Common.currentTab == Media_Type_Video) {
+        if (Common.currentTab == VIDEO) {
             var tokens: [String] = []
             if (Common.recordingVideosController != nil) {
                 for recording in Common.recordingVideosController!.recordings {
@@ -150,12 +157,12 @@ class HomeViewController: UIViewController {
             }
                        
             if (tokens.count > 0) {
-                Common.ziggeo?.playVideo(tokens)
+                Common.ziggeo?.playVideos(tokens)
             } else {
                 Common.showAlertView("Video recordings are empty.")
             }
             
-        } else if (Common.currentTab == Media_Type_Audio) {
+        } else if (Common.currentTab == AUDIO) {
             var tokens: [String] = []
             if (Common.recordingAudiosController != nil) {
                 for recording in Common.recordingAudiosController!.recordings {
@@ -164,7 +171,7 @@ class HomeViewController: UIViewController {
             }
             
             if (tokens.count > 0) {
-                Common.ziggeo?.startAudioPlayer(tokens)
+                Common.ziggeo?.playAudios(tokens)
             } else {
                 Common.showAlertView("Audio recordings are empty.")
             }
@@ -178,7 +185,7 @@ class HomeViewController: UIViewController {
             }
             
             if (tokens.count > 0) {
-                Common.ziggeo?.showImage(tokens)
+                Common.ziggeo?.showImage(fromUris: tokens)
             } else {
                 Common.showAlertView("Image recordings are empty.")
             }
@@ -310,9 +317,7 @@ extension HomeViewController: MenuActionDelegate {
     }
     
     func didSelectPlayVideoFromUrlMenu() {
-        Common.ziggeo?.play(fromUri: ["http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                                      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4",
-                                      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",])
+        Common.ziggeo?.play(fromUri: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
     }
     
     func didSelectPlayLocalVideoMenu() {
@@ -330,7 +335,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: false) {
             let videoUrl = (info[.mediaURL] as! URL).path
-            Common.ziggeo?.play(fromUri: [videoUrl])
+            Common.ziggeo?.play(fromUri: videoUrl)
         }
     }
 }

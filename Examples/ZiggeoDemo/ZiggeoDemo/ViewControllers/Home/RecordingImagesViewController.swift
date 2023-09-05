@@ -41,7 +41,7 @@ class RecordingImagesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        Common.currentTab = Media_Type_Image
+        Common.currentTab = IMAGE
     }
     
     // MARK: - Functions
@@ -59,7 +59,7 @@ class RecordingImagesViewController: UIViewController {
             if (array != nil) {
                 for i in 0..<array!.count {
                     if let item = array![i] as? ContentModel {
-                        if item.stateString != ZIGGEO_STATUS_EMPTY && item.stateString != ZIGGEO_STATUS_DELETED {
+                        if item.stateString != STATUS_EMPTY && item.stateString != STATUS_DELETED {
                             self.recordings.append(item)
                         }
                     }
@@ -91,7 +91,7 @@ extension RecordingImagesViewController: UITableViewDelegate, UITableViewDataSou
         Common.ziggeo?.images().get(self.recordings[indexPath.row].token, data: [:], callback: { content, response, error in
             SVProgressHUD.dismiss()
             if let vc = Common.getStoryboardViewController("RecordingDetailViewController") as? RecordingDetailViewController {
-                vc.mediaType = Media_Type_Image
+                vc.mediaType = IMAGE
                 vc.recording = content
                 vc.recordingDelegate = self
                 Common.mainNavigationController?.pushViewController(vc, animated: true)

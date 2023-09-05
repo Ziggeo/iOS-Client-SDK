@@ -2,13 +2,13 @@
 //  ButtonConfig.h
 //  ZiggeoMediaSDK
 //
-//  Created by dragon on 11/15/18.
-//  Copyright © 2016 Ziggeo Inc. All rights reserved.
+//  Created by Severyn on 07/24/23.
+//  Copyright © 2023 Ziggeo Inc. All rights reserved.
 //
-
 
 @import Foundation;
 @import UIKit;
+
 
 @interface ButtonConfig : NSObject
 
