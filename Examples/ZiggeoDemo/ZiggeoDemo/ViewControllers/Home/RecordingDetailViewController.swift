@@ -167,7 +167,7 @@ class RecordingDetailViewController: UIViewController {
                 Common.ziggeo?.startAudioPlayer(recording!.token!)
                 
             } else {
-                Common.ziggeo?.showImage(fromUris: [recording!.token!])
+                Common.ziggeo?.showImage(recording!.token!)
             }
         }
     }

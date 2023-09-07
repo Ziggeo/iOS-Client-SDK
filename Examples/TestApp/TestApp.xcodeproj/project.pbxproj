@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B12D6722836361DD4A88246 /* libPods-TestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 323687E001BAB17ADC483E7B /* libPods-TestApp.a */; };
+		D8301F4C2A97BC2500A171DA /* CustomUIRecroderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8301F492A97BC2500A171DA /* CustomUIRecroderView.xib */; };
+		D8301F4D2A97BC2500A171DA /* CustomUIRecroderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8301F4B2A97BC2500A171DA /* CustomUIRecroderViewController.m */; };
 		FA8827A11BB486D40025C71D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A01BB486D40025C71D /* main.m */; };
 		FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A31BB486D40025C71D /* AppDelegate.m */; };
 		FA8827A71BB486D40025C71D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8827A61BB486D40025C71D /* ViewController.m */; };
@@ -29,6 +32,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28E29FCDB3A2985445C7B18A /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		323687E001BAB17ADC483E7B /* libPods-TestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8301F492A97BC2500A171DA /* CustomUIRecroderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomUIRecroderView.xib; sourceTree = "<group>"; };
+		D8301F4A2A97BC2500A171DA /* CustomUIRecroderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIRecroderViewController.h; sourceTree = "<group>"; };
+		D8301F4B2A97BC2500A171DA /* CustomUIRecroderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomUIRecroderViewController.m; sourceTree = "<group>"; };
+		DC693F802EADE769E714CDBE /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		FA88279B1BB486D40025C71D /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA88279F1BB486D40025C71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8827A01BB486D40025C71D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B12D6722836361DD4A88246 /* libPods-TestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +65,28 @@
 		8E843F5AC2EACC8863B1A301 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				28E29FCDB3A2985445C7B18A /* Pods-TestApp.debug.xcconfig */,
+				DC693F802EADE769E714CDBE /* Pods-TestApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D8301F482A97BC2500A171DA /* CustomUIRecroder */ = {
+			isa = PBXGroup;
+			children = (
+				D8301F492A97BC2500A171DA /* CustomUIRecroderView.xib */,
+				D8301F4A2A97BC2500A171DA /* CustomUIRecroderViewController.h */,
+				D8301F4B2A97BC2500A171DA /* CustomUIRecroderViewController.m */,
+			);
+			path = CustomUIRecroder;
+			sourceTree = "<group>";
+		};
+		DA7A4400FA7D602042BAA52E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				323687E001BAB17ADC483E7B /* libPods-TestApp.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FA8827921BB486D40025C71D = {
@@ -65,6 +95,7 @@
 				FA88279D1BB486D40025C71D /* TestApp */,
 				FA88279C1BB486D40025C71D /* Products */,
 				8E843F5AC2EACC8863B1A301 /* Pods */,
+				DA7A4400FA7D602042BAA52E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +114,7 @@
 				FA8827A31BB486D40025C71D /* AppDelegate.m */,
 				FA8827A51BB486D40025C71D /* ViewController.h */,
 				FA8827A61BB486D40025C71D /* ViewController.m */,
+				D8301F482A97BC2500A171DA /* CustomUIRecroder */,
 				FA8827A81BB486D40025C71D /* Main.storyboard */,
 				FA8827AB1BB486D40025C71D /* Images.xcassets */,
 				FA8827AD1BB486D40025C71D /* LaunchScreen.xib */,
@@ -107,11 +139,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8827BE1BB486D40025C71D /* Build configuration list for PBXNativeTarget "TestApp" */;
 			buildPhases = (
+				16EE6EA9BA6EC628F7F5111E /* [CP] Check Pods Manifest.lock */,
 				FA8827971BB486D40025C71D /* Sources */,
 				FA8827981BB486D40025C71D /* Frameworks */,
 				FA8827991BB486D40025C71D /* Resources */,
 				FA8827C81BB488230025C71D /* Embed Frameworks */,
 				FA4651951F58114B002E4120 /* ShellScript */,
+				AE12A21473E44222D30C52D3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,7 +167,7 @@
 				TargetAttributes = {
 					FA88279A1BB486D40025C71D = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = MD9AQL359V;
+						DevelopmentTeam = 7C9963Q3QW;
 					};
 				};
 			};
@@ -164,12 +198,55 @@
 				FA8827AA1BB486D40025C71D /* Main.storyboard in Resources */,
 				FA8827AF1BB486D40025C71D /* LaunchScreen.xib in Resources */,
 				FA8827AC1BB486D40025C71D /* Images.xcassets in Resources */,
+				D8301F4C2A97BC2500A171DA /* CustomUIRecroderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16EE6EA9BA6EC628F7F5111E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE12A21473E44222D30C52D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh",
+				"${PODS_ROOT}/GoogleAds-IMA-iOS-SDK/GoogleInteractiveMediaAds.framework",
+				"${PODS_ROOT}/../../../Frameworks/ZiggeoMediaSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleInteractiveMediaAds.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZiggeoMediaSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA4651951F58114B002E4120 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +269,7 @@
 			files = (
 				FA8827A71BB486D40025C71D /* ViewController.m in Sources */,
 				FA8827A41BB486D40025C71D /* AppDelegate.m in Sources */,
+				D8301F4D2A97BC2500A171DA /* CustomUIRecroderViewController.m in Sources */,
 				FA8827A11BB486D40025C71D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,20 +380,21 @@
 		};
 		FA8827BF1BB486D40025C71D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28E29FCDB3A2985445C7B18A /* Pods-TestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MD9AQL359V;
+				DEVELOPMENT_TEAM = 7C9963Q3QW;
 				ENABLE_BITCODE = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products",
-					"$(SRCROOT)/../Output",
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1.41;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -323,26 +402,28 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		FA8827C01BB486D40025C71D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC693F802EADE769E714CDBE /* Pods-TestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MD9AQL359V;
+				DEVELOPMENT_TEAM = 7C9963Q3QW;
 				ENABLE_BITCODE = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Ziggeo-bnnenouuadvymkarcecmbyxnnkby/Build/Products",
-					"$(SRCROOT)/../Output",
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1.41;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -350,6 +431,7 @@
 					"-l\"sqlite3\"",
 					"-l\"z\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
