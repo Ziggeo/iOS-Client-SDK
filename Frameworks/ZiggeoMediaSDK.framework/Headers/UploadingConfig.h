@@ -18,6 +18,7 @@
 @property (nonatomic) bool shouldUseWifiOnly;
 // upload without starting a background service (will start only when the app goes foreground)
 @property (nonatomic) bool shouldStartAsForeground;
+@property (nonatomic) bool shouldDeleteFailedFile;
 @property (nonatomic) int lostConnectionAction;
 @property (nonatomic, strong) NSDictionary *extraArgs;
 
@@ -29,6 +30,8 @@
 - (void)setShouldUseWifiOnly:(bool)shouldUseWifiOnly;
 - (bool)getShouldStartAsForeground;
 - (void)setShouldStartAsForeground:(bool)shouldStartAsForeground;
+- (bool)getShouldDeleteFailedFile;
+- (void)setShouldDeleteFailedFile:(bool)shouldDeleteFailedFile;
 - (int)getLostConnectionAction;
 - (void)setLostConnectionAction:(int)lostConnectionAction;
 - (NSMutableDictionary *)getExtraArgs;
