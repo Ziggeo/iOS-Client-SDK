@@ -349,6 +349,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
 // MARK: - 1. Init
 - (id)init;
 - (id)initWithToken:(NSString *)token;
+- (void)sendLocalNotification:(NSString *)message;
 
 // MARK: - Set Delegate
 - (void)setQRScannerDelegate:(id<ZiggeoQRScannerDelegate>)delegate;
