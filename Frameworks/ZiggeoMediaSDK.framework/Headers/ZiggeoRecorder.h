@@ -14,7 +14,7 @@
 #import "ZiggeoRecordedVideoPreview.h"
 #import "RecorderConfig.h"
 
-@class ZiggeoRecorderInterfaceConfig;
+@class RecorderInterfaceConfig;
 
 
 @interface ZiggeoRecorder : UIViewController
@@ -23,7 +23,7 @@
 
 @property (nonatomic) bool showLightIndicator;
 @property (nonatomic) bool showSoundIndicator;
-@property (nonatomic) ZiggeoRecorderInterfaceConfig *interfaceConfig;
+@property (nonatomic) RecorderInterfaceConfig *interfaceConfig;
 @property (nonatomic) AVLayerVideoGravity videoGravity;
 
 
