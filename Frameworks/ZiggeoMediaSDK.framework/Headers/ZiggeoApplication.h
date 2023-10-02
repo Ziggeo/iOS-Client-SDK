@@ -22,7 +22,6 @@
 @class PlayerConfig;
 @class QrScannerConfig;
 @class FileSelectorConfig;
-@class CacheConfig;
 @class RecorderConfig;
 @class AspectRatio;
 
@@ -331,7 +330,6 @@ static NSString *ARG_DATA = @"ARG_DATA";
     FileSelectorConfig *_fileSelectorConfig;
     UploadingConfig *_uploadingConfig;
     PlayerConfig *_playerConfig;
-    CacheConfig *_cacheConfig;
     QrScannerConfig *_qrScannerConfig;
     RecorderConfig *_recorderConfig;
     
@@ -389,7 +387,6 @@ static NSString *ARG_DATA = @"ARG_DATA";
 - (FileSelectorConfig *)fileSelectorConfig;
 - (UploadingConfig *)uploadingConfig;
 - (PlayerConfig *)playerConfig;
-- (CacheConfig *)cacheConfig;
 - (QrScannerConfig *)qrScannerConfig;
 - (RecorderConfig *)recorderConfig;
 
@@ -397,7 +394,6 @@ static NSString *ARG_DATA = @"ARG_DATA";
 - (void)setFileSelectorConfig:(FileSelectorConfig *)config;
 - (void)setUploadingConfig:(UploadingConfig *)config;
 - (void)setPlayerConfig:(PlayerConfig *)config;
-- (void)setCacheConfig:(CacheConfig *)config;
 - (void)setQrScannerConfig:(QrScannerConfig *)config;
 - (void)setRecorderConfig:(RecorderConfig *)config;
 

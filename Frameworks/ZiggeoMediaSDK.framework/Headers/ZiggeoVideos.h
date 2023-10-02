@@ -56,6 +56,7 @@
                                              data:(NSDictionary*)data
                                          callback:(void (^)(NSDictionary* jsonObject, NSURLResponse* response, NSError* error))callback;
 - (NSURLSessionTask *)destroy:(NSString *)token
+                  streamToken:(NSString*)streamToken
                      callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 - (NSURLSessionTask *)update:(NSString *)token
                         data:(NSDictionary *)data
