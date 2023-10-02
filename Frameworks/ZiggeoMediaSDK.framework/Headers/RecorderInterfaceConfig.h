@@ -15,6 +15,7 @@
 
 @property (nonatomic) ButtonConfig *recordButton;
 @property (nonatomic) ButtonConfig *closeButton;
+@property (nonatomic) ButtonConfig *pauseButton;
 @property (nonatomic) ButtonConfig *cameraFlipButton;
 
 @end

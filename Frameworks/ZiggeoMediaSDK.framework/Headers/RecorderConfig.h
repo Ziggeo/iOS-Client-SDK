@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "CameraRecorderStyle.h"
 #import "VideoSize.h"
+#import "CacheConfig.h"
+#import "StopRecordingConfirmationDialogConfig.h"
 
 @interface RecorderConfig : NSObject
 
@@ -35,6 +37,8 @@
 @property (nonatomic) int videoBitrate;
 @property (nonatomic) int audioBitrate;
 @property (nonatomic) int audioSampleRate;
+@property (nonatomic, strong) CacheConfig *cacheConfig;
+@property (nonatomic, strong) StopRecordingConfirmationDialogConfig *stopRecordingConfirmationDialogConfig;
 @property (nonatomic, strong) NSDictionary *extraArgs;
 
 - (CameraRecorderStyle *)getStyle;
@@ -81,6 +85,10 @@
 - (void)setAudioBitrate:(int)audioBitrate;
 - (int)getAudioSampleRate;
 - (void)setAudioSampleRate:(int)rate;
+- (CacheConfig *)getCacheConfig;
+- (void)setCacheConfig:(CacheConfig *)cacheConfig;
+- (StopRecordingConfirmationDialogConfig *)getStopRecordingConfirmationDialogConfig;
+- (void)setStopRecordingConfirmationDialogConfig:(StopRecordingConfirmationDialogConfig *)stopRecordingConfirmationDialogConfig;
 - (NSMutableDictionary *)getExtraArgs;
 - (void)setExtraArgs:(NSDictionary *)extraArgs;
 - (void)addExtraArgs:(NSDictionary *)extraArgs;

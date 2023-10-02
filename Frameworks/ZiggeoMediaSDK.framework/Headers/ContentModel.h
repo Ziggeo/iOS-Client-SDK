@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *desc;
 @property (strong, nonatomic) NSString *stateString;
 @property (strong, nonatomic) NSString *token;
+@property (strong, nonatomic) NSString *streamToken;
 @property (nonatomic) double date;
 @property (nonatomic) double duration;
 
