@@ -31,23 +31,23 @@
 + (void)createPlayerWithAdditionalParams:(Ziggeo *)ziggeo
                               videoToken:(NSString *)token
                                   params:(NSDictionary*)params
-                                callback:(void (^)(ZiggeoPlayer* player))callback;
+                                callback:(void (^)(ZiggeoPlayer * player))callback;
 
 + (void)createPlayerWithAdditionalParams:(Ziggeo *)ziggeo
                               videoToken:(NSString *)token
                                 videoUrl:(NSString *)url
                                   params:(NSDictionary*)params
-                                callback:(void (^)(ZiggeoPlayer* player))callback;
+                                callback:(void (^)(ZiggeoPlayer * player))callback;
 
 + (void)createPlayersWithAdditionalParams:(Ziggeo *)ziggeo
                               videoTokens:(NSArray *)tokens
                                    params:(NSDictionary*)params
-                                 callback:(void (^)(ZiggeoPlayer* player))callback;
+                                 callback:(void (^)(ZiggeoPlayer * player))callback;
 
 + (void)createPlayersWithAdditionalParams:(Ziggeo *)ziggeo
                                 videoUrls:(NSArray *)urls
                                    params:(NSDictionary*)params
-                                 callback:(void (^)(ZiggeoPlayer* player))callback;
+                                 callback:(void (^)(ZiggeoPlayer * player))callback;
 
 + (void)createPlayerWithServerAuthToken:(Ziggeo *)ziggeo
                              videoToken:(NSString *)token

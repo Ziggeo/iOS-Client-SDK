@@ -37,3 +37,4 @@ FOUNDATION_EXPORT const unsigned char ZiggeoMediaSDKVersionString[];
 #import <ZiggeoMediaSDK/RecorderConfig.h>
 #import <ZiggeoMediaSDK/RecordingInfo.h>
 #import <ZiggeoMediaSDK/CacheConfig.h>
+#import <ZiggeoMediaSDK/StopRecordingConfirmationDialogConfig.h>

@@ -55,7 +55,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 - (IBAction)onRecordVideo:(id)sender {
     currentType = VIDEO;
     
-    RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
+    RecorderConfig *recorderConfig = [RecorderConfig new];
     [recorderConfig setShouldAutoStartRecording:true];
     [recorderConfig setStartDelay:DEFAULT_START_DELAY];
     [recorderConfig setShouldDisableCameraSwitch:false];
@@ -63,6 +63,15 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     [recorderConfig setFacing:FACING_BACK];
     [recorderConfig setMaxDuration:0];
     [recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
+    [recorderConfig setShouldConfirmStopRecording:true];
+    
+    StopRecordingConfirmationDialogConfig *stopRecordingConfirmationDialogConfig = [StopRecordingConfirmationDialogConfig new];
+    [stopRecordingConfirmationDialogConfig setTitleText:@"Ziggeo"];
+    [stopRecordingConfirmationDialogConfig setMesText:@"Do you want to stop recording?"];
+    [stopRecordingConfirmationDialogConfig setPosBtnText:@"Yes"];
+    [stopRecordingConfirmationDialogConfig setNegBtnText:@"No"];
+    [recorderConfig setStopRecordingConfirmationDialogConfig:stopRecordingConfirmationDialogConfig];
+    
     [recorderConfig setExtraArgs:@{@"tags": @"iOS,Video,Record",
                                    @"client_auth" : @"CLIENT_AUTH_TOKEN",
                                    @"server_auth" : @"SERVER_AUTH_TOKEN",
@@ -74,7 +83,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onPlayVideoWithToken:(id)sender {
-    PlayerConfig *playerConfig = [[PlayerConfig alloc] init];
+    PlayerConfig *playerConfig = [PlayerConfig new];
     [playerConfig setAdsUri:@"https://pubads.g.doubleclick.net/gampad/ads?"
      @"iu=/21775744923/external/single_ad_samples&sz=640x480&cust_params=sample_ct%3Dlinear&"
      @"ciu_szs=300x250%2C728x90&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&"
@@ -87,7 +96,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 - (IBAction)onChooseMedia:(id)sender {
     currentType = 0;
     
-    FileSelectorConfig *fileSelectorConfig = [[FileSelectorConfig alloc] init];
+    FileSelectorConfig *fileSelectorConfig = [FileSelectorConfig new];
     [fileSelectorConfig setMaxDuration:0];
     [fileSelectorConfig setMinDuration:0];
     [fileSelectorConfig setShouldAllowMultipleSelection:true];
@@ -101,7 +110,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 - (IBAction)onRecordAudio:(id)sender {
     currentType = AUDIO;
     
-    RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
+    RecorderConfig *recorderConfig = [RecorderConfig new];
     [recorderConfig setIsPausedMode:true];
     [recorderConfig setExtraArgs:@{@"tags": @"iOS,Audio,Record"}];
     [m_ziggeo setRecorderConfig:recorderConfig];
@@ -116,7 +125,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 - (IBAction)onTakePhoto:(id)sender {
     currentType = IMAGE;
     
-    UploadingConfig *uploadingConfig = [[UploadingConfig alloc] init];
+    UploadingConfig *uploadingConfig = [UploadingConfig new];
     [uploadingConfig setExtraArgs:@{@"tags": @"iOS,Take,Photo"}];
     [m_ziggeo setUploadingConfig:uploadingConfig];
     
@@ -128,7 +137,7 @@ NSString *Last_Image_Token = @"Last_Image_Token";
 }
 
 - (IBAction)onCustomUIRecorder:(id)sender {
-    RecorderConfig *recorderConfig = [[RecorderConfig alloc] init];
+    RecorderConfig *recorderConfig = [RecorderConfig new];
     [recorderConfig setShouldAutoStartRecording:false];
     [recorderConfig setVideoQuality:QUALITY_HIGH];
     [recorderConfig setFacing:FACING_BACK];

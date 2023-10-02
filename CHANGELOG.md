@@ -1,5 +1,10 @@
 # Changelog
 
+Version 1.1.44 *(2023-09-28)*
+-----------------------------
+* The update adds stop recording confirmation dialog config.
+* The update adds pause button on recording video/audio screen.
+
 Version 1.1.42 *(2023-09-21)*
 -----------------------------
 * The update adds ability to remove the video from uploading when connection is lost.
@@ -7,7 +12,7 @@ Version 1.1.42 *(2023-09-21)*
 * The update adds callback for the network connection status.
 * The update adds custom recorder view.
 
-Version 1.1.41 *(2023-08-14)*
+Version 1.1.41 *(2023-08-24)*
 -----------------------------
 * The update changes `playVideo`, `showImage` and `playAudio` functions to use only a item.
 * The update adds `playVideos`, `showImages` and `playAudios` functions to support multiple items.

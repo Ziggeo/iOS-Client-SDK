@@ -81,7 +81,7 @@ class RecordingDetailViewController: UIViewController {
         refreshButtons()
     }
     
-    @IBAction func onDelete(_ sender: Any) {
+    @IBAction func onDelete(_ sender: Any) {        
         let alert = UIAlertController(title: "", message: "Are you sure you want to delete this recording?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: { (action) in
         }))
@@ -89,7 +89,7 @@ class RecordingDetailViewController: UIViewController {
             if (self.recording != nil) {
                 SVProgressHUD.show()
                 if (self.mediaType == VIDEO) {
-                    Common.ziggeo?.videos().destroy(self.recording!.token, callback: { jsonObject, response, error in
+                    Common.ziggeo?.videos().destroy(self.recording!.token, streamToken: self.recording!.streamToken, callback: { jsonObject, response, error in
                         SVProgressHUD.dismiss()
                         self.isEditMode = false
                         self.recordingDelegate?.recordingDeleted(self.recording!.token)
