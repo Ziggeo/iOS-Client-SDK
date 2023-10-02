@@ -12,8 +12,8 @@
 
 @interface ZiggeoConnect : NSObject
 
-@property (nonatomic) NSString * serverAuthToken;
-@property (nonatomic) NSString * clientAuthToken;
+@property (nonatomic) NSString *serverAuthToken;
+@property (nonatomic) NSString *clientAuthToken;
 
 - (id)initWithZiggeoApplication:(Ziggeo *)ziggeo;
 - (NSURLSessionTask *)requestWithMethod:(NSString *)method
@@ -77,7 +77,7 @@
                                callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 - (NSURLSessionTask *)addSessionData:(NSDictionary*)data
                                path:(NSString *)path
-                           callback:(NSURLSessionTask* (^)(NSDictionary* dataWithSessionData))callback;
+                           callback:(NSURLSessionTask *(^)(NSDictionary *dataWithSessionData))callback;
 - (void)appWakeupSignalTaskComplete:(NSString *)sessionID;
 
 @end

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name             = 'ZiggeoMediaSDK'
-  spec.version          = '1.1.41-blurring'
+  spec.version          = '1.1.44-blurring'
   spec.summary          = 'Ziggeo iOS Client SDK'
   spec.description      = 'Ziggeo iOS recording and playback SDK'
 
