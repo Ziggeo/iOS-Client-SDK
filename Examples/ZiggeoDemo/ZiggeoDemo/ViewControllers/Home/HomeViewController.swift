@@ -132,10 +132,11 @@ class HomeViewController: UIViewController {
             recorderConfig.videoQuality = QUALITY_HIGH
             recorderConfig.facing = FACING_BACK
             recorderConfig.maxDuration = 0
-            recorderConfig.shouldSendImmediately = true
+            recorderConfig.shouldSendImmediately = false
             recorderConfig.isLiveStreaming = false
             recorderConfig.shouldEnableCoverShot = true
-            recorderConfig.blurMode = true
+            recorderConfig.isPausedMode = false
+            recorderConfig.blurMode = UserDefaults.standard.bool(forKey: Common.Blur_Mode_Key);
             recorderConfig.extraArgs = ["tags": "iOS,Video,Record",
                                         "client_auth" : "CLIENT_AUTH_TOKEN",
                                         "server_auth" : "SERVER_AUTH_TOKEN",
