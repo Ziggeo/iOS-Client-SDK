@@ -62,6 +62,8 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     [recorderConfig setVideoQuality:QUALITY_HIGH];
     [recorderConfig setFacing:FACING_BACK];
     [recorderConfig setMaxDuration:0];
+    [recorderConfig setShouldSendImmediately:false];
+    [recorderConfig setIsPausedMode:true];
     [recorderConfig.resolution setAspectRatio:DEFAULT_ASPECT_RATIO];
     [recorderConfig setShouldConfirmStopRecording:true];
     

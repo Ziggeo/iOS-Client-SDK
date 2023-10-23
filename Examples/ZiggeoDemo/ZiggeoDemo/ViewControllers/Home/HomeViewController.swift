@@ -132,9 +132,6 @@ class HomeViewController: UIViewController {
             recorderConfig.videoQuality = QUALITY_HIGH
             recorderConfig.facing = FACING_BACK
             recorderConfig.maxDuration = 0
-            recorderConfig.shouldSendImmediately = true
-            recorderConfig.isLiveStreaming = false
-            recorderConfig.shouldEnableCoverShot = true
             recorderConfig.extraArgs = ["tags": "iOS,Video,Record",
                                         "client_auth" : "CLIENT_AUTH_TOKEN",
                                         "server_auth" : "SERVER_AUTH_TOKEN",

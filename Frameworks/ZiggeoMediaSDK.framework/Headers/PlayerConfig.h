@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "PlayerStyle.h"
 
 @interface PlayerConfig : NSObject
 
+@property (nonatomic, strong) PlayerStyle *style;
 @property (nonatomic) bool shouldShowSubtitles;
 @property (nonatomic) bool shouldPreload;
 @property (nonatomic) bool isMuted;
@@ -19,6 +20,8 @@
 @property (nonatomic, strong) NSString *adsUri;
 @property (nonatomic, strong) NSDictionary *extraArgs;
 
+- (PlayerStyle *)getStyle;
+- (void)setStyle:(PlayerStyle *)style;
 - (bool)getShouldShowSubtitles;
 - (void)setShouldShowSubtitles:(bool)shouldShowSubtitles;
 - (bool)getShouldPreload;
