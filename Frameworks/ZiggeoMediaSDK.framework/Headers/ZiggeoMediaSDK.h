@@ -30,6 +30,7 @@ FOUNDATION_EXPORT const unsigned char ZiggeoMediaSDKVersionString[];
 #import <ZiggeoMediaSDK/ButtonConfig.h>
 #import <ZiggeoMediaSDK/FileSelectorConfig.h>
 #import <ZiggeoMediaSDK/UploadingConfig.h>
+#import <ZiggeoMediaSDK/PlayerStyle.h>
 #import <ZiggeoMediaSDK/PlayerConfig.h>
 #import <ZiggeoMediaSDK/QrScannerConfig.h>
 #import <ZiggeoMediaSDK/CameraRecorderStyle.h>
