@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "ZiggeoApplication.h"
 #import "ContentModel.h"
+#import "Audio.h"
 @import UIKit;
 
 
@@ -18,6 +19,8 @@
 - (id)initWithZiggeoApplication:(Ziggeo *)ziggeo;
 - (NSURLSessionTask *)index:(NSDictionary *)data
                    callback:(void (^)(NSArray *jsonArray, NSError *error))callback;
+- (NSURLSessionTask *)index:(NSDictionary *)data
+             stringCallback:(void (^)(NSString *string, NSURLResponse *response, NSError *error))callback;
 - (NSURLSessionTask *)create:(NSString *)file_path
                         data:(NSDictionary *)data
                     callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
@@ -25,7 +28,7 @@
              confirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
 - (NSURLSessionTask *)get:(NSString *)token
                      data:(NSDictionary *)data
-                 callback:(void (^)(ContentModel *content, NSURLResponse *response, NSError *error))callback;
+                 callback:(void (^)(Audio *content, NSURLResponse *response, NSError *error))callback;
 - (void)download:(NSString *)token
         callback:(void (^)(NSString *filePath))callback;
 - (NSString *)getAudioUrl:(NSString *)token;
@@ -33,9 +36,8 @@
                      callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback;
 - (NSURLSessionTask *)update:(NSString *)token
                         data:(NSDictionary *)data
-                    callback:(void (^)(ContentModel *content, NSURLResponse *response,  NSError *error))callback;
-- (NSURLSessionTask *)update:(NSString *)token
-                 modelInJson:(NSString *)modelInJson
-                    callback:(void (^)(ContentModel *content, NSURLResponse *response, NSError *error))callback;
+                    callback:(void (^)(Audio *content, NSURLResponse *response,  NSError *error))callback;
+- (NSURLSessionTask *)update:(Audio *)model
+                    callback:(void (^)(Audio *content, NSURLResponse *response, NSError *error))callback;
 
 @end

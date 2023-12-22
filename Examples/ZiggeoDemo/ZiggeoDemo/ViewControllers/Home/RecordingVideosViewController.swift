@@ -52,7 +52,7 @@ class RecordingVideosViewController: UIViewController {
     
     func getRecordings() {
         SVProgressHUD.show()
-        Common.ziggeo?.videos().index([:], callback: { array, error in
+        Common.ziggeo?.videos().index([:], callback: { array, error in            
             SVProgressHUD.dismiss()
             self.refreshControl.endRefreshing()
             
