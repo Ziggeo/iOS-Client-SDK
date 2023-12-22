@@ -16,6 +16,6 @@ class RecordingTableViewCell: UITableViewCell {
         
         tokenLabel.text = content.token
         stateLabel.text = content.stateString
-        dateLabel.text = content.date.toDate
+        dateLabel.text = Double(content.date).toDate
     }
 }

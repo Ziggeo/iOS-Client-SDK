@@ -37,28 +37,7 @@
       uploadedParts:(int)uploadedParts
            uploadId:(NSString *)uploadId
         streamToken:(NSString *)streamToken;
-- (NSString *)getToken;
-- (void)setToken:(NSString *)token;
-- (int)getFileType;
-- (void)setFileType:(int)fileType;
-- (Boolean)getUploaded;
-- (void)setUploaded:(Boolean)uploaded;
-- (Boolean)getVerified;
-- (void)setVerified:(Boolean)verified;
-- (Boolean)getProcessed;
-- (void)setProcessed:(Boolean)processed;
-- (Boolean)getFailed;
-- (void)setFailed:(Boolean)failed;
-- (NSMutableDictionary *)getExtraArgs;
-- (void)setExtraArgs:(NSDictionary *)extraArgs;
+
 - (void)addExtraArgs:(NSDictionary *)extraArgs;
-- (NSMutableArray *)getUrisForUploading;
-- (void)setUrisForUploading:(NSMutableArray *)urisForUploading;
-- (int)getUploadedParts;
-- (void)setUploadedParts:(int)uploadedParts;
-- (NSString *)getUploadId;
-- (void)setUploadId:(NSString *)uploadId;
-- (NSString *)getStreamToken;
-- (void)setStreamToken:(NSString *)streamToken;
 
 @end
