@@ -1,5 +1,11 @@
 # Changelog
 
+Version 1.1.47-blurring *(2024-01-22)*
+-----------------------------
+* The update changes cache functions.
+* The update changes demo project.
+
+
 Version 1.1.46-blurring *(2023-12-22)*
 -----------------------------
 * The update changes some models.

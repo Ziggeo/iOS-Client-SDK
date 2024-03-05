@@ -22,6 +22,7 @@
 @class PlayerConfig;
 @class QrScannerConfig;
 @class FileSelectorConfig;
+@class CacheConfig;
 @class RecorderConfig;
 @class AspectRatio;
 
@@ -331,6 +332,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
     UploadingConfig *_uploadingConfig;
     PlayerConfig *_playerConfig;
     QrScannerConfig *_qrScannerConfig;
+    CacheConfig *_cacheConfig;
     RecorderConfig *_recorderConfig;
     
     id<ZiggeoQRScannerDelegate> qrScannerDelegate;
@@ -388,6 +390,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
 - (UploadingConfig *)uploadingConfig;
 - (PlayerConfig *)playerConfig;
 - (QrScannerConfig *)qrScannerConfig;
+- (CacheConfig *)cacheConfig;
 - (RecorderConfig *)recorderConfig;
 
 // MARK: - Set Config Variables
@@ -395,6 +398,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
 - (void)setUploadingConfig:(UploadingConfig *)config;
 - (void)setPlayerConfig:(PlayerConfig *)config;
 - (void)setQrScannerConfig:(QrScannerConfig *)config;
+- (void)setCacheConfig:(CacheConfig *)config;
 - (void)setRecorderConfig:(RecorderConfig *)config;
 
 // MARK: - ContactUs
