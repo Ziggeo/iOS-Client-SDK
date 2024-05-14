@@ -10,27 +10,25 @@ import ZiggeoMediaSDK
 import SVProgressHUD
 import AVFoundation
 
-class RecordingVideosViewController: UIViewController {
+final class RecordingVideosViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var recordingsTableView: UITableView!
+    @IBOutlet private weak var recordingsTableView: UITableView!
     
     // MARK: - Private variables
     var recordings: [ContentModel] = []
     private let refreshControl = UIRefreshControl()
-    private let reuseIdentifier = "RecordingTableViewCell"
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         Common.recordingVideosController = self
         
         recordingsTableView.delegate = self
         recordingsTableView.dataSource = self
         recordingsTableView.estimatedRowHeight = 120
         recordingsTableView.rowHeight = UITableView.automaticDimension
-        recordingsTableView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellReuseIdentifier: reuseIdentifier)
+        recordingsTableView.register(cell: RecordingTableViewCell.self)
         
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
@@ -45,53 +43,52 @@ class RecordingVideosViewController: UIViewController {
         Common.currentTab = VIDEO
     }
     
-    // MARK: - Functions
-    @objc func refresh(_ sender: AnyObject) {
-       getRecordings()
-    }
-    
     func getRecordings() {
         SVProgressHUD.show()
-        Common.ziggeo?.videos().index([:], callback: { array, error in            
+        Common.ziggeo?.videos().index([:]) { array, _ in
             SVProgressHUD.dismiss()
             self.refreshControl.endRefreshing()
             
             self.recordings.removeAll()
-            if (array != nil) {
-                for i in 0..<array!.count {
-                    if let item = array![i] as? ContentModel {
-                        if item.stateString != STATUS_EMPTY && item.stateString != STATUS_DELETED {
-                            self.recordings.append(item)
-                        }
+            if let array = array?.compactMap({ $0 as? ContentModel }) {
+                for item in array {
+                    if item.stateString != STATUS_EMPTY && item.stateString != STATUS_DELETED {
+                        self.recordings.append(item)
                     }
                 }
             }
             self.recordingsTableView.reloadData()
-        })
+        }
+    }
+}
+
+// MARK: - Privates
+private extension RecordingVideosViewController {
+    @objc func refresh(_ sender: AnyObject) {
+       getRecordings()
     }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension RecordingVideosViewController: UITableViewDelegate, UITableViewDataSource {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recordings.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let recording = recordings[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! RecordingTableViewCell
-        cell.setData(icon: "ic_tab_video", content: recording)
+        let cell: RecordingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setData(icon: .videoTabIcon, content: recording)
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
         SVProgressHUD.show()
-        Common.ziggeo?.videos().get(self.recordings[indexPath.row].token, data: [:], callback: { content, response, error in
+        Common.ziggeo?.videos().get(recordings[indexPath.row].token, data: [:], callback: { content, _, _ in
             SVProgressHUD.dismiss()
-            if let vc = Common.getStoryboardViewController("RecordingDetailViewController") as? RecordingDetailViewController {
+            if let vc = Common.getStoryboardViewController(type: RecordingDetailViewController.self) {
                 vc.mediaType = VIDEO
                 vc.recording = content
                 vc.recordingDelegate = self
@@ -104,9 +101,7 @@ extension RecordingVideosViewController: UITableViewDelegate, UITableViewDataSou
 // MARK: - RecordingDelegate
 extension RecordingVideosViewController: RecordingDelegate {
     func recordingDeleted(_ token: String) {
-        self.recordings = self.recordings.filter({ recording in
-            return recording.token != token
-        })
-        self.recordingsTableView.reloadData()
+        recordings = recordings.filter { $0.token != token }
+        recordingsTableView.reloadData()
     }
 }
