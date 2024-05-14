@@ -16,11 +16,6 @@
     self.stopAndUploadButton.enabled = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)closeButtonPressed:(id)sender {
     if (self.m_recorder) [self.m_recorder dismissViewControllerAnimated:YES completion:nil];
     self.m_recorder = nil;
