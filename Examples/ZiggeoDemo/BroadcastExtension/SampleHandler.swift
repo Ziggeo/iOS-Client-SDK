@@ -8,8 +8,7 @@
 import ReplayKit
 import ZiggeoMediaSDK
 
-class SampleHandler: ZiggeoScreenRecorderSampleHandler {
-
+final class SampleHandler: ZiggeoScreenRecorderSampleHandler {
     override func getApplicationGroup() -> String! {
         return "group.com.ziggeo.demo"
     }

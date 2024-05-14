@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		640FCF3E798D07F36B033876 /* Pods_BroadcastExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE734401DF54652FE2A62DAD /* Pods_BroadcastExtension.framework */; };
-		A274CF491AD91E37ED1199C7 /* Pods_ZiggeoDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DADD182B3CCE50FCF4F7B798 /* Pods_ZiggeoDemo.framework */; };
+		56E577C9D4D6C7B65C89A68D /* Pods_BroadcastExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430EA3C15F94FCFA73FD021B /* Pods_BroadcastExtension.framework */; };
 		D8B31D3C28815FE300C03825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D3B28815FE300C03825 /* AppDelegate.swift */; };
 		D8B31D4328815FE300C03825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D4128815FE300C03825 /* Main.storyboard */; };
 		D8B31D4528815FE600C03825 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D4428815FE600C03825 /* Assets.xcassets */; };
@@ -20,10 +19,10 @@
 		D8B31D822881613C00C03825 /* LogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D542881613B00C03825 /* LogTableViewCell.xib */; };
 		D8B31D832881613C00C03825 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D552881613B00C03825 /* RecordingTableViewCell.swift */; };
 		D8B31D842881613C00C03825 /* RecordingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D562881613B00C03825 /* RecordingTableViewCell.xib */; };
-		D8B31D852881613C00C03825 /* Double+Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D582881613B00C03825 /* Double+Expansion.swift */; };
-		D8B31D862881613C00C03825 /* String+Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D592881613B00C03825 /* String+Expansion.swift */; };
-		D8B31D872881613C00C03825 /* UIImageView+Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D5A2881613B00C03825 /* UIImageView+Expansion.swift */; };
-		D8B31D882881613C00C03825 /* UIView+Expansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D5B2881613B00C03825 /* UIView+Expansion.swift */; };
+		D8B31D852881613C00C03825 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D582881613B00C03825 /* Double.swift */; };
+		D8B31D862881613C00C03825 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D592881613B00C03825 /* String.swift */; };
+		D8B31D872881613C00C03825 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D5A2881613B00C03825 /* UIImageView.swift */; };
+		D8B31D882881613C00C03825 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D5B2881613B00C03825 /* UIView.swift */; };
 		D8B31D892881613C00C03825 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D5D2881613B00C03825 /* Common.swift */; };
 		D8B31D8A2881613C00C03825 /* LogoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B31D5F2881613B00C03825 /* LogoData.swift */; };
 		D8B31D9F2881613C00C03825 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = D8B31D7D2881613C00C03825 /* about.html */; };
@@ -47,9 +46,15 @@
 		D8D4810E288FEEE700B5961A /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D480FA288FEEE700B5961A /* SideMenuViewController.swift */; };
 		D8D4810F288FEEE700B5961A /* TopClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D480FB288FEEE700B5961A /* TopClientsViewController.swift */; };
 		D8D48110288FEEE700B5961A /* VideoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D480FC288FEEE700B5961A /* VideoEditorViewController.swift */; };
-		D8DB96C229A66F26003A46F2 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB96C129A66F26003A46F2 /* ReplayKit.framework */; };
-		D8DB96C529A66F26003A46F2 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB96C429A66F26003A46F2 /* SampleHandler.swift */; };
-		D8DB96C929A66F26003A46F2 /* BroadcastExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D8DB96C029A66F26003A46F2 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F265C6A98B840FC482F5B286 /* Pods_ZiggeoDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF13B36C610EC58AFC2339A /* Pods_ZiggeoDemo.framework */; };
+		FD6090142BF293080042637F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090132BF293080042637F /* UserDefaults.swift */; };
+		FD6090162BF294DA0042637F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090152BF294DA0042637F /* DateFormatter.swift */; };
+		FD6090182BF295BA0042637F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090172BF295BA0042637F /* UIImage.swift */; };
+		FD60901A2BF298420042637F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090192BF298420042637F /* UIViewController.swift */; };
+		FD60901C2BF2985D0042637F /* UIWindowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60901B2BF2985D0042637F /* UIWindowScene.swift */; };
+		FD60901E2BF2986E0042637F /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60901D2BF2986E0042637F /* UIWindow.swift */; };
+		FD6090202BF298880042637F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60901F2BF298880042637F /* UITableView.swift */; };
+		FD6090222BF2989D0042637F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090212BF2989D0042637F /* UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,26 +67,13 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D8DB96CD29A66F26003A46F2 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				D8DB96C929A66F26003A46F2 /* BroadcastExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		1EA9B625C13E78809919DC2D /* Pods-ZiggeoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiggeoDemo.release.xcconfig"; path = "Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo.release.xcconfig"; sourceTree = "<group>"; };
-		6EC717BFFD3CBCC331315321 /* Pods-ZiggeoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiggeoDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		8DED28B68335B6C1611E45F9 /* Pods-BroadcastExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadcastExtension.release.xcconfig"; path = "Target Support Files/Pods-BroadcastExtension/Pods-BroadcastExtension.release.xcconfig"; sourceTree = "<group>"; };
-		A562FB59BCC7787E2EBC7064 /* Pods-BroadcastExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadcastExtension.debug.xcconfig"; path = "Target Support Files/Pods-BroadcastExtension/Pods-BroadcastExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		CE734401DF54652FE2A62DAD /* Pods_BroadcastExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadcastExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EF13B36C610EC58AFC2339A /* Pods_ZiggeoDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiggeoDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430EA3C15F94FCFA73FD021B /* Pods_BroadcastExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BroadcastExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5788AA3DAD93C6273B656D /* Pods-ZiggeoDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiggeoDemo.release.xcconfig"; path = "Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo.release.xcconfig"; sourceTree = "<group>"; };
+		946AB6754CF59B1F2F5F84CD /* Pods-BroadcastExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadcastExtension.release.xcconfig"; path = "Target Support Files/Pods-BroadcastExtension/Pods-BroadcastExtension.release.xcconfig"; sourceTree = "<group>"; };
+		AD90324CD26B62849EA4CC8A /* Pods-ZiggeoDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZiggeoDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CB235BC4CF5ADCFA0EB53BB7 /* Pods-BroadcastExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BroadcastExtension.debug.xcconfig"; path = "Target Support Files/Pods-BroadcastExtension/Pods-BroadcastExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		D8B31D3828815FE300C03825 /* ZiggeoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZiggeoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B31D3B28815FE300C03825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B31D4228815FE300C03825 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,10 +87,10 @@
 		D8B31D542881613B00C03825 /* LogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogTableViewCell.xib; sourceTree = "<group>"; };
 		D8B31D552881613B00C03825 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
 		D8B31D562881613B00C03825 /* RecordingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordingTableViewCell.xib; sourceTree = "<group>"; };
-		D8B31D582881613B00C03825 /* Double+Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Expansion.swift"; sourceTree = "<group>"; };
-		D8B31D592881613B00C03825 /* String+Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Expansion.swift"; sourceTree = "<group>"; };
-		D8B31D5A2881613B00C03825 /* UIImageView+Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Expansion.swift"; sourceTree = "<group>"; };
-		D8B31D5B2881613B00C03825 /* UIView+Expansion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Expansion.swift"; sourceTree = "<group>"; };
+		D8B31D582881613B00C03825 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		D8B31D592881613B00C03825 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D8B31D5A2881613B00C03825 /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		D8B31D5B2881613B00C03825 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D8B31D5D2881613B00C03825 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		D8B31D5F2881613B00C03825 /* LogoData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoData.swift; sourceTree = "<group>"; };
 		D8B31D7D2881613C00C03825 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
@@ -122,30 +114,33 @@
 		D8D480FA288FEEE700B5961A /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		D8D480FB288FEEE700B5961A /* TopClientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopClientsViewController.swift; sourceTree = "<group>"; };
 		D8D480FC288FEEE700B5961A /* VideoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
-		D8DB96C029A66F26003A46F2 /* BroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8DB96C129A66F26003A46F2 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
-		D8DB96C429A66F26003A46F2 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
-		D8DB96C629A66F26003A46F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8DB96CE29A66F2F003A46F2 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
-		D8DB96CF29A66F61003A46F2 /* ZiggeoDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZiggeoDemo.entitlements; sourceTree = "<group>"; };
-		DADD182B3CCE50FCF4F7B798 /* Pods_ZiggeoDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZiggeoDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6090132BF293080042637F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		FD6090152BF294DA0042637F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		FD6090172BF295BA0042637F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FD6090192BF298420042637F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		FD60901B2BF2985D0042637F /* UIWindowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowScene.swift; sourceTree = "<group>"; };
+		FD60901D2BF2986E0042637F /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		FD60901F2BF298880042637F /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		FD6090212BF2989D0042637F /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		FDAC2BBC2BF39E5C00296141 /* SampleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		FDAC2BBD2BF39E5C00296141 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
+		FDAC2BBE2BF39E5C00296141 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		61E98262E33A503666B2A610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E577C9D4D6C7B65C89A68D /* Pods_BroadcastExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8B31D3528815FE300C03825 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A274CF491AD91E37ED1199C7 /* Pods_ZiggeoDemo.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8DB96BD29A66F26003A46F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8DB96C229A66F26003A46F2 /* ReplayKit.framework in Frameworks */,
-				640FCF3E798D07F36B033876 /* Pods_BroadcastExtension.framework in Frameworks */,
+				F265C6A98B840FC482F5B286 /* Pods_ZiggeoDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,9 +150,8 @@
 		2F63715C75F3BD00ADB67D37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8DB96C129A66F26003A46F2 /* ReplayKit.framework */,
-				CE734401DF54652FE2A62DAD /* Pods_BroadcastExtension.framework */,
-				DADD182B3CCE50FCF4F7B798 /* Pods_ZiggeoDemo.framework */,
+				430EA3C15F94FCFA73FD021B /* Pods_BroadcastExtension.framework */,
+				3EF13B36C610EC58AFC2339A /* Pods_ZiggeoDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,10 +159,10 @@
 		6F09F3AD468DD01E61DF4010 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A562FB59BCC7787E2EBC7064 /* Pods-BroadcastExtension.debug.xcconfig */,
-				8DED28B68335B6C1611E45F9 /* Pods-BroadcastExtension.release.xcconfig */,
-				6EC717BFFD3CBCC331315321 /* Pods-ZiggeoDemo.debug.xcconfig */,
-				1EA9B625C13E78809919DC2D /* Pods-ZiggeoDemo.release.xcconfig */,
+				CB235BC4CF5ADCFA0EB53BB7 /* Pods-BroadcastExtension.debug.xcconfig */,
+				946AB6754CF59B1F2F5F84CD /* Pods-BroadcastExtension.release.xcconfig */,
+				AD90324CD26B62849EA4CC8A /* Pods-ZiggeoDemo.debug.xcconfig */,
+				5D5788AA3DAD93C6273B656D /* Pods-ZiggeoDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -188,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				D8B31D3828815FE300C03825 /* ZiggeoDemo.app */,
-				D8DB96C029A66F26003A46F2 /* BroadcastExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,11 +189,10 @@
 		D8B31D3A28815FE300C03825 /* ZiggeoDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D8DB96CF29A66F61003A46F2 /* ZiggeoDemo.entitlements */,
 				D8B31D3B28815FE300C03825 /* AppDelegate.swift */,
 				D8D480E3288FEEE700B5961A /* ViewControllers */,
 				D8B31D5C2881613B00C03825 /* Common */,
-				D8B31D572881613B00C03825 /* Expansion */,
+				D8B31D572881613B00C03825 /* Extensions */,
 				D8B31D5E2881613B00C03825 /* Models */,
 				D8B31D7B2881613C00C03825 /* Resources */,
 				D8B31D4F2881613B00C03825 /* ViewCells */,
@@ -226,15 +218,16 @@
 			path = ViewCells;
 			sourceTree = "<group>";
 		};
-		D8B31D572881613B00C03825 /* Expansion */ = {
+		D8B31D572881613B00C03825 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D8B31D582881613B00C03825 /* Double+Expansion.swift */,
-				D8B31D592881613B00C03825 /* String+Expansion.swift */,
-				D8B31D5A2881613B00C03825 /* UIImageView+Expansion.swift */,
-				D8B31D5B2881613B00C03825 /* UIView+Expansion.swift */,
+				FD6090122BF292E80042637F /* UIKit */,
+				FD6090152BF294DA0042637F /* DateFormatter.swift */,
+				D8B31D582881613B00C03825 /* Double.swift */,
+				D8B31D592881613B00C03825 /* String.swift */,
+				FD6090132BF293080042637F /* UserDefaults.swift */,
 			);
-			path = Expansion;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D8B31D5C2881613B00C03825 /* Common */ = {
@@ -339,11 +332,26 @@
 		D8DB96C329A66F26003A46F2 /* BroadcastExtension */ = {
 			isa = PBXGroup;
 			children = (
-				D8DB96CE29A66F2F003A46F2 /* BroadcastExtension.entitlements */,
-				D8DB96C429A66F26003A46F2 /* SampleHandler.swift */,
-				D8DB96C629A66F26003A46F2 /* Info.plist */,
+				FDAC2BBD2BF39E5C00296141 /* BroadcastExtension.entitlements */,
+				FDAC2BBE2BF39E5C00296141 /* Info.plist */,
+				FDAC2BBC2BF39E5C00296141 /* SampleHandler.swift */,
 			);
 			path = BroadcastExtension;
+			sourceTree = "<group>";
+		};
+		FD6090122BF292E80042637F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FD6090172BF295BA0042637F /* UIImage.swift */,
+				D8B31D5A2881613B00C03825 /* UIImageView.swift */,
+				FD60901F2BF298880042637F /* UITableView.swift */,
+				D8B31D5B2881613B00C03825 /* UIView.swift */,
+				FD6090192BF298420042637F /* UIViewController.swift */,
+				FD60901B2BF2985D0042637F /* UIWindowScene.swift */,
+				FD60901D2BF2986E0042637F /* UIWindow.swift */,
+				FD6090212BF2989D0042637F /* UICollectionView.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,12 +361,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8B31D4C28815FE600C03825 /* Build configuration list for PBXNativeTarget "ZiggeoDemo" */;
 			buildPhases = (
-				DE13637D6A9ACFEF64AB66E4 /* [CP] Check Pods Manifest.lock */,
+				917F66E351C3220D41F5F513 /* [CP] Check Pods Manifest.lock */,
 				D8B31D3428815FE300C03825 /* Sources */,
 				D8B31D3528815FE300C03825 /* Frameworks */,
 				D8B31D3628815FE300C03825 /* Resources */,
-				D8DB96CD29A66F26003A46F2 /* Embed App Extensions */,
-				E2B92ED54936DBEEC17C2CAA /* [CP] Embed Pods Frameworks */,
+				D552EB10424670CA820C50F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,10 +381,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8DB96CA29A66F26003A46F2 /* Build configuration list for PBXNativeTarget "BroadcastExtension" */;
 			buildPhases = (
-				12A26BA36C6C7FF3B4660C41 /* [CP] Check Pods Manifest.lock */,
-				D8DB96BC29A66F26003A46F2 /* Sources */,
-				D8DB96BD29A66F26003A46F2 /* Frameworks */,
-				D8DB96BE29A66F26003A46F2 /* Resources */,
+				AAC53F9F40191E096130EB58 /* [CP] Check Pods Manifest.lock */,
+				61E98262E33A503666B2A610 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,7 +390,6 @@
 			);
 			name = BroadcastExtension;
 			productName = BroadcastExtension;
-			productReference = D8DB96C029A66F26003A46F2 /* BroadcastExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -396,13 +400,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					D8B31D3728815FE300C03825 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					D8DB96BF29A66F26003A46F2 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -443,39 +448,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D8DB96BE29A66F26003A46F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12A26BA36C6C7FF3B4660C41 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BroadcastExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE13637D6A9ACFEF64AB66E4 /* [CP] Check Pods Manifest.lock */ = {
+		917F66E351C3220D41F5F513 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,7 +473,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E2B92ED54936DBEEC17C2CAA /* [CP] Embed Pods Frameworks */ = {
+		AAC53F9F40191E096130EB58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BroadcastExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D552EB10424670CA820C50F8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6090142BF293080042637F /* UserDefaults.swift in Sources */,
 				D8D48106288FEEE700B5961A /* RecordingImagesViewController.swift in Sources */,
 				D8D4810A288FEEE700B5961A /* AvailableSdksViewController.swift in Sources */,
 				D8D480FD288FEEE700B5961A /* AuthViewController.swift in Sources */,
@@ -529,10 +528,13 @@
 				D8B31D812881613C00C03825 /* LogTableViewCell.swift in Sources */,
 				D8D48109288FEEE700B5961A /* AboutViewController.swift in Sources */,
 				D8B31D3C28815FE300C03825 /* AppDelegate.swift in Sources */,
-				D8B31D882881613C00C03825 /* UIView+Expansion.swift in Sources */,
+				D8B31D882881613C00C03825 /* UIView.swift in Sources */,
 				D8D4810D288FEEE700B5961A /* SettingsViewController.swift in Sources */,
 				D8B31D7E2881613C00C03825 /* LogoCollectionViewCell.swift in Sources */,
+				FD60901C2BF2985D0042637F /* UIWindowScene.swift in Sources */,
 				D8D48110288FEEE700B5961A /* VideoEditorViewController.swift in Sources */,
+				FD6090182BF295BA0042637F /* UIImage.swift in Sources */,
+				FD60901A2BF298420042637F /* UIViewController.swift in Sources */,
 				D8D48103288FEEE700B5961A /* HomeViewController.swift in Sources */,
 				D8D480FE288FEEE700B5961A /* CustomVideoPlayer.swift in Sources */,
 				D8D48104288FEEE700B5961A /* RecordingAudiosViewController.swift in Sources */,
@@ -540,23 +542,19 @@
 				D8D4810B288FEEE700B5961A /* ContactUsViewController.swift in Sources */,
 				D8B31D892881613C00C03825 /* Common.swift in Sources */,
 				D8D4810E288FEEE700B5961A /* SideMenuViewController.swift in Sources */,
-				D8B31D872881613C00C03825 /* UIImageView+Expansion.swift in Sources */,
+				FD60901E2BF2986E0042637F /* UIWindow.swift in Sources */,
+				D8B31D872881613C00C03825 /* UIImageView.swift in Sources */,
 				D8D48107288FEEE700B5961A /* RecordingsViewController.swift in Sources */,
 				D8D48105288FEEE700B5961A /* RecordingDetailViewController.swift in Sources */,
+				FD6090202BF298880042637F /* UITableView.swift in Sources */,
 				D8B31D8A2881613C00C03825 /* LogoData.swift in Sources */,
-				D8B31D852881613C00C03825 /* Double+Expansion.swift in Sources */,
+				FD6090162BF294DA0042637F /* DateFormatter.swift in Sources */,
+				FD6090222BF2989D0042637F /* UICollectionView.swift in Sources */,
+				D8B31D852881613C00C03825 /* Double.swift in Sources */,
 				D8D48108288FEEE700B5961A /* RecordingVideosViewController.swift in Sources */,
-				D8B31D862881613C00C03825 /* String+Expansion.swift in Sources */,
+				D8B31D862881613C00C03825 /* String.swift in Sources */,
 				D8B31D832881613C00C03825 /* RecordingTableViewCell.swift in Sources */,
 				D8D48100288FEEE700B5961A /* CapturePreviewView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D8DB96BC29A66F26003A46F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8DB96C529A66F26003A46F2 /* SampleHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -696,7 +694,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -708,7 +706,7 @@
 		};
 		D8B31D4D28815FE600C03825 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EC717BFFD3CBCC331315321 /* Pods-ZiggeoDemo.debug.xcconfig */;
+			baseConfigurationReference = AD90324CD26B62849EA4CC8A /* Pods-ZiggeoDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -734,7 +732,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,7 +748,7 @@
 		};
 		D8B31D4E28815FE600C03825 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1EA9B625C13E78809919DC2D /* Pods-ZiggeoDemo.release.xcconfig */;
+			baseConfigurationReference = 5D5788AA3DAD93C6273B656D /* Pods-ZiggeoDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -777,7 +775,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -793,8 +791,9 @@
 		};
 		D8DB96CB29A66F26003A46F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A562FB59BCC7787E2EBC7064 /* Pods-BroadcastExtension.debug.xcconfig */;
+			baseConfigurationReference = CB235BC4CF5ADCFA0EB53BB7 /* Pods-BroadcastExtension.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -805,17 +804,18 @@
 				INFOPLIST_FILE = BroadcastExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ziggeo;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.45;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.demo.BroadcastExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -823,8 +823,9 @@
 		};
 		D8DB96CC29A66F26003A46F2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DED28B68335B6C1611E45F9 /* Pods-BroadcastExtension.release.xcconfig */;
+			baseConfigurationReference = 946AB6754CF59B1F2F5F84CD /* Pods-BroadcastExtension.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = BroadcastExtension/BroadcastExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -835,13 +836,13 @@
 				INFOPLIST_FILE = BroadcastExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Ziggeo;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.45;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.demo.BroadcastExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
