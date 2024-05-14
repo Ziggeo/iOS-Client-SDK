@@ -46,12 +46,8 @@ NSString *Last_Image_Token = @"Last_Image_Token";
     currentType = 0;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
 
-
-// MARK: Button Click Action
+// MARK: - Button Click Action
 - (IBAction)onRecordVideo:(id)sender {
     currentType = VIDEO;
     
