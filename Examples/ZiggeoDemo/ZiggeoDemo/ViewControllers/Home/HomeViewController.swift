@@ -31,15 +31,15 @@ final class HomeViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         if let vc = Common.getStoryboardViewController(type: SideMenuViewController.self) {
             vc.delegate = self
             
             sideMenuVc = SideMenuNavigationController(rootViewController: vc)
             SideMenuManager.default.leftMenuNavigationController = sideMenuVc
             sideMenuVc?.settings = makeSettings()
+            // swiftlint:disable:next force_unwrapping
             SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
-            // SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+            // SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: navigationController!.view)
             sideMenuVc?.statusBarEndAlpha = 0
         }
         refreshPopupMenu()
@@ -74,7 +74,7 @@ private extension HomeViewController {
         fileSelectorConfig.minDuration = 0
         fileSelectorConfig.shouldAllowMultipleSelection = true
         fileSelectorConfig.mediaType = VIDEO | AUDIO | IMAGE
-        fileSelectorConfig.extraArgs = ["tags" : "iOS,Choose,Media"]
+        fileSelectorConfig.extraArgs = ["tags": "iOS,Choose,Media"]
         Common.ziggeo?.setFileSelectorConfig(fileSelectorConfig)
         
         Common.ziggeo?.startFileSelector()
@@ -86,7 +86,7 @@ private extension HomeViewController {
         let uploadingConfig = UploadingConfig()
         uploadingConfig.extraArgs = ["tags": "iOS,Take,Photo"]
         Common.ziggeo?.setUploadingConfig(uploadingConfig)
-
+        
         Common.ziggeo?.startImageRecorder()
         
         hideMenu()
@@ -128,10 +128,10 @@ private extension HomeViewController {
         recorderConfig.facing = FACING_BACK
         recorderConfig.maxDuration = 0
         recorderConfig.extraArgs = ["tags": "iOS,Video,Record",
-                                    "client_auth" : "CLIENT_AUTH_TOKEN",
-                                    "server_auth" : "SERVER_AUTH_TOKEN",
-                                    "data" : ["foo": "bar"],
-                                    "effect_profile" : "1234,5678"]
+                                    "client_auth": "CLIENT_AUTH_TOKEN",
+                                    "server_auth": "SERVER_AUTH_TOKEN",
+                                    "data": ["foo": "bar"],
+                                    "effect_profile": "1234,5678"]
         Common.ziggeo?.setRecorderConfig(recorderConfig)
         
         Common.ziggeo?.record()
@@ -301,7 +301,7 @@ extension HomeViewController: MenuActionDelegate {
 extension HomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         dismiss(animated: false) {
-            let videoUrl = (info[.mediaURL] as! URL).path
+            let videoUrl = (info[.mediaURL] as! URL).path // swiftlint:disable:this force_cast
             Common.ziggeo?.play(fromUri: videoUrl)
         }
     }
@@ -331,15 +331,15 @@ extension HomeViewController: ZiggeoUploadingDelegate {
         Common.addLog("Preparing To Upload: \(sourcePath)")
     }
     
-    func failedToUpload(withPath sourcePath: String) {
-        Common.addLog("Failed To Upload: \(sourcePath)")
+    func error(_ info: RecordingInfo?, _ error: Error, _ lostConnectionAction: Int) {
+        Common.addLog("Failed To Upload : \(info?.token ?? "")")
     }
     
     func uploadStarted(withPath path: String, token: String, streamToken: String, backgroundTask: URLSessionTask) {
         Common.addLog("Upload Started: \(token) - \(streamToken)")
     }
     
-    func uploadProgress(withPath sourcePath: String!, token: String, streamToken: String, totalBytesSent bytesSent: Int32, totalBytesExpectedToSend totalBytes: Int32) {
+    func uploadProgress(withPath sourcePath: String, token: String, streamToken: String, totalBytesSent bytesSent: Int32, totalBytesExpectedToSend totalBytes: Int32) {
         Common.addLog("Upload Progress: \(bytesSent) - \(totalBytes)")
     }
     
@@ -351,7 +351,7 @@ extension HomeViewController: ZiggeoUploadingDelegate {
         Common.recordingImagesController?.getRecordings()
     }
     
-    func uploadVerified(withPath sourcePath: String!, token: String, streamToken: String, with response: URLResponse, error: Error, json: [AnyHashable : Any]) {
+    func uploadVerified(withPath sourcePath: String, token: String, streamToken: String, with response: URLResponse, error: Error, json: [AnyHashable: Any]) {
         Common.addLog("Upload Verified: \(token) - \(streamToken)")
     }
     
@@ -363,11 +363,11 @@ extension HomeViewController: ZiggeoUploadingDelegate {
         Common.addLog("Upload Processed: \(token) - \(streamToken)")
     }
 
-    func delete(withToken token: String, streamToken: String, with response: URLResponse, error: Error, json: [AnyHashable : Any]) {
+    func delete(withToken token: String, streamToken: String, with response: URLResponse, error: Error, json: [AnyHashable: Any]) {
         Common.addLog("delete: \(token) - \(streamToken)")
     }
     
-    func cancelUpload(byPath sourcePath: String!, deleteFile: Bool) {
+    func cancelUpload(byPath sourcePath: String, deleteFile: Bool) {
     }
     
     func cancelCurrentUpload(_ deleteFile: Bool) {
@@ -376,8 +376,8 @@ extension HomeViewController: ZiggeoUploadingDelegate {
 
 // MARK: - ZiggeoFileSelectorDelegate
 extension HomeViewController: ZiggeoFileSelectorDelegate {
-    func uploadSelected(_ paths: [String]!) {
-        Common.addLog("Upload Selected: \(String(describing: paths))")
+    func uploadSelected(_ paths: [String]) {
+        Common.addLog("Upload Selected: \(paths)")
     }
     
     func uploadCancelledByUser() {

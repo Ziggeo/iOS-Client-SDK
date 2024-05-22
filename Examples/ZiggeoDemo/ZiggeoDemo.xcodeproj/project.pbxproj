@@ -48,8 +48,11 @@
 		D8D48110288FEEE700B5961A /* VideoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D480FC288FEEE700B5961A /* VideoEditorViewController.swift */; };
 		D8DB96AF29A65C82003A46F2 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB96AE29A65C82003A46F2 /* ReplayKit.framework */; };
 		D8DB96B229A65C82003A46F2 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB96B129A65C82003A46F2 /* SampleHandler.swift */; };
-		D8DB96B629A65C82003A46F2 /* BroadcastExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D8DB96AD29A65C82003A46F2 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D8DB96B629A65C82003A46F2 /* BroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D8DB96AD29A65C82003A46F2 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E8A0FD67814B34F37087F9A0 /* Pods_BroadcastExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2110BB79772455492DE96DF6 /* Pods_BroadcastExtension.framework */; };
+		FD51021B2BFBBE070055A55B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FD51021A2BFBBE070055A55B /* .swiftlint.yml */; };
+		FD51021E2BFBC3130055A55B /* AVCaptureVideoOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51021D2BFBC3130055A55B /* AVCaptureVideoOrientation.swift */; };
+		FD5102202BFBC34B0055A55B /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51021F2BFBC34B0055A55B /* Optional.swift */; };
 		FD6090142BF293080042637F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090132BF293080042637F /* UserDefaults.swift */; };
 		FD6090162BF294DA0042637F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090152BF294DA0042637F /* DateFormatter.swift */; };
 		FD6090182BF295BA0042637F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090172BF295BA0042637F /* UIImage.swift */; };
@@ -71,15 +74,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D8DB96BA29A65C82003A46F2 /* Embed App Extensions */ = {
+		D8DB96BA29A65C82003A46F2 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D8DB96B629A65C82003A46F2 /* BroadcastExtension.appex in Embed App Extensions */,
+				D8DB96B629A65C82003A46F2 /* BroadcastExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -137,6 +140,9 @@
 		D8DB96B129A65C82003A46F2 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
 		D8DB96B329A65C82003A46F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8DB96BB29A65C91003A46F2 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
+		FD51021A2BFBBE070055A55B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FD51021D2BFBC3130055A55B /* AVCaptureVideoOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoOrientation.swift; sourceTree = "<group>"; };
+		FD51021F2BFBC34B0055A55B /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		FD6090132BF293080042637F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FD6090152BF294DA0042637F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FD6090172BF295BA0042637F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 			children = (
 				D8B31D3A28815FE300C03825 /* ZiggeoDemo */,
 				D8DB96B029A65C82003A46F2 /* BroadcastExtension */,
+				FD5102192BFBBDDD0055A55B /* SwiftLint */,
 				D8B31D3928815FE300C03825 /* Products */,
 				6F09F3AD468DD01E61DF4010 /* Pods */,
 				B0FBBDC793A33BF8EEA05823 /* Frameworks */,
@@ -213,13 +220,13 @@
 			isa = PBXGroup;
 			children = (
 				D8DB96A829A65C68003A46F2 /* ZiggeoDemo.entitlements */,
-				D8B31D3B28815FE300C03825 /* AppDelegate.swift */,
 				D8D480E3288FEEE700B5961A /* ViewControllers */,
 				D8B31D5C2881613B00C03825 /* Common */,
 				D8B31D572881613B00C03825 /* Extensions */,
 				D8B31D5E2881613B00C03825 /* Models */,
 				D8B31D7B2881613C00C03825 /* Resources */,
 				D8B31D4F2881613B00C03825 /* ViewCells */,
+				D8B31D3B28815FE300C03825 /* AppDelegate.swift */,
 				D8B31D4128815FE300C03825 /* Main.storyboard */,
 				D8B31D4428815FE600C03825 /* Assets.xcassets */,
 				D8B31D4628815FE600C03825 /* LaunchScreen.storyboard */,
@@ -246,8 +253,10 @@
 			isa = PBXGroup;
 			children = (
 				FD6090122BF292E80042637F /* UIKit */,
+				FD51021D2BFBC3130055A55B /* AVCaptureVideoOrientation.swift */,
 				FD6090152BF294DA0042637F /* DateFormatter.swift */,
 				D8B31D582881613B00C03825 /* Double.swift */,
+				FD51021F2BFBC34B0055A55B /* Optional.swift */,
 				D8B31D592881613B00C03825 /* String.swift */,
 				FD6090132BF293080042637F /* UserDefaults.swift */,
 			);
@@ -363,6 +372,14 @@
 			path = BroadcastExtension;
 			sourceTree = "<group>";
 		};
+		FD5102192BFBBDDD0055A55B /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				FD51021A2BFBBE070055A55B /* .swiftlint.yml */,
+			);
+			name = SwiftLint;
+			sourceTree = "<group>";
+		};
 		FD6090122BF292E80042637F /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,10 +403,11 @@
 			buildConfigurationList = D8B31D4C28815FE600C03825 /* Build configuration list for PBXNativeTarget "ZiggeoDemo" */;
 			buildPhases = (
 				917F66E351C3220D41F5F513 /* [CP] Check Pods Manifest.lock */,
+				FD51021C2BFBBE1E0055A55B /* SwiftLint */,
 				D8B31D3428815FE300C03825 /* Sources */,
 				D8B31D3528815FE300C03825 /* Frameworks */,
 				D8B31D3628815FE300C03825 /* Resources */,
-				D8DB96BA29A65C82003A46F2 /* Embed App Extensions */,
+				D8DB96BA29A65C82003A46F2 /* Embed Foundation Extensions */,
 				D552EB10424670CA820C50F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -428,7 +446,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1530;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					D8B31D3728815FE300C03825 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -472,6 +490,7 @@
 				D8B31D9F2881613C00C03825 /* about.html in Resources */,
 				D8D48102288FEEE700B5961A /* CustomVideoRecorder.xib in Resources */,
 				D8B31D7F2881613C00C03825 /* LogoCollectionViewCell.xib in Resources */,
+				FD51021B2BFBBE070055A55B /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +565,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZiggeoDemo/Pods-ZiggeoDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FD51021C2BFBBE1E0055A55B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -570,6 +608,7 @@
 				FD6090182BF295BA0042637F /* UIImage.swift in Sources */,
 				FD60901A2BF298420042637F /* UIViewController.swift in Sources */,
 				D8D48103288FEEE700B5961A /* HomeViewController.swift in Sources */,
+				FD5102202BFBC34B0055A55B /* Optional.swift in Sources */,
 				D8D480FE288FEEE700B5961A /* CustomVideoPlayer.swift in Sources */,
 				D8D48104288FEEE700B5961A /* RecordingAudiosViewController.swift in Sources */,
 				D8D48101288FEEE700B5961A /* CustomVideoRecorder.swift in Sources */,
@@ -584,6 +623,7 @@
 				D8B31D8A2881613C00C03825 /* LogoData.swift in Sources */,
 				FD6090162BF294DA0042637F /* DateFormatter.swift in Sources */,
 				FD6090222BF2989D0042637F /* UICollectionView.swift in Sources */,
+				FD51021E2BFBC3130055A55B /* AVCaptureVideoOrientation.swift in Sources */,
 				D8B31D852881613C00C03825 /* Double.swift in Sources */,
 				D8D48108288FEEE700B5961A /* RecordingVideosViewController.swift in Sources */,
 				D8B31D862881613C00C03825 /* String.swift in Sources */,
@@ -752,7 +792,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = ZiggeoDemo/ZiggeoDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -794,7 +834,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = ZiggeoDemo/ZiggeoDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
