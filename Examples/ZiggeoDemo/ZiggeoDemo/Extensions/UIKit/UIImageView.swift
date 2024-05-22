@@ -11,22 +11,17 @@ extension UIImageView {
         }
     }
     
-    func setURL(_ strUrl: String?, placeholder: UIImage?) {
-        let newString = strUrl?.replacingOccurrences(of: "\\", with: "/", options: .literal, range: nil)
-        let url = URL(string: newString!)
+    func setURL(_ strUrl: String, placeholder: UIImage?) {
+        let newString = strUrl.replacingOccurrences(of: "\\", with: "/", options: .literal)
+        let url = URL(string: newString)
         self.setURL(url, placeholder: placeholder)
     }
     
     func setURL(_ thumbUrl: String, _ imageUrl: String, placeholder: UIImage?) {
-        if thumbUrl != "" {
-            let newString = thumbUrl.replacingOccurrences(of: "\\", with: "/", options: .literal, range: nil)
-            let url = URL(string: newString)
-            self.setURL(url, placeholder: placeholder)
-        } else if imageUrl != "" {
-            let newString = imageUrl.replacingOccurrences(of: "\\", with: "/", options: .literal, range: nil)
-            let url = URL(string: newString)
-            self.setURL(url, placeholder: placeholder)
-            
+        if !thumbUrl.isEmpty {
+            self.setURL(thumbUrl, placeholder: placeholder)
+        } else if !imageUrl.isEmpty {
+            self.setURL(imageUrl, placeholder: placeholder)
         } else {
             self.image = placeholder
         }
