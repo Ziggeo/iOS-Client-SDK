@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ZiggeoMediaSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name ZiggeoMediaSDK
 import AVFoundation
 import Accelerate
 import AssetsLibrary
@@ -376,9 +375,7 @@ extension ZiggeoMediaSDK.ImagePickerController : ZiggeoMediaSDK.ImagePickerContr
   @objc deinit
 }
 extension ZiggeoMediaSDK.ImagePickerController : UIKit.UIAdaptivePresentationControllerDelegate {
-  @available(iOS 13, *)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationControllerShouldDismiss(_ presentationController: UIKit.UIPresentationController) -> Swift.Bool
-  @available(iOS 13, *)
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationControllerDidDismiss(_ presentationController: UIKit.UIPresentationController)
 }
 @_hasMissingDesignatedInitializers final public class AudioContext {
@@ -416,39 +413,39 @@ extension ZiggeoMediaSDK.ImagePickerController : UIKit.UIAdaptivePresentationCon
 extension ZiggeoMediaSDK.ImageView {
   @_Concurrency.MainActor(unsafe) convenience public init(image: UIKit.UIImage?)
   @_Concurrency.MainActor(unsafe) convenience public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var image: UIKit.UIImage? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var image: UIKit.UIImage? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var highlightedImage: UIKit.UIImage? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var highlightedImage: UIKit.UIImage? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic open var isHighlighted: Swift.Bool {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var isHighlighted: Swift.Bool {
     @objc get
     @objc set
   }
-  @_Concurrency.MainActor(unsafe) open var animationImages: [UIKit.UIImage]? {
+  @_Concurrency.MainActor(unsafe) public var animationImages: [UIKit.UIImage]? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open var highlightedAnimationImages: [UIKit.UIImage]? {
+  @_Concurrency.MainActor(unsafe) public var highlightedAnimationImages: [UIKit.UIImage]? {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open var animationDuration: Foundation.TimeInterval {
+  @_Concurrency.MainActor(unsafe) public var animationDuration: Foundation.TimeInterval {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open var animationRepeatCount: Swift.Int {
+  @_Concurrency.MainActor(unsafe) public var animationRepeatCount: Swift.Int {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) open func startAnimating()
-  @_Concurrency.MainActor(unsafe) open func stopAnimating()
-  @_Concurrency.MainActor(unsafe) open var isAnimating: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) public var isAnimating: Swift.Bool {
     get
   }
+  @_Concurrency.MainActor(unsafe) public func startAnimating()
+  @_Concurrency.MainActor(unsafe) public func stopAnimating()
 }
 @objc @objcMembers public class AssetStore : ObjectiveC.NSObject {
   @objc public var assets: [Photos.PHAsset] {

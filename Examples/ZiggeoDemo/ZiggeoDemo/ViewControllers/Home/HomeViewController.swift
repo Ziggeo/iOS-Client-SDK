@@ -104,7 +104,7 @@ private extension HomeViewController {
     }
     
     @IBAction func onScreenRecord(_ sender: Any) {
-        Common.ziggeo?.startScreenRecorder(withAppGroup: "group.com.ziggeo.demo",
+        Common.ziggeo?.startScreenRecorder(appGroup: "group.com.ziggeo.demo",
                                            preferredExtension: "com.ziggeo.demo.BroadcastExtension")
         hideMenu()
     }
@@ -344,15 +344,16 @@ extension HomeViewController: ZiggeoUploadingDelegate {
         Common.addLog("Upload Progress: \(bytesSent) - \(totalBytes)")
     }
     
-    func uploadFinished(withPath sourcePath: String, token: String, streamToken: String) {
-        Common.addLog("Upload Finished: \(token) - \(streamToken)")
+    func uploadFinished(withPath sourcePath: String, token: String?, streamToken: String?) {
+        Common.addLog("Upload Finished: \(String(describing: token)) - \(String(describing: streamToken))")
         
         Common.recordingVideosController?.getRecordings()
         Common.recordingAudiosController?.getRecordings()
         Common.recordingImagesController?.getRecordings()
     }
     
-    func uploadVerified(withPath sourcePath: String, token: String, streamToken: String, with response: URLResponse, error: Error, json: [AnyHashable: Any]) {
+    // swiftlint:disable:next discouraged_optional_collection
+    func uploadVerified(withPath sourcePath: String, token: String, streamToken: String, with response: URLResponse, error: Error?, json: [AnyHashable: Any]?) {
         Common.addLog("Upload Verified: \(token) - \(streamToken)")
     }
     
@@ -364,7 +365,8 @@ extension HomeViewController: ZiggeoUploadingDelegate {
         Common.addLog("Upload Processed: \(token) - \(streamToken)")
     }
 
-    func delete(withToken token: String, streamToken: String, with response: URLResponse, error: Error, json: [AnyHashable: Any]) {
+    // swiftlint:disable:next discouraged_optional_collection
+    func delete(withToken token: String, streamToken: String, with response: URLResponse, error: Error?, json: [AnyHashable: Any]?) {
         Common.addLog("delete: \(token) - \(streamToken)")
     }
     
