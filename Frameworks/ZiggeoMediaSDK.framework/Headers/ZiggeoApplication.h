@@ -48,7 +48,7 @@ static int DEFAULT_START_DELAY = 3; // seconds
 static int DEFAULT_AUDIO_BITRATE = 64 * 1024; // 64KB
 static int DEFAULT_AUDIO_SAMPLE_RATE = 48000; // 48kHz
 
-static NSString *SCREEN_LOCK_TAG = @"CameraView lock";
+static NSString * _Nonnull SCREEN_LOCK_TAG = @"CameraView lock";
 
 /**
  * The camera device faces the opposite direction as the device's screen.
@@ -96,40 +96,40 @@ static int MAX_RESOLUTION_HEIGHT_SUPPORTED = 1080;
 /*
  * 16 : 9
  */
-static AspectRatio *DEFAULT_ASPECT_RATIO = nil;
+static AspectRatio * __null_unspecified DEFAULT_ASPECT_RATIO = nil;
 
 /*
  * 4 : 3
  */
-static AspectRatio *FALLBACK_ASPECT_RATIO = nil;
+static AspectRatio * __null_unspecified FALLBACK_ASPECT_RATIO = nil;
 
-static AspectRatio *RATIO_16_9 = nil;
-static AspectRatio *RATIO_4_3 = nil;
-static AspectRatio *RATIO_1_1 = nil;
+static AspectRatio * __null_unspecified RATIO_16_9 = nil;
+static AspectRatio * __null_unspecified RATIO_4_3 = nil;
+static AspectRatio * __null_unspecified RATIO_1_1 = nil;
 
-static NSString *STATUS_EMPTY = @"EMPTY";
-static NSString *STATUS_DELETED = @"DELETED";
-static NSString *STATUS_VERIFIED = @"VERIFIED";
-static NSString *STATUS_PROCESSING = @"PROCESSING";
-static NSString *STATUS_FAILED = @"FAILED";
-static NSString *STATUS_READY = @"READY";
+static NSString * __nonnull STATUS_EMPTY = @"EMPTY";
+static NSString * __nonnull STATUS_DELETED = @"DELETED";
+static NSString * __nonnull STATUS_VERIFIED = @"VERIFIED";
+static NSString * __nonnull STATUS_PROCESSING = @"PROCESSING";
+static NSString * __nonnull STATUS_FAILED = @"FAILED";
+static NSString * __nonnull STATUS_READY = @"READY";
 
-static NSString *ARG_PATH = @"ARG_PATH";
-static NSString *ARG_TOKEN = @"ARG_TOKEN";
-static NSString *ARG_IMAGE_MODE_ONLY = @"ARG_IMAGE_MODE_ONLY";
-static NSString *ARG_URI = @"ARG_URI";
-static NSString *ARG_COVER_SHOT_PATH = @"ARG_COVER_SHOT_PATH";
-static NSString *ARG_FORCE_SEND = @"ARG_FORCE_SEND";
-static NSString *ARG_SHOW_COVER_SHOT_SELECTION_POPUP = @"ARG_SHOW_COVER_SHOT_SELECTION_POPUP";
-static NSString *ARG_SHOW_STOP_RECORDING_CONFIRMATION = @"ARG_SHOW_STOP_RECORDING_CONFIRMATION";
-static NSString *ARG_SHOW_CONFIRMATION_ON_PLAYER = @"ARG_SHOW_CONFIRMATION_ON_PLAYER";
-static NSString *ARG_FILE_TO_CONFIRM = @"ARG_FILE_TO_CONFIRM";
-static NSString *ARG_SELECTED_FILTER = @"ARG_SELECTED_FILTER";
-static NSString *ARG_SELECTED_VIEW_MODE = @"ARG_SELECTED_VIEW_MODE";
-static NSString *ARG_PACKAGE_NAME = @"appname";
-static NSString *ARG_CLIENT_AUTH = @"client_auth";
-static NSString *ARG_SERVER_AUTH = @"server_auth";
-static NSString *ARG_DATA = @"ARG_DATA";
+static NSString * __nonnull ARG_PATH = @"ARG_PATH";
+static NSString * __nonnull ARG_TOKEN = @"ARG_TOKEN";
+static NSString * __nonnull ARG_IMAGE_MODE_ONLY = @"ARG_IMAGE_MODE_ONLY";
+static NSString * __nonnull ARG_URI = @"ARG_URI";
+static NSString * __nonnull ARG_COVER_SHOT_PATH = @"ARG_COVER_SHOT_PATH";
+static NSString * __nonnull ARG_FORCE_SEND = @"ARG_FORCE_SEND";
+static NSString * __nonnull ARG_SHOW_COVER_SHOT_SELECTION_POPUP = @"ARG_SHOW_COVER_SHOT_SELECTION_POPUP";
+static NSString * __nonnull ARG_SHOW_STOP_RECORDING_CONFIRMATION = @"ARG_SHOW_STOP_RECORDING_CONFIRMATION";
+static NSString * __nonnull ARG_SHOW_CONFIRMATION_ON_PLAYER = @"ARG_SHOW_CONFIRMATION_ON_PLAYER";
+static NSString * __nonnull ARG_FILE_TO_CONFIRM = @"ARG_FILE_TO_CONFIRM";
+static NSString * __nonnull ARG_SELECTED_FILTER = @"ARG_SELECTED_FILTER";
+static NSString * __nonnull ARG_SELECTED_VIEW_MODE = @"ARG_SELECTED_VIEW_MODE";
+static NSString * __nonnull ARG_PACKAGE_NAME = @"appname";
+static NSString * __nonnull ARG_CLIENT_AUTH = @"client_auth";
+static NSString * __nonnull ARG_SERVER_AUTH = @"server_auth";
+static NSString * __nonnull ARG_DATA = @"ARG_DATA";
 
 
 // MARK: - ZiggeoHardwarePermissionDelegate
@@ -153,63 +153,63 @@ static NSString *ARG_DATA = @"ARG_DATA";
 @protocol ZiggeoUploadingDelegate <NSObject>
 
 @optional
-- (void)preparingToUploadWithPath:(NSString *)sourcePath;
+- (void)preparingToUploadWithPath:(nonnull NSString *)sourcePath;
 /**
  * Triggered when a media uploadingStarted has started
  */
 @optional
-- (void)uploadStartedWithPath:(NSString *)sourcePath
-                        token:(NSString *)token
-                  streamToken:(NSString *)streamToken
-               backgroundTask:(NSURLSessionTask *)uploadingTask;
+- (void)uploadStartedWithPath:(nonnull NSString *)sourcePath
+                        token:(nonnull NSString *)token
+                  streamToken:(nonnull NSString *)streamToken
+               backgroundTask:(nonnull NSURLSessionTask *)uploadingTask;
 /**
  * Continuous updates on the upload progress.
  */
 @optional
-- (void)uploadProgressWithPath:(NSString *)sourcePath
-                         token:(NSString *)token
-                   streamToken:(NSString *)streamToken
+- (void)uploadProgressWithPath:(nonnull NSString *)sourcePath
+                         token:(nonnull NSString *)token
+                   streamToken:(nonnull NSString *)streamToken
                 totalBytesSent:(int)bytesSent
       totalBytesExpectedToSend:(int)totalBytes;
 /**
  * Fires after upload has finished.
  */
 @optional
-- (void)uploadFinishedWithPath:(NSString *)sourcePath
-                         token:(NSString *)token
-                   streamToken:(NSString *)streamToken;
+- (void)uploadFinishedWithPath:(nonnull NSString *)sourcePath
+                         token:(nullable NSString *)token
+                   streamToken:(nullable NSString *)streamToken;
 /**
  * Triggered after media is uploaded and verified that it can be processed.
  */
 @optional
-- (void)uploadVerifiedWithPath:(NSString *)sourcePath
-                         token:(NSString *)token
-                   streamToken:(NSString *)streamToken
-                  withResponse:(NSURLResponse *)response
-                         error:(NSError *)error
-                          json:(NSDictionary *)json;
+- (void)uploadVerifiedWithPath:(nonnull NSString *)sourcePath
+                         token:(nonnull NSString *)token
+                   streamToken:(nonnull NSString *)streamToken
+                  withResponse:(nonnull NSURLResponse *)response
+                         error:(nullable NSError *)error
+                          json:(nullable NSDictionary *)json;
 /**
  * Continuous update notifications while processing the media.
  */
 @optional
-- (void)uploadProcessingWithPath:(NSString *)sourcePath
-                           token:(NSString *)token
-                     streamToken:(NSString *)streamToken;
+- (void)uploadProcessingWithPath:(nonnull NSString *)sourcePath
+                           token:(nonnull NSString *)token
+                     streamToken:(nonnull NSString *)streamToken;
 /**
  * Video successfully processed.
  */
 @optional
-- (void)uploadProcessedWithPath:(NSString *)sourcePath
-                          token:(NSString *)token
-                    streamToken:(NSString *)streamToken;
+- (void)uploadProcessedWithPath:(nonnull NSString *)sourcePath
+                          token:(nonnull NSString *)token
+                    streamToken:(nonnull NSString *)streamToken;
 @optional
-- (void)deleteWithToken:(NSString *)token
-            streamToken:(NSString *)streamToken
-           withResponse:(NSURLResponse *)response
-                  error:(NSError *)error
-                   json:(NSDictionary *)json;
+- (void)deleteWithToken:(nonnull NSString *)token
+            streamToken:(nonnull NSString *)streamToken
+           withResponse:(nonnull NSURLResponse *)response
+                  error:(nullable NSError *)error
+                   json:(nullable NSDictionary *)json;
 @optional
-- (void)cancelUploadByPath:(NSString *)sourcePath
+- (void)cancelUploadByPath:(nonnull NSString *)sourcePath
                 deleteFile:(BOOL)deleteFile;
 @optional
 - (void)cancelCurrentUpload:(BOOL)deleteFile;
@@ -217,14 +217,14 @@ static NSString *ARG_DATA = @"ARG_DATA";
  * Called in case of error occurred
  */
 @optional
-- (void)errorWithInfo:(RecordingInfo *)info
-                error:(NSError *)error
+- (void)errorWithInfo:(nullable RecordingInfo *)info
+                error:(nonnull NSError *)error
  lostConnectionAction:(int)lostConnectionAction;
 /**
  * Called in case of error occurred
  */
 @optional
-- (void)errorWithError:(NSError *)error;
+- (void)errorWithError:(nonnull NSError *)error;
 
 @end
 
@@ -233,7 +233,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
 @protocol ZiggeoFileSelectorDelegate <NSObject>
 
 @optional
-- (void)uploadSelected:(NSArray<NSString *> *)paths;
+- (void)uploadSelected:(nonnull NSArray<NSString *> *)paths;
 @optional
 - (void)uploadCancelledByUser;
 
@@ -254,7 +254,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
 @optional
 - (void)recorderPaused;
 @optional
-- (void)recorderStopped:(NSString *)path;
+- (void)recorderStopped:(nonnull NSString *)path;
 @optional
 - (void)recorderRerecord;
 @optional
@@ -306,7 +306,7 @@ static NSString *ARG_DATA = @"ARG_DATA";
 @protocol ZiggeoQRScannerDelegate <NSObject>
 
 @optional
-- (void)qrCodeScaned:(NSString *)qrCode;
+- (void)qrCodeScaned:(nonnull NSString *)qrCode;
 @optional
 - (void)qrCodeScanCancelledByUser;
 
@@ -345,107 +345,107 @@ static NSString *ARG_DATA = @"ARG_DATA";
     id<ZiggeoScreenRecorderDelegate> screenRecorderDelegate;
 }
     
-@property (strong, nonatomic) NSString *token;
+@property (strong, nonatomic) NSString * __nonnull token;
 @property (nonatomic) bool enableDebugLogs;
 
 // MARK: - 1. Init
-- (id)init;
-- (id)initWithToken:(NSString *)token;
-- (void)sendLocalNotification:(NSString *)message;
+- (nonnull id)init;
+- (nonnull id)initWithToken:(nonnull NSString *)token;
+- (void)sendLocalNotification:(nonnull NSString *)message;
 
 // MARK: - Set Delegate
-- (void)setQRScannerDelegate:(id<ZiggeoQRScannerDelegate>)delegate;
-- (void)setHardwarePermissionDelegate:(id<ZiggeoHardwarePermissionDelegate>)delegate;
-- (void)setUploadingDelegate:(id<ZiggeoUploadingDelegate>)delegate;
-- (void)setFileSelectorDelegate:(id<ZiggeoFileSelectorDelegate>)delegate;
-- (void)setRecorderDelegate:(id<ZiggeoRecorderDelegate>)delegate;
-- (void)setSensorDelegate:(id<ZiggeoSensorDelegate>)delegate;
-- (void)setPlayerDelegate:(id<ZiggeoPlayerDelegate>)delegate;
-- (void)setScreenRecorderDelegate:(id<ZiggeoScreenRecorderDelegate>)delegate;
+- (void)setQRScannerDelegate:(nullable id<ZiggeoQRScannerDelegate>)delegate;
+- (void)setHardwarePermissionDelegate:(nullable id<ZiggeoHardwarePermissionDelegate>)delegate;
+- (void)setUploadingDelegate:(nullable id<ZiggeoUploadingDelegate>)delegate;
+- (void)setFileSelectorDelegate:(nullable id<ZiggeoFileSelectorDelegate>)delegate;
+- (void)setRecorderDelegate:(nullable id<ZiggeoRecorderDelegate>)delegate;
+- (void)setSensorDelegate:(nullable id<ZiggeoSensorDelegate>)delegate;
+- (void)setPlayerDelegate:(nullable id<ZiggeoPlayerDelegate>)delegate;
+- (void)setScreenRecorderDelegate:(nullable id<ZiggeoScreenRecorderDelegate>)delegate;
 
 // MARK: - Get Delegate
-- (id<ZiggeoQRScannerDelegate>)getQRScannerDelegate;
-- (id<ZiggeoHardwarePermissionDelegate>)getHardwarePermissionDelegate;
-- (id<ZiggeoUploadingDelegate>)getUploadingDelegate;
-- (id<ZiggeoFileSelectorDelegate>)getFileSelectorDelegate;
-- (id<ZiggeoRecorderDelegate>)getRecorderDelegate;
-- (id<ZiggeoSensorDelegate>)getSensorDelegate;
-- (id<ZiggeoPlayerDelegate>)getPlayerDelegate;
-- (id<ZiggeoScreenRecorderDelegate>)getScreenRecorderDelegate;
+- (nullable id<ZiggeoQRScannerDelegate>)getQRScannerDelegate;
+- (nullable id<ZiggeoHardwarePermissionDelegate>)getHardwarePermissionDelegate;
+- (nullable id<ZiggeoUploadingDelegate>)getUploadingDelegate;
+- (nullable id<ZiggeoFileSelectorDelegate>)getFileSelectorDelegate;
+- (nullable id<ZiggeoRecorderDelegate>)getRecorderDelegate;
+- (nullable id<ZiggeoSensorDelegate>)getSensorDelegate;
+- (nullable id<ZiggeoPlayerDelegate>)getPlayerDelegate;
+- (nullable id<ZiggeoScreenRecorderDelegate>)getScreenRecorderDelegate;
 
 // MARK: - Get Variables
-- (NSString *)getAppToken;
-- (NSString *)getServerAuthToken;
-- (NSString *)getClientAuthToken;
-- (UIViewController *)getParentViewController;
-- (ZiggeoConfig *)config;
-- (ZiggeoCacheManager *)cacheManager;
-- (ZiggeoCacheManager *)playerCacheManager;
-- (ZiggeoConnect *)connect;
-- (ZiggeoUploadingHandler *)uploadingHandler;
-- (ZiggeoVideos *)videos;
-- (ZiggeoAudios *)audios;
-- (ZiggeoImages *)images;
-- (FileSelectorConfig *)fileSelectorConfig;
-- (UploadingConfig *)uploadingConfig;
-- (PlayerConfig *)playerConfig;
-- (QrScannerConfig *)qrScannerConfig;
-- (CacheConfig *)cacheConfig;
-- (RecorderConfig *)recorderConfig;
+- (nonnull NSString *)getAppToken;
+- (nullable NSString *)getServerAuthToken;
+- (nullable NSString *)getClientAuthToken;
+- (nonnull UIViewController *)getParentViewController;
+- (nonnull ZiggeoConfig *)config;
+- (nonnull ZiggeoCacheManager *)cacheManager;
+- (nonnull ZiggeoCacheManager *)playerCacheManager;
+- (nonnull ZiggeoConnect *)connect;
+- (nonnull ZiggeoUploadingHandler *)uploadingHandler;
+- (nonnull ZiggeoVideos *)videos;
+- (nonnull ZiggeoAudios *)audios;
+- (nonnull ZiggeoImages *)images;
+- (nonnull FileSelectorConfig *)fileSelectorConfig;
+- (nonnull UploadingConfig *)uploadingConfig;
+- (nonnull PlayerConfig *)playerConfig;
+- (nonnull QrScannerConfig *)qrScannerConfig;
+- (nonnull CacheConfig *)cacheConfig;
+- (nonnull RecorderConfig *)recorderConfig;
 
 // MARK: - Set Config Variables
-- (void)setFileSelectorConfig:(FileSelectorConfig *)config;
-- (void)setUploadingConfig:(UploadingConfig *)config;
-- (void)setPlayerConfig:(PlayerConfig *)config;
-- (void)setQrScannerConfig:(QrScannerConfig *)config;
-- (void)setCacheConfig:(CacheConfig *)config;
-- (void)setRecorderConfig:(RecorderConfig *)config;
+- (void)setFileSelectorConfig:(nonnull FileSelectorConfig *)config;
+- (void)setUploadingConfig:(nonnull UploadingConfig *)config;
+- (void)setPlayerConfig:(nonnull PlayerConfig *)config;
+- (void)setQrScannerConfig:(nonnull QrScannerConfig *)config;
+- (void)setCacheConfig:(nonnull CacheConfig *)config;
+- (void)setRecorderConfig:(nonnull RecorderConfig *)config;
 
 // MARK: - ContactUs
-- (void)sendReport:(NSArray *)array;
-- (void)sendEmailToSupport:(NSString *)subject messageBody:(NSString *)messageBody file:(FileInfoData *)file;
+- (void)sendReport:(nonnull NSArray *)array;
+- (void)sendEmailToSupport:(nonnull NSString *)subject messageBody:(nonnull NSString *)messageBody file:(nullable FileInfoData *)file;
 - (void)sendEmailToSupport;
-- (void)log:(NSString *)message;
-- (void)logError:(NSString *)message;
+- (void)log:(nonnull NSString *)message;
+- (void)logError:(nonnull NSString *)message;
 - (BOOL)isNetworkConnected;
 - (BOOL)isWifiConnected;
 
 
 // MARK: - 2. Recorder
 - (void)record;
-- (void)startScreenRecorderWithAppGroup:(NSString *)appGroup
-                     preferredExtension:(NSString *)preferredExtension;
-- (void)trimVideo:(NSString *)videoUrl;
+- (void)startScreenRecorderWithAppGroup:(nonnull NSString *)appGroup
+                     preferredExtension:(nonnull NSString *)preferredExtension NS_SWIFT_NAME( startScreenRecorder(appGroup:preferredExtension:) );
+- (void)trimVideo:(nonnull NSString *)videoUrl;
 - (void)startImageRecorder;
 - (void)startAudioRecorder;
-- (void)uploadFromPath:(NSString *)fileName
-                  data:(NSDictionary *)data;
-- (void)uploadFromPath:(NSString *)fileName
-                  data:(NSDictionary *)data
-              callback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))callback
-              progress:(void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
-       confirmCallback:(void (^)(NSDictionary *jsonObject, NSURLResponse *response, NSError *error))confirmCallback;
+- (void)uploadFromPath:(nonnull NSString *)fileName
+                  data:(nonnull NSDictionary *)data;
+- (void)uploadFromPath:(nonnull NSString *)fileName
+                  data:(nonnull NSDictionary *)data
+              callback:(nullable void (^)(NSDictionary * __nullable jsonObject, NSURLResponse * __nonnull response, NSError * __nullable error))callback
+              progress:(nullable void (^)(int totalBytesSent, int totalBytesExpectedToSend))progress
+       confirmCallback:(nullable void (^)(NSDictionary * __nullable jsonObject, NSURLResponse * __nonnull response, NSError * __nullable error))confirmCallback;
 - (void)startFileSelector;
-- (void)cancelUpload:(NSString *)path :(bool)delete_file;
+- (void)cancelUpload:(nullable NSString *)path :(bool)delete_file;
 
 
 // MARK: - 3. Player
-- (void)playVideo:(NSString *)token;
-- (void)playVideos:(NSArray<NSString *> *)tokens;
-- (void)playFromUri:(NSString *)url;
-- (void)playFromUris:(NSArray<NSString *> *)urls;
+- (void)playVideo:(nonnull NSString *)token;
+- (void)playVideos:(nonnull NSArray<NSString *> *)tokens;
+- (void)playFromUri:(nonnull NSString *)url;
+- (void)playFromUris:(nonnull NSArray<NSString *> *)urls;
 
-- (void)showImage:(NSString *)token;
-- (void)showImages:(NSArray<NSString *> *)tokens;
-- (void)showImageFromUri:(NSString *)url;
-- (void)showImageFromUris:(NSArray<NSString *> *)urls;
+- (void)showImage:(nonnull NSString *)token;
+- (void)showImages:(nonnull NSArray<NSString *> *)tokens;
+- (void)showImageFromUri:(nonnull NSString *)url;
+- (void)showImageFromUris:(nonnull NSArray<NSString *> *)urls;
 
-- (void)playAudio:(NSString *)token;
-- (void)playAudios:(NSArray<NSString *> *)tokens;
-- (void)playAudioFromUri:(NSString *)url;
-- (void)playAudioFromUris:(NSArray<NSString *> *)urls;
+- (void)playAudio:(nonnull NSString *)token;
+- (void)playAudios:(nonnull NSArray<NSString *> *)tokens;
+- (void)playAudioFromUri:(nonnull NSString *)url;
+- (void)playAudioFromUris:(nonnull NSArray<NSString *> *)urls;
 
-- (void)startAudioPlayer:(NSString *)token;
+- (void)startAudioPlayer:(nonnull NSString *)token;
 
 
 // MARK: - 4. QR Scanner

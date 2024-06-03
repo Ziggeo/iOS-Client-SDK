@@ -47,13 +47,10 @@
 		D8D4810F288FEEE700B5961A /* TopClientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D480FB288FEEE700B5961A /* TopClientsViewController.swift */; };
 		D8D48110288FEEE700B5961A /* VideoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D480FC288FEEE700B5961A /* VideoEditorViewController.swift */; };
 		F265C6A98B840FC482F5B286 /* Pods_ZiggeoDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF13B36C610EC58AFC2339A /* Pods_ZiggeoDemo.framework */; };
-		D8DB96AF29A65C82003A46F2 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8DB96AE29A65C82003A46F2 /* ReplayKit.framework */; };
-		D8DB96B229A65C82003A46F2 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DB96B129A65C82003A46F2 /* SampleHandler.swift */; };
-		D8DB96B629A65C82003A46F2 /* BroadcastExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D8DB96AD29A65C82003A46F2 /* BroadcastExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		E8A0FD67814B34F37087F9A0 /* Pods_BroadcastExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2110BB79772455492DE96DF6 /* Pods_BroadcastExtension.framework */; };
 		FD51021B2BFBBE070055A55B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FD51021A2BFBBE070055A55B /* .swiftlint.yml */; };
 		FD51021E2BFBC3130055A55B /* AVCaptureVideoOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51021D2BFBC3130055A55B /* AVCaptureVideoOrientation.swift */; };
 		FD5102202BFBC34B0055A55B /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51021F2BFBC34B0055A55B /* Optional.swift */; };
+		FD605D622C0E790B00BE0660 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD605D5F2C0E790B00BE0660 /* SampleHandler.swift */; };
 		FD6090142BF293080042637F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090132BF293080042637F /* UserDefaults.swift */; };
 		FD6090162BF294DA0042637F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090152BF294DA0042637F /* DateFormatter.swift */; };
 		FD6090182BF295BA0042637F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090172BF295BA0042637F /* UIImage.swift */; };
@@ -81,7 +78,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D8DB96B629A65C82003A46F2 /* BroadcastExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,14 +132,12 @@
 		D8D480FB288FEEE700B5961A /* TopClientsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopClientsViewController.swift; sourceTree = "<group>"; };
 		D8D480FC288FEEE700B5961A /* VideoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
 		D8DB96A829A65C68003A46F2 /* ZiggeoDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZiggeoDemo.entitlements; sourceTree = "<group>"; };
-		D8DB96AD29A65C82003A46F2 /* BroadcastExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BroadcastExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8DB96AE29A65C82003A46F2 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
-		D8DB96B129A65C82003A46F2 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
-		D8DB96B329A65C82003A46F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8DB96BB29A65C91003A46F2 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
 		FD51021A2BFBBE070055A55B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		FD51021D2BFBC3130055A55B /* AVCaptureVideoOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureVideoOrientation.swift; sourceTree = "<group>"; };
 		FD51021F2BFBC34B0055A55B /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
+		FD605D5D2C0E790B00BE0660 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
+		FD605D5E2C0E790B00BE0660 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD605D5F2C0E790B00BE0660 /* SampleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
 		FD6090132BF293080042637F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FD6090152BF294DA0042637F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		FD6090172BF295BA0042637F /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -152,9 +146,6 @@
 		FD60901D2BF2986E0042637F /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		FD60901F2BF298880042637F /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		FD6090212BF2989D0042637F /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
-		FDAC2BBC2BF39E5C00296141 /* SampleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
-		FDAC2BBD2BF39E5C00296141 /* BroadcastExtension.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BroadcastExtension.entitlements; sourceTree = "<group>"; };
-		FDAC2BBE2BF39E5C00296141 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				D8B31D3A28815FE300C03825 /* ZiggeoDemo */,
-				D8DB96B029A65C82003A46F2 /* BroadcastExtension */,
+				FD605D602C0E790B00BE0660 /* BroadcastExtension */,
 				FD5102192BFBBDDD0055A55B /* SwiftLint */,
 				D8B31D3928815FE300C03825 /* Products */,
 				6F09F3AD468DD01E61DF4010 /* Pods */,
@@ -363,22 +354,22 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		D8DB96C329A66F26003A46F2 /* BroadcastExtension */ = {
-			isa = PBXGroup;
-			children = (
-				FDAC2BBD2BF39E5C00296141 /* BroadcastExtension.entitlements */,
-				FDAC2BBE2BF39E5C00296141 /* Info.plist */,
-				FDAC2BBC2BF39E5C00296141 /* SampleHandler.swift */,
-			);
-			path = BroadcastExtension;
-			sourceTree = "<group>";
-		};
 		FD5102192BFBBDDD0055A55B /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
 				FD51021A2BFBBE070055A55B /* .swiftlint.yml */,
 			);
 			name = SwiftLint;
+			sourceTree = "<group>";
+		};
+		FD605D602C0E790B00BE0660 /* BroadcastExtension */ = {
+			isa = PBXGroup;
+			children = (
+				FD605D5D2C0E790B00BE0660 /* BroadcastExtension.entitlements */,
+				FD605D5E2C0E790B00BE0660 /* Info.plist */,
+				FD605D5F2C0E790B00BE0660 /* SampleHandler.swift */,
+			);
+			path = BroadcastExtension;
 			sourceTree = "<group>";
 		};
 		FD6090122BF292E80042637F /* UIKit */ = {
@@ -591,6 +582,7 @@
 				D8D4810C288FEEE700B5961A /* LogViewController.swift in Sources */,
 				D8B31D812881613C00C03825 /* LogTableViewCell.swift in Sources */,
 				D8D48109288FEEE700B5961A /* AboutViewController.swift in Sources */,
+				FD605D622C0E790B00BE0660 /* SampleHandler.swift in Sources */,
 				D8B31D3C28815FE300C03825 /* AppDelegate.swift in Sources */,
 				D8B31D882881613C00C03825 /* UIView.swift in Sources */,
 				D8D4810D288FEEE700B5961A /* SettingsViewController.swift in Sources */,
@@ -803,7 +795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "1.1.41-blurring";
+				MARKETING_VERSION = "1.1.48-blurring";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -846,7 +838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "1.1.41-blurring";
+				MARKETING_VERSION = "1.1.48-blurring";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -876,7 +868,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.45;
+				MARKETING_VERSION = "1.1.48-blurring";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.demo.BroadcastExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -908,7 +900,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.45;
+				MARKETING_VERSION = "1.1.48-blurring";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ziggeo.demo.BroadcastExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

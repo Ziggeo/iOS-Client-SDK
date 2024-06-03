@@ -91,13 +91,13 @@ private extension AuthViewController {
     
     func scanQRCode() {
         let ziggeo = Ziggeo()
-        ziggeo?.setQRScannerDelegate(self)
+        ziggeo.setQRScannerDelegate(self)
         
         let qrScannerConfig = QrScannerConfig()
         qrScannerConfig.shouldCloseAfterSuccessfulScan = true
-        ziggeo?.setQrScannerConfig(qrScannerConfig)
+        ziggeo.setQrScannerConfig(qrScannerConfig)
         
-        ziggeo?.startQrScanner()
+        ziggeo.startQrScanner()
     }
     
     func login(_ applicationToken: String) {
