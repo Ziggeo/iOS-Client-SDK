@@ -49,8 +49,8 @@ final class CustomVideoPlayer: UIViewController, VideoPreviewProtocol {
         uploadButton.isHidden = !isRecordingPreview
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         initPlayer(videoURL)
     }
     
