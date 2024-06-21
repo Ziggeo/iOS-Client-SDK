@@ -59,6 +59,7 @@
 		FD60901E2BF2986E0042637F /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60901D2BF2986E0042637F /* UIWindow.swift */; };
 		FD6090202BF298880042637F /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD60901F2BF298880042637F /* UITableView.swift */; };
 		FD6090222BF2989D0042637F /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6090212BF2989D0042637F /* UICollectionView.swift */; };
+		FD97699D2C2379AF00CBECE5 /* MailScreenInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97699C2C2379AF00CBECE5 /* MailScreenInvoker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		FD60901D2BF2986E0042637F /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		FD60901F2BF298880042637F /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		FD6090212BF2989D0042637F /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		FD97699C2C2379AF00CBECE5 /* MailScreenInvoker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailScreenInvoker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 		D8B31D5C2881613B00C03825 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FD97699C2C2379AF00CBECE5 /* MailScreenInvoker.swift */,
 				D8B31D5D2881613B00C03825 /* Common.swift */,
 			);
 			path = Common;
@@ -597,6 +600,7 @@
 				D8D48104288FEEE700B5961A /* RecordingAudiosViewController.swift in Sources */,
 				D8D48101288FEEE700B5961A /* CustomVideoRecorder.swift in Sources */,
 				D8D4810B288FEEE700B5961A /* ContactUsViewController.swift in Sources */,
+				FD97699D2C2379AF00CBECE5 /* MailScreenInvoker.swift in Sources */,
 				D8B31D892881613C00C03825 /* Common.swift in Sources */,
 				D8D4810E288FEEE700B5961A /* SideMenuViewController.swift in Sources */,
 				FD60901E2BF2986E0042637F /* UIWindow.swift in Sources */,

@@ -166,8 +166,8 @@ private extension HomeViewController {
 // MARK: - Privates
 private extension HomeViewController {
     func refreshPopupMenu() {
-        popupMenuView.isHidden = isShowPopupMenu
-        popupMenuImageView.image = isShowPopupMenu ? .plusIcon : .closeIcon
+        popupMenuView.isHidden = !isShowPopupMenu
+        popupMenuImageView.image = isShowPopupMenu ? .closeIcon : .plusIcon
     }
     
     func hideMenu() {
